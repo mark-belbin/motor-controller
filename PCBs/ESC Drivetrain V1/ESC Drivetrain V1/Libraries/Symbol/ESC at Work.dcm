@@ -1,0 +1,19 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LMR16006XDDC
+F http://www.ti.com/lit/ds/symlink/lmr16006.pdf
+$ENDCMP
+#
+$CMP SIZF906DT
+D N-MOSFET transistor, drain/gate/source
+K transistor NMOS N-MOS N-MOSFET
+F http://www.vishay.com/docs/67547/sizf906dt.pdf
+$ENDCMP
+#
+$CMP SRV05-4
+D ESD Protection Diodes with Low Clamping Voltage, SOT-23-6
+K ESD protection diodes
+F http://www.onsemi.com/pub/Collateral/SRV05-4-D.PDF
+$ENDCMP
+#
+#End Doc Library
