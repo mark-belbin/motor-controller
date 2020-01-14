@@ -1915,4 +1915,12 @@ F 4 "311-820ARCT-ND" V 4125 1025 50  0001 C CNN "Digikey"
 $EndComp
 NoConn ~ 7500 5300
 NoConn ~ 7500 5400
+Text Notes 9250 4475 0    50   ~ 0
+PWR_ISO
+Text Notes 9625 5250 0    50   ~ 0
+XDS100 Serial
+Text Notes 8250 5600 0    50   ~ 0
+Boot Mode
+Text Notes 10125 4375 0    50   ~ 0
+Programming Cable \n     Interface
 $EndSCHEMATC
