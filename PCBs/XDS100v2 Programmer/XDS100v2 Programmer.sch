@@ -1452,8 +1452,6 @@ Wire Wire Line
 Wire Wire Line
 	9600 5400 9975 5400
 Connection ~ 9600 5400
-Wire Wire Line
-	8650 5950 8600 5950
 Text Label 7825 5750 0    50   ~ 0
 GPIO34
 Text Label 7825 5850 0    50   ~ 0
@@ -1467,8 +1465,6 @@ Wire Wire Line
 Connection ~ 8375 5850
 Wire Wire Line
 	8375 5850 7825 5850
-Wire Wire Line
-	8600 5950 8600 6025
 $Comp
 L Device:R_Small_US R13
 U 1 1 5E865275
@@ -1510,22 +1506,6 @@ F 3 "" H 8375 6300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8375 6300 8375 6225
-$Comp
-L power:GND #PWR0145
-U 1 1 5E8FAD6F
-P 8600 6300
-F 0 "#PWR0145" H 8600 6050 50  0001 C CNN
-F 1 "GND" H 8605 6127 50  0000 C CNN
-F 2 "" H 8600 6300 50  0001 C CNN
-F 3 "" H 8600 6300 50  0001 C CNN
-	1    8600 6300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8600 6300 8600 6225
-Wire Wire Line
-	7825 5950 8600 5950
-Connection ~ 8600 5950
 Wire Wire Line
 	8375 5850 8650 5850
 Wire Wire Line
@@ -1570,18 +1550,6 @@ F 2 "Resistors_SMD:R_0805" H 8375 6125 50  0001 C CNN
 F 3 "~" H 8375 6125 50  0001 C CNN
 F 4 "311-2.20KCRCT-ND" V 8375 6125 50  0001 C CNN "Digikey"
 	1    8375 6125
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Small_US R15
-U 1 1 5EAF1D16
-P 8600 6125
-F 0 "R15" H 8500 6225 50  0000 L CNN
-F 1 "2.2k" H 8400 6075 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805" H 8600 6125 50  0001 C CNN
-F 3 "~" H 8600 6125 50  0001 C CNN
-F 4 "311-2.20KCRCT-ND" V 8600 6125 50  0001 C CNN "Digikey"
-	1    8600 6125
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1924,4 +1892,6 @@ F 3 "~" H 10425 4700 50  0001 C CNN
 	1    10425 4700
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7825 5950 8650 5950
 $EndSCHEMATC
