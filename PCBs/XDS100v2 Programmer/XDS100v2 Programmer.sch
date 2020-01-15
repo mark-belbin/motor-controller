@@ -1334,7 +1334,7 @@ Wire Wire Line
 	8175 3725 8825 3725
 Text Label 8350 5275 0    50   ~ 0
 SCI_TX
-Text Label 10975 4800 2    50   ~ 0
+Text Label 10975 4700 2    50   ~ 0
 TDO
 Text Label 9850 4500 0    50   ~ 0
 3V3_MCU
@@ -1351,11 +1351,11 @@ F 3 "" H 10000 4925 50  0001 C CNN
 $EndComp
 Text Label 8350 5175 0    50   ~ 0
 SCI_RX
-Text Label 10975 4700 2    50   ~ 0
+Text Label 10975 4500 2    50   ~ 0
 TMS
-Text Label 10975 4600 2    50   ~ 0
+Text Label 10975 4800 2    50   ~ 0
 TDI
-Text Label 10975 4900 2    50   ~ 0
+Text Label 10975 4600 2    50   ~ 0
 TCK
 $Comp
 L Switch:SW_DIP_x02 SW1
@@ -1530,7 +1530,7 @@ Wire Wire Line
 	8375 5850 8650 5850
 Wire Wire Line
 	8125 5750 8650 5750
-Text Label 10975 4500 2    50   ~ 0
+Text Label 10975 4900 2    50   ~ 0
 TRST
 Text Label 9850 4800 0    50   ~ 0
 GPIO34
@@ -1538,18 +1538,6 @@ Text Label 9850 4600 0    50   ~ 0
 GPIO28
 Text Label 9850 4700 0    50   ~ 0
 GPIO29
-$Comp
-L Connector_Generic:Conn_02x05_Counter_Clockwise J2
-U 1 1 5EA078BB
-P 10425 4700
-F 0 "J2" H 10475 5000 50  0000 C CNN
-F 1 "Conn_02x05" H 10475 4400 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x05_Pitch2.54mm" H 10425 4700 50  0001 C CNN
-F 3 "~" H 10425 4700 50  0001 C CNN
-F 4 "ED1543-ND" H 10425 4700 50  0001 C CNN "Digikey"
-	1    10425 4700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10975 4500 10725 4500
 Wire Wire Line
@@ -1917,10 +1905,23 @@ NoConn ~ 7500 5300
 NoConn ~ 7500 5400
 Text Notes 9250 4475 0    50   ~ 0
 PWR_ISO
-Text Notes 9625 5250 0    50   ~ 0
+Text Notes 7725 5225 0    50   ~ 0
 XDS100 Serial
 Text Notes 8250 5600 0    50   ~ 0
 Boot Mode
-Text Notes 10125 4375 0    50   ~ 0
+Text Notes 10125 4325 0    50   ~ 0
 Programming Cable \n     Interface
+Text Notes 10150 5125 0    39   Italic 0
+Follows ARM 10 Pin JTAG Interface, \nslightly modified 
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5E219B1D
+P 10425 4700
+F 0 "J?" H 10475 5000 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 10500 4400 50  0001 C CNN
+F 2 "" H 10425 4700 50  0001 C CNN
+F 3 "~" H 10425 4700 50  0001 C CNN
+	1    10425 4700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
