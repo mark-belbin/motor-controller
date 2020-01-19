@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP MCP2515-QFN20
+D Stand-Alone CAN Controller with SPI Interface, TSSOP-20
+K CAN Controller SPI
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21801e.pdf
+$ENDCMP
+#
 $CMP SN74LVC2G07
 D Dual-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, VSSOP-8
 K Level-Shifter CMOS-TTL-Translation

@@ -91,17 +91,6 @@ Wire Wire Line
 	1700 800  1700 750 
 Connection ~ 1700 800 
 $Comp
-L power:+12V #PWR01
-U 1 1 5D54F21B
-P 1700 750
-F 0 "#PWR01" H 1700 600 50  0001 C CNN
-F 1 "+12V" H 1715 923 50  0000 C CNN
-F 2 "" H 1700 750 50  0001 C CNN
-F 3 "" H 1700 750 50  0001 C CNN
-	1    1700 750 
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR08
 U 1 1 5D545620
 P 1475 1625
@@ -282,17 +271,6 @@ F 4 "490-10731-1-ND" H 1400 4325 50  0001 C CNN "Digikey"
 	1    1400 4325
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+12V #PWR025
-U 1 1 5D571885
-P 1400 4200
-F 0 "#PWR025" H 1400 4050 50  0001 C CNN
-F 1 "+12V" H 1415 4373 50  0000 C CNN
-F 2 "" H 1400 4200 50  0001 C CNN
-F 3 "" H 1400 4200 50  0001 C CNN
-	1    1400 4200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1400 4200 1400 4225
 $Comp
@@ -464,17 +442,6 @@ Wire Wire Line
 	3850 1925 4025 1925
 Wire Wire Line
 	4025 1925 4025 1850
-$Comp
-L power:+12V #PWR012
-U 1 1 5D5A2AFD
-P 4025 1850
-F 0 "#PWR012" H 4025 1700 50  0001 C CNN
-F 1 "+12V" H 4025 2000 50  0000 C CNN
-F 2 "" H 4025 1850 50  0001 C CNN
-F 3 "" H 4025 1850 50  0001 C CNN
-	1    4025 1850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3200 1825 3875 1825
 Wire Wire Line
@@ -989,17 +956,8 @@ Wire Wire Line
 Connection ~ 6100 2225
 Wire Wire Line
 	6100 2225 6100 2075
-Wire Wire Line
-	6100 2575 6100 2650
-Wire Wire Line
-	6100 2650 5550 2650
-Wire Wire Line
-	6100 2650 6100 2800
-Connection ~ 6100 2650
 Text Label 5550 2225 0    50   ~ 0
 SN1
-Text Label 5550 2650 0    50   ~ 0
-SP1
 $Comp
 L power:GND #PWR020
 U 1 1 5DB8BD06
@@ -1128,13 +1086,6 @@ Wire Wire Line
 Connection ~ 8050 2200
 Wire Wire Line
 	8050 2200 8050 2050
-Wire Wire Line
-	8050 2550 8050 2625
-Wire Wire Line
-	8050 2625 7500 2625
-Wire Wire Line
-	8050 2625 8050 2775
-Connection ~ 8050 2625
 $Comp
 L power:GND #PWR014
 U 1 1 5DCF5ABE
@@ -1250,7 +1201,7 @@ Wire Wire Line
 Wire Wire Line
 	9975 2550 9975 2625
 Wire Wire Line
-	9975 2625 9425 2625
+	9975 2625 9825 2625
 Wire Wire Line
 	9975 2625 9975 2775
 Connection ~ 9975 2625
@@ -1365,17 +1316,6 @@ Wire Wire Line
 	7925 3625 7925 3675
 Connection ~ 7550 3625
 $Comp
-L power:+12V #PWR09
-U 1 1 5E0EF3BA
-P 5100 1625
-F 0 "#PWR09" H 5100 1475 50  0001 C CNN
-F 1 "+12V" H 5115 1798 50  0000 C CNN
-F 2 "" H 5100 1625 50  0001 C CNN
-F 3 "" H 5100 1625 50  0001 C CNN
-	1    5100 1625
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:LED_ALT D1
 U 1 1 5E0F0E06
 P 5100 1825
@@ -1433,7 +1373,7 @@ Wire Notes Line
 Wire Notes Line
 	4675 4700 4675 500 
 Wire Notes Line
-	6925 7750 525  7750
+	4625 7750 525  7750
 Wire Notes Line
 	500  7750 500  5325
 Wire Notes Line
@@ -1755,7 +1695,7 @@ Wire Wire Line
 Wire Wire Line
 	1000 7425 1300 7425
 Text HLabel 3475 6025 0    50   Input ~ 0
-SPI_CS
+SPI_CS_0
 Text HLabel 3475 6125 0    50   BiDi ~ 0
 SPI_MOSI
 Text HLabel 3475 6225 0    50   BiDi ~ 0
@@ -1770,4 +1710,107 @@ Text HLabel 3475 6750 0    50   Input ~ 0
 WAKE
 Text HLabel 3475 6850 0    50   Output ~ 0
 nFAULT
+Wire Notes Line
+	500  5325 4625 5325
+Wire Notes Line
+	4625 5325 4625 7750
+$Comp
+L power:+BATT #PWR?
+U 1 1 5E32BA5B
+P 1700 750
+F 0 "#PWR?" H 1700 600 50  0001 C CNN
+F 1 "+BATT" H 1715 923 50  0000 C CNN
+F 2 "" H 1700 750 50  0001 C CNN
+F 3 "" H 1700 750 50  0001 C CNN
+	1    1700 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 5E32C321
+P 4025 1850
+F 0 "#PWR?" H 4025 1700 50  0001 C CNN
+F 1 "+BATT" H 4040 2023 50  0000 C CNN
+F 2 "" H 4025 1850 50  0001 C CNN
+F 3 "" H 4025 1850 50  0001 C CNN
+	1    4025 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 5E32CCC5
+P 5100 1625
+F 0 "#PWR?" H 5100 1475 50  0001 C CNN
+F 1 "+BATT" H 5115 1798 50  0000 C CNN
+F 2 "" H 5100 1625 50  0001 C CNN
+F 3 "" H 5100 1625 50  0001 C CNN
+	1    5100 1625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 5E32DA12
+P 1400 4200
+F 0 "#PWR?" H 1400 4050 50  0001 C CNN
+F 1 "+BATT" H 1415 4373 50  0000 C CNN
+F 2 "" H 1400 4200 50  0001 C CNN
+F 3 "" H 1400 4200 50  0001 C CNN
+	1    1400 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5E373C00
+P 5825 2650
+F 0 "NT?" H 5825 2700 50  0000 C CNN
+F 1 "Net-Tie_2" H 5825 2550 50  0001 C CNN
+F 2 "" H 5825 2650 50  0001 C CNN
+F 3 "~" H 5825 2650 50  0001 C CNN
+	1    5825 2650
+	1    0    0    -1  
+$EndComp
+Text Label 5550 2650 0    50   ~ 0
+SP1
+Wire Wire Line
+	6100 2575 6100 2650
+Wire Wire Line
+	5550 2650 5725 2650
+Wire Wire Line
+	5925 2650 6100 2650
+Connection ~ 6100 2650
+Wire Wire Line
+	6100 2650 6100 2800
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5E39434A
+P 7775 2625
+F 0 "NT?" H 7775 2675 50  0000 C CNN
+F 1 "Net-Tie_2" H 7775 2525 50  0001 C CNN
+F 2 "" H 7775 2625 50  0001 C CNN
+F 3 "~" H 7775 2625 50  0001 C CNN
+	1    7775 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2550 8050 2625
+Wire Wire Line
+	7500 2625 7675 2625
+Wire Wire Line
+	7875 2625 8050 2625
+Connection ~ 8050 2625
+Wire Wire Line
+	8050 2625 8050 2775
+Wire Wire Line
+	9625 2625 9425 2625
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5E3B408A
+P 9725 2625
+F 0 "NT?" H 9725 2675 50  0000 C CNN
+F 1 "Net-Tie_2" H 9725 2525 50  0001 C CNN
+F 2 "" H 9725 2625 50  0001 C CNN
+F 3 "~" H 9725 2625 50  0001 C CNN
+	1    9725 2625
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

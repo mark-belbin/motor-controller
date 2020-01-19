@@ -959,7 +959,7 @@ Text Notes 5575 1150 0    39   ~ 0
 Required Pullups/Pulldowns for XDS100v2 operation \nand boot-to-flash (XDS100v2 disconnected)
 Text HLabel 10300 2550 2    50   Input ~ 0
 GPIO28
-Text HLabel 10300 4625 2    50   Output ~ 0
+Text HLabel 10300 4725 2    50   Output ~ 0
 SPI_CLK
 Text HLabel 10300 2925 2    50   Input ~ 0
 ADCINA7
@@ -988,12 +988,12 @@ EPWM3A
 Text HLabel 10300 4175 2    50   Output ~ 0
 EPWM3B
 Text HLabel 10300 4325 2    50   Output ~ 0
-SPI_CS
+SPI_CS_0
 Text HLabel 10300 2450 2    50   Input ~ 0
 ~RESET~
-Text HLabel 10300 4425 2    50   BiDi ~ 0
-SPI_MOSI
 Text HLabel 10300 4525 2    50   BiDi ~ 0
+SPI_MOSI
+Text HLabel 10300 4625 2    50   BiDi ~ 0
 SPI_MISO
 Text HLabel 10300 2750 2    50   Output ~ 0
 GPIO6
@@ -1044,11 +1044,11 @@ Wire Wire Line
 Wire Wire Line
 	10300 4325 9875 4325
 Wire Wire Line
-	10300 4425 9875 4425
-Wire Wire Line
 	10300 4525 9875 4525
 Wire Wire Line
 	10300 4625 9875 4625
+Wire Wire Line
+	10300 4725 9875 4725
 Wire Wire Line
 	10300 2450 9875 2450
 Wire Wire Line
@@ -1061,7 +1061,7 @@ Text Label 9875 2450 0    50   ~ 0
 ~RESET~
 Text Label 9875 2550 0    50   ~ 0
 GPIO28
-Text Label 9875 4625 0    50   ~ 0
+Text Label 9875 4725 0    50   ~ 0
 GPIO18
 Text Label 9875 3675 0    50   ~ 0
 GPIO0
@@ -1077,9 +1077,9 @@ Text Label 9875 4175 0    50   ~ 0
 GPIO5
 Text Label 9875 4325 0    50   ~ 0
 GPIO19
-Text Label 9875 4425 0    50   ~ 0
-GPIO16
 Text Label 9875 4525 0    50   ~ 0
+GPIO16
+Text Label 9875 4625 0    50   ~ 0
 GPIO17
 Text Label 9875 2650 0    50   ~ 0
 GPIO7
@@ -1201,4 +1201,12 @@ Text Notes 1400 2725 0    50   ~ 0
 JTAG
 Text Notes 1425 3050 0    50   ~ 0
 UART
+Text HLabel 10300 4425 2    50   Output ~ 0
+SPI_CS_1
+Wire Wire Line
+	10300 4425 9875 4425
+Text HLabel 10300 4850 2    50   Input ~ 0
+CAN_INT
+Wire Wire Line
+	10300 4850 9875 4850
 $EndSCHEMATC
