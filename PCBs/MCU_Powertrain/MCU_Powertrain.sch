@@ -69,13 +69,13 @@ F19 "SPI_MOSI" B R 6375 4250 50
 F20 "SPI_MISO" B R 6375 4325 50 
 F21 "GPIO6" O R 6375 2925 50 
 F22 "GPIO7" O R 6375 2850 50 
-F23 "GPIO29" I L 3425 3350 50 
-F24 "GPIO34" I L 3425 3250 50 
-F25 "TRST" I L 3425 3450 50 
-F26 "TCK" I L 3425 3550 50 
-F27 "TMS" I L 3425 3650 50 
-F28 "TDI" I L 3425 3750 50 
-F29 "TDO" I L 3425 3850 50 
+F23 "GPIO29" I L 3425 3225 50 
+F24 "TRST" I L 3425 3850 50 
+F25 "TCK" I L 3425 3550 50 
+F26 "TMS" I L 3425 3450 50 
+F27 "TDI" I L 3425 3750 50 
+F28 "TDO" I L 3425 3650 50 
+F29 "GPIO28" I L 3425 3125 50 
 $EndSheet
 Text Notes 4375 3550 0    118  Italic 24
 TI MCU
@@ -504,17 +504,6 @@ F 3 "~" H 1275 3875 50  0001 C CNN
 	1    1275 3875
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J?
-U 1 1 5E5BBE7F
-P 1275 4600
-F 0 "J?" H 1325 4925 50  0000 C CNN
-F 1 "Pogo Conn" H 1325 4275 50  0000 C CNN
-F 2 "" H 1275 4600 50  0001 C CNN
-F 3 "~" H 1275 4600 50  0001 C CNN
-	1    1275 4600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6375 2700 7100 2700
 Wire Wire Line
@@ -557,4 +546,196 @@ Wire Wire Line
 	7100 4325 6375 4325
 Wire Wire Line
 	6375 4400 7100 4400
+Wire Wire Line
+	1075 3675 875  3675
+Wire Wire Line
+	875  3675 875  3600
+Wire Wire Line
+	1075 3975 1000 3975
+Wire Wire Line
+	1000 3975 1000 4075
+Wire Wire Line
+	1075 4075 1000 4075
+Wire Wire Line
+	1000 4075 875  4075
+Wire Wire Line
+	875  4075 875  4125
+Connection ~ 1000 4075
+$Comp
+L power:GND #PWR?
+U 1 1 5E266250
+P 875 4125
+AR Path="/5E20A2BB/5E266250" Ref="#PWR?"  Part="1" 
+AR Path="/5E266250" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 875 3875 50  0001 C CNN
+F 1 "GND" H 880 3952 50  0000 C CNN
+F 2 "" H 875 4125 50  0001 C CNN
+F 3 "" H 875 4125 50  0001 C CNN
+	1    875  4125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E266D11
+P 875 3600
+AR Path="/5E20A2BB/5E266D11" Ref="#PWR?"  Part="1" 
+AR Path="/5E266D11" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 875 3450 50  0001 C CNN
+F 1 "+3V3" H 1025 3675 50  0000 C CNN
+F 2 "" H 875 3600 50  0001 C CNN
+F 3 "" H 875 3600 50  0001 C CNN
+	1    875  3600
+	1    0    0    -1  
+$EndComp
+Text Label 800  3775 0    50   ~ 0
+GPIO28
+Wire Wire Line
+	800  3775 1075 3775
+Wire Wire Line
+	800  3875 1075 3875
+Text Label 800  3875 0    50   ~ 0
+GPIO29
+Text Label 1825 3675 2    50   ~ 0
+TMS
+Text Label 1825 3775 2    50   ~ 0
+TCK
+Text Label 1825 3875 2    50   ~ 0
+TDO
+Text Label 1825 3975 2    50   ~ 0
+TDI
+Text Label 1825 4075 2    50   ~ 0
+TRST
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5E2798B5
+P 1275 4800
+F 0 "J?" H 1325 5125 50  0000 C CNN
+F 1 "Pogo Conn" H 1325 4475 50  0000 C CNN
+F 2 "" H 1275 4800 50  0001 C CNN
+F 3 "~" H 1275 4800 50  0001 C CNN
+	1    1275 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1075 4600 875  4600
+Wire Wire Line
+	875  4600 875  4525
+Wire Wire Line
+	1075 4900 1000 4900
+Wire Wire Line
+	1000 4900 1000 5000
+Wire Wire Line
+	1075 5000 1000 5000
+Wire Wire Line
+	1000 5000 875  5000
+Wire Wire Line
+	875  5000 875  5050
+Connection ~ 1000 5000
+$Comp
+L power:GND #PWR?
+U 1 1 5E2798C3
+P 875 5050
+AR Path="/5E20A2BB/5E2798C3" Ref="#PWR?"  Part="1" 
+AR Path="/5E2798C3" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 875 4800 50  0001 C CNN
+F 1 "GND" H 880 4877 50  0000 C CNN
+F 2 "" H 875 5050 50  0001 C CNN
+F 3 "" H 875 5050 50  0001 C CNN
+	1    875  5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E2798C9
+P 875 4525
+AR Path="/5E20A2BB/5E2798C9" Ref="#PWR?"  Part="1" 
+AR Path="/5E2798C9" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 875 4375 50  0001 C CNN
+F 1 "+3V3" H 1025 4600 50  0000 C CNN
+F 2 "" H 875 4525 50  0001 C CNN
+F 3 "" H 875 4525 50  0001 C CNN
+	1    875  4525
+	1    0    0    -1  
+$EndComp
+Text Label 800  4700 0    50   ~ 0
+GPIO28
+Wire Wire Line
+	800  4700 1075 4700
+Wire Wire Line
+	800  4800 1075 4800
+Text Label 800  4800 0    50   ~ 0
+GPIO29
+Text Label 1825 4600 2    50   ~ 0
+TMS
+Text Label 1825 4700 2    50   ~ 0
+TCK
+Text Label 1825 4800 2    50   ~ 0
+TDO
+Text Label 1825 4900 2    50   ~ 0
+TDI
+Text Label 1825 5000 2    50   ~ 0
+TRST
+Wire Wire Line
+	3425 3225 3100 3225
+Wire Wire Line
+	3425 3125 3100 3125
+Text Label 3100 3125 0    50   ~ 0
+GPIO28
+Text Label 3100 3225 0    50   ~ 0
+GPIO29
+Wire Wire Line
+	2275 3450 2275 3675
+Wire Wire Line
+	1575 3675 2275 3675
+Wire Wire Line
+	2275 3450 3425 3450
+Wire Wire Line
+	2350 3550 2350 3775
+Wire Wire Line
+	1575 3775 2350 3775
+Wire Wire Line
+	2350 3550 3425 3550
+Wire Wire Line
+	2425 3650 2425 3875
+Wire Wire Line
+	1575 3875 2425 3875
+Wire Wire Line
+	2425 3650 3425 3650
+Wire Wire Line
+	2500 3750 2500 3975
+Wire Wire Line
+	1575 3975 2500 3975
+Wire Wire Line
+	2500 3750 3425 3750
+Wire Wire Line
+	2575 3850 2575 4075
+Wire Wire Line
+	1575 4075 2575 4075
+Wire Wire Line
+	2575 3850 3425 3850
+Wire Wire Line
+	2275 3675 2275 4600
+Wire Wire Line
+	1575 4600 2275 4600
+Connection ~ 2275 3675
+Wire Wire Line
+	2350 3775 2350 4700
+Wire Wire Line
+	1575 4700 2350 4700
+Connection ~ 2350 3775
+Wire Wire Line
+	2425 3875 2425 4800
+Wire Wire Line
+	1575 4800 2425 4800
+Connection ~ 2425 3875
+Wire Wire Line
+	2500 3975 2500 4900
+Wire Wire Line
+	1575 4900 2500 4900
+Connection ~ 2500 3975
+Wire Wire Line
+	2575 4075 2575 5000
+Wire Wire Line
+	1575 5000 2575 5000
+Connection ~ 2575 4075
 $EndSCHEMATC

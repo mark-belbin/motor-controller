@@ -1143,52 +1143,62 @@ F 3 "" H 5275 1375 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5275 1325 5275 1375
-Text HLabel 950  3100 0    50   Input ~ 0
-GPIO29
-Text HLabel 950  3200 0    50   Input ~ 0
-GPIO28
 Text HLabel 950  3000 0    50   Input ~ 0
-GPIO34
+GPIO29
+Text HLabel 950  3100 0    50   Input ~ 0
+GPIO28
 Text HLabel 950  2900 0    50   Input ~ 0
 TRST
-Text HLabel 950  2800 0    50   Input ~ 0
-TCK
-Text HLabel 950  2700 0    50   Input ~ 0
-TMS
 Text HLabel 950  2600 0    50   Input ~ 0
-TDI
+TCK
 Text HLabel 950  2500 0    50   Input ~ 0
+TMS
+Text HLabel 950  2800 0    50   Input ~ 0
+TDI
+Text HLabel 950  2700 0    50   Input ~ 0
 TDO
-Wire Wire Line
-	950  2500 1275 2500
-Wire Wire Line
-	950  2600 1275 2600
 Wire Wire Line
 	950  2700 1275 2700
 Wire Wire Line
 	950  2800 1275 2800
+Wire Wire Line
+	950  2500 1275 2500
+Wire Wire Line
+	950  2600 1275 2600
 Wire Wire Line
 	950  2900 1275 2900
 Wire Wire Line
 	950  3000 1275 3000
 Wire Wire Line
 	950  3100 1275 3100
-Wire Wire Line
-	950  3200 1275 3200
-Text Label 1275 2600 2    50   ~ 0
-TDI
-Text Label 1275 2700 2    50   ~ 0
-TMS
-Text Label 1275 2500 2    50   ~ 0
-TDO
 Text Label 1275 2800 2    50   ~ 0
+TDI
+Text Label 1275 2500 2    50   ~ 0
+TMS
+Text Label 1275 2700 2    50   ~ 0
+TDO
+Text Label 1275 2600 2    50   ~ 0
 TCK
 Text Label 1275 2900 2    50   ~ 0
 TRST
 Text Label 1275 3000 2    50   ~ 0
-GPIO34
-Text Label 1275 3100 2    50   ~ 0
 GPIO29
-Text Label 1275 3200 2    50   ~ 0
+Text Label 1275 3100 2    50   ~ 0
 GPIO28
+Wire Notes Line
+	1325 2950 1375 2950
+Wire Notes Line
+	1375 2950 1375 3125
+Wire Notes Line
+	1375 3125 1325 3125
+Wire Notes Line
+	1325 2925 1375 2925
+Wire Notes Line
+	1375 2925 1375 2475
+Wire Notes Line
+	1375 2475 1325 2475
+Text Notes 1400 2725 0    50   ~ 0
+JTAG
+Text Notes 1425 3050 0    50   ~ 0
+UART
 $EndSCHEMATC
