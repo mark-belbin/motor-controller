@@ -622,6 +622,21 @@ X ADCINA2/COMP1A/AIO2 9 -1900 900 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# Mechanical_MountingHole
+#
+DEF Mechanical_MountingHole H 0 40 Y Y 1 F N
+F0 "H" 0 200 50 H V C CNN
+F1 "Mechanical_MountingHole" 0 125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*
+$ENDFPLIST
+DRAW
+C 0 0 50 0 1 50 N
+ENDDRAW
+ENDDEF
+#
 # Switch_SW_Push_Dual
 #
 DEF Switch_SW_Push_Dual SW 0 40 Y N 1 F N
