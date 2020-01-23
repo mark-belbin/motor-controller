@@ -63,8 +63,9 @@ U 1 1 5E2964D2
 P 3650 1700
 F 0 "R4" V 3550 1700 50  0000 C CNN
 F 1 "5m" V 3750 1700 50  0000 C CNN
-F 2 "" V 3690 1690 50  0001 C CNN
+F 2 "Power Sense PCB:R_2512_Sense" V 3690 1690 50  0001 C CNN
 F 3 "~" H 3650 1700 50  0001 C CNN
+F 4 "YAG6124CT-ND" V 3650 1700 50  0001 C CNN "Digikey"
 	1    3650 1700
 	0    1    1    0   
 $EndComp
@@ -84,8 +85,8 @@ $Comp
 L Device:Net-Tie_2 NT4
 U 1 1 5E298E2C
 P 3950 1875
-F 0 "NT4" V 3904 1919 50  0000 L CNN
-F 1 "Net-Tie_2" V 3995 1919 50  0000 L CNN
+F 0 "NT4" V 3950 1919 50  0000 L CNN
+F 1 "Net-Tie_2" V 3995 1919 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3950 1875 50  0001 C CNN
 F 3 "~" H 3950 1875 50  0001 C CNN
 	1    3950 1875
@@ -95,8 +96,8 @@ $Comp
 L Device:Net-Tie_2 NT3
 U 1 1 5E299C10
 P 3350 1875
-F 0 "NT3" V 3304 1919 50  0000 L CNN
-F 1 "Net-Tie_2" V 3395 1919 50  0000 L CNN
+F 0 "NT3" V 3350 1919 50  0000 L CNN
+F 1 "Net-Tie_2" V 3395 1919 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3350 1875 50  0001 C CNN
 F 3 "~" H 3350 1875 50  0001 C CNN
 	1    3350 1875
@@ -110,6 +111,7 @@ F 0 "TP3" V 4504 1188 50  0000 L CNN
 F 1 "V_PHASE_A" V 4595 1188 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4750 1000 50  0001 C CNN
 F 3 "~" H 4750 1000 50  0001 C CNN
+F 4 "36-5117-ND" V 4550 1000 50  0001 C CNN "Digikey"
 	1    4550 1000
 	0    1    1    0   
 $EndComp
@@ -188,6 +190,7 @@ F 0 "TP6" V 5904 2513 50  0000 L CNN
 F 1 "I_PHASE_A" V 5995 2513 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6150 2325 50  0001 C CNN
 F 3 "~" H 6150 2325 50  0001 C CNN
+F 4 "36-5119-ND" V 5950 2325 50  0001 C CNN "Digikey"
 	1    5950 2325
 	0    1    1    0   
 $EndComp
@@ -259,49 +262,6 @@ $EndComp
 Wire Wire Line
 	2950 1700 3350 1700
 $Comp
-L Device:R_Small_US R2
-U 1 1 5E2B0D9F
-P 3675 1000
-F 0 "R2" V 3562 1000 50  0000 C CNN
-F 1 "R_Small_US" V 3561 1000 50  0001 C CNN
-F 2 "Resistors_SMD:R_0603" H 3675 1000 50  0001 C CNN
-F 3 "~" H 3675 1000 50  0001 C CNN
-	1    3675 1000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3775 1000 3975 1000
-$Comp
-L Device:C_Small C2
-U 1 1 5E2B0DA6
-P 3975 1150
-F 0 "C2" H 4067 1150 50  0000 L CNN
-F 1 "C_Small" H 4067 1105 50  0001 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3975 1150 50  0001 C CNN
-F 3 "~" H 3975 1150 50  0001 C CNN
-	1    3975 1150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3975 1000 3975 1050
-Wire Wire Line
-	3975 1250 3975 1300
-$Comp
-L power:GND #PWR0107
-U 1 1 5E2B0DB0
-P 3975 1300
-F 0 "#PWR0107" H 3975 1050 50  0001 C CNN
-F 1 "GND" H 3980 1127 50  0000 C CNN
-F 2 "" H 3975 1300 50  0001 C CNN
-F 3 "" H 3975 1300 50  0001 C CNN
-	1    3975 1300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3575 1000 3350 1000
-Wire Wire Line
-	3350 1000 3350 1700
-$Comp
 L Connector:TestPoint TP4
 U 1 1 5E2C01E6
 P 5300 1000
@@ -309,6 +269,7 @@ F 0 "TP4" V 5254 1188 50  0000 L CNN
 F 1 "GND_REF" V 5345 1188 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5500 1000 50  0001 C CNN
 F 3 "~" H 5500 1000 50  0001 C CNN
+F 4 "36-5001-ND" V 5300 1000 50  0001 C CNN "Digikey"
 	1    5300 1000
 	0    1    1    0   
 $EndComp
@@ -327,17 +288,6 @@ Wire Wire Line
 	5200 1175 5200 1000
 Wire Wire Line
 	5200 1000 5300 1000
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5E2C31E7
-P 5950 2575
-F 0 "TP8" V 5904 2763 50  0000 L CNN
-F 1 "GND_REF" V 5995 2763 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6150 2575 50  0001 C CNN
-F 3 "~" H 6150 2575 50  0001 C CNN
-	1    5950 2575
-	0    1    1    0   
-$EndComp
 $Comp
 L power:GND #PWR0109
 U 1 1 5E2C31ED
@@ -381,8 +331,9 @@ U 1 1 5E2DD894
 P 3625 3800
 F 0 "R10" V 3525 3800 50  0000 C CNN
 F 1 "5m" V 3725 3800 50  0000 C CNN
-F 2 "" V 3665 3790 50  0001 C CNN
+F 2 "Power Sense PCB:R_2512_Sense" V 3665 3790 50  0001 C CNN
 F 3 "~" H 3625 3800 50  0001 C CNN
+F 4 "YAG6124CT-ND" V 3625 3800 50  0001 C CNN "Digikey"
 	1    3625 3800
 	0    1    1    0   
 $EndComp
@@ -402,8 +353,8 @@ $Comp
 L Device:Net-Tie_2 NT6
 U 1 1 5E2DD8A1
 P 3925 3975
-F 0 "NT6" V 3879 4019 50  0000 L CNN
-F 1 "Net-Tie_2" V 3970 4019 50  0000 L CNN
+F 0 "NT6" V 3925 4019 50  0000 L CNN
+F 1 "Net-Tie_2" V 3970 4019 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3925 3975 50  0001 C CNN
 F 3 "~" H 3925 3975 50  0001 C CNN
 	1    3925 3975
@@ -413,22 +364,11 @@ $Comp
 L Device:Net-Tie_2 NT5
 U 1 1 5E2DD8A7
 P 3325 3975
-F 0 "NT5" V 3279 4019 50  0000 L CNN
-F 1 "Net-Tie_2" V 3370 4019 50  0000 L CNN
+F 0 "NT5" V 3325 4019 50  0000 L CNN
+F 1 "Net-Tie_2" V 3370 4019 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3325 3975 50  0001 C CNN
 F 3 "~" H 3325 3975 50  0001 C CNN
 	1    3325 3975
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5E2DD8AD
-P 4450 3100
-F 0 "TP9" V 4404 3288 50  0000 L CNN
-F 1 "V_PHASE_B" V 4495 3288 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4650 3100 50  0001 C CNN
-F 3 "~" H 4650 3100 50  0001 C CNN
-	1    4450 3100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -506,6 +446,7 @@ F 0 "TP14" V 5854 4613 50  0000 L CNN
 F 1 "I_PHASE_B" V 5945 4613 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6100 4425 50  0001 C CNN
 F 3 "~" H 6100 4425 50  0001 C CNN
+F 4 "36-5119-ND" V 5900 4425 50  0001 C CNN "Digikey"
 	1    5900 4425
 	0    1    1    0   
 $EndComp
@@ -547,63 +488,6 @@ $EndComp
 Wire Wire Line
 	2925 3800 3325 3800
 $Comp
-L Device:R_Small_US R7
-U 1 1 5E2DD8F7
-P 3650 3100
-F 0 "R7" V 3537 3100 50  0000 C CNN
-F 1 "R_Small_US" V 3536 3100 50  0001 C CNN
-F 2 "Resistors_SMD:R_0603" H 3650 3100 50  0001 C CNN
-F 3 "~" H 3650 3100 50  0001 C CNN
-	1    3650 3100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3750 3100 3950 3100
-$Comp
-L Device:C_Small C7
-U 1 1 5E2DD8FE
-P 3950 3250
-F 0 "C7" H 4042 3250 50  0000 L CNN
-F 1 "C_Small" H 4042 3205 50  0001 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3950 3250 50  0001 C CNN
-F 3 "~" H 3950 3250 50  0001 C CNN
-	1    3950 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3950 3100 3950 3150
-Wire Wire Line
-	3950 3100 4450 3100
-Connection ~ 3950 3100
-Wire Wire Line
-	3950 3350 3950 3400
-$Comp
-L power:GND #PWR0114
-U 1 1 5E2DD908
-P 3950 3400
-F 0 "#PWR0114" H 3950 3150 50  0001 C CNN
-F 1 "GND" H 3955 3227 50  0000 C CNN
-F 2 "" H 3950 3400 50  0001 C CNN
-F 3 "" H 3950 3400 50  0001 C CNN
-	1    3950 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 3100 3325 3100
-Wire Wire Line
-	3325 3100 3325 3800
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5E2DD910
-P 5200 3100
-F 0 "TP10" V 5154 3288 50  0000 L CNN
-F 1 "GND_REF" V 5245 3288 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5400 3100 50  0001 C CNN
-F 3 "~" H 5400 3100 50  0001 C CNN
-	1    5200 3100
-	0    1    1    0   
-$EndComp
-$Comp
 L power:GND #PWR0115
 U 1 1 5E2DD916
 P 5100 3275
@@ -618,17 +502,6 @@ Wire Wire Line
 	5100 3275 5100 3100
 Wire Wire Line
 	5100 3100 5200 3100
-$Comp
-L Connector:TestPoint TP15
-U 1 1 5E2DD91E
-P 5900 4675
-F 0 "TP15" V 5854 4863 50  0000 L CNN
-F 1 "GND_REF" V 5945 4863 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6100 4675 50  0001 C CNN
-F 3 "~" H 6100 4675 50  0001 C CNN
-	1    5900 4675
-	0    1    1    0   
-$EndComp
 $Comp
 L power:GND #PWR0116
 U 1 1 5E2DD924
@@ -670,10 +543,11 @@ $Comp
 L Device:R_US R14
 U 1 1 5E2FB5CB
 P 3600 5875
-F 0 "R14" V 3395 5875 50  0000 C CNN
-F 1 "R_US" V 3486 5875 50  0000 C CNN
-F 2 "" V 3640 5865 50  0001 C CNN
+F 0 "R14" V 3500 5875 50  0000 C CNN
+F 1 "5m" V 3700 5875 50  0000 C CNN
+F 2 "Power Sense PCB:R_2512_Sense" V 3640 5865 50  0001 C CNN
 F 3 "~" H 3600 5875 50  0001 C CNN
+F 4 "YAG6124CT-ND" V 3600 5875 50  0001 C CNN "Digikey"
 	1    3600 5875
 	0    1    1    0   
 $EndComp
@@ -693,8 +567,8 @@ $Comp
 L Device:Net-Tie_2 NT8
 U 1 1 5E2FB5D8
 P 3900 6050
-F 0 "NT8" V 3854 6094 50  0000 L CNN
-F 1 "Net-Tie_2" V 3945 6094 50  0000 L CNN
+F 0 "NT8" V 3900 6094 50  0000 L CNN
+F 1 "Net-Tie_2" V 3945 6094 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3900 6050 50  0001 C CNN
 F 3 "~" H 3900 6050 50  0001 C CNN
 	1    3900 6050
@@ -704,22 +578,11 @@ $Comp
 L Device:Net-Tie_2 NT7
 U 1 1 5E2FB5DE
 P 3300 6050
-F 0 "NT7" V 3254 6094 50  0000 L CNN
-F 1 "Net-Tie_2" V 3345 6094 50  0000 L CNN
+F 0 "NT7" V 3300 6094 50  0000 L CNN
+F 1 "Net-Tie_2" V 3345 6094 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3300 6050 50  0001 C CNN
 F 3 "~" H 3300 6050 50  0001 C CNN
 	1    3300 6050
-	0    1    1    0   
-$EndComp
-$Comp
-L Connector:TestPoint TP16
-U 1 1 5E2FB5E4
-P 4400 5175
-F 0 "TP16" V 4354 5363 50  0000 L CNN
-F 1 "V_PHASE_C" V 4445 5363 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4600 5175 50  0001 C CNN
-F 3 "~" H 4600 5175 50  0001 C CNN
-	1    4400 5175
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -797,6 +660,7 @@ F 0 "TP18" V 5829 6688 50  0000 L CNN
 F 1 "I_PHASE_C" V 5920 6688 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6075 6500 50  0001 C CNN
 F 3 "~" H 6075 6500 50  0001 C CNN
+F 4 "36-5119-ND" V 5875 6500 50  0001 C CNN "Digikey"
 	1    5875 6500
 	0    1    1    0   
 $EndComp
@@ -838,63 +702,6 @@ $EndComp
 Wire Wire Line
 	2900 5875 3300 5875
 $Comp
-L Device:R_Small_US R13
-U 1 1 5E2FB62E
-P 3625 5175
-F 0 "R13" V 3512 5175 50  0000 C CNN
-F 1 "R_Small_US" V 3511 5175 50  0001 C CNN
-F 2 "Resistors_SMD:R_0603" H 3625 5175 50  0001 C CNN
-F 3 "~" H 3625 5175 50  0001 C CNN
-	1    3625 5175
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3725 5175 3925 5175
-$Comp
-L Device:C_Small C10
-U 1 1 5E2FB635
-P 3925 5325
-F 0 "C10" H 4017 5325 50  0000 L CNN
-F 1 "C_Small" H 4017 5280 50  0001 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3925 5325 50  0001 C CNN
-F 3 "~" H 3925 5325 50  0001 C CNN
-	1    3925 5325
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3925 5175 3925 5225
-Wire Wire Line
-	3925 5175 4400 5175
-Connection ~ 3925 5175
-Wire Wire Line
-	3925 5425 3925 5475
-$Comp
-L power:GND #PWR0121
-U 1 1 5E2FB63F
-P 3925 5475
-F 0 "#PWR0121" H 3925 5225 50  0001 C CNN
-F 1 "GND" H 3930 5302 50  0000 C CNN
-F 2 "" H 3925 5475 50  0001 C CNN
-F 3 "" H 3925 5475 50  0001 C CNN
-	1    3925 5475
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3525 5175 3300 5175
-Wire Wire Line
-	3300 5175 3300 5875
-$Comp
-L Connector:TestPoint TP17
-U 1 1 5E2FB647
-P 5275 5175
-F 0 "TP17" V 5229 5363 50  0000 L CNN
-F 1 "GND_REF" V 5320 5363 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5475 5175 50  0001 C CNN
-F 3 "~" H 5475 5175 50  0001 C CNN
-	1    5275 5175
-	0    1    1    0   
-$EndComp
-$Comp
 L power:GND #PWR0122
 U 1 1 5E2FB64D
 P 5175 5350
@@ -909,17 +716,6 @@ Wire Wire Line
 	5175 5350 5175 5175
 Wire Wire Line
 	5175 5175 5275 5175
-$Comp
-L Connector:TestPoint TP19
-U 1 1 5E2FB655
-P 5875 6750
-F 0 "TP19" V 5829 6938 50  0000 L CNN
-F 1 "GND_REF" V 5920 6938 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6075 6750 50  0001 C CNN
-F 3 "~" H 6075 6750 50  0001 C CNN
-	1    5875 6750
-	0    1    1    0   
-$EndComp
 $Comp
 L power:GND #PWR0123
 U 1 1 5E2FB65B
@@ -941,8 +737,9 @@ U 1 1 5E3A5F83
 P 7875 1625
 F 0 "R3" V 7775 1625 50  0000 C CNN
 F 1 "5m" V 7975 1625 50  0000 C CNN
-F 2 "" V 7915 1615 50  0001 C CNN
+F 2 "Power Sense PCB:R_2512_Sense" V 7915 1615 50  0001 C CNN
 F 3 "~" H 7875 1625 50  0001 C CNN
+F 4 "YAG6124CT-ND" V 7875 1625 50  0001 C CNN "Digikey"
 	1    7875 1625
 	0    1    1    0   
 $EndComp
@@ -960,8 +757,8 @@ $Comp
 L Device:Net-Tie_2 NT2
 U 1 1 5E3A5F90
 P 8175 1800
-F 0 "NT2" V 8129 1844 50  0000 L CNN
-F 1 "Net-Tie_2" V 8220 1844 50  0000 L CNN
+F 0 "NT2" V 8175 1844 50  0000 L CNN
+F 1 "Net-Tie_2" V 8220 1844 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 8175 1800 50  0001 C CNN
 F 3 "~" H 8175 1800 50  0001 C CNN
 	1    8175 1800
@@ -971,8 +768,8 @@ $Comp
 L Device:Net-Tie_2 NT1
 U 1 1 5E3A5F96
 P 7575 1800
-F 0 "NT1" V 7529 1844 50  0000 L CNN
-F 1 "Net-Tie_2" V 7620 1844 50  0000 L CNN
+F 0 "NT1" V 7575 1844 50  0000 L CNN
+F 1 "Net-Tie_2" V 7620 1844 50  0001 L CNN
 F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 7575 1800 50  0001 C CNN
 F 3 "~" H 7575 1800 50  0001 C CNN
 	1    7575 1800
@@ -981,12 +778,13 @@ $EndComp
 $Comp
 L Connector:TestPoint TP1
 U 1 1 5E3A5F9C
-P 8575 925
-F 0 "TP1" V 8529 1113 50  0000 L CNN
-F 1 "V_BUS" V 8620 1113 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 8775 925 50  0001 C CNN
-F 3 "~" H 8775 925 50  0001 C CNN
-	1    8575 925 
+P 8625 925
+F 0 "TP1" V 8579 1113 50  0000 L CNN
+F 1 "V_BUS" V 8670 1113 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 8825 925 50  0001 C CNN
+F 3 "~" H 8825 925 50  0001 C CNN
+F 4 "36-5117-ND" V 8625 925 50  0001 C CNN "Digikey"
+	1    8625 925 
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -1061,9 +859,10 @@ L Connector:TestPoint TP5
 U 1 1 5E3A5FCC
 P 10150 2250
 F 0 "TP5" V 10104 2438 50  0000 L CNN
-F 1 "I_PHASE_A" V 10195 2438 50  0000 L CNN
+F 1 "I_BUS" V 10195 2438 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10350 2250 50  0001 C CNN
 F 3 "~" H 10350 2250 50  0001 C CNN
+F 4 "36-5119-ND" V 10150 2250 50  0001 C CNN "Digikey"
 	1    10150 2250
 	0    1    1    0   
 $EndComp
@@ -1103,90 +902,22 @@ F 3 "" H 8975 2575 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7025 1625 7575 1625
-$Comp
-L Device:R_Small_US R1
-U 1 1 5E3A5FE6
-P 7900 925
-F 0 "R1" V 7787 925 50  0000 C CNN
-F 1 "R_Small_US" V 7786 925 50  0001 C CNN
-F 2 "Resistors_SMD:R_0603" H 7900 925 50  0001 C CNN
-F 3 "~" H 7900 925 50  0001 C CNN
-	1    7900 925 
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8000 925  8200 925 
-$Comp
-L Device:C_Small C1
-U 1 1 5E3A5FED
-P 8200 1075
-F 0 "C1" H 8292 1075 50  0000 L CNN
-F 1 "C_Small" H 8292 1030 50  0001 L CNN
-F 2 "Capacitors_SMD:C_0603" H 8200 1075 50  0001 C CNN
-F 3 "~" H 8200 1075 50  0001 C CNN
-	1    8200 1075
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8200 925  8200 975 
-Wire Wire Line
-	8200 925  8575 925 
-Connection ~ 8200 925 
-Wire Wire Line
-	8200 1175 8200 1225
-$Comp
-L power:GND #PWR0128
-U 1 1 5E3A5FF7
-P 8200 1225
-F 0 "#PWR0128" H 8200 975 50  0001 C CNN
-F 1 "GND" H 8205 1052 50  0000 C CNN
-F 2 "" H 8200 1225 50  0001 C CNN
-F 3 "" H 8200 1225 50  0001 C CNN
-	1    8200 1225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7800 925  7575 925 
-Wire Wire Line
-	7575 925  7575 1625
-$Comp
-L Connector:TestPoint TP2
-U 1 1 5E3A5FFF
-P 9575 925
-F 0 "TP2" V 9529 1113 50  0000 L CNN
-F 1 "GND_REF" V 9620 1113 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9775 925 50  0001 C CNN
-F 3 "~" H 9775 925 50  0001 C CNN
-	1    9575 925 
-	0    1    1    0   
-$EndComp
+	7025 1625 7125 1625
 $Comp
 L power:GND #PWR0129
 U 1 1 5E3A6005
-P 9475 1100
-F 0 "#PWR0129" H 9475 850 50  0001 C CNN
-F 1 "GND" H 9480 927 50  0000 C CNN
-F 2 "" H 9475 1100 50  0001 C CNN
-F 3 "" H 9475 1100 50  0001 C CNN
-	1    9475 1100
+P 9175 1100
+F 0 "#PWR0129" H 9175 850 50  0001 C CNN
+F 1 "GND" H 9180 927 50  0000 C CNN
+F 2 "" H 9175 1100 50  0001 C CNN
+F 3 "" H 9175 1100 50  0001 C CNN
+	1    9175 1100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9475 1100 9475 925 
+	9175 1100 9175 925 
 Wire Wire Line
-	9475 925  9575 925 
-$Comp
-L Connector:TestPoint TP7
-U 1 1 5E3A600D
-P 10150 2500
-F 0 "TP7" V 10104 2688 50  0000 L CNN
-F 1 "GND_REF" V 10195 2688 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10350 2500 50  0001 C CNN
-F 3 "~" H 10350 2500 50  0001 C CNN
-	1    10150 2500
-	0    1    1    0   
-$EndComp
+	9175 925  9275 925 
 $Comp
 L power:GND #PWR0130
 U 1 1 5E3A6013
@@ -1356,26 +1087,19 @@ F 4 "296-49646-1-ND" H 4500 6500 50  0001 C CNN "Digikey"
 $EndComp
 Text Label 4075 1000 0    50   ~ 0
 V_PHASE_A
-Wire Wire Line
-	4550 1000 3975 1000
-Connection ~ 3975 1000
 Text Label 4150 1700 0    50   ~ 0
 PHASE_A_MOTOR
 Text Label 5525 2325 0    50   ~ 0
 I_PHASE_A
-Text Label 4000 3100 0    50   ~ 0
-V_PHASE_B
 Text Label 4100 3800 0    50   ~ 0
 PHASE_B_MOTOR
 Text Label 5475 4425 0    50   ~ 0
 I_PHASE_B
-Text Label 3975 5175 0    50   ~ 0
-V_PHASE_C
 Text Label 4025 5875 0    50   ~ 0
 PHASE_C_MOTOR
 Text Label 5475 6500 0    50   ~ 0
 I_PHASE_C
-Text Label 8275 925  0    50   ~ 0
+Text Label 8350 925  0    50   ~ 0
 V_BUS
 Text Label 9800 2250 0    50   ~ 0
 I_BUS
@@ -1429,8 +1153,9 @@ U 1 1 5E42DD74
 P 1100 1250
 F 0 "J1" H 1157 1575 50  0000 C CNN
 F 1 "Jack-DC" H 1157 1484 50  0000 C CNN
-F 2 "" H 1150 1210 50  0001 C CNN
+F 2 "Connectors:BARREL_JACK" H 1150 1210 50  0001 C CNN
 F 3 "~" H 1150 1210 50  0001 C CNN
+F 4 "CP-002A-ND" H 1100 1250 50  0001 C CNN "Digikey"
 	1    1100 1250
 	1    0    0    -1  
 $EndComp
@@ -1475,21 +1200,18 @@ F 0 "TP11" V 8404 3638 50  0000 L CNN
 F 1 "NEUTRAL_REF" V 8495 3638 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 8650 3450 50  0001 C CNN
 F 3 "~" H 8650 3450 50  0001 C CNN
+F 4 "36-5001-ND" V 8450 3450 50  0001 C CNN "Digikey"
 	1    8450 3450
 	0    1    1    0   
 $EndComp
 Text Label 6450 3450 0    50   ~ 0
 PHASE_A_MOTOR
 Wire Wire Line
-	6450 3450 7200 3450
+	6250 3450 7200 3450
 Text Label 6450 3675 0    50   ~ 0
 PHASE_B_MOTOR
-Wire Wire Line
-	6450 3675 7200 3675
 Text Label 6450 3900 0    50   ~ 0
 PHASE_C_MOTOR
-Wire Wire Line
-	6450 3900 7200 3900
 $Comp
 L Device:R_Small_US R9
 U 1 1 5E483244
@@ -1520,6 +1242,7 @@ F 0 "TP12" V 8404 3863 50  0000 L CNN
 F 1 "NEUTRAL_REF" V 8495 3863 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 8650 3675 50  0001 C CNN
 F 3 "~" H 8650 3675 50  0001 C CNN
+F 4 "36-5001-ND" V 8450 3675 50  0001 C CNN "Digikey"
 	1    8450 3675
 	0    1    1    0   
 $EndComp
@@ -1531,6 +1254,7 @@ F 0 "TP13" V 8404 4088 50  0000 L CNN
 F 1 "NEUTRAL_REF" V 8495 4088 50  0000 L CNN
 F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 8650 3900 50  0001 C CNN
 F 3 "~" H 8650 3900 50  0001 C CNN
+F 4 "36-5001-ND" V 8450 3900 50  0001 C CNN "Digikey"
 	1    8450 3900
 	0    1    1    0   
 $EndComp
@@ -1542,4 +1266,647 @@ Text Notes 7475 4075 0    50   ~ 0
 "Fake" neutral star point 
 Text Notes 7500 4350 0    50   ~ 0
 Should be approx the same\nvoltage as the real motor neutral, \nsince phases are close to balanced.
+$Comp
+L Connector_Generic:Conn_01x08 J10
+U 1 1 5E4D3815
+P 10550 3700
+F 0 "J10" H 10475 4100 50  0000 L CNN
+F 1 "Test Conn" H 10475 3200 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 10550 3700 50  0001 C CNN
+F 3 "~" H 10550 3700 50  0001 C CNN
+F 4 "961108-6404-AR" H 10550 3700 50  0001 C CNN "Digikey"
+	1    10550 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 3400 9825 3400
+Wire Wire Line
+	10350 3500 9825 3500
+Text Label 9825 3400 0    50   ~ 0
+V_BUS
+Text Label 9825 3500 0    50   ~ 0
+I_BUS
+Wire Wire Line
+	9825 3600 10350 3600
+Wire Wire Line
+	10350 3700 9825 3700
+Wire Wire Line
+	10350 3800 9825 3800
+Wire Wire Line
+	10350 3900 9825 3900
+Wire Wire Line
+	10350 4000 9825 4000
+Wire Wire Line
+	10350 4100 9825 4100
+$Comp
+L Device:C_Small C7
+U 1 1 5E52DAB3
+P 1800 2675
+F 0 "C7" H 1892 2721 50  0000 L CNN
+F 1 "0.1uF" H 1892 2630 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 1800 2675 50  0001 C CNN
+F 3 "~" H 1800 2675 50  0001 C CNN
+F 4 "478-12799-1-ND" H 1800 2675 50  0001 C CNN "Digikey"
+	1    1800 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C10
+U 1 1 5E530B19
+P 2200 2675
+F 0 "C10" H 2292 2721 50  0000 L CNN
+F 1 "0.1uF" H 2292 2630 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2200 2675 50  0001 C CNN
+F 3 "~" H 2200 2675 50  0001 C CNN
+F 4 "478-12799-1-ND" H 2200 2675 50  0001 C CNN "Digikey"
+	1    2200 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C13
+U 1 1 5E531090
+P 2600 2675
+F 0 "C13" H 2692 2721 50  0000 L CNN
+F 1 "0.1uF" H 2692 2630 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2600 2675 50  0001 C CNN
+F 3 "~" H 2600 2675 50  0001 C CNN
+F 4 "478-12799-1-ND" H 2600 2675 50  0001 C CNN "Digikey"
+	1    2600 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C14
+U 1 1 5E5318F5
+P 3000 2675
+F 0 "C14" H 3092 2721 50  0000 L CNN
+F 1 "0.1uF" H 3092 2630 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3000 2675 50  0001 C CNN
+F 3 "~" H 3000 2675 50  0001 C CNN
+F 4 "478-12799-1-ND" H 3000 2675 50  0001 C CNN "Digikey"
+	1    3000 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0107
+U 1 1 5E539DC6
+P 2400 2425
+F 0 "#PWR0107" H 2400 2275 50  0001 C CNN
+F 1 "+5V" H 2415 2598 50  0000 C CNN
+F 2 "" H 2400 2425 50  0001 C CNN
+F 3 "" H 2400 2425 50  0001 C CNN
+	1    2400 2425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 2575 1800 2500
+Wire Wire Line
+	1800 2500 2200 2500
+Wire Wire Line
+	2200 2500 2200 2575
+Wire Wire Line
+	2200 2500 2400 2500
+Wire Wire Line
+	2400 2500 2400 2425
+Connection ~ 2200 2500
+Wire Wire Line
+	2600 2575 2600 2500
+Wire Wire Line
+	3000 2575 3000 2500
+Wire Wire Line
+	3000 2500 2600 2500
+Connection ~ 2600 2500
+Wire Wire Line
+	3000 2775 3000 2850
+Wire Wire Line
+	3000 2850 2600 2850
+Wire Wire Line
+	2600 2850 2600 2775
+Wire Wire Line
+	2200 2850 2200 2775
+Connection ~ 2600 2850
+Wire Wire Line
+	2200 2850 1800 2850
+Wire Wire Line
+	1800 2850 1800 2775
+Connection ~ 2200 2850
+Wire Wire Line
+	2400 2850 2400 2950
+$Comp
+L power:GND #PWR0114
+U 1 1 5E57E647
+P 2400 2950
+F 0 "#PWR0114" H 2400 2700 50  0001 C CNN
+F 1 "GND" H 2405 2777 50  0000 C CNN
+F 2 "" H 2400 2950 50  0001 C CNN
+F 3 "" H 2400 2950 50  0001 C CNN
+	1    2400 2950
+	1    0    0    -1  
+$EndComp
+Connection ~ 2400 2500
+Wire Wire Line
+	2400 2500 2600 2500
+Connection ~ 2400 2850
+Wire Wire Line
+	2400 2850 2200 2850
+Wire Wire Line
+	2400 2850 2600 2850
+Text Notes 1375 2150 0    50   ~ 0
+Current sense chips bypass cap
+Wire Wire Line
+	3350 1700 3350 1450
+$Comp
+L Device:R_Small_US R7
+U 1 1 5E5ACA35
+P 3350 1350
+F 0 "R7" H 3282 1304 50  0000 R CNN
+F 1 "22k" H 3282 1395 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3350 1350 50  0001 C CNN
+F 3 "~" H 3350 1350 50  0001 C CNN
+F 4 "" H 3350 1350 50  0001 C CNN "Digikey"
+	1    3350 1350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R2
+U 1 1 5E5B600E
+P 3725 1225
+F 0 "R2" H 3657 1179 50  0000 R CNN
+F 1 "4.99k" H 3700 1300 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3725 1225 50  0001 C CNN
+F 3 "~" H 3725 1225 50  0001 C CNN
+F 4 "" H 3725 1225 50  0001 C CNN "Digikey"
+	1    3725 1225
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 5E5B6DE8
+P 4025 1200
+F 0 "C2" H 4117 1246 50  0000 L CNN
+F 1 "0.1uF" H 4117 1155 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4025 1200 50  0001 C CNN
+F 3 "~" H 4025 1200 50  0001 C CNN
+F 4 "478-12799-1-ND" H 4025 1200 50  0001 C CNN "Digikey"
+	1    4025 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1250 3350 1000
+Wire Wire Line
+	3350 1000 3725 1000
+Wire Wire Line
+	4025 1100 4025 1000
+Connection ~ 4025 1000
+Wire Wire Line
+	4025 1000 4550 1000
+Wire Wire Line
+	3725 1125 3725 1000
+Connection ~ 3725 1000
+Wire Wire Line
+	3725 1000 4025 1000
+Wire Wire Line
+	3725 1325 3725 1375
+Wire Wire Line
+	4025 1300 4025 1375
+$Comp
+L power:GND #PWR0121
+U 1 1 5E5E7C17
+P 4025 1375
+F 0 "#PWR0121" H 4025 1125 50  0001 C CNN
+F 1 "GND" H 4175 1300 50  0000 C CNN
+F 2 "" H 4025 1375 50  0001 C CNN
+F 3 "" H 4025 1375 50  0001 C CNN
+	1    4025 1375
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0133
+U 1 1 5E5F1948
+P 3725 1375
+F 0 "#PWR0133" H 3725 1125 50  0001 C CNN
+F 1 "GND" H 3850 1300 50  0000 C CNN
+F 2 "" H 3725 1375 50  0001 C CNN
+F 3 "" H 3725 1375 50  0001 C CNN
+	1    3725 1375
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0134
+U 1 1 5E601134
+P 3700 3475
+F 0 "#PWR0134" H 3700 3225 50  0001 C CNN
+F 1 "GND" H 3825 3400 50  0000 C CNN
+F 2 "" H 3700 3475 50  0001 C CNN
+F 3 "" H 3700 3475 50  0001 C CNN
+	1    3700 3475
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0135
+U 1 1 5E60112E
+P 4000 3475
+F 0 "#PWR0135" H 4000 3225 50  0001 C CNN
+F 1 "GND" H 4150 3400 50  0000 C CNN
+F 2 "" H 4000 3475 50  0001 C CNN
+F 3 "" H 4000 3475 50  0001 C CNN
+	1    4000 3475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3400 4000 3475
+Wire Wire Line
+	3700 3425 3700 3475
+Wire Wire Line
+	3700 3100 4000 3100
+Connection ~ 3700 3100
+Wire Wire Line
+	3700 3225 3700 3100
+Wire Wire Line
+	4000 3100 4425 3100
+Connection ~ 4000 3100
+Wire Wire Line
+	4000 3200 4000 3100
+Wire Wire Line
+	3325 3100 3700 3100
+Wire Wire Line
+	3325 3350 3325 3100
+$Comp
+L Device:C_Small C15
+U 1 1 5E60111E
+P 4000 3300
+F 0 "C15" H 4092 3346 50  0000 L CNN
+F 1 "0.1uF" H 4092 3255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4000 3300 50  0001 C CNN
+F 3 "~" H 4000 3300 50  0001 C CNN
+F 4 "478-12799-1-ND" H 4000 3300 50  0001 C CNN "Digikey"
+	1    4000 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R13
+U 1 1 5E601117
+P 3700 3325
+F 0 "R13" H 3632 3279 50  0000 R CNN
+F 1 "4.99k" H 3675 3400 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3700 3325 50  0001 C CNN
+F 3 "~" H 3700 3325 50  0001 C CNN
+F 4 "" H 3700 3325 50  0001 C CNN "Digikey"
+	1    3700 3325
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R16
+U 1 1 5E601110
+P 3325 3450
+F 0 "R16" H 3257 3404 50  0000 R CNN
+F 1 "22k" H 3257 3495 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3325 3450 50  0001 C CNN
+F 3 "~" H 3325 3450 50  0001 C CNN
+F 4 "" H 3325 3450 50  0001 C CNN "Digikey"
+	1    3325 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3325 3800 3325 3550
+Text Label 4050 3100 0    50   ~ 0
+V_PHASE_B
+$Comp
+L Connector:TestPoint TP9
+U 1 1 5E2DD8AD
+P 4425 3100
+F 0 "TP9" V 4379 3288 50  0000 L CNN
+F 1 "V_PHASE_B" V 4470 3288 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4625 3100 50  0001 C CNN
+F 3 "~" H 4625 3100 50  0001 C CNN
+F 4 "36-5117-ND" V 4425 3100 50  0001 C CNN "Digikey"
+	1    4425 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP16
+U 1 1 5E2FB5E4
+P 4500 5175
+F 0 "TP16" V 4454 5363 50  0000 L CNN
+F 1 "V_PHASE_C" V 4545 5363 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4700 5175 50  0001 C CNN
+F 3 "~" H 4700 5175 50  0001 C CNN
+F 4 "36-5117-ND" V 4500 5175 50  0001 C CNN "Digikey"
+	1    4500 5175
+	0    1    1    0   
+$EndComp
+Text Label 4025 5175 0    50   ~ 0
+V_PHASE_C
+Wire Wire Line
+	3300 5875 3300 5625
+$Comp
+L Device:R_Small_US R18
+U 1 1 5E63B5D7
+P 3300 5525
+F 0 "R18" H 3232 5479 50  0000 R CNN
+F 1 "22k" H 3232 5570 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3300 5525 50  0001 C CNN
+F 3 "~" H 3300 5525 50  0001 C CNN
+F 4 "" H 3300 5525 50  0001 C CNN "Digikey"
+	1    3300 5525
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R17
+U 1 1 5E63B5DE
+P 3675 5400
+F 0 "R17" H 3607 5354 50  0000 R CNN
+F 1 "4.99k" H 3650 5475 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 3675 5400 50  0001 C CNN
+F 3 "~" H 3675 5400 50  0001 C CNN
+F 4 "" H 3675 5400 50  0001 C CNN "Digikey"
+	1    3675 5400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C16
+U 1 1 5E63B5E5
+P 3975 5375
+F 0 "C16" H 4067 5421 50  0000 L CNN
+F 1 "0.1uF" H 4067 5330 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3975 5375 50  0001 C CNN
+F 3 "~" H 3975 5375 50  0001 C CNN
+F 4 "478-12799-1-ND" H 3975 5375 50  0001 C CNN "Digikey"
+	1    3975 5375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 5425 3300 5175
+Wire Wire Line
+	3300 5175 3675 5175
+Wire Wire Line
+	3975 5275 3975 5175
+Connection ~ 3975 5175
+Wire Wire Line
+	3975 5175 4500 5175
+Wire Wire Line
+	3675 5300 3675 5175
+Connection ~ 3675 5175
+Wire Wire Line
+	3675 5175 3975 5175
+Wire Wire Line
+	3675 5500 3675 5550
+Wire Wire Line
+	3975 5475 3975 5550
+$Comp
+L power:GND #PWR0136
+U 1 1 5E63B5F5
+P 3975 5550
+F 0 "#PWR0136" H 3975 5300 50  0001 C CNN
+F 1 "GND" H 4125 5475 50  0000 C CNN
+F 2 "" H 3975 5550 50  0001 C CNN
+F 3 "" H 3975 5550 50  0001 C CNN
+	1    3975 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0137
+U 1 1 5E63B5FB
+P 3675 5550
+F 0 "#PWR0137" H 3675 5300 50  0001 C CNN
+F 1 "GND" H 3800 5475 50  0000 C CNN
+F 2 "" H 3675 5550 50  0001 C CNN
+F 3 "" H 3675 5550 50  0001 C CNN
+	1    3675 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP20
+U 1 1 5E645FF3
+P 6250 3450
+F 0 "TP20" V 6300 3475 50  0000 C CNN
+F 1 "PHASE_A" V 6200 3375 50  0000 C CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6450 3450 50  0001 C CNN
+F 3 "~" H 6450 3450 50  0001 C CNN
+F 4 "36-5116-ND" V 6250 3450 50  0001 C CNN "Digikey"
+	1    6250 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP21
+U 1 1 5E652436
+P 6250 3675
+F 0 "TP21" V 6300 3700 50  0000 C CNN
+F 1 "PHASE_B" V 6200 3600 50  0000 C CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6450 3675 50  0001 C CNN
+F 3 "~" H 6450 3675 50  0001 C CNN
+F 4 "36-5116-ND" V 6250 3675 50  0001 C CNN "Digikey"
+	1    6250 3675
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6250 3675 7200 3675
+$Comp
+L Connector:TestPoint TP22
+U 1 1 5E65E281
+P 6250 3900
+F 0 "TP22" V 6300 3925 50  0000 C CNN
+F 1 "PHASE_C" V 6200 3825 50  0000 C CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6450 3900 50  0001 C CNN
+F 3 "~" H 6450 3900 50  0001 C CNN
+F 4 "36-5116-ND" V 6250 3900 50  0001 C CNN "Digikey"
+	1    6250 3900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6250 3900 7200 3900
+Text Label 9825 3600 0    50   ~ 0
+V_PHASE_A
+Text Label 9825 3700 0    50   ~ 0
+V_PHASE_B
+Text Label 9825 3800 0    50   ~ 0
+V_PHASE_C
+Text Label 9825 4000 0    50   ~ 0
+I_PHASE_B
+Text Label 9825 3900 0    50   ~ 0
+I_PHASE_A
+Text Label 9825 4100 0    50   ~ 0
+I_PHASE_C
+Text Notes 9550 4375 0    50   ~ 0
+For data aquistion via Arduino or similar. 
+Text Notes 10025 4500 0    50   ~ 0
+All signals 0-5V 
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E676BC8
+P 5200 3100
+F 0 "TP?" V 5154 3288 50  0000 L CNN
+F 1 "GND_REF" V 5245 3288 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5400 3100 50  0001 C CNN
+F 3 "~" H 5400 3100 50  0001 C CNN
+F 4 "36-5001-ND" V 5200 3100 50  0001 C CNN "Digikey"
+	1    5200 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E68145A
+P 5950 2575
+F 0 "TP?" V 5904 2763 50  0000 L CNN
+F 1 "GND_REF" V 5995 2763 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6150 2575 50  0001 C CNN
+F 3 "~" H 6150 2575 50  0001 C CNN
+F 4 "36-5001-ND" V 5950 2575 50  0001 C CNN "Digikey"
+	1    5950 2575
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E681C75
+P 5900 4675
+F 0 "TP?" V 5854 4863 50  0000 L CNN
+F 1 "GND_REF" V 5945 4863 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6100 4675 50  0001 C CNN
+F 3 "~" H 6100 4675 50  0001 C CNN
+F 4 "36-5001-ND" V 5900 4675 50  0001 C CNN "Digikey"
+	1    5900 4675
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E682603
+P 5275 5175
+F 0 "TP?" V 5229 5363 50  0000 L CNN
+F 1 "GND_REF" V 5320 5363 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5475 5175 50  0001 C CNN
+F 3 "~" H 5475 5175 50  0001 C CNN
+F 4 "36-5001-ND" V 5275 5175 50  0001 C CNN "Digikey"
+	1    5275 5175
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E68D32D
+P 5875 6750
+F 0 "TP?" V 5829 6938 50  0000 L CNN
+F 1 "GND_REF" V 5920 6938 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6075 6750 50  0001 C CNN
+F 3 "~" H 6075 6750 50  0001 C CNN
+F 4 "36-5001-ND" V 5875 6750 50  0001 C CNN "Digikey"
+	1    5875 6750
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E68DD8B
+P 10150 2500
+F 0 "TP?" V 10104 2688 50  0000 L CNN
+F 1 "GND_REF" V 10195 2688 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10350 2500 50  0001 C CNN
+F 3 "~" H 10350 2500 50  0001 C CNN
+F 4 "36-5001-ND" V 10150 2500 50  0001 C CNN "Digikey"
+	1    10150 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E68FC5B
+P 9275 925
+F 0 "TP?" V 9229 1113 50  0000 L CNN
+F 1 "GND_REF" V 9320 1113 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9475 925 50  0001 C CNN
+F 3 "~" H 9475 925 50  0001 C CNN
+F 4 "36-5001-ND" V 9275 925 50  0001 C CNN "Digikey"
+	1    9275 925 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7575 1625 7575 1375
+$Comp
+L Device:R_Small_US R?
+U 1 1 5E69FFCA
+P 7575 1275
+F 0 "R?" H 7507 1229 50  0000 R CNN
+F 1 "22k" H 7507 1320 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 7575 1275 50  0001 C CNN
+F 3 "~" H 7575 1275 50  0001 C CNN
+F 4 "" H 7575 1275 50  0001 C CNN "Digikey"
+	1    7575 1275
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 5E69FFD1
+P 7950 1150
+F 0 "R?" H 7882 1104 50  0000 R CNN
+F 1 "4.99k" H 7925 1225 50  0000 R CNN
+F 2 "Resistors_SMD:R_0603" H 7950 1150 50  0001 C CNN
+F 3 "~" H 7950 1150 50  0001 C CNN
+F 4 "" H 7950 1150 50  0001 C CNN "Digikey"
+	1    7950 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E69FFD8
+P 8250 1125
+F 0 "C?" H 8342 1171 50  0000 L CNN
+F 1 "0.1uF" H 8342 1080 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 8250 1125 50  0001 C CNN
+F 3 "~" H 8250 1125 50  0001 C CNN
+F 4 "478-12799-1-ND" H 8250 1125 50  0001 C CNN "Digikey"
+	1    8250 1125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7575 1175 7575 925 
+Wire Wire Line
+	7575 925  7950 925 
+Wire Wire Line
+	8250 1025 8250 925 
+Connection ~ 8250 925 
+Wire Wire Line
+	8250 925  8625 925 
+Wire Wire Line
+	7950 1050 7950 925 
+Connection ~ 7950 925 
+Wire Wire Line
+	7950 925  8250 925 
+Wire Wire Line
+	7950 1250 7950 1300
+Wire Wire Line
+	8250 1225 8250 1300
+$Comp
+L power:GND #PWR?
+U 1 1 5E69FFE8
+P 8250 1300
+F 0 "#PWR?" H 8250 1050 50  0001 C CNN
+F 1 "GND" H 8400 1225 50  0000 C CNN
+F 2 "" H 8250 1300 50  0001 C CNN
+F 3 "" H 8250 1300 50  0001 C CNN
+	1    8250 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E69FFEE
+P 7950 1300
+F 0 "#PWR?" H 7950 1050 50  0001 C CNN
+F 1 "GND" H 8075 1225 50  0000 C CNN
+F 2 "" H 7950 1300 50  0001 C CNN
+F 3 "" H 7950 1300 50  0001 C CNN
+	1    7950 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5E6B61F2
+P 7125 1450
+F 0 "TP?" H 7183 1568 50  0000 L CNN
+F 1 "BUS" H 7183 1477 50  0000 L CNN
+F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7325 1450 50  0001 C CNN
+F 3 "~" H 7325 1450 50  0001 C CNN
+F 4 "36-5116-ND" H 7125 1450 50  0001 C CNN "Digikey"
+	1    7125 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7125 1450 7125 1625
+Connection ~ 7125 1625
+Wire Wire Line
+	7125 1625 7575 1625
 $EndSCHEMATC
