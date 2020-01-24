@@ -1,4 +1,4 @@
-895670080456247
+900414735736875
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -43008,6 +43008,27 @@ Potentiometer_WirePads_largePads
 0
 0
 0
+Power Sense PCB
+3mm_Bullet_RA
+
+
+0
+1
+1
+Power Sense PCB
+AMASS_XT60-M
+
+
+0
+2
+2
+Power Sense PCB
+R_2512_Sense
+Resistor SMD 2512, reflow soldering, Vishay (see dcrcw.pdf)
+resistor 2512
+0
+2
+2
 Power_Integrations
 PDIP-8
 
