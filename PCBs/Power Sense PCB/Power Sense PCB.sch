@@ -87,7 +87,7 @@ U 1 1 5E298E2C
 P 3950 1875
 F 0 "NT4" V 3950 1919 50  0000 L CNN
 F 1 "Net-Tie_2" V 3995 1919 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3950 1875 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3950 1875 50  0001 C CNN
 F 3 "~" H 3950 1875 50  0001 C CNN
 	1    3950 1875
 	0    1    1    0   
@@ -98,7 +98,7 @@ U 1 1 5E299C10
 P 3350 1875
 F 0 "NT3" V 3350 1919 50  0000 L CNN
 F 1 "Net-Tie_2" V 3395 1919 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3350 1875 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3350 1875 50  0001 C CNN
 F 3 "~" H 3350 1875 50  0001 C CNN
 	1    3350 1875
 	0    1    1    0   
@@ -197,7 +197,7 @@ $EndComp
 Wire Wire Line
 	1400 1150 1625 1150
 Wire Wire Line
-	1625 1150 1625 975 
+	1625 1150 1625 1075
 $Comp
 L power:+5V #PWR0103
 U 1 1 5E2A4F63
@@ -212,7 +212,7 @@ $EndComp
 Wire Wire Line
 	1400 1350 1625 1350
 Wire Wire Line
-	1625 1350 1625 1500
+	1625 1350 1625 1450
 $Comp
 L power:GND #PWR0104
 U 1 1 5E2A5BAB
@@ -355,7 +355,7 @@ U 1 1 5E2DD8A1
 P 3925 3975
 F 0 "NT6" V 3925 4019 50  0000 L CNN
 F 1 "Net-Tie_2" V 3970 4019 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3925 3975 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3925 3975 50  0001 C CNN
 F 3 "~" H 3925 3975 50  0001 C CNN
 	1    3925 3975
 	0    1    1    0   
@@ -366,7 +366,7 @@ U 1 1 5E2DD8A7
 P 3325 3975
 F 0 "NT5" V 3325 4019 50  0000 L CNN
 F 1 "Net-Tie_2" V 3370 4019 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3325 3975 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3325 3975 50  0001 C CNN
 F 3 "~" H 3325 3975 50  0001 C CNN
 	1    3325 3975
 	0    1    1    0   
@@ -569,7 +569,7 @@ U 1 1 5E2FB5D8
 P 3900 6050
 F 0 "NT8" V 3900 6094 50  0000 L CNN
 F 1 "Net-Tie_2" V 3945 6094 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3900 6050 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3900 6050 50  0001 C CNN
 F 3 "~" H 3900 6050 50  0001 C CNN
 	1    3900 6050
 	0    1    1    0   
@@ -580,7 +580,7 @@ U 1 1 5E2FB5DE
 P 3300 6050
 F 0 "NT7" V 3300 6094 50  0000 L CNN
 F 1 "Net-Tie_2" V 3345 6094 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 3300 6050 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 3300 6050 50  0001 C CNN
 F 3 "~" H 3300 6050 50  0001 C CNN
 	1    3300 6050
 	0    1    1    0   
@@ -759,7 +759,7 @@ U 1 1 5E3A5F90
 P 8175 1800
 F 0 "NT2" V 8175 1844 50  0000 L CNN
 F 1 "Net-Tie_2" V 8220 1844 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 8175 1800 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 8175 1800 50  0001 C CNN
 F 3 "~" H 8175 1800 50  0001 C CNN
 	1    8175 1800
 	0    1    1    0   
@@ -770,7 +770,7 @@ U 1 1 5E3A5F96
 P 7575 1800
 F 0 "NT1" V 7575 1844 50  0000 L CNN
 F 1 "Net-Tie_2" V 7620 1844 50  0001 L CNN
-F 2 "NetTies:NetTie-2_SMD_Pad0.5mm" H 7575 1800 50  0001 C CNN
+F 2 "Power Sense PCB:NetTie-2_SMD_Pad0.25mm" H 7575 1800 50  0001 C CNN
 F 3 "~" H 7575 1800 50  0001 C CNN
 	1    7575 1800
 	0    1    1    0   
@@ -1267,27 +1267,29 @@ Text Notes 7475 4075 0    50   ~ 0
 Text Notes 7500 4350 0    50   ~ 0
 Should be approx the same\nvoltage as the real motor neutral, \nsince phases are close to balanced.
 $Comp
-L Connector_Generic:Conn_01x08 J10
+L Connector_Generic:Conn_01x09 J10
 U 1 1 5E4D3815
 P 10550 3700
-F 0 "J10" H 10475 4100 50  0000 L CNN
+F 0 "J10" H 10500 4225 50  0000 L CNN
 F 1 "Test Conn" H 10475 3200 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08_Pitch2.54mm" H 10550 3700 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x09_Pitch2.54mm" H 10550 3700 50  0001 C CNN
 F 3 "~" H 10550 3700 50  0001 C CNN
-F 4 "961108-6404-AR" H 10550 3700 50  0001 C CNN "Digikey"
+F 4 "3M9457-09-ND" H 10550 3700 50  0001 C CNN "Digikey"
 	1    10550 3700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10350 3400 9825 3400
+	10350 3300 9825 3300
 Wire Wire Line
-	10350 3500 9825 3500
-Text Label 9825 3400 0    50   ~ 0
+	10350 3400 9825 3400
+Text Label 9825 3300 0    50   ~ 0
 V_BUS
-Text Label 9825 3500 0    50   ~ 0
+Text Label 9825 3400 0    50   ~ 0
 I_BUS
 Wire Wire Line
-	9825 3600 10350 3600
+	9825 3500 10350 3500
+Wire Wire Line
+	10350 3600 9825 3600
 Wire Wire Line
 	10350 3700 9825 3700
 Wire Wire Line
@@ -1296,8 +1298,6 @@ Wire Wire Line
 	10350 3900 9825 3900
 Wire Wire Line
 	10350 4000 9825 4000
-Wire Wire Line
-	10350 4100 9825 4100
 $Comp
 L Device:C_Small C7
 U 1 1 5E52DAB3
@@ -1714,21 +1714,21 @@ F 4 "36-5116-ND" V 6250 3900 50  0001 C CNN "Digikey"
 $EndComp
 Wire Wire Line
 	6250 3900 7200 3900
-Text Label 9825 3600 0    50   ~ 0
+Text Label 9825 3500 0    50   ~ 0
 V_PHASE_A
-Text Label 9825 3700 0    50   ~ 0
+Text Label 9825 3600 0    50   ~ 0
 V_PHASE_B
-Text Label 9825 3800 0    50   ~ 0
+Text Label 9825 3700 0    50   ~ 0
 V_PHASE_C
-Text Label 9825 4000 0    50   ~ 0
-I_PHASE_B
 Text Label 9825 3900 0    50   ~ 0
+I_PHASE_B
+Text Label 9825 3800 0    50   ~ 0
 I_PHASE_A
-Text Label 9825 4100 0    50   ~ 0
+Text Label 9825 4000 0    50   ~ 0
 I_PHASE_C
-Text Notes 9550 4375 0    50   ~ 0
+Text Notes 9525 4600 0    50   ~ 0
 For data aquistion via Arduino or similar. 
-Text Notes 10025 4500 0    50   ~ 0
+Text Notes 10000 4725 0    50   ~ 0
 All signals 0-5V 
 $Comp
 L Connector:TestPoint TP15
@@ -1909,4 +1909,89 @@ Wire Wire Line
 Connection ~ 7125 1625
 Wire Wire Line
 	7125 1625 7575 1625
+$Comp
+L Device:CP1 C17
+U 1 1 5E383FE4
+P 1800 1250
+F 0 "C17" H 1915 1296 50  0000 L CNN
+F 1 "330uF" H 1915 1205 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 1800 1250 50  0001 C CNN
+F 3 "~" H 1800 1250 50  0001 C CNN
+F 4 "493-15427-ND" H 1800 1250 50  0001 C CNN "Digikey"
+	1    1800 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1625 1075 1800 1075
+Wire Wire Line
+	1800 1075 1800 1100
+Connection ~ 1625 1075
+Wire Wire Line
+	1625 1075 1625 975 
+Wire Wire Line
+	1800 1400 1800 1450
+Wire Wire Line
+	1800 1450 1625 1450
+Connection ~ 1625 1450
+Wire Wire Line
+	1625 1450 1625 1500
+$Comp
+L Device:LED D1
+U 1 1 5E3AA4EA
+P 2225 1250
+F 0 "D1" V 2264 1132 50  0000 R CNN
+F 1 "RED" V 2173 1132 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 2225 1250 50  0001 C CNN
+F 3 "~" H 2225 1250 50  0001 C CNN
+F 4 "160-1447-1-ND" V 2225 1250 50  0001 C CNN "Digikey"
+	1    2225 1250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1800 1075 2225 1075
+Wire Wire Line
+	2225 1075 2225 1100
+Connection ~ 1800 1075
+$Comp
+L Device:R_Small_US R20
+U 1 1 5E3B8A0C
+P 2225 1550
+F 0 "R20" H 2293 1596 50  0000 L CNN
+F 1 "330" H 2293 1505 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 2225 1550 50  0001 C CNN
+F 3 "~" H 2225 1550 50  0001 C CNN
+F 4 "RHM330DCT-ND" H 2225 1550 50  0001 C CNN "Digikey"
+	1    2225 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2225 1400 2225 1450
+Wire Wire Line
+	2225 1650 2225 1725
+$Comp
+L power:GND #PWR01
+U 1 1 5E3D3814
+P 2225 1725
+F 0 "#PWR01" H 2225 1475 50  0001 C CNN
+F 1 "GND" H 2230 1552 50  0000 C CNN
+F 2 "" H 2225 1725 50  0001 C CNN
+F 3 "" H 2225 1725 50  0001 C CNN
+	1    2225 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 4100 10275 4100
+Wire Wire Line
+	10275 4100 10275 4175
+$Comp
+L power:GND #PWR?
+U 1 1 5E454E34
+P 10275 4175
+F 0 "#PWR?" H 10275 3925 50  0001 C CNN
+F 1 "GND" H 10280 4002 50  0000 C CNN
+F 2 "" H 10275 4175 50  0001 C CNN
+F 3 "" H 10275 4175 50  0001 C CNN
+	1    10275 4175
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
