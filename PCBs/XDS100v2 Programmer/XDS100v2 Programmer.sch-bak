@@ -91,7 +91,7 @@ U 1 1 5E1E4339
 P 2925 1625
 F 0 "U1" H 2925 1867 50  0000 C CNN
 F 1 "TLV1117-33" H 2925 1776 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-223" H 2925 1625 50  0001 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223-3_TabPin2" H 2925 1625 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tlv1117.pdf" H 2925 1625 50  0001 C CNN
 F 4 "296-50648-ND" H 2925 1625 50  0001 C CNN "Digikey"
 	1    2925 1625
@@ -857,8 +857,6 @@ F 3 "" H 1975 3125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2875 3200 3050 3200
-Wire Wire Line
 	3050 3200 3050 3075
 Wire Wire Line
 	3050 3200 3175 3200
@@ -867,11 +865,11 @@ $Comp
 L Device:R_Small_US R5
 U 1 1 5E30F12E
 P 3275 3200
-F 0 "R5" V 3200 3250 50  0000 L CNN
-F 1 "2.2k" V 3200 3050 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805" H 3275 3200 50  0001 C CNN
+F 0 "R5" V 3225 3250 50  0000 L CNN
+F 1 "2.2k" V 3225 2975 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 3275 3200 50  0001 C CNN
 F 3 "~" H 3275 3200 50  0001 C CNN
-F 4 "311-2.20KCRCT-ND" V 3275 3200 50  0001 C CNN "Digikey"
+F 4 "" V 3275 3200 50  0001 C CNN "Digikey"
 	1    3275 3200
 	0    -1   -1   0   
 $EndComp
@@ -881,9 +879,9 @@ U 1 1 5E30FF9B
 P 3050 2975
 F 0 "R2" H 3100 3000 50  0000 L CNN
 F 1 "10k" H 3100 2900 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805" H 3050 2975 50  0001 C CNN
+F 2 "Resistors_SMD:R_0603" H 3050 2975 50  0001 C CNN
 F 3 "~" H 3050 2975 50  0001 C CNN
-F 4 "311-10.0KCRCT-ND" V 3050 2975 50  0001 C CNN "Digikey"
+F 4 "" V 3050 2975 50  0001 C CNN "Digikey"
 	1    3050 2975
 	1    0    0    -1  
 $EndComp
@@ -1405,11 +1403,11 @@ F 4 "CT2043ST-ND" H 8950 5950 50  0001 C CNN "Digikey"
 	1    8950 5950
 	1    0    0    -1  
 $EndComp
-Text Label 9650 5950 2    50   ~ 0
+Text Label 9700 5950 2    50   ~ 0
 JTAG_TRST
 Wire Wire Line
-	9250 5950 9650 5950
-Text Label 7825 5950 0    50   ~ 0
+	9250 5950 9700 5950
+Text Label 8300 5950 0    50   ~ 0
 TRST
 Text Label 10975 4900 2    50   ~ 0
 TRST
@@ -1517,54 +1515,6 @@ Wire Wire Line
 	2875 4550 3250 4550
 Text Label 3250 4550 2    50   ~ 0
 FTDI_DATA
-Wire Wire Line
-	3400 4700 3400 4575
-Wire Wire Line
-	3400 4700 3525 4700
-Connection ~ 3400 4700
-$Comp
-L Device:R_Small_US R10
-U 1 1 5EC133C6
-P 3625 4700
-F 0 "R10" V 3550 4750 50  0000 L CNN
-F 1 "2.2k" V 3550 4550 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805" H 3625 4700 50  0001 C CNN
-F 3 "~" H 3625 4700 50  0001 C CNN
-F 4 "311-2.20KCRCT-ND" V 3625 4700 50  0001 C CNN "Digikey"
-	1    3625 4700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R_Small_US R7
-U 1 1 5EC133CD
-P 3400 4475
-F 0 "R7" H 3450 4500 50  0000 L CNN
-F 1 "10k" H 3450 4400 50  0000 L CNN
-F 2 "Resistors_SMD:R_0805" H 3400 4475 50  0001 C CNN
-F 3 "~" H 3400 4475 50  0001 C CNN
-F 4 "311-10.0KCRCT-ND" V 3400 4475 50  0001 C CNN "Digikey"
-	1    3400 4475
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3400 4375 3400 4300
-$Comp
-L power:+3V3 #PWR0148
-U 1 1 5EC133D4
-P 3400 4300
-F 0 "#PWR0148" H 3400 4150 50  0001 C CNN
-F 1 "+3V3" H 3415 4473 50  0000 C CNN
-F 2 "" H 3400 4300 50  0001 C CNN
-F 3 "" H 3400 4300 50  0001 C CNN
-	1    3400 4300
-	1    0    0    -1  
-$EndComp
-Text Label 4125 4700 2    50   ~ 0
-FTDI_DATA
-Wire Wire Line
-	3725 4700 4125 4700
-Wire Wire Line
-	2875 4700 3400 4700
 Text Notes 850  3900 0    50   ~ 0
 Duplicate incase 8pin EEPROM does not work
 $Comp
@@ -1580,7 +1530,7 @@ F 4 "160-1579-1-ND‎" V 7750 4175 50  0001 C CNN "Digikey"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H1
+L Mechanical:MountingHole H1
 U 1 1 5EC57A13
 P 8425 775
 F 0 "H1" H 8525 778 50  0000 L CNN
@@ -1591,7 +1541,7 @@ F 3 "~" H 8425 775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H2
+L Mechanical:MountingHole H2
 U 1 1 5EC59DEB
 P 8775 775
 F 0 "H2" H 8875 778 50  0000 L CNN
@@ -1602,7 +1552,7 @@ F 3 "~" H 8775 775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H3
+L Mechanical:MountingHole H3
 U 1 1 5EC5A192
 P 9125 775
 F 0 "H3" H 9225 778 50  0000 L CNN
@@ -1613,7 +1563,7 @@ F 3 "~" H 9125 775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H4
+L Mechanical:MountingHole H4
 U 1 1 5EC5A687
 P 9450 775
 F 0 "H4" H 9550 778 50  0000 L CNN
@@ -1621,106 +1571,6 @@ F 1 "MountingHole_Pad" H 9550 733 50  0001 L CNN
 F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 9450 775 50  0001 C CNN
 F 3 "~" H 9450 775 50  0001 C CNN
 	1    9450 775 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDD #PWR0149
-U 1 1 5EC5AED7
-P 8425 950
-F 0 "#PWR0149" H 8425 700 50  0001 C CNN
-F 1 "GNDD" H 8429 795 50  0000 C CNN
-F 2 "" H 8425 950 50  0001 C CNN
-F 3 "" H 8425 950 50  0001 C CNN
-	1    8425 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8425 875  8425 950 
-$Comp
-L power:GNDD #PWR0150
-U 1 1 5EC6C740
-P 8775 950
-F 0 "#PWR0150" H 8775 700 50  0001 C CNN
-F 1 "GNDD" H 8779 795 50  0000 C CNN
-F 2 "" H 8775 950 50  0001 C CNN
-F 3 "" H 8775 950 50  0001 C CNN
-	1    8775 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8775 875  8775 950 
-$Comp
-L power:GNDD #PWR0151
-U 1 1 5EC7D792
-P 9125 950
-F 0 "#PWR0151" H 9125 700 50  0001 C CNN
-F 1 "GNDD" H 9129 795 50  0000 C CNN
-F 2 "" H 9125 950 50  0001 C CNN
-F 3 "" H 9125 950 50  0001 C CNN
-	1    9125 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9125 875  9125 950 
-$Comp
-L power:GNDD #PWR0152
-U 1 1 5EC8E96E
-P 9450 950
-F 0 "#PWR0152" H 9450 700 50  0001 C CNN
-F 1 "GNDD" H 9454 795 50  0000 C CNN
-F 2 "" H 9450 950 50  0001 C CNN
-F 3 "" H 9450 950 50  0001 C CNN
-	1    9450 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9450 875  9450 950 
-$Comp
-L Mechanical:MountingHole_Pad H5
-U 1 1 5ECB6AC0
-P 10250 775
-F 0 "H5" H 10350 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 10350 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 10250 775 50  0001 C CNN
-F 3 "~" H 10250 775 50  0001 C CNN
-	1    10250 775 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H6
-U 1 1 5ECB6AC6
-P 10575 775
-F 0 "H6" H 10675 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 10675 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 10575 775 50  0001 C CNN
-F 3 "~" H 10575 775 50  0001 C CNN
-	1    10575 775 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10250 875  10250 950 
-Wire Wire Line
-	10575 875  10575 950 
-$Comp
-L power:GND #PWR0153
-U 1 1 5ECC751B
-P 10250 950
-F 0 "#PWR0153" H 10250 700 50  0001 C CNN
-F 1 "GND" H 10255 777 50  0000 C CNN
-F 2 "" H 10250 950 50  0001 C CNN
-F 3 "" H 10250 950 50  0001 C CNN
-	1    10250 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0154
-U 1 1 5ECC7B09
-P 10575 950
-F 0 "#PWR0154" H 10575 700 50  0001 C CNN
-F 1 "GND" H 10580 777 50  0000 C CNN
-F 2 "" H 10575 950 50  0001 C CNN
-F 3 "" H 10575 950 50  0001 C CNN
-	1    10575 950 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1764,21 +1614,21 @@ Text Notes 8250 5600 0    50   ~ 0
 Boot Mode
 Text Notes 10125 4325 0    50   ~ 0
 Programming Cable \n     Interface
-Text Notes 10150 5125 0    39   Italic 0
+Text Notes 10150 5200 0    39   Italic 0
 Follows ARM 10 Pin JTAG Interface, \nslightly modified 
 $Comp
-L Connector_Generic:Conn_02x05_Odd_Even J?
+L Connector_Generic:Conn_02x05_Odd_Even J2
 U 1 1 5E219B1D
 P 10425 4700
-F 0 "J?" H 10475 5000 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 10500 4400 50  0001 C CNN
-F 2 "" H 10425 4700 50  0001 C CNN
+F 0 "J2" H 10475 5000 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 10500 4400 50  0000 C CNN
+F 2 "XDS100v2 Programmer:2x05_Prog_Header" H 10425 4700 50  0001 C CNN
 F 3 "~" H 10425 4700 50  0001 C CNN
 	1    10425 4700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7825 5950 8650 5950
+	8300 5950 8650 5950
 Wire Wire Line
 	10225 4800 10150 4800
 Wire Wire Line
@@ -1786,4 +1636,21 @@ Wire Wire Line
 Connection ~ 10150 4900
 Wire Wire Line
 	10150 4900 10225 4900
+NoConn ~ 9250 5850
+NoConn ~ 9250 5750
+NoConn ~ 8650 5750
+NoConn ~ 8650 5850
+Wire Wire Line
+	2875 4700 3525 4700
+Wire Wire Line
+	2950 3200 2950 3300
+Wire Wire Line
+	2950 3300 3525 3300
+Wire Wire Line
+	3525 3300 3525 4700
+Wire Wire Line
+	2875 3200 2950 3200
+Connection ~ 2950 3200
+Wire Wire Line
+	2950 3200 3050 3200
 $EndSCHEMATC
