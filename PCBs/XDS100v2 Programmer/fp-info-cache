@@ -1,4 +1,4 @@
-900223093603920
+905186617274973
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -23751,69 +23751,6 @@ TRANS_DMN2020UFCL-7
 0
 8
 3
-ESC Drivetrain V1
-3mm_Bullet_A
-
-
-0
-1
-1
-ESC Drivetrain V1
-3mm_Bullet_B
-
-
-0
-1
-1
-ESC Drivetrain V1
-3mm_Bullet_C
-
-
-0
-1
-1
-ESC Drivetrain V1
-AMASS_XT60-M
-
-
-0
-2
-2
-ESC Drivetrain V1
-DRV8305
-48-Lead Thin Quad Flatpack (PT) - 7x7x1.0 mm Body [TQFP] With Exposed Pad (see Microchip Packaging Specification 00000049BS.pdf)
-QFP 0.5
-0
-74
-49
-ESC Drivetrain V1
-Eaton_Inductor
-
-
-0
-2
-2
-ESC Drivetrain V1
-Pin_Header_Straight_2x10_Pitch2.54mm_LaunchPad
-Through hole straight pin header, 2x10, 2.54mm pitch, double rows
-Through hole pin header THT 2x10 2.54mm double row
-0
-20
-20
-ESC Drivetrain V1
-R_2512_Sense
-Resistor SMD 2512, reflow soldering, Vishay (see dcrcw.pdf)
-resistor 2512
-0
-2
-2
-ESC Drivetrain V1
-SIZF906DT
-
-
-0
-8
-6
 EuroBoard_Outline
 EuroBoard160mmX100mm
 
@@ -33628,6 +33565,90 @@ MountingHole_8.4mm_M8_Pad_Via
 0
 0
 0
+NetTies
+NetTie-2_SMD_Pad0.5mm
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
+NetTies
+NetTie-2_SMD_Pad2.0mm
+Net tie, 2 pin, 2.0mm square SMD pads
+net tie
+0
+2
+2
+NetTies
+NetTie-2_THT_Pad0.3mm
+Net tie, 2 pin, 0.3mm round THT pads
+net tie
+0
+2
+2
+NetTies
+NetTie-2_THT_Pad1.0mm
+Net tie, 2 pin, 1.0mm round THT pads
+net tie
+0
+2
+2
+NetTies
+NetTie-3_SMD_Pad0.5mm
+Net tie, 3 pin, 0.5mm square SMD pads
+net tie
+0
+3
+3
+NetTies
+NetTie-3_SMD_Pad2.0mm
+Net tie, 3 pin, 2.0mm square SMD pads
+net tie
+0
+3
+3
+NetTies
+NetTie-3_THT_Pad0.3mm
+Net tie, 3 pin, 0.3mm round THT pads
+net tie
+0
+3
+3
+NetTies
+NetTie-3_THT_Pad1.0mm
+Net tie, 3 pin, 1.0mm round THT pads
+net tie
+0
+3
+3
+NetTies
+NetTie-4_SMD_Pad0.5mm
+Net tie, 4 pin, 0.5mm square SMD pads
+net tie
+0
+4
+4
+NetTies
+NetTie-4_SMD_Pad2.0mm
+Net tie, 4 pin, 2.0mm square SMD pads
+net tie
+0
+4
+4
+NetTies
+NetTie-4_THT_Pad0.3mm
+Net tie, 4 pin, 0.3mm round THT pads
+net tie
+0
+4
+4
+NetTies
+NetTie-4_THT_Pad1.0mm
+Net tie, 4 pin, 1.0mm round THT pads
+net tie
+0
+4
+4
 Opto-Devices
 AmbientLightSensor_AMS_TSL2550_SMD
 
@@ -54489,6 +54510,13 @@ SolderWirePad_single_SMD_5x10mm
 0
 0
 XDS100v2 Programmer
+2x05_Prog_Header
+Through hole straight pin header, 2x05, 2.54mm pitch, double rows
+Through hole pin header THT 2x05 2.54mm double row
+0
+10
+10
+XDS100v2 Programmer
 1812_PloyFuse
 
 
@@ -54524,10 +54552,3 @@ Source: http://www.cypressindustries.com/pdf/32005-201.pdf
 0
 9
 6
-XT60-M
-AMASS_XT60-M
-
-
-0
-2
-2

@@ -1532,45 +1532,45 @@ $EndComp
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5EC57A13
-P 8425 775
-F 0 "H1" H 8525 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 8525 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 8425 775 50  0001 C CNN
-F 3 "~" H 8425 775 50  0001 C CNN
-	1    8425 775 
+P 8375 925
+F 0 "H1" H 8475 928 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8475 883 50  0001 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 8375 925 50  0001 C CNN
+F 3 "~" H 8375 925 50  0001 C CNN
+	1    8375 925 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5EC59DEB
-P 8775 775
-F 0 "H2" H 8875 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 8875 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 8775 775 50  0001 C CNN
-F 3 "~" H 8775 775 50  0001 C CNN
-	1    8775 775 
+P 8725 925
+F 0 "H2" H 8825 928 50  0000 L CNN
+F 1 "MountingHole_Pad" H 8825 883 50  0001 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 8725 925 50  0001 C CNN
+F 3 "~" H 8725 925 50  0001 C CNN
+	1    8725 925 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 5EC5A192
-P 9125 775
-F 0 "H3" H 9225 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 9225 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 9125 775 50  0001 C CNN
-F 3 "~" H 9125 775 50  0001 C CNN
-	1    9125 775 
+P 9075 925
+F 0 "H3" H 9175 928 50  0000 L CNN
+F 1 "MountingHole_Pad" H 9175 883 50  0001 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 9075 925 50  0001 C CNN
+F 3 "~" H 9075 925 50  0001 C CNN
+	1    9075 925 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5EC5A687
-P 9450 775
-F 0 "H4" H 9550 778 50  0000 L CNN
-F 1 "MountingHole_Pad" H 9550 733 50  0001 L CNN
-F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 9450 775 50  0001 C CNN
-F 3 "~" H 9450 775 50  0001 C CNN
-	1    9450 775 
+P 9400 925
+F 0 "H4" H 9500 928 50  0000 L CNN
+F 1 "MountingHole_Pad" H 9500 883 50  0001 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 9400 925 50  0001 C CNN
+F 3 "~" H 9400 925 50  0001 C CNN
+	1    9400 925 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
