@@ -1,0 +1,35 @@
+Source:,D:\Motor Controller Research\GitHub\motor-controller\PCBs\XDS100v2 Programmer\XDS100v2 Programmer.sch,,,,,,
+Date:,2020-01-14 16:15,,,,,,
+Tool:,Eeschema (5.1.5)-3,,,,,,
+Generator:,C:\Program Files\KiCad\bin\scripting\plugins/bom_csv_grouped_by_value.py,,,,,,
+Component Count:,46,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,Digikey
+1,2,"C1, C2",4.7uF,Device:C_Small,Capacitors_SMD:C_0805,~,490-14466-1-ND
+2,1,C3,1uF,Device:C_Small,Capacitors_SMD:C_0805,~,399-8011-1-ND
+3,1,C4,100uF,Device:CP,,~,478-7995-1-ND
+4,6,"C5, C6, C7, C8, C10, C11",0.1uF,Device:C_Small,Capacitors_SMD:C_0805,~,311-1361-1-ND
+5,1,C9,3.3uF,Device:C_Small,Capacitors_SMD:C_0805,~,490-13309-1-ND
+6,2,"C12, C13",36p,Device:C_Small,Capacitors_SMD:C_0603,~,490-1416-1-ND
+7,3,"D1, D2, D3",LED,Device:LED,LEDs:LED_0805,~,475-1278-1-ND
+8,1,F1,500mA,Device:Fuse,,~,MF-MSMF050-2CT-ND
+9,1,J1,USB_B_Mini,Connector:USB_B_Mini,,~,ED2992CT-ND
+10,1,J2,Conn_02x05,Connector_Generic:Conn_02x05_Counter_Clockwise,,~,ED1543-ND
+11,2,"L1, L2",FB,Device:L,Inductors_SMD:L_0402,~,553-2374-1-ND
+12,3,"R1, R3, R4",1k,Device:R_Small_US,Resistors_SMD:R_0805,~,311-1.0KARCT-ND
+13,2,"R2, R7",10k,Device:R_Small_US,Resistors_SMD:R_0805,~,311-10.0KCRCT-ND
+14,5,"R5, R10, R13, R14, R15",2.2k,Device:R_Small_US,Resistors_SMD:R_0805,~,311-2.20KCRCT-ND
+15,1,R6,12k,Device:R_Small_US,Resistors_SMD:R_0805,~,A129762CT-ND
+16,2,"R8, R9",330,Device:R_Small_US,Resistors_SMD:R_0805,~,A129743CT-ND
+17,2,"R11, R12",820,Device:R_Small_US,Resistors_SMD:R_0805,~,311-820ARCT-ND
+18,2,"SW1, SW2",SW_DIP_x02,Switch:SW_DIP_x02,,~,CT204211ST-ND
+19,1,SW3,SW_DIP_x03,Switch:SW_DIP_x03,,~,CT2043ST-ND
+20,1,U1,TLV1117-33,Regulator_Linear:TLV1117-33,TO_SOT_Packages_SMD:SOT-223,http://www.ti.com/lit/ds/symlink/tlv1117.pdf,296-50648-ND
+21,1,U2,ISO7240,XDS100v2 Programmer:ISO7240,Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm,,296-22617-1-ND
+22,1,U3,EEPROM_Array,XDS100v2 Programmer:EEPROM_Array,TO_SOT_Packages_SMD:SOT-23-6,,
+23,1,U4,FT2232H,Interface_USB:FT2232H,Housings_DFN_QFN:QFN-64-1EP_9x9mm_Pitch0.5mm,https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf,768-1025-1-ND
+24,1,U5,ISO7231,XDS100v2 Programmer:ISO7231,Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm,,296-22960-5-ND
+25,1,U6,EEPROM_Array_8pin,XDS100v2 Programmer:EEPROM_Array_8pin,,,1662-2080-1-ND
+26,1,Y1,12MHz,Device:Crystal_Small,,~,XC2079CT-ND
