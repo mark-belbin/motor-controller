@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name RPM_Sensor)(type Legacy)(uri "${KIPRJMOD}/RPM Sensor.lib")(options "")(descr "Misc Symbols for the RPM Sensor Project"))
+)
