@@ -574,7 +574,7 @@
   )
 
   (module Testpoints:TestPoint_Pad_D2.0mm (layer F.Cu) (tedit 5A0F774F) (tstamp 5E309253)
-    (at 98.5 105.9)
+    (at 98.8 105.9)
     (descr "SMD pad as test Point, diameter 2.0mm")
     (tags "test point SMD pad")
     (path /5E326D87)
@@ -595,7 +595,7 @@
   )
 
   (module Testpoints:TestPoint_Pad_D2.0mm (layer F.Cu) (tedit 5A0F774F) (tstamp 5E30925A)
-    (at 101.7 106)
+    (at 100.4 108.7)
     (descr "SMD pad as test Point, diameter 2.0mm")
     (tags "test point SMD pad")
     (path /5E327659)
@@ -616,7 +616,7 @@
   )
 
   (module Testpoints:TestPoint_Pad_D2.0mm (layer F.Cu) (tedit 5A0F774F) (tstamp 5E309261)
-    (at 104.8 106)
+    (at 102.2 106)
     (descr "SMD pad as test Point, diameter 2.0mm")
     (tags "test point SMD pad")
     (path /5E327B31)
@@ -637,7 +637,7 @@
   )
 
   (module Testpoints:TestPoint_Pad_D2.0mm (layer F.Cu) (tedit 5A0F774F) (tstamp 5E309268)
-    (at 100 108.8)
+    (at 97.2 108.7)
     (descr "SMD pad as test Point, diameter 2.0mm")
     (tags "test point SMD pad")
     (path /5E327EA2)

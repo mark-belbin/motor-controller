@@ -173,94 +173,12 @@ place next to pins 14/13
 Text Notes 2825 3600 0    39   ~ 0
 place next to pins 19/20
 $Comp
-L Connector:TestPoint TP1
-U 1 1 5E31452F
-P 6375 2500
-F 0 "TP1" H 6433 2572 50  0000 L CNN
-F 1 "TestPoint" H 6433 2527 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6575 2500 50  0001 C CNN
-F 3 "~" H 6575 2500 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6375 2500 50  0001 C CNN "Digikey"
-	1    6375 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6200 2600 6375 2600
-Wire Wire Line
-	6375 2600 6375 2500
-Wire Wire Line
-	6200 2700 6600 2700
-Connection ~ 6375 2600
-Wire Wire Line
-	6200 2800 6825 2800
-Wire Wire Line
-	6600 2500 6600 2700
-Connection ~ 6600 2700
-Wire Wire Line
-	6825 2500 6825 2800
-Connection ~ 6825 2800
-Wire Wire Line
-	6200 3050 6350 3050
-Wire Wire Line
-	6350 3050 6350 3000
-Connection ~ 6350 3050
-Wire Wire Line
-	6200 3150 6600 3150
-Wire Wire Line
-	6600 3150 6600 3000
-Connection ~ 6600 3150
-Wire Wire Line
-	6200 3250 6825 3250
-Wire Wire Line
-	6825 3250 6825 3000
-Connection ~ 6825 3250
-Wire Wire Line
-	6200 3700 6350 3700
-Wire Wire Line
-	6350 3700 6350 3650
-Wire Wire Line
-	6200 3800 6575 3800
-Wire Wire Line
-	6575 3800 6575 3650
-Wire Wire Line
-	6200 3900 6800 3900
-Wire Wire Line
-	6800 3900 6800 3650
-Wire Wire Line
-	6200 4000 7025 4000
-Wire Wire Line
-	7025 4000 7025 3650
-Wire Wire Line
-	6350 3700 7250 3700
-Connection ~ 6350 3700
-Wire Wire Line
-	6575 3800 7250 3800
-Connection ~ 6575 3800
-Wire Wire Line
-	6800 3900 7250 3900
-Connection ~ 6800 3900
-Wire Wire Line
-	7025 4000 7250 4000
-Connection ~ 7025 4000
-Wire Wire Line
-	6825 3250 7250 3250
-Wire Wire Line
-	6600 3150 7250 3150
-Wire Wire Line
-	6350 3050 7250 3050
-Wire Wire Line
-	6825 2800 7250 2800
-Wire Wire Line
-	6600 2700 7250 2700
-Wire Wire Line
-	6375 2600 7250 2600
-$Comp
 L Connector_Generic:Conn_01x01 J1
 U 1 1 5E324C0D
 P 7450 2600
 F 0 "J1" H 7530 2596 50  0000 L CNN
 F 1 "I" H 7530 2551 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 2600 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 2600 50  0001 C CNN
 F 3 "~" H 7450 2600 50  0001 C CNN
 	1    7450 2600
 	1    0    0    -1  
@@ -271,7 +189,7 @@ U 1 1 5E325BD5
 P 7450 2700
 F 0 "J2" H 7530 2696 50  0000 L CNN
 F 1 "B" H 7530 2651 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 2700 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 2700 50  0001 C CNN
 F 3 "~" H 7450 2700 50  0001 C CNN
 	1    7450 2700
 	1    0    0    -1  
@@ -282,7 +200,7 @@ U 1 1 5E325F04
 P 7450 2800
 F 0 "J4" H 7530 2796 50  0000 L CNN
 F 1 "A" H 7530 2751 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 2800 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 2800 50  0001 C CNN
 F 3 "~" H 7450 2800 50  0001 C CNN
 	1    7450 2800
 	1    0    0    -1  
@@ -293,7 +211,7 @@ U 1 1 5E326206
 P 7450 3050
 F 0 "J5" H 7530 3046 50  0000 L CNN
 F 1 "U" H 7530 3001 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3050 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3050 50  0001 C CNN
 F 3 "~" H 7450 3050 50  0001 C CNN
 	1    7450 3050
 	1    0    0    -1  
@@ -304,7 +222,7 @@ U 1 1 5E3267EE
 P 7450 3150
 F 0 "J6" H 7530 3146 50  0000 L CNN
 F 1 "V" H 7530 3101 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3150 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3150 50  0001 C CNN
 F 3 "~" H 7450 3150 50  0001 C CNN
 	1    7450 3150
 	1    0    0    -1  
@@ -315,7 +233,7 @@ U 1 1 5E326A79
 P 7450 3250
 F 0 "J7" H 7530 3246 50  0000 L CNN
 F 1 "W/PWM" H 7530 3201 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3250 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3250 50  0001 C CNN
 F 3 "~" H 7450 3250 50  0001 C CNN
 	1    7450 3250
 	1    0    0    -1  
@@ -326,7 +244,7 @@ U 1 1 5E326D87
 P 7450 3700
 F 0 "J8" H 7530 3696 50  0000 L CNN
 F 1 "SCL/CLK" H 7530 3651 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3700 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3700 50  0001 C CNN
 F 3 "~" H 7450 3700 50  0001 C CNN
 	1    7450 3700
 	1    0    0    -1  
@@ -337,7 +255,7 @@ U 1 1 5E327659
 P 7450 3800
 F 0 "J9" H 7530 3796 50  0000 L CNN
 F 1 "NSL/DI" H 7530 3751 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3800 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3800 50  0001 C CNN
 F 3 "~" H 7450 3800 50  0001 C CNN
 	1    7450 3800
 	1    0    0    -1  
@@ -348,7 +266,7 @@ U 1 1 5E327B31
 P 7450 3900
 F 0 "J10" H 7530 3896 50  0000 L CNN
 F 1 "DO/DO" H 7530 3851 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 3900 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 3900 50  0001 C CNN
 F 3 "~" H 7450 3900 50  0001 C CNN
 	1    7450 3900
 	1    0    0    -1  
@@ -359,7 +277,7 @@ U 1 1 5E327EA2
 P 7450 4000
 F 0 "J11" H 7530 3996 50  0000 L CNN
 F 1 "SEL/SEL" H 7530 3951 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 7450 4000 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 4000 50  0001 C CNN
 F 3 "~" H 7450 4000 50  0001 C CNN
 	1    7450 4000
 	1    0    0    -1  
@@ -439,244 +357,12 @@ F 4 "478-7995-1-ND" H 3875 2775 50  0001 C CNN "Digikey"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP2
-U 1 1 5E34715D
-P 6600 2500
-F 0 "TP2" H 6658 2572 50  0000 L CNN
-F 1 "TestPoint" H 6658 2527 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6800 2500 50  0001 C CNN
-F 3 "~" H 6800 2500 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6600 2500 50  0001 C CNN "Digikey"
-	1    6600 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP3
-U 1 1 5E3476B2
-P 6825 2500
-F 0 "TP3" H 6883 2572 50  0000 L CNN
-F 1 "TestPoint" H 6883 2527 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7025 2500 50  0001 C CNN
-F 3 "~" H 7025 2500 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6825 2500 50  0001 C CNN "Digikey"
-	1    6825 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP6
-U 1 1 5E3478D1
-P 6350 3000
-F 0 "TP6" H 6408 3072 50  0000 L CNN
-F 1 "TestPoint" H 6408 3027 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6550 3000 50  0001 C CNN
-F 3 "~" H 6550 3000 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6350 3000 50  0001 C CNN "Digikey"
-	1    6350 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP7
-U 1 1 5E34819C
-P 6600 3000
-F 0 "TP7" H 6658 3072 50  0000 L CNN
-F 1 "TestPoint" H 6658 3027 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6800 3000 50  0001 C CNN
-F 3 "~" H 6800 3000 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6600 3000 50  0001 C CNN "Digikey"
-	1    6600 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5E34865D
-P 6825 3000
-F 0 "TP8" H 6883 3072 50  0000 L CNN
-F 1 "TestPoint" H 6883 3027 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7025 3000 50  0001 C CNN
-F 3 "~" H 7025 3000 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6825 3000 50  0001 C CNN "Digikey"
-	1    6825 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5E348AAC
-P 6350 3650
-F 0 "TP9" H 6375 3725 50  0000 L CNN
-F 1 "TestPoint" H 6408 3677 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6550 3650 50  0001 C CNN
-F 3 "~" H 6550 3650 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6350 3650 50  0001 C CNN "Digikey"
-	1    6350 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5E34914F
-P 6575 3650
-F 0 "TP10" H 6600 3725 50  0000 L CNN
-F 1 "TestPoint" H 6633 3677 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6775 3650 50  0001 C CNN
-F 3 "~" H 6775 3650 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6575 3650 50  0001 C CNN "Digikey"
-	1    6575 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5E3495BA
-P 6800 3650
-F 0 "TP11" H 6825 3725 50  0000 L CNN
-F 1 "TestPoint" H 6858 3677 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7000 3650 50  0001 C CNN
-F 3 "~" H 7000 3650 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6800 3650 50  0001 C CNN "Digikey"
-	1    6800 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5E349A3F
-P 7025 3650
-F 0 "TP12" H 7050 3725 50  0000 L CNN
-F 1 "TestPoint" H 7083 3677 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7225 3650 50  0001 C CNN
-F 3 "~" H 7225 3650 50  0001 C CNN
-F 4 "36-5015CT-ND" H 7025 3650 50  0001 C CNN "Digikey"
-	1    7025 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP13
-U 1 1 5E34BA52
-P 6350 4325
-F 0 "TP13" H 6375 4400 50  0000 L CNN
-F 1 "TestPoint" H 6408 4352 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6550 4325 50  0001 C CNN
-F 3 "~" H 6550 4325 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6350 4325 50  0001 C CNN "Digikey"
-	1    6350 4325
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP14
-U 1 1 5E34BA59
-P 6575 4325
-F 0 "TP14" H 6600 4400 50  0000 L CNN
-F 1 "TestPoint" H 6633 4352 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 6775 4325 50  0001 C CNN
-F 3 "~" H 6775 4325 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6575 4325 50  0001 C CNN "Digikey"
-	1    6575 4325
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP15
-U 1 1 5E34BA60
-P 6800 4325
-F 0 "TP15" H 6825 4400 50  0000 L CNN
-F 1 "TestPoint" H 6858 4352 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7000 4325 50  0001 C CNN
-F 3 "~" H 7000 4325 50  0001 C CNN
-F 4 "36-5015CT-ND" H 6800 4325 50  0001 C CNN "Digikey"
-	1    6800 4325
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP16
-U 1 1 5E34BA67
-P 7025 4325
-F 0 "TP16" H 7050 4400 50  0000 L CNN
-F 1 "TestPoint" H 7083 4352 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 7225 4325 50  0001 C CNN
-F 3 "~" H 7225 4325 50  0001 C CNN
-F 4 "36-5015CT-ND" H 7025 4325 50  0001 C CNN "Digikey"
-	1    7025 4325
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0109
-U 1 1 5E34CA29
-P 6350 4450
-F 0 "#PWR0109" H 6350 4200 50  0001 C CNN
-F 1 "GND" H 6355 4277 50  0000 C CNN
-F 2 "" H 6350 4450 50  0001 C CNN
-F 3 "" H 6350 4450 50  0001 C CNN
-	1    6350 4450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6350 4325 6350 4450
-$Comp
-L power:GND #PWR0110
-U 1 1 5E34F41A
-P 6575 4450
-F 0 "#PWR0110" H 6575 4200 50  0001 C CNN
-F 1 "GND" H 6580 4277 50  0000 C CNN
-F 2 "" H 6575 4450 50  0001 C CNN
-F 3 "" H 6575 4450 50  0001 C CNN
-	1    6575 4450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6575 4325 6575 4450
-$Comp
-L power:GND #PWR0111
-U 1 1 5E3509CB
-P 6800 4450
-F 0 "#PWR0111" H 6800 4200 50  0001 C CNN
-F 1 "GND" H 6805 4277 50  0000 C CNN
-F 2 "" H 6800 4450 50  0001 C CNN
-F 3 "" H 6800 4450 50  0001 C CNN
-	1    6800 4450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 4325 6800 4450
-$Comp
-L power:GND #PWR0112
-U 1 1 5E3520D2
-P 7025 4450
-F 0 "#PWR0112" H 7025 4200 50  0001 C CNN
-F 1 "GND" H 7030 4277 50  0000 C CNN
-F 2 "" H 7025 4450 50  0001 C CNN
-F 3 "" H 7025 4450 50  0001 C CNN
-	1    7025 4450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7025 4325 7025 4450
-$Comp
-L Connector:TestPoint TP4
-U 1 1 5E353331
-P 3400 2550
-F 0 "TP4" H 3458 2622 50  0000 L CNN
-F 1 "TestPoint" H 3458 2577 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 3600 2550 50  0001 C CNN
-F 3 "~" H 3600 2550 50  0001 C CNN
-F 4 "36-5015CT-ND" H 3400 2550 50  0001 C CNN "Digikey"
-	1    3400 2550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP5
-U 1 1 5E353FE7
-P 3400 3000
-F 0 "TP5" H 3342 3072 50  0000 R CNN
-F 1 "TestPoint" H 3458 3027 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Keystone_5015_Micro-Minature" H 3600 3000 50  0001 C CNN
-F 3 "~" H 3600 3000 50  0001 C CNN
-F 4 "36-5015CT-ND" H 3400 3000 50  0001 C CNN "Digikey"
-	1    3400 3000
-	-1   0    0    1   
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x01 J3
 U 1 1 5E35F5AC
 P 2750 2550
 F 0 "J3" H 2668 2417 50  0000 C CNN
 F 1 "I" H 2830 2501 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 2750 2550 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 2750 2550 50  0001 C CNN
 F 3 "~" H 2750 2550 50  0001 C CNN
 	1    2750 2550
 	-1   0    0    1   
@@ -687,9 +373,103 @@ U 1 1 5E360C7C
 P 2750 3000
 F 0 "J12" H 2668 2867 50  0000 C CNN
 F 1 "I" H 2830 2951 50  0001 L CNN
-F 2 "Testpoints:TestPoint_Pad_D4.0mm" H 2750 3000 50  0001 C CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 2750 3000 50  0001 C CNN
 F 3 "~" H 2750 3000 50  0001 C CNN
 	1    2750 3000
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	6200 2700 7250 2700
+Wire Wire Line
+	6200 2600 7250 2600
+Wire Wire Line
+	6200 2800 7250 2800
+Wire Wire Line
+	6200 3250 7250 3250
+Wire Wire Line
+	6200 3150 7250 3150
+Wire Wire Line
+	6200 3050 7250 3050
+Wire Wire Line
+	6200 3700 7250 3700
+Wire Wire Line
+	6200 3800 7250 3800
+Wire Wire Line
+	6200 3900 7250 3900
+Wire Wire Line
+	6200 4000 7250 4000
+$Comp
+L Connector_Generic:Conn_01x01 J13
+U 1 1 5E3769E9
+P 7450 4275
+F 0 "J13" H 7575 4275 50  0000 C CNN
+F 1 "I" H 7530 4226 50  0001 L CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 4275 50  0001 C CNN
+F 3 "~" H 7450 4275 50  0001 C CNN
+	1    7450 4275
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J14
+U 1 1 5E377ABE
+P 7450 4375
+F 0 "J14" H 7575 4375 50  0000 C CNN
+F 1 "I" H 7530 4326 50  0001 L CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 4375 50  0001 C CNN
+F 3 "~" H 7450 4375 50  0001 C CNN
+	1    7450 4375
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J15
+U 1 1 5E379145
+P 7450 4475
+F 0 "J15" H 7575 4475 50  0000 C CNN
+F 1 "I" H 7530 4426 50  0001 L CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 4475 50  0001 C CNN
+F 3 "~" H 7450 4475 50  0001 C CNN
+	1    7450 4475
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J16
+U 1 1 5E379427
+P 7450 4575
+F 0 "J16" H 7575 4575 50  0000 C CNN
+F 1 "I" H 7530 4526 50  0001 L CNN
+F 2 "Testpoints:TestPoint_Pad_D2.0mm" H 7450 4575 50  0001 C CNN
+F 3 "~" H 7450 4575 50  0001 C CNN
+	1    7450 4575
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5E37974E
+P 7150 4650
+F 0 "#PWR0109" H 7150 4400 50  0001 C CNN
+F 1 "GND" H 7155 4477 50  0000 C CNN
+F 2 "" H 7150 4650 50  0001 C CNN
+F 3 "" H 7150 4650 50  0001 C CNN
+	1    7150 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4275 7150 4275
+Wire Wire Line
+	7150 4275 7150 4375
+Wire Wire Line
+	7250 4375 7150 4375
+Connection ~ 7150 4375
+Wire Wire Line
+	7150 4375 7150 4475
+Wire Wire Line
+	7250 4475 7150 4475
+Connection ~ 7150 4475
+Wire Wire Line
+	7150 4475 7150 4575
+Wire Wire Line
+	7250 4575 7150 4575
+Connection ~ 7150 4575
+Wire Wire Line
+	7150 4575 7150 4650
 $EndSCHEMATC
