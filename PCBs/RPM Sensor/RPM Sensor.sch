@@ -1,0 +1,72 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "RPM Sensor"
+Date "2020-01-28"
+Rev "001"
+Comp "Mark Belbin"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RPM_Sensor:MAG_ENCODER_AEAT-8800-Q24 U?
+U 1 1 5E30854E
+P 5400 2900
+F 0 "U?" H 5550 3565 50  0000 C CNN
+F 1 "MAG_ENCODER_AEAT-8800-Q24" H 5550 3474 50  0000 C CNN
+F 2 "" H 5400 2900 50  0001 C CNN
+F 3 "" H 5400 2900 50  0001 C CNN
+	1    5400 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E30A58F
+P 4725 4225
+F 0 "#PWR?" H 4725 3975 50  0001 C CNN
+F 1 "GND" H 4730 4052 50  0000 C CNN
+F 2 "" H 4725 4225 50  0001 C CNN
+F 3 "" H 4725 4225 50  0001 C CNN
+	1    4725 4225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3900 4725 3900
+Wire Wire Line
+	4725 3900 4725 4000
+Wire Wire Line
+	4900 4000 4725 4000
+Connection ~ 4725 4000
+Wire Wire Line
+	4900 4100 4725 4100
+Wire Wire Line
+	4725 4000 4725 4100
+Connection ~ 4725 4100
+Wire Wire Line
+	4725 4100 4725 4225
+Wire Wire Line
+	4900 3700 4725 3700
+Wire Wire Line
+	4725 3700 4725 3600
+Wire Wire Line
+	4900 3600 4725 3600
+Connection ~ 4725 3600
+Wire Wire Line
+	4725 3600 4725 3525
+$Comp
+L power:+5V #PWR?
+U 1 1 5E30BA2D
+P 4725 3525
+F 0 "#PWR?" H 4725 3375 50  0001 C CNN
+F 1 "+5V" H 4740 3698 50  0000 C CNN
+F 2 "" H 4725 3525 50  0001 C CNN
+F 3 "" H 4725 3525 50  0001 C CNN
+	1    4725 3525
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
