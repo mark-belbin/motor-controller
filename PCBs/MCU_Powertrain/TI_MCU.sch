@@ -216,16 +216,12 @@ Wire Wire Line
 	3725 3125 3400 3125
 Wire Wire Line
 	3725 3225 3400 3225
-Wire Wire Line
-	3725 3325 3400 3325
 Text Label 3400 3025 0    50   ~ 0
 ADCINB3
 Text Label 3400 3125 0    50   ~ 0
 ADCINB4
 Text Label 3400 3225 0    50   ~ 0
 ADCINB6
-Text Label 3400 3325 0    50   ~ 0
-ADCINB7
 Wire Wire Line
 	3725 3425 3400 3425
 Wire Wire Line
@@ -1444,4 +1440,8 @@ F 4 "CKN9112CT-ND" H 4375 5525 50  0001 C CNN "Digikey"
 $EndComp
 Wire Wire Line
 	3575 5525 4175 5525
+Text Label 3400 3325 0    50   ~ 0
+ADCINB7
+Wire Wire Line
+	3400 3325 3725 3325
 $EndSCHEMATC
