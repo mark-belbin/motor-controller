@@ -908,8 +908,8 @@ Text Label 9875 3325 0    50   ~ 0
 ADCINB1
 Text Label 9875 3425 0    50   ~ 0
 ADCINB3
-Text Label 9750 3525 0    50   ~ 0
-uC_ADCINB7
+Text Label 9875 3525 0    50   ~ 0
+ADCINB7
 Wire Wire Line
 	10300 2450 9875 2450
 Wire Wire Line
@@ -1440,8 +1440,8 @@ F 4 "CKN9112CT-ND" H 4375 5525 50  0001 C CNN "Digikey"
 $EndComp
 Wire Wire Line
 	3575 5525 4175 5525
-Text Label 3275 3325 0    50   ~ 0
-uC_ADCINB7
+Text Label 3400 3325 0    50   ~ 0
+ADCINB7
 Wire Wire Line
-	3275 3325 3725 3325
+	3400 3325 3725 3325
 $EndSCHEMATC
