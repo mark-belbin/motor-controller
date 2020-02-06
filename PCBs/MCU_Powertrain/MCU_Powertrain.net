@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "D:\\Motor Controller Research\\GitHub\\motor-controller\\PCBs\\MCU_Powertrain\\MCU_Powertrain.sch")
-    (date "2020-01-29 4:16:45 PM")
+    (date "2020-02-06 2:56:43 PM")
     (tool "Eeschema (5.1.5)-3")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -285,7 +285,7 @@
       (tstamp 5E669F85))
     (comp (ref TP6)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -294,7 +294,7 @@
       (tstamp 5E79927E))
     (comp (ref TP18)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5000-ND))
@@ -303,7 +303,7 @@
       (tstamp 5E7DF3C1))
     (comp (ref TP20)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5000-ND))
@@ -312,7 +312,7 @@
       (tstamp 5E7EA5B7))
     (comp (ref TP12)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -321,7 +321,7 @@
       (tstamp 5E88DEBD))
     (comp (ref TP1)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -330,7 +330,7 @@
       (tstamp 5E8B7B57))
     (comp (ref TP2)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -339,7 +339,7 @@
       (tstamp 5E8B9215))
     (comp (ref TP3)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -348,7 +348,7 @@
       (tstamp 5E8B95C5))
     (comp (ref TP4)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -357,7 +357,7 @@
       (tstamp 5E9045D4))
     (comp (ref TP19)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -366,7 +366,7 @@
       (tstamp 5E9119E4))
     (comp (ref TP21)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -375,7 +375,7 @@
       (tstamp 5E91308A))
     (comp (ref TP10)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -384,7 +384,7 @@
       (tstamp 5E96DE13))
     (comp (ref TP5)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -393,7 +393,7 @@
       (tstamp 5E96F3CE))
     (comp (ref TP8)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -402,7 +402,7 @@
       (tstamp 5E970343))
     (comp (ref TP14)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -411,7 +411,7 @@
       (tstamp 5E973B2C))
     (comp (ref TP17)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -420,7 +420,7 @@
       (tstamp 5E9387FC))
     (comp (ref TP16)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -429,7 +429,7 @@
       (tstamp 5E9366D5))
     (comp (ref TP7)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -438,7 +438,7 @@
       (tstamp 5E9749CD))
     (comp (ref TP9)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -447,7 +447,7 @@
       (tstamp 5E974F4E))
     (comp (ref TP11)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -456,7 +456,7 @@
       (tstamp 5E9755A1))
     (comp (ref TP13)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -465,7 +465,7 @@
       (tstamp 5E9759DE))
     (comp (ref TP15)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1162,7 +1162,7 @@
       (tstamp 5E45C92A))
     (comp (ref TP29)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1171,7 +1171,7 @@
       (tstamp 5E6E7E17))
     (comp (ref TP30)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1180,7 +1180,7 @@
       (tstamp 5E6E873B))
     (comp (ref TP22)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1189,7 +1189,7 @@
       (tstamp 5E70F37E))
     (comp (ref TP41)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -1198,7 +1198,7 @@
       (tstamp 5E8E8251))
     (comp (ref TP42)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -1207,7 +1207,7 @@
       (tstamp 5E8E88B3))
     (comp (ref TP43)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -1216,7 +1216,7 @@
       (tstamp 5E8E8B23))
     (comp (ref TP44)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5001-ND))
@@ -1225,7 +1225,7 @@
       (tstamp 5E8E94BB))
     (comp (ref TP31)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1234,7 +1234,7 @@
       (tstamp 5E96B52B))
     (comp (ref TP32)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1243,7 +1243,7 @@
       (tstamp 5E96B928))
     (comp (ref TP33)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1252,7 +1252,7 @@
       (tstamp 5E96BC9D))
     (comp (ref TP34)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5116-ND))
@@ -1261,7 +1261,7 @@
       (tstamp 5E96BF08))
     (comp (ref TP35)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1270,7 +1270,7 @@
       (tstamp 5E6B90DA))
     (comp (ref TP36)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1279,7 +1279,7 @@
       (tstamp 5E971FA2))
     (comp (ref TP37)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1288,7 +1288,7 @@
       (tstamp 5E972393))
     (comp (ref TP38)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1297,7 +1297,7 @@
       (tstamp 5E9726E4))
     (comp (ref TP39)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1306,7 +1306,7 @@
       (tstamp 5E972C07))
     (comp (ref TP40)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5119-ND))
@@ -1315,7 +1315,7 @@
       (tstamp 5E972F48))
     (comp (ref TP23)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1324,7 +1324,7 @@
       (tstamp 5E977BBC))
     (comp (ref TP24)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1333,7 +1333,7 @@
       (tstamp 5E97802F))
     (comp (ref TP25)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1342,7 +1342,7 @@
       (tstamp 5E978304))
     (comp (ref TP26)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1351,7 +1351,7 @@
       (tstamp 5E97860B))
     (comp (ref TP27)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))
@@ -1360,7 +1360,7 @@
       (tstamp 5E978A1C))
     (comp (ref TP28)
       (value TestPoint)
-      (footprint Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
+      (footprint MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded)
       (datasheet ~)
       (fields
         (field (name Digikey) 36-5117-ND))

@@ -1240,7 +1240,7 @@ U 1 1 5E79927E
 P 10250 3800
 F 0 "TP6" H 10308 3918 50  0000 L CNN
 F 1 "TestPoint" H 10308 3827 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10450 3800 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10450 3800 50  0001 C CNN
 F 3 "~" H 10450 3800 50  0001 C CNN
 F 4 "36-5119-ND" H 10250 3800 50  0001 C CNN "Digikey"
 	1    10250 3800
@@ -1262,7 +1262,7 @@ U 1 1 5E7DF3C1
 P 4600 5025
 F 0 "TP18" H 4658 5143 50  0000 L CNN
 F 1 "TestPoint" H 4658 5052 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4800 5025 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4800 5025 50  0001 C CNN
 F 3 "~" H 4800 5025 50  0001 C CNN
 F 4 "36-5000-ND" H 4600 5025 50  0001 C CNN "Digikey"
 	1    4600 5025
@@ -1279,7 +1279,7 @@ U 1 1 5E7EA5B7
 P 2250 5375
 F 0 "TP20" H 2308 5493 50  0000 L CNN
 F 1 "TestPoint" H 2308 5402 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2450 5375 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2450 5375 50  0001 C CNN
 F 3 "~" H 2450 5375 50  0001 C CNN
 F 4 "36-5000-ND" H 2250 5375 50  0001 C CNN "Digikey"
 	1    2250 5375
@@ -1334,7 +1334,7 @@ U 1 1 5E88DEBD
 P 1350 4375
 F 0 "TP12" V 1275 4400 50  0000 L CNN
 F 1 "TestPoint" V 1350 4550 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4375 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4375 50  0001 C CNN
 F 3 "~" H 1550 4375 50  0001 C CNN
 F 4 "36-5119-ND" V 1350 4375 50  0001 C CNN "Digikey"
 	1    1350 4375
@@ -1354,7 +1354,7 @@ U 1 1 5E8B7B57
 P 10500 2800
 F 0 "TP1" V 10425 2825 50  0000 L CNN
 F 1 "TestPoint" V 10500 2975 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2800 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2800 50  0001 C CNN
 F 3 "~" H 10700 2800 50  0001 C CNN
 F 4 "36-5117-ND" V 10500 2800 50  0001 C CNN "Digikey"
 	1    10500 2800
@@ -1366,7 +1366,7 @@ U 1 1 5E8B9215
 P 10500 2950
 F 0 "TP2" V 10425 2975 50  0000 L CNN
 F 1 "TestPoint" V 10500 3125 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2950 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2950 50  0001 C CNN
 F 3 "~" H 10700 2950 50  0001 C CNN
 F 4 "36-5117-ND" V 10500 2950 50  0001 C CNN "Digikey"
 	1    10500 2950
@@ -1378,7 +1378,7 @@ U 1 1 5E8B95C5
 P 10500 3100
 F 0 "TP3" V 10425 3125 50  0000 L CNN
 F 1 "TestPoint" V 10500 3275 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3100 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3100 50  0001 C CNN
 F 3 "~" H 10700 3100 50  0001 C CNN
 F 4 "36-5117-ND" V 10500 3100 50  0001 C CNN "Digikey"
 	1    10500 3100
@@ -1413,7 +1413,7 @@ U 1 1 5E9045D4
 P 10500 3300
 F 0 "TP4" V 10425 3325 50  0000 L CNN
 F 1 "TestPoint" V 10500 3475 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3300 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3300 50  0001 C CNN
 F 3 "~" H 10700 3300 50  0001 C CNN
 F 4 "36-5001-ND" V 10500 3300 50  0001 C CNN "Digikey"
 	1    10500 3300
@@ -1442,7 +1442,7 @@ U 1 1 5E9119E4
 P 7175 5225
 F 0 "TP19" V 7100 5250 50  0000 L CNN
 F 1 "TestPoint" V 7175 5400 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5225 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5225 50  0001 C CNN
 F 3 "~" H 7375 5225 50  0001 C CNN
 F 4 "36-5001-ND" V 7175 5225 50  0001 C CNN "Digikey"
 	1    7175 5225
@@ -1454,7 +1454,7 @@ U 1 1 5E91308A
 P 7175 5400
 F 0 "TP21" V 7100 5425 50  0000 L CNN
 F 1 "TestPoint" V 7175 5575 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5400 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5400 50  0001 C CNN
 F 3 "~" H 7375 5400 50  0001 C CNN
 F 4 "36-5001-ND" V 7175 5400 50  0001 C CNN "Digikey"
 	1    7175 5400
@@ -1510,7 +1510,7 @@ U 1 1 5E96DE13
 P 10250 4100
 F 0 "TP10" H 10192 4126 50  0000 R CNN
 F 1 "TestPoint" H 10192 4217 50  0000 R CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10450 4100 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10450 4100 50  0001 C CNN
 F 3 "~" H 10450 4100 50  0001 C CNN
 F 4 "36-5119-ND" H 10250 4100 50  0001 C CNN "Digikey"
 	1    10250 4100
@@ -1522,7 +1522,7 @@ U 1 1 5E96F3CE
 P 8925 3700
 F 0 "TP5" H 8983 3818 50  0000 L CNN
 F 1 "TestPoint" H 8983 3727 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 3700 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 3700 50  0001 C CNN
 F 3 "~" H 9125 3700 50  0001 C CNN
 F 4 "36-5119-ND" H 8925 3700 50  0001 C CNN "Digikey"
 	1    8925 3700
@@ -1534,7 +1534,7 @@ U 1 1 5E970343
 P 8925 4025
 F 0 "TP8" H 8867 4051 50  0000 R CNN
 F 1 "TestPoint" H 8867 4142 50  0000 R CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 4025 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 4025 50  0001 C CNN
 F 3 "~" H 9125 4025 50  0001 C CNN
 F 4 "36-5119-ND" H 8925 4025 50  0001 C CNN "Digikey"
 	1    8925 4025
@@ -1546,7 +1546,7 @@ U 1 1 5E973B2C
 P 1350 4550
 F 0 "TP14" V 1275 4575 50  0000 L CNN
 F 1 "TestPoint" V 1350 4725 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4550 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4550 50  0001 C CNN
 F 3 "~" H 1550 4550 50  0001 C CNN
 F 4 "36-5119-ND" V 1350 4550 50  0001 C CNN "Digikey"
 	1    1350 4550
@@ -1558,7 +1558,7 @@ U 1 1 5E9387FC
 P 2425 4875
 F 0 "TP17" V 2350 4900 50  0000 L CNN
 F 1 "TestPoint" V 2425 5050 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4875 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4875 50  0001 C CNN
 F 3 "~" H 2625 4875 50  0001 C CNN
 F 4 "36-5001-ND" V 2425 4875 50  0001 C CNN "Digikey"
 	1    2425 4875
@@ -1570,7 +1570,7 @@ U 1 1 5E9366D5
 P 2425 4725
 F 0 "TP16" V 2350 4750 50  0000 L CNN
 F 1 "TestPoint" V 2425 4900 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4725 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4725 50  0001 C CNN
 F 3 "~" H 2625 4725 50  0001 C CNN
 F 4 "36-5001-ND" V 2425 4725 50  0001 C CNN "Digikey"
 	1    2425 4725
@@ -1582,7 +1582,7 @@ U 1 1 5E9749CD
 P 2425 3950
 F 0 "TP7" V 2350 3975 50  0000 L CNN
 F 1 "TestPoint" V 2425 4125 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 3950 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 3950 50  0001 C CNN
 F 3 "~" H 2625 3950 50  0001 C CNN
 F 4 "36-5119-ND" V 2425 3950 50  0001 C CNN "Digikey"
 	1    2425 3950
@@ -1594,7 +1594,7 @@ U 1 1 5E974F4E
 P 2425 4100
 F 0 "TP9" V 2350 4125 50  0000 L CNN
 F 1 "TestPoint" V 2425 4275 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4100 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4100 50  0001 C CNN
 F 3 "~" H 2625 4100 50  0001 C CNN
 F 4 "36-5119-ND" V 2425 4100 50  0001 C CNN "Digikey"
 	1    2425 4100
@@ -1606,7 +1606,7 @@ U 1 1 5E9755A1
 P 2425 4250
 F 0 "TP11" V 2350 4275 50  0000 L CNN
 F 1 "TestPoint" V 2425 4425 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4250 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4250 50  0001 C CNN
 F 3 "~" H 2625 4250 50  0001 C CNN
 F 4 "36-5119-ND" V 2425 4250 50  0001 C CNN "Digikey"
 	1    2425 4250
@@ -1618,7 +1618,7 @@ U 1 1 5E9759DE
 P 2425 4400
 F 0 "TP13" V 2350 4425 50  0000 L CNN
 F 1 "TestPoint" V 2425 4575 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4400 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4400 50  0001 C CNN
 F 3 "~" H 2625 4400 50  0001 C CNN
 F 4 "36-5119-ND" V 2425 4400 50  0001 C CNN "Digikey"
 	1    2425 4400
@@ -1630,7 +1630,7 @@ U 1 1 5E975CDD
 P 2425 4550
 F 0 "TP15" V 2350 4575 50  0000 L CNN
 F 1 "TestPoint" V 2425 4725 50  0000 L CNN
-F 2 "Testpoints:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4550 50  0001 C CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4550 50  0001 C CNN
 F 3 "~" H 2625 4550 50  0001 C CNN
 F 4 "36-5119-ND" V 2425 4550 50  0001 C CNN "Digikey"
 	1    2425 4550
