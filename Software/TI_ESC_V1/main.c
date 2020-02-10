@@ -8,7 +8,7 @@
 //| Modified from lab10a from TI's InstaSPIN FOC Suite
 //| "Space Vector Over-Modulation"
 //|
-//| For The TMS320f28027F and DRV8305
+//| For The TMS320F28027F and DRV8305
 
 // **************************************************************************
 // the includes
