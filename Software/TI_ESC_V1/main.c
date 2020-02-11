@@ -15,7 +15,11 @@
 
 // system includes
 #include <math.h>
-#include "main.h"
+#include <stdio.h>
+#include <file.h>
+
+#include "TI_ESC_V1/main.h"
+#include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
 
 #ifdef FLASH
 #pragma CODE_SECTION(mainISR,"ramfuncs");
@@ -32,6 +36,8 @@
 
 // **************************************************************************
 // the globals
+
+SCI_Handle mySci;
 
 uint_least16_t gCounter_updateGlobals = 0;
 
@@ -101,6 +107,7 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 
 // **************************************************************************
 // the functions
+
 
 void main(void)
 {

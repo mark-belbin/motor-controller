@@ -172,11 +172,6 @@
 			<locationURI>MW_INSTALL_DIR/sw/drivers/gpio/src/32b/f28x/f2802x/gpio.c</locationURI>
 		</link>
 		<link>
-			<name>hal.c</name>
-			<type>1</type>
-			<locationURI>MW_INSTALL_DIR/sw/modules/hal/boards/boostxldrv8305_revA/f28x/f2802x/src/hal.c</locationURI>
-		</link>
-		<link>
 			<name>ipark.c</name>
 			<type>1</type>
 			<locationURI>MW_INSTALL_DIR/sw/modules/ipark/src/32b/ipark.c</locationURI>
@@ -230,6 +225,11 @@
 			<name>pwr.c</name>
 			<type>1</type>
 			<locationURI>MW_INSTALL_DIR/sw/drivers/pwr/src/32b/f28x/f2802x/pwr.c</locationURI>
+		</link>
+		<link>
+			<name>sci.c</name>
+			<type>1</type>
+			<location>C:/ti/motorware/motorware_1_01_00_18/sw/drivers/sci/src/32b/f28x/f2802x/sci.c</location>
 		</link>
 		<link>
 			<name>spi.c</name>

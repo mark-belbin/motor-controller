@@ -58,8 +58,8 @@
 
 // platforms
 #include "sw/modules/ctrl/src/32b/ctrl.h"
-#include "hal.h"
-#include "user.h"
+#include "TI_ESC_V1/hal.h"
+#include "TI_ESC_V1/user.h"
 
 
 // **************************************************************************
