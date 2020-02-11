@@ -57,16 +57,11 @@ HAL_AdcData_t gAdcData;
 
 _iq gMaxCurrentSlope = _IQ(0.0);
 
-#ifdef FAST_ROM_V1p6
-CTRL_Obj *controller_obj;
-#else
-
 #ifdef CSM_ENABLE
 #pragma DATA_SECTION(ctrl,"rom_accessed_data");
 #endif
 
 CTRL_Obj ctrl;              //v1p7 format
-#endif
 
 uint16_t gLEDcnt = 0;
 
@@ -93,15 +88,8 @@ MATH_vec3 gIavg = {_IQ(0.0), _IQ(0.0), _IQ(0.0)};
 uint16_t gIavg_shift = 1;
 MATH_vec3 gPwmData_prev = {_IQ(0.0), _IQ(0.0), _IQ(0.0)};
 
-#ifdef DRV8301_SPI
-// Watch window interface to the 8301 SPI
-DRV_SPI_8301_Vars_t gDrvSpi8301Vars;
-#endif
-
-#ifdef DRV8305_SPI
 // Watch window interface to the 8305 SPI
 DRV_SPI_8305_Vars_t gDrvSpi8305Vars;
-#endif
 
 _iq gFlux_pu_to_Wb_sf;
 
@@ -117,10 +105,6 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 void main(void)
 {
   uint_least8_t estNumber = 0;
-
-#ifdef FAST_ROM_V1p6
-  uint_least8_t ctrlNumber = 0;
-#endif
 
   // Only used if running from FLASH
   // Note that the variable FLASH is defined by the project
@@ -173,13 +157,7 @@ void main(void)
 
 
   // initialize the controller
-#ifdef FAST_ROM_V1p6
-  ctrlHandle = CTRL_initCtrl(ctrlNumber, estNumber);        //v1p6 format (06xF and 06xM devices)
-  controller_obj = (CTRL_Obj *)ctrlHandle;
-#else
   ctrlHandle = CTRL_initCtrl(estNumber,&ctrl,sizeof(ctrl)); //v1p7 format default
-#endif
-
 
   {
     CTRL_Version version;
@@ -234,19 +212,12 @@ void main(void)
   // disable the PWM
   HAL_disablePwm(halHandle);
 
-#ifdef DRV8301_SPI
-  // turn on the DRV8301 if present
-  HAL_enableDrv(halHandle);
-  // initialize the DRV8301 interface
-  HAL_setupDrvSpi(halHandle,&gDrvSpi8301Vars);
-#endif
 
-#ifdef DRV8305_SPI
   // turn on the DRV8305 if present
   HAL_enableDrv(halHandle);
   // initialize the DRV8305 interface
   HAL_setupDrvSpi(halHandle,&gDrvSpi8305Vars);
-#endif
+
 
   // enable DC bus compensation
   CTRL_setFlag_enableDcBusComp(ctrlHandle, true);
@@ -256,6 +227,11 @@ void main(void)
   gFlux_pu_to_VpHz_sf = USER_computeFlux_pu_to_VpHz_sf();
   gTorque_Ls_Id_Iq_pu_to_Nm_sf = USER_computeTorque_Ls_Id_Iq_pu_to_Nm_sf();
   gTorque_Flux_Iq_pu_to_Nm_sf = USER_computeTorque_Flux_Iq_pu_to_Nm_sf();
+
+
+  //***************************************************************************
+  //***********************ENTER MAIN CONTROL LOOP*****************************
+  //***************************************************************************
 
   for(;;)
   {
@@ -350,14 +326,6 @@ void main(void)
                     HAL_disablePwm(halHandle);
                     gMotorVars.Flag_Run_Identify = false;
                   }
-
-                if((CTRL_getFlag_enableUserMotorParams(ctrlHandle) == true) &&
-                  (ctrlState > CTRL_State_Idle) &&
-                  (gMotorVars.CtrlVersion.minor == 6))
-                  {
-                    // call this function to fix 1p6
-                    USER_softwareUpdate1p6(ctrlHandle);
-                  }
               }
           }
 
@@ -428,16 +396,10 @@ void main(void)
         // enable or disable power warp
         CTRL_setFlag_enablePowerWarp(ctrlHandle,gMotorVars.Flag_enablePowerWarp);
 
-#ifdef DRV8301_SPI
-        HAL_writeDrvData(halHandle,&gDrvSpi8301Vars);
-
-        HAL_readDrvData(halHandle,&gDrvSpi8301Vars);
-#endif
-#ifdef DRV8305_SPI
+        // DRV8305 comms
         HAL_writeDrvData(halHandle,&gDrvSpi8305Vars);
-
         HAL_readDrvData(halHandle,&gDrvSpi8305Vars);
-#endif
+
       } // end of while(gFlag_enableSys) loop
 
 
@@ -448,7 +410,7 @@ void main(void)
     CTRL_setParams(ctrlHandle,&gUserParams);
     gMotorVars.Flag_Run_Identify = false;
 
-  } // end of for(;;) loop
+  } // end of main for(;;) loop
 
 } // end of main() function
 
