@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "D:\\Motor Controller Research\\GitHub\\motor-controller\\PCBs\\RPM Sensor\\RPM Sensor.sch")
-    (date "01/28/20 16:25:13")
+    (date "2020-02-14 12:04:43 PM")
     (tool "Eeschema (5.1.5)-3")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -17,7 +17,7 @@
   (components
     (comp (ref U1)
       (value MAG_ENCODER_AEAT-8800-Q24)
-      (footprint Housings_DFN_QFN:QFN-24-1EP_4x4mm_Pitch0.5mm)
+      (footprint Housings_DFN_QFN:QFN-24-1EP_5x5mm_Pitch0.65mm)
       (fields
         (field (name Digikey) 516-3787-ND))
       (libsource (lib RPM_Sensor) (part MAG_ENCODER_AEAT-8800-Q24) (description ""))
