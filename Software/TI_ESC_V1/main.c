@@ -15,6 +15,7 @@
 
 // system includes
 #include <math.h>
+#include <stdio.h>
 
 #include "TI_ESC_V1/main.h"
 #include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
@@ -104,6 +105,38 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 
 // **************************************************************************
 // the functions
+
+
+//Function
+void sendOverUART(_iq data) {
+    //Initializations
+    int i = 0;
+    float data_f;
+
+    //Convert data from IQ to float
+    data_f = _IQtoF(data);
+
+    //Convert float to a char array
+    char buffer[20];
+    sprintf(buffer, "%f", data_f);
+
+    //Write all characters in array
+    while (buffer[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer[i]);
+
+        i++;
+    }
+
+    //Write Newline
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x000A);
+
+    //Write Carriage Return
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x000D);
+
+}
 
 
 void main(void)
@@ -251,25 +284,12 @@ void main(void)
     // loop while the enable system flag is true
     while(gMotorVars.Flag_enableSys)
       {
-        /*
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x0048);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x0065);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x006C);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x006C);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x006F);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x0021);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x000A);
-         while(!SCI_txReady(halHandle->sciAHandle));
-         SCI_write(halHandle->sciAHandle, 0x000D);
-         */
 
+        /***************TEST CODE*******************/
+        /*******************************************/
+        sendOverUART(gMotorVars.Speed_krpm);
+
+        /*******************************************/
 
         CTRL_Obj *obj = (CTRL_Obj *)ctrlHandle;
 
