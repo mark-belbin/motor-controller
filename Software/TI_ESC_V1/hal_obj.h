@@ -54,6 +54,7 @@
 #include "sw/drivers/timer/src/32b/f28x/f2802x/timer.h"
 #include "sw/drivers/wdog/src/32b/f28x/f2802x/wdog.h"
 #include "sw/drivers/drvic/drv8305/src/32b/f28x/f2802x/drv8305.h"
+#include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
 
 
 // modules
@@ -172,6 +173,8 @@ typedef struct _HAL_Obj_
 
   DRV8305_Handle drv8305Handle;   //!< the drv8305 interface handle
   DRV8305_Obj    drv8305;         //!< the drv8305 interface object
+
+  SCI_Handle    sciAHandle;       //!< the SCI handle
 
 } HAL_Obj;
 

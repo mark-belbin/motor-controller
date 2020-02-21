@@ -43,9 +43,9 @@
 // modules
 
 // platforms
-#include "hal.h"
-#include "user.h"
-#include "hal_obj.h"
+#include "TI_ESC_V1/hal.h"
+#include "TI_ESC_V1/user.h"
+#include "TI_ESC_V1/hal_obj.h"
 
 #ifdef FLASH
 #pragma CODE_SECTION(HAL_setupFlash,"ramfuncs");
@@ -671,6 +671,9 @@ HAL_Handle HAL_init(void *pMemory,const size_t numBytes)
   // initialize drv8305 interface
   obj->drv8305Handle = DRV8305_init(&obj->drv8305,sizeof(obj->drv8305));
 
+  // initialize the SCI handles
+  obj->sciAHandle = SCI_init((void *)SCIA_BASE_ADDR,sizeof(SCI_Obj));
+
   return(handle);
 } // end of HAL_init() function
 
@@ -755,6 +758,10 @@ void HAL_setParams(HAL_Handle handle,const USER_Params *pUserParams)
 
   // setup the spiA
   HAL_setupSpiA(handle);
+
+
+  // setup the sciA
+  HAL_setupSciA(handle);
 
 
   // setup the timers
@@ -1033,6 +1040,12 @@ void HAL_setupGpios(HAL_Handle handle)
   GPIO_setMode(obj->gpioHandle,GPIO_Number_36,GPIO_36_Mode_JTAG_TMS);
   GPIO_setMode(obj->gpioHandle,GPIO_Number_37,GPIO_37_Mode_JTAG_TDO);
   GPIO_setMode(obj->gpioHandle,GPIO_Number_38,GPIO_38_Mode_JTAG_TCK);
+
+  // UARTA RX
+  GPIO_setMode(obj->gpioHandle, GPIO_Number_28, GPIO_28_Mode_SCIRXDA);
+
+  // UARTA TX
+  GPIO_setMode(obj->gpioHandle, GPIO_Number_29, GPIO_29_Mode_SCITXDA);
 
   return;
 }  // end of HAL_setupGpios() function
@@ -1368,5 +1381,27 @@ void HAL_setDacParameters(HAL_Handle handle, HAL_DacData_t *pDacData)
 
 	return;
 }	//end of HAL_setDacParameters() function
+
+void HAL_setupSciA(HAL_Handle handle)
+{
+    HAL_Obj *obj = (HAL_Obj *)handle;
+
+    SCI_reset(obj->sciAHandle);
+    SCI_enableTx(obj->sciAHandle);
+    SCI_enableRx(obj->sciAHandle);
+
+    SCI_disableParity(obj->sciAHandle);
+    SCI_setNumStopBits(obj->sciAHandle, SCI_NumStopBits_One);
+    SCI_setCharLength(obj->sciAHandle, SCI_CharLength_8_Bits);
+
+    // set baud rate to 115200
+    SCI_setBaudRate(obj->sciAHandle,SCI_BaudRate_115_2_kBaud);
+    SCI_setPriority(obj->sciAHandle,SCI_Priority_FreeRun);
+
+    SCI_enable(obj->sciAHandle);
+
+    return;
+    //end of HAL_setupSciA() function
+}
 
 // end of file

@@ -1319,6 +1319,12 @@ void HAL_setupDrvSpi(HAL_Handle handle, DRV_SPI_8305_Vars_t *Spi_8305_Vars);
 //! \param[in] pDacData  The pointer to the DAC data
 void HAL_setDacParameters(HAL_Handle handle, HAL_DacData_t *pDacData);
 
+//! \brief     Sets up the SciA peripheral
+//! \param[in] handle    The hardware abstraction layer (HAL) handle
+extern void HAL_setupSciA(HAL_Handle handle);
+
+
+
 #ifdef __cplusplus
 }
 #endif // extern "C"

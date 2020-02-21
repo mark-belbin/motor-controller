@@ -15,8 +15,6 @@
 
 // system includes
 #include <math.h>
-#include <stdio.h>
-#include <file.h>
 
 #include "TI_ESC_V1/main.h"
 #include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
@@ -37,7 +35,6 @@
 // **************************************************************************
 // the globals
 
-SCI_Handle mySci;
 
 uint_least16_t gCounter_updateGlobals = 0;
 
@@ -111,6 +108,7 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 
 void main(void)
 {
+
   uint_least8_t estNumber = 0;
 
   // Only used if running from FLASH
@@ -240,8 +238,10 @@ void main(void)
   //***********************ENTER MAIN CONTROL LOOP*****************************
   //***************************************************************************
 
+
   for(;;)
   {
+
     // Waiting for enable system flag to be set
     while(!(gMotorVars.Flag_enableSys));
 
@@ -251,6 +251,26 @@ void main(void)
     // loop while the enable system flag is true
     while(gMotorVars.Flag_enableSys)
       {
+        /*
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x0048);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x0065);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x006C);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x006C);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x006F);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x0021);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x000A);
+         while(!SCI_txReady(halHandle->sciAHandle));
+         SCI_write(halHandle->sciAHandle, 0x000D);
+         */
+
+
         CTRL_Obj *obj = (CTRL_Obj *)ctrlHandle;
 
         // increment counters
