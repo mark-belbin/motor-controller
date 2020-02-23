@@ -45,7 +45,7 @@
 #include "sw/drivers/flash/src/32b/f28x/f2802x/flash.h"
 #include "sw/drivers/gpio/src/32b/f28x/f2802x/gpio.h"
 #include "sw/drivers/osc/src/32b/f28x/f2802x/osc.h"
-#include "sw/drivers/pie/src/32b/f28x/f2802x/pie.h"
+#include "TI_ESC_V1/pie.h"
 #include "sw/drivers/pll/src/32b/f28x/f2802x/pll.h"
 #include "sw/drivers/pwm/src/32b/f28x/f2802x/pwm.h"
 #include "sw/drivers/pwmdac/src/32b/f28x/f2802x/pwmdac.h"

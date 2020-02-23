@@ -107,7 +107,7 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 // the functions
 
 
-//Function
+//Function that sends an IQ value over UART, formatted for PUTTY
 void sendOverUART(_iq data) {
     //Initializations
     int i = 0;
@@ -141,6 +141,9 @@ void sendOverUART(_iq data) {
 
 void main(void)
 {
+
+  //Use calculated offset values
+  gMotorVars.Flag_enableOffsetcalc = false;
 
   uint_least8_t estNumber = 0;
 

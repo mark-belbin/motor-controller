@@ -202,11 +202,6 @@
 			<locationURI>MW_INSTALL_DIR/sw/modules/pid/src/32b/pid.c</locationURI>
 		</link>
 		<link>
-			<name>pie.c</name>
-			<type>1</type>
-			<locationURI>MW_INSTALL_DIR/sw/drivers/pie/src/32b/f28x/f2802x/pie.c</locationURI>
-		</link>
-		<link>
 			<name>pll.c</name>
 			<type>1</type>
 			<locationURI>MW_INSTALL_DIR/sw/drivers/pll/src/32b/f28x/f2802x/pll.c</locationURI>
