@@ -53,7 +53,7 @@
 #include "sw/drivers/spi/src/32b/f28x/f2802x/spi.h"
 #include "sw/drivers/timer/src/32b/f28x/f2802x/timer.h"
 #include "sw/drivers/wdog/src/32b/f28x/f2802x/wdog.h"
-#include "sw/drivers/drvic/drv8305/src/32b/f28x/f2802x/drv8305.h"
+#include "TI_ESC_V1/drv8305.h"
 #include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
 
 

@@ -142,11 +142,6 @@
 			<locationURI>MW_INSTALL_DIR/sw/modules/ctrl/src/32b/ctrl.c</locationURI>
 		</link>
 		<link>
-			<name>drv8305.c</name>
-			<type>1</type>
-			<locationURI>MW_INSTALL_DIR/sw/drivers/drvic/drv8305/src/32b/f28x/f2802x/drv8305.c</locationURI>
-		</link>
-		<link>
 			<name>fast_public.lib</name>
 			<type>1</type>
 			<locationURI>MW_INSTALL_DIR/sw/modules/fast/lib/32b/f28x/f2802x/fast_public.lib</locationURI>
