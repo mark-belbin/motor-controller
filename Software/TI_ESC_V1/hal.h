@@ -47,7 +47,7 @@
 
 
 // platforms
-#include "hal_obj.h"
+#include "TI_ESC_V1/hal_obj.h"
 #include "sw/modules/svgen/src/32b/svgen_current.h"
 
 
@@ -164,6 +164,8 @@ typedef enum
 
 extern interrupt void mainISR(void);
 
+extern interrupt void timer0ISR(void);
+
 
 // **************************************************************************
 // the function prototypes
@@ -211,6 +213,22 @@ static inline void HAL_acqPwmInt(HAL_Handle handle,const PWM_Number_e pwmNumber)
 
   return;
 } // end of HAL_acqPwmInt() function
+
+//! \brief      Acknowledges an interrupt from Timer0 so that another Timer0 interrupt can occur
+//! \param[in]  handle  The hardware abstraction layer (HAL) handle
+static inline void HAL_acqTimer0Int(HAL_Handle handle)
+{
+    HAL_Obj *obj = (HAL_Obj *)handle;
+
+    // clear the Timer0 interrupt flag
+    TIMER_clearFlag(obj->timerHandle[0]);
+
+    // Acknowledge interrupt from PIE group 1
+    PIE_clearInt(obj->pieHandle, PIE_GroupNumber_1);
+
+    return;
+} // end of the HAL_acqTimer0Int() function
+
 
 
 //! \brief      Executes calibration routines
@@ -464,7 +482,7 @@ extern HAL_Handle HAL_init(void *pMemory,const size_t numBytes);
 
 
 //! \brief      Initializes the interrupt vector table
-//! \details    Points the ISR to the function mainISR.
+//! \details    Points the TINT0 to timer0ISR and ADCINT1 to mainISR
 //! \param[in]  handle  The hardware abstraction layer (HAL) handle
 static inline void HAL_initIntVectorTable(HAL_Handle handle)
  {
@@ -475,6 +493,8 @@ static inline void HAL_initIntVectorTable(HAL_Handle handle)
   ENABLE_PROTECTED_REGISTER_WRITE_MODE;
 
   pie->ADCINT1 = &mainISR;
+
+  pie->TINT0 = &timer0ISR;
 
   DISABLE_PROTECTED_REGISTER_WRITE_MODE;
 
@@ -1322,6 +1342,10 @@ void HAL_setDacParameters(HAL_Handle handle, HAL_DacData_t *pDacData);
 //! \brief     Sets up the SciA peripheral
 //! \param[in] handle    The hardware abstraction layer (HAL) handle
 extern void HAL_setupSciA(HAL_Handle handle);
+
+//! \brief     Enables the Timer0 interrupt
+//! \param[in] handle    The hardware abstraction layer (HAL) handle
+extern void HAL_enableTimer0Int(HAL_Handle handle);
 
 
 

@@ -36,6 +36,10 @@
 // **************************************************************************
 // the globals
 
+bool gFirst = true;
+uint32_t gOldTimer2 = 0;
+uint32_t gNewTimer2 = 0;
+double gTime = 0.0;
 
 uint_least16_t gCounter_updateGlobals = 0;
 
@@ -106,9 +110,47 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 // **************************************************************************
 // the functions
 
+//Function that sends the CSV header over UART to PuTTy
+void sendCSVHeader() {
+    int i = 0;
+    char title1[] = {'A','c','t','u','a','l','_','R','P','M', 0};
+    char title2[] = {'T','i','m','e', 0};
+
+    //Write all characters in array
+    while (title1[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, title1[i]);
+        i++;
+    }
+
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+
+    //Write all characters in title2 array
+    i = 0;
+    while (title2[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, title2[i]);
+        i++;
+    }
+
+
+    //Write Newline
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x000A);
+
+    //Write Carriage Return
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x000D);
+
+    return;
+}
 
 //Function that sends an IQ value over UART, formatted for PUTTY
-void sendOverUART(_iq data) {
+//Also Formatted for CSV, adds a timestamp feature using Timer2
+void sendCSV(_iq data) {
     //Initializations
     int i = 0;
     float data_f;
@@ -124,7 +166,34 @@ void sendOverUART(_iq data) {
     while (buffer[i] != 0) {
         while(!SCI_txReady(halHandle->sciAHandle));
         SCI_write(halHandle->sciAHandle, buffer[i]);
+        i++;
+    }
 
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    // Calculate TimeStamp
+    if (gFirst) {
+      gOldTimer2 = halHandle->timerHandle[2]->TIM;
+      gFirst = false;
+    }
+    else {
+      gNewTimer2 = halHandle->timerHandle[2]->TIM;
+      gTime += (double)(gOldTimer2-gNewTimer2)/(60E6);
+      gOldTimer2 = gNewTimer2;
+    }
+
+
+    //Convert uint32 timer value to char buffer
+    char buffer2[50];
+    sprintf(buffer2, "%f", gTime);
+
+    //Write all characters in array
+    i=0;
+    while (buffer2[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer2[i]);
         i++;
     }
 
@@ -136,12 +205,12 @@ void sendOverUART(_iq data) {
     while(!SCI_txReady(halHandle->sciAHandle));
     SCI_write(halHandle->sciAHandle, 0x000D);
 
+    return;
 }
 
 
 void main(void)
 {
-
   //Use calculated offset values
   gMotorVars.Flag_enableOffsetcalc = false;
 
@@ -239,16 +308,17 @@ void main(void)
   // initialize the interrupt vector table
   HAL_initIntVectorTable(halHandle);
 
-
   // enable the ADC interrupts
   HAL_enableAdcInts(halHandle);
-
 
   // enable global interrupts
   HAL_enableGlobalInts(halHandle);
 
   // enable debug interrupts
   HAL_enableDebugInt(halHandle);
+
+  // enable the Timer0 interrupts
+  //HAL_enableTimer0Int(halHandle);
 
   // disable the PWM
   HAL_disablePwm(halHandle);
@@ -268,6 +338,9 @@ void main(void)
   gFlux_pu_to_VpHz_sf = USER_computeFlux_pu_to_VpHz_sf();
   gTorque_Ls_Id_Iq_pu_to_Nm_sf = USER_computeTorque_Ls_Id_Iq_pu_to_Nm_sf();
   gTorque_Flux_Iq_pu_to_Nm_sf = USER_computeTorque_Flux_Iq_pu_to_Nm_sf();
+
+  //Send the header for proper CSV PuTTy logging
+  sendCSVHeader();
 
 
   //***************************************************************************
@@ -290,7 +363,8 @@ void main(void)
 
         /***************TEST CODE*******************/
         /*******************************************/
-        sendOverUART(gMotorVars.Speed_krpm);
+
+        sendCSV(gMotorVars.Speed_krpm);
 
         /*******************************************/
 
@@ -521,6 +595,16 @@ interrupt void mainISR(void)
 
   return;
 } // end of mainISR() function
+
+interrupt void timer0ISR(void)
+{
+    // acknowledge the Timer 0 interrupt
+    HAL_acqTimer0Int(halHandle);
+
+    //sendOverUART(_IQ(2.0));
+
+
+} // end of timer0ISR() function
 
 
 void updateGlobalVariables_motor(CTRL_Handle handle)
