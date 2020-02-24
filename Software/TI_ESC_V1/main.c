@@ -113,8 +113,9 @@ _iq gTorque_Flux_Iq_pu_to_Nm_sf;
 //Function that sends the CSV header over UART to PuTTy
 void sendCSVHeader() {
     int i = 0;
-    char title1[] = {'A','c','t','u','a','l','_','R','P','M', 0};
-    char title2[] = {'T','i','m','e', 0};
+    char title1[] = {'T','i','m','e', 0};
+    char title2[] = {'S','e','t','_','R','P','M', 0};
+    char title3[] = {'A','c','t','u','a','l','_','R','P','M', 0};
 
     //Write all characters in array
     while (title1[i] != 0) {
@@ -127,7 +128,6 @@ void sendCSVHeader() {
     while(!SCI_txReady(halHandle->sciAHandle));
     SCI_write(halHandle->sciAHandle, 0x002C);
 
-
     //Write all characters in title2 array
     i = 0;
     while (title2[i] != 0) {
@@ -136,6 +136,17 @@ void sendCSVHeader() {
         i++;
     }
 
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Write all characters in title2 array
+    i = 0;
+    while (title3[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, title3[i]);
+        i++;
+    }
 
     //Write Newline
     while(!SCI_txReady(halHandle->sciAHandle));
@@ -150,28 +161,12 @@ void sendCSVHeader() {
 
 //Function that sends an IQ value over UART, formatted for PUTTY
 //Also Formatted for CSV, adds a timestamp feature using Timer2
-void sendCSV(_iq data) {
+void sendCSV(_iq data1, _iq data2) {
     //Initializations
     int i = 0;
-    float data_f;
-
-    //Convert data from IQ to float
-    data_f = _IQtoF(data);
-
-    //Convert float to a char array
-    char buffer[20];
-    sprintf(buffer, "%f", data_f);
-
-    //Write all characters in array
-    while (buffer[i] != 0) {
-        while(!SCI_txReady(halHandle->sciAHandle));
-        SCI_write(halHandle->sciAHandle, buffer[i]);
-        i++;
-    }
-
-    //Write Comma
-    while(!SCI_txReady(halHandle->sciAHandle));
-    SCI_write(halHandle->sciAHandle, 0x002C);
+    float data_f1;
+    float data_f2;
+    char buffer[50];
 
     // Calculate TimeStamp
     if (gFirst) {
@@ -184,16 +179,51 @@ void sendCSV(_iq data) {
       gOldTimer2 = gNewTimer2;
     }
 
-
     //Convert uint32 timer value to char buffer
-    char buffer2[50];
-    sprintf(buffer2, "%f", gTime);
+    sprintf(buffer, "%f", gTime);
 
     //Write all characters in array
-    i=0;
-    while (buffer2[i] != 0) {
+    while (buffer[i] != 0) {
         while(!SCI_txReady(halHandle->sciAHandle));
-        SCI_write(halHandle->sciAHandle, buffer2[i]);
+        SCI_write(halHandle->sciAHandle, buffer[i]);
+        i++;
+    }
+
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Convert data from IQ to float
+    data_f1 = _IQtoF(data1);
+
+    //Convert float to a char array
+    memset(buffer, 0, 50);
+    sprintf(buffer, "%f", data_f1);
+
+    //Write all characters in array
+    i = 0;
+    while (buffer[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer[i]);
+        i++;
+    }
+
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Convert data from IQ to float
+    data_f2 = _IQtoF(data2);
+
+    //Convert float to a char array
+    memset(buffer, 0, 50);
+    sprintf(buffer, "%f", data_f2);
+
+    //Write all characters in array
+    i = 0;
+    while (buffer[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer[i]);
         i++;
     }
 
@@ -364,7 +394,7 @@ void main(void)
         /***************TEST CODE*******************/
         /*******************************************/
 
-        sendCSV(gMotorVars.Speed_krpm);
+        sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm);
 
         /*******************************************/
 
