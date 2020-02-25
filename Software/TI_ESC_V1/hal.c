@@ -1017,22 +1017,21 @@ void HAL_setupGpios(HAL_Handle handle)
   // SPI_CLK
   GPIO_setMode(obj->gpioHandle,GPIO_Number_18,GPIO_18_Mode_SPICLKA);
 
-  // SPI_SCS
-  GPIO_setMode(obj->gpioHandle,GPIO_Number_19,GPIO_19_Mode_SPISTEA_NOT);
+  // SPI_SCS_DRV8305
+  GPIO_setMode(obj->gpioHandle,GPIO_Number_19,GPIO_19_Mode_GeneralPurpose);
+  GPIO_setHigh(obj->gpioHandle,GPIO_Number_19);
+  GPIO_setDirection(obj->gpioHandle,GPIO_Number_19,GPIO_Direction_Output);
+
+  // SPI_SCS_MCP2515
+  GPIO_setMode(obj->gpioHandle,GPIO_Number_32,GPIO_32_Mode_GeneralPurpose);
+  GPIO_setHigh(obj->gpioHandle,GPIO_Number_32);
+  GPIO_setDirection(obj->gpioHandle,GPIO_Number_32,GPIO_Direction_Output);
 
   // nFAULT
   GPIO_setMode(obj->gpioHandle,GPIO_Number_28,GPIO_28_Mode_TZ2_NOT);
 
-  // No connection (TX)
-  GPIO_setMode(obj->gpioHandle,GPIO_Number_29,GPIO_29_Mode_GeneralPurpose);
-
-  // SPI_SDI if JP5 is soldered, No Connection if JP5 is not soldered
-  GPIO_setMode(obj->gpioHandle,GPIO_Number_32,GPIO_32_Mode_GeneralPurpose);
-
-  // SPI_SDO if JP7 is soldered, No Connection if JP7 is not soldered
-  GPIO_setMode(obj->gpioHandle,GPIO_Number_33,GPIO_33_Mode_GeneralPurpose);
-
   // No Connection
+  GPIO_setMode(obj->gpioHandle,GPIO_Number_33,GPIO_33_Mode_GeneralPurpose);
   GPIO_setMode(obj->gpioHandle,GPIO_Number_34,GPIO_34_Mode_GeneralPurpose);
 
   // JTAG

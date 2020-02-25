@@ -1099,6 +1099,9 @@ uint16_t DRV8305_readSpi(DRV8305_Handle handle,const DRV8305_Address_e regAddr)
   static volatile uint16_t WaitTimeOut = 0;
   volatile SPI_FifoStatus_e RxFifoCnt = SPI_FifoStatus_Empty;
 
+  //Set CS to Low
+  GPIO_setLow(obj->gpioHandle,GPIO_Number_19);
+
   // build the control word
   ctrlWord = (uint16_t)DRV8305_buildCtrlWord(CtrlMode_Read,regAddr,data);
 
@@ -1122,6 +1125,9 @@ uint16_t DRV8305_readSpi(DRV8305_Handle handle,const DRV8305_Address_e regAddr)
   // Read the word
   readWord = SPI_readEmu(obj->spiHandle);
 
+  //Set CS to High
+  GPIO_setHigh(obj->gpioHandle,GPIO_Number_19);
+
   return(readWord & DRV8305_DATA_MASK);
 } // end of DRV8305_readSpi() function
 
@@ -1131,6 +1137,9 @@ void DRV8305_writeSpi(DRV8305_Handle handle,const DRV8305_Address_e regAddr,cons
   DRV8305_Obj *obj = (DRV8305_Obj *)handle;
   uint16_t ctrlWord;
   uint16_t n;
+
+  //Set CS to Low
+  GPIO_setLow(obj->gpioHandle,GPIO_Number_19);
 
   // build the control word
   ctrlWord = (uint16_t)DRV8305_buildCtrlWord(CtrlMode_Write,regAddr,data);
@@ -1145,6 +1154,9 @@ void DRV8305_writeSpi(DRV8305_Handle handle,const DRV8305_Address_e regAddr,cons
   // wait for registers to update
   for(n=0;n<0xf;n++)
     asm(" NOP");
+
+  //Set CS to High
+  GPIO_setHigh(obj->gpioHandle,GPIO_Number_19);
 
   return;
 }  // end of DRV8305_writeSpi() function
