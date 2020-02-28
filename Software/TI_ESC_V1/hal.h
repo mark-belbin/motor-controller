@@ -657,6 +657,11 @@ static inline void HAL_reloadTimer(HAL_Handle handle,const uint_least8_t timerNu
 void HAL_setupGate(HAL_Handle handle);
 
 
+//! \brief     Sets up the MCP2515 object
+//! \param[in] handle       The hardware abstraction layer (HAL) handle
+void HAL_setupMCP2515(HAL_Handle handle);
+
+
 //! \brief     Starts the timer
 //! \param[in] handle       The hardware abstraction layer (HAL) handle
 //! \param[in] timerNumber  The timer number, 0,1 or 2

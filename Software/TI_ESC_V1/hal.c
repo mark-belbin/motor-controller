@@ -671,6 +671,9 @@ HAL_Handle HAL_init(void *pMemory,const size_t numBytes)
   // initialize drv8305 interface
   obj->drv8305Handle = DRV8305_init(&obj->drv8305,sizeof(obj->drv8305));
 
+  // initialize mcp2515 interface
+  obj->mcp2515Handle = MCP2515_init(&obj->mcp2515,sizeof(obj->mcp2515));
+
   // initialize the SCI handles
   obj->sciAHandle = SCI_init((void *)SCIA_BASE_ADDR,sizeof(SCI_Obj));
 
@@ -771,6 +774,9 @@ void HAL_setParams(HAL_Handle handle,const USER_Params *pUserParams)
 
   // setup the drv8305 interface
   HAL_setupGate(handle);
+
+  // setup the drv8305 interface
+  HAL_setupMCP2515(handle);
 
 
   // set the default current bias
@@ -969,6 +975,16 @@ void HAL_setupGate(HAL_Handle handle)
   DRV8305_setSpiHandle(obj->drv8305Handle,obj->spiAHandle);
   DRV8305_setGpioHandle(obj->drv8305Handle,obj->gpioHandle);
   DRV8305_setGpioNumber(obj->drv8305Handle,GPIO_Number_6);
+} // HAL_setupGate() function
+
+
+void HAL_setupMCP2515(HAL_Handle handle)
+{
+  HAL_Obj *obj = (HAL_Obj *)handle;
+
+  MCP2515_setSpiHandle(obj->mcp2515Handle,obj->spiAHandle);
+  MCP2515_setGpioHandle(obj->mcp2515Handle,obj->gpioHandle);
+  MCP2515_setGpioNumber(obj->mcp2515Handle,GPIO_Number_32);
 } // HAL_setupGate() function
 
 

@@ -54,6 +54,7 @@
 #include "sw/drivers/timer/src/32b/f28x/f2802x/timer.h"
 #include "sw/drivers/wdog/src/32b/f28x/f2802x/wdog.h"
 #include "TI_ESC_V1/drv8305.h"
+#include "TI_ESC_V1/mcp2515.h"
 #include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
 
 
@@ -173,6 +174,9 @@ typedef struct _HAL_Obj_
 
   DRV8305_Handle drv8305Handle;   //!< the drv8305 interface handle
   DRV8305_Obj    drv8305;         //!< the drv8305 interface object
+
+  MCP2515_Handle mcp2515Handle;   //!< the mcp2515 interface handle
+  MCP2515_Obj    mcp2515;         //!< the mcp2515 interface object
 
   SCI_Handle    sciAHandle;       //!< the SCI handle
 
