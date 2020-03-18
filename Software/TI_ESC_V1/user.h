@@ -573,10 +573,10 @@ extern "C" {
 #define USER_MOTOR_TYPE                 MOTOR_Type_Pm
 #define USER_MOTOR_NUM_POLE_PAIRS       (7)
 #define USER_MOTOR_Rr                   (NULL)
-#define USER_MOTOR_Rs                   (0.10077)
-#define USER_MOTOR_Ls_d                 (0.000038826)
-#define USER_MOTOR_Ls_q                 (0.000038826)
-#define USER_MOTOR_RATED_FLUX           (0.009825)
+#define USER_MOTOR_Rs                   (0.14548515)
+#define USER_MOTOR_Ls_d                 (0.000041379)
+#define USER_MOTOR_Ls_q                 (0.000041379)
+#define USER_MOTOR_RATED_FLUX           (0.0105808)
 #define USER_MOTOR_MAGNETIZING_CURRENT  (NULL)
 #define USER_MOTOR_RES_EST_CURRENT      (4.0)
 #define USER_MOTOR_IND_EST_CURRENT      (-2.0) //Was -3

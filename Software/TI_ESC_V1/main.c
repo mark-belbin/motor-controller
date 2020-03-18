@@ -41,6 +41,8 @@ uint32_t gOldTimer2 = 0;
 uint32_t gNewTimer2 = 0;
 double gTime = 0.0;
 
+bool gEnableUART = false;
+
 uint_least16_t gCounter_updateGlobals = 0;
 
 bool Flag_Latch_softwareUpdate = true;
@@ -377,6 +379,8 @@ void main(void)
   //***********************ENTER MAIN CONTROL LOOP*****************************
   //***************************************************************************
 
+  gMotorVars.Flag_enableSys = true;
+  gMotorVars.Flag_Run_Identify = true;
 
   for(;;)
   {
@@ -394,7 +398,7 @@ void main(void)
         /***************TEST CODE*******************/
         /*******************************************/
 
-        sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm);
+        if (gEnableUART) sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm);
 
         /*******************************************/
 
