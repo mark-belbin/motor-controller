@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name Thruster_Controller)(type Legacy)(uri ${KIPRJMOD}/Thruster_Controller.lib)(options "")(descr ""))
+  (lib (name ESC_at_Work)(type Legacy)(uri "${KIPRJMOD}/ESC at Work.lib")(options "")(descr ""))
+  (lib (name ESC_Drivetrain_V1)(type Legacy)(uri "${KIPRJMOD}/ESC Drivetrain V1.lib")(options "")(descr ""))
+  (lib (name Thruster_Controller-rescue)(type Legacy)(uri ${KIPRJMOD}/Thruster_Controller-rescue.lib)(options "")(descr ""))
+)
