@@ -87,18 +87,6 @@ F 3 "" H 5015 7285 50  0001 C CNN
 $EndComp
 Text Notes 2260 5050 0    79   Italic 16
 3.3V Regulator
-$Comp
-L Connector_Generic:Conn_01x02 J7
-U 1 1 5E5819AC
-P 965 5235
-F 0 "J7" H 965 5010 50  0000 C CNN
-F 1 "PWRIN" H 890 5385 50  0001 C CNN
-F 2 "MCU_Powertrain:AMASS_XT60-M" H 965 5235 50  0001 C CNN
-F 3 "~" H 965 5235 50  0001 C CNN
-F 4 "" H 965 5235 50  0001 C CNN "Digikey"
-	1    965  5235
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	1365 5085 1365 5135
 Wire Wire Line
@@ -115,20 +103,20 @@ F 3 "" H 1365 5085 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1165 5235 1365 5235
+	1165 5260 1365 5260
 Wire Wire Line
-	1365 5235 1365 5285
+	1365 5260 1365 5310
 $Comp
 L power:GND #PWR?
 U 1 1 5E585248
-P 1365 5285
+P 1365 5310
 AR Path="/5E20A2BB/5E585248" Ref="#PWR?"  Part="1" 
 AR Path="/5E585248" Ref="#PWR0111"  Part="1" 
-F 0 "#PWR0111" H 1365 5035 50  0001 C CNN
-F 1 "GND" H 1515 5210 50  0000 C CNN
-F 2 "" H 1365 5285 50  0001 C CNN
-F 3 "" H 1365 5285 50  0001 C CNN
-	1    1365 5285
+F 0 "#PWR0111" H 1365 5060 50  0001 C CNN
+F 1 "GND" H 1515 5235 50  0000 C CNN
+F 2 "" H 1365 5310 50  0001 C CNN
+F 3 "" H 1365 5310 50  0001 C CNN
+	1    1365 5310
 	1    0    0    -1  
 $EndComp
 Text Notes 1465 5085 0    50   Italic 10
@@ -1236,5 +1224,27 @@ F 2 "" H 4615 6460 50  0001 C CNN
 F 3 "" H 4615 6460 50  0001 C CNN
 	1    4615 6460
 	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 5EED2A54
+P 965 5135
+F 0 "J?" H 1130 5140 50  0000 C CNN
+F 1 "Conn_01x01" H 883 5001 50  0001 C CNN
+F 2 "" H 965 5135 50  0001 C CNN
+F 3 "~" H 965 5135 50  0001 C CNN
+	1    965  5135
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 5EED568B
+P 965 5260
+F 0 "J?" H 1135 5265 50  0000 C CNN
+F 1 "Conn_01x01" H 883 5126 50  0001 C CNN
+F 2 "" H 965 5260 50  0001 C CNN
+F 3 "~" H 965 5260 50  0001 C CNN
+	1    965  5260
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
