@@ -379,8 +379,8 @@ void main(void)
   //***********************ENTER MAIN CONTROL LOOP*****************************
   //***************************************************************************
 
-  gMotorVars.Flag_enableSys = true;
-  gMotorVars.Flag_Run_Identify = true;
+  //gMotorVars.Flag_enableSys = true;
+  //gMotorVars.Flag_Run_Identify = true;
 
   for(;;)
   {

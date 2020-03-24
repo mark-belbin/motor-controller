@@ -362,23 +362,9 @@ extern "C" {
 //! \brief Uncomment the motor which should be included at compile
 //! \brief These motor ID settings and motor parameters are then available to be used by the control system
 //! \brief Once your ideal settings and parameters are identified update the motor section here so it is available in the binary code
-//#define USER_MOTOR Estun_EMJ_04APB22
-#define USER_MOTOR Big_Test_Motor
-//#define USER_MOTOR hobby_3p5T
-//#define USER_MOTOR hobby_4p5T
-//#define USER_MOTOR My_Motor
-//#define USER_MOTOR small_hobby
-//#define USER_MOTOR Belt_Drive_Washer_IPM
-//#define USER_MOTOR Marathon_5K33GN2A
-//#define USER_MOTOR teknic_2310P
-//#define USER_MOTOR hobbywing_ezrun_8p5T
-//#define USER_MOTOR eflite_helicopter_420
-//#define USER_MOTOR Bodine_34B3FEBL
-//#define USER_MOTOR Pittman_elcom_5233B599
-//#define USER_MOTOR medical_instrument
-//#define USER_MOTOR Test_Motor
-//#define USER_MOTOR Kinetek_YDQ1p3_4
-//#define USER_MOTOR LPKF_CAD_CAM
+
+#define USER_MOTOR BRT200
+
 
 
 #if (USER_MOTOR == Estun_EMJ_04APB22)                  // Name must match the motor #define
@@ -573,10 +559,10 @@ extern "C" {
 #define USER_MOTOR_TYPE                 MOTOR_Type_Pm
 #define USER_MOTOR_NUM_POLE_PAIRS       (7)
 #define USER_MOTOR_Rr                   (NULL)
-#define USER_MOTOR_Rs                   (0.14548515)
-#define USER_MOTOR_Ls_d                 (0.000041379)
-#define USER_MOTOR_Ls_q                 (0.000041379)
-#define USER_MOTOR_RATED_FLUX           (0.0105808)
+#define USER_MOTOR_Rs                   (0.133840173)
+#define USER_MOTOR_Ls_d                 (0.000037976)
+#define USER_MOTOR_Ls_q                 (0.000037976)
+#define USER_MOTOR_RATED_FLUX           (0.009744111)
 #define USER_MOTOR_MAGNETIZING_CURRENT  (NULL)
 #define USER_MOTOR_RES_EST_CURRENT      (4.0)
 #define USER_MOTOR_IND_EST_CURRENT      (-2.0) //Was -3
