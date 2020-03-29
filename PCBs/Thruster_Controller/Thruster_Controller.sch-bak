@@ -19,7 +19,7 @@ Text Notes 8025 2350 0    118  Italic 24
 Powertrain
 Text Notes 650  4080 0    118  Italic 24
 Power Input and Conversion
-Text Notes 780  1985 0    118  Italic 24
+Text Notes 810  1705 0    118  Italic 24
 Programming
 Text Notes 7210 3695 0    118  Italic 24
 CAN
@@ -69,7 +69,7 @@ AR Path="/5E20A2BB/5E5B11C6" Ref="J?"  Part="1"
 AR Path="/5E5B11C6" Ref="J1"  Part="1" 
 F 0 "J1" H 10680 2042 50  0000 L CNN
 F 1 "PHASE_A" H 10680 1951 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2000 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2000 50  0001 C CNN
 F 3 "~" H 10600 2000 50  0001 C CNN
 	1    10600 2000
 	1    0    0    -1  
@@ -82,7 +82,7 @@ AR Path="/5E20A2BB/5E5B11CC" Ref="J?"  Part="1"
 AR Path="/5E5B11CC" Ref="J2"  Part="1" 
 F 0 "J2" H 10680 2267 50  0000 L CNN
 F 1 "PHASE_B" H 10680 2176 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2225 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2225 50  0001 C CNN
 F 3 "~" H 10600 2225 50  0001 C CNN
 	1    10600 2225
 	1    0    0    -1  
@@ -95,7 +95,7 @@ AR Path="/5E20A2BB/5E5B11D2" Ref="J?"  Part="1"
 AR Path="/5E5B11D2" Ref="J3"  Part="1" 
 F 0 "J3" H 10680 2492 50  0000 L CNN
 F 1 "PHASE_C" H 10680 2401 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2450 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2450 50  0001 C CNN
 F 3 "~" H 10600 2450 50  0001 C CNN
 	1    10600 2450
 	1    0    0    -1  
@@ -197,10 +197,6 @@ F 3 "" H 950 2200 50  0001 C CNN
 $EndComp
 Text Label 875  2375 0    50   ~ 0
 GPIO28
-Wire Wire Line
-	875  2375 1150 2375
-Wire Wire Line
-	875  2475 1150 2475
 Text Label 875  2475 0    50   ~ 0
 GPIO29
 Text Label 1900 2275 2    50   ~ 0
@@ -213,14 +209,6 @@ Text Label 1900 2575 2    50   ~ 0
 TDI
 Text Label 1900 2675 2    50   ~ 0
 TRST
-Wire Wire Line
-	3500 2050 3175 2050
-Wire Wire Line
-	3500 1950 3175 1950
-Text Label 3175 1950 0    50   ~ 0
-GPIO28
-Text Label 3175 2050 0    50   ~ 0
-GPIO29
 Wire Wire Line
 	6450 3000 6550 3000
 Wire Wire Line
@@ -1454,4 +1442,16 @@ F 4 "160-1446-1-ND" V 3655 6275 50  0001 C CNN "Digikey"
 	1    3655 6275
 	0    -1   -1   0   
 $EndComp
+Wire Wire Line
+	815  1950 815  2375
+Wire Wire Line
+	815  2375 1150 2375
+Wire Wire Line
+	815  1950 3500 1950
+Wire Wire Line
+	725  2475 725  2050
+Wire Wire Line
+	725  2475 1150 2475
+Wire Wire Line
+	725  2050 3500 2050
 $EndSCHEMATC

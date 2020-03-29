@@ -69,7 +69,7 @@ AR Path="/5E20A2BB/5E5B11C6" Ref="J?"  Part="1"
 AR Path="/5E5B11C6" Ref="J1"  Part="1" 
 F 0 "J1" H 10680 2042 50  0000 L CNN
 F 1 "PHASE_A" H 10680 1951 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2000 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2000 50  0001 C CNN
 F 3 "~" H 10600 2000 50  0001 C CNN
 	1    10600 2000
 	1    0    0    -1  
@@ -82,7 +82,7 @@ AR Path="/5E20A2BB/5E5B11CC" Ref="J?"  Part="1"
 AR Path="/5E5B11CC" Ref="J2"  Part="1" 
 F 0 "J2" H 10680 2267 50  0000 L CNN
 F 1 "PHASE_B" H 10680 2176 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2225 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2225 50  0001 C CNN
 F 3 "~" H 10600 2225 50  0001 C CNN
 	1    10600 2225
 	1    0    0    -1  
@@ -95,7 +95,7 @@ AR Path="/5E20A2BB/5E5B11D2" Ref="J?"  Part="1"
 AR Path="/5E5B11D2" Ref="J3"  Part="1" 
 F 0 "J3" H 10680 2492 50  0000 L CNN
 F 1 "PHASE_C" H 10680 2401 50  0000 L CNN
-F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2450 50  0001 C CNN
+F 2 "Thruster_Controller:Phase_Pad" H 10600 2450 50  0001 C CNN
 F 3 "~" H 10600 2450 50  0001 C CNN
 	1    10600 2450
 	1    0    0    -1  
@@ -1077,7 +1077,7 @@ U 1 1 5EED2A54
 P 1125 4485
 F 0 "J7" H 1290 4490 50  0000 C CNN
 F 1 "Conn_01x01" H 1043 4351 50  0001 C CNN
-F 2 "" H 1125 4485 50  0001 C CNN
+F 2 "Thruster_Controller:Bus_Pad" H 1125 4485 50  0001 C CNN
 F 3 "~" H 1125 4485 50  0001 C CNN
 	1    1125 4485
 	-1   0    0    1   
@@ -1088,7 +1088,7 @@ U 1 1 5EED568B
 P 1125 4610
 F 0 "J8" H 1295 4615 50  0000 C CNN
 F 1 "Conn_01x01" H 1043 4476 50  0001 C CNN
-F 2 "" H 1125 4610 50  0001 C CNN
+F 2 "Thruster_Controller:Bus_Pad" H 1125 4610 50  0001 C CNN
 F 3 "~" H 1125 4610 50  0001 C CNN
 	1    1125 4610
 	-1   0    0    1   
