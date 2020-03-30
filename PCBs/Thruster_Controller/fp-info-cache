@@ -1,4 +1,4 @@
-919491572841353
+921083387237501
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -53037,8 +53037,8 @@ Bus_Pad
 
 
 0
-0
-0
+1
+1
 Thruster_Controller
 DRV8305
 48-Lead Thin Quad Flatpack (PT) - 7x7x1.0 mm Body [TQFP] With Exposed Pad (see Microchip Packaging Specification 00000049BS.pdf)
@@ -53053,6 +53053,13 @@ Eaton_Inductor
 0
 2
 2
+Thruster_Controller
+MountingHole_M2
+Mounting Hole 2.2mm, no annular, M2
+mounting hole 2.2mm no annular m2
+0
+0
+0
 Thruster_Controller
 NetTie-2_SMD_5mil
 Net tie, 2 pin, 0.5mm square SMD pads

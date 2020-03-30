@@ -1306,7 +1306,7 @@ U 1 1 5E669612
 P 5770 7120
 F 0 "H2" H 5870 7166 50  0000 L CNN
 F 1 "MountingHole" H 5870 7075 50  0000 L CNN
-F 2 "Mounting_Holes:MountingHole_2.2mm_M2" H 5770 7120 50  0001 C CNN
+F 2 "Thruster_Controller:MountingHole_M2" H 5770 7120 50  0001 C CNN
 F 3 "~" H 5770 7120 50  0001 C CNN
 	1    5770 7120
 	1    0    0    -1  
@@ -1317,7 +1317,7 @@ U 1 1 5E668803
 P 4995 7120
 F 0 "H1" H 5095 7166 50  0000 L CNN
 F 1 "MountingHole" H 5095 7075 50  0000 L CNN
-F 2 "Mounting_Holes:MountingHole_2.2mm_M2" H 4995 7120 50  0001 C CNN
+F 2 "Thruster_Controller:MountingHole_M2" H 4995 7120 50  0001 C CNN
 F 3 "~" H 4995 7120 50  0001 C CNN
 	1    4995 7120
 	1    0    0    -1  
