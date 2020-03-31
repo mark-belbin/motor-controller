@@ -1,4 +1,4 @@
-921083387237501
+924261733765671
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -53040,6 +53040,13 @@ Bus_Pad
 1
 1
 Thruster_Controller
+CAN_Pad
+
+
+0
+1
+1
+Thruster_Controller
 DRV8305
 48-Lead Thin Quad Flatpack (PT) - 7x7x1.0 mm Body [TQFP] With Exposed Pad (see Microchip Packaging Specification 00000049BS.pdf)
 QFP 0.5
@@ -53106,6 +53113,13 @@ Thruster_Controller
 TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded
 wire loop with bead as test point, loop diameter 1.8mm, hole diameter 1.0mm
 test point wire loop bead
+0
+1
+1
+Thruster_Controller
+TestPoint_Pad_D1.0mm
+SMD pad as test Point, diameter 1.0mm
+test point SMD pad
 0
 1
 1
