@@ -1460,7 +1460,7 @@ U 1 1 5E97E448
 P 4985 6050
 F 0 "TP1" H 4927 6122 50  0000 R CNN
 F 1 "TestPoint" H 4927 6167 50  0001 R CNN
-F 2 "Testpoints:TestPoint_Pad_D1.0mm" H 5185 6050 50  0001 C CNN
+F 2 "Thruster_Controller:TestPoint_Pad_D1.0mm" H 5185 6050 50  0001 C CNN
 F 3 "~" H 5185 6050 50  0001 C CNN
 	1    4985 6050
 	-1   0    0    1   
@@ -1471,7 +1471,7 @@ U 1 1 5E97E895
 P 5250 6050
 F 0 "TP2" H 5192 6122 50  0000 R CNN
 F 1 "TestPoint" H 5192 6167 50  0001 R CNN
-F 2 "Testpoints:TestPoint_Pad_D1.0mm" H 5450 6050 50  0001 C CNN
+F 2 "Thruster_Controller:TestPoint_Pad_D1.0mm" H 5450 6050 50  0001 C CNN
 F 3 "~" H 5450 6050 50  0001 C CNN
 	1    5250 6050
 	-1   0    0    1   
@@ -1482,7 +1482,7 @@ U 1 1 5E97F5C4
 P 5495 6050
 F 0 "TP3" H 5437 6122 50  0000 R CNN
 F 1 "TestPoint" H 5437 6167 50  0001 R CNN
-F 2 "Testpoints:TestPoint_Pad_D1.0mm" H 5695 6050 50  0001 C CNN
+F 2 "Thruster_Controller:TestPoint_Pad_D1.0mm" H 5695 6050 50  0001 C CNN
 F 3 "~" H 5695 6050 50  0001 C CNN
 	1    5495 6050
 	-1   0    0    1   
