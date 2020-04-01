@@ -15,17 +15,22 @@ Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet
 14,"Light emitting diode, filled shape",LED_ALT,D3,GREEN,LED_0603,1,~,732-4980-1-ND,
 15,"Light emitting diode, filled shape",LED_ALT,D5,Orange,LED_0603,1,~,160-1180-1-ND,
 16,"Light emitting diode, filled shape",LED_ALT,D2 D4,RED,LED_0603,2,~,732-4978-1-ND,
+17,"Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x01,J4 J6,Conn_01x01,CAN_Pad,2,~,,
+18,"Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x01,J7 J8,Conn_01x01,Bus_Pad,2,~,,
+19,"Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x01,J1 J2 J3,PHASE_A,Phase_Pad,3,~,,
+20,"Generic connector, double row, 02x05, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_02x05_Odd_Even,J5,Pogo Conn,Tag-Connect_TC2050-IDC-NL,1,~,,
 21,"Inductor, small symbol",L_Small,L1,2.2uH,L_0805,1,~,587-3018-1-ND,
 22,"Inductor, small symbol",L_Small,L2,FB,L_0805,1,~,240-2549-1-ND,
 23,"Inductor, small symbol",L_Small,L3,FB,L_0402,1,~,445-172882-1-ND,
+24,"Net tie, 2 pins",Net-Tie_2,NT1 NT2 NT3 NT4 NT5 NT6,Net-Tie_2,NetTie-2_SMD_5mil,6,~,,
 25,,SIZF906DT,Q1 Q2 Q3,SIZF906DT,SIZF906DT,3,http://www.vishay.com/docs/67547/sizf906dt.pdf,SIZF906DT-T1-GE3CT-ND,
 26,"Resistor, US symbol",R_US,R2,100,R_0603,1,~,RHM100DCT-ND,
 27,"Resistor, small US symbol",R_Small_US,R23,100k,R_0402_NoSilk,1,~,RMCF0402JT100KCT-ND,
-28,"Resistor, US symbol",R_US,R1 R6,10k,R_0603,2,~,RNCP0603FTD10K0CT-ND,
+28,"Resistor, US symbol",R_US,R1 R6,10k,R_0603,2,~,RMCF0603JT10K0CT-ND,
 29,"Resistor, small US symbol",R_Small_US,R17 R18,10k,R_0402,2,~,311-10KJRCT-ND,
 30,"Resistor, small US symbol",R_Small_US,R35,120,R_0402,1,~,311-120JRCT-ND,
 31,"Resistor, small US symbol",R_Small_US,R27 R28 R29 R30,2.2k,R_0402,4,~,311-2.2KJRCT-ND,
-32,"Resistor, US symbol",R_US,R7,2.7k,R_0603,1,~,P2.7KDACT-ND,
+32,"Resistor, US symbol",R_US,R7,2.7k,R_0603,1,~,RMCF0603JT2K70CT-ND,
 33,"Resistor, US symbol",R_US,R3 R4 R5 R15,22.0k,R_0402,4,~,RMCF0402FT22K0CT-ND,
 34,"Resistor, US symbol",R_US,R10 R19,330,R_0603,2,~,RHM330DCT-ND,
 35,"Resistor, US symbol",R_US,R12 R13 R14 R16,4.99k,R_0402,4,~,311-4.99KLRCT-ND,
@@ -40,17 +45,19 @@ Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet
 44,,TMS320F28027F-MCU_Powertrain,U5,TMS320F28027F,LQFP-48_7x7mm_Pitch0.5mm,1,,296-36409-ND,
 45,,TPS62172DSGR,U4,TPS62172DSGR,8-Pin_WSON,1,http://www.ti.com/lit/ds/symlink/tps62171.pdf,296-39449-1-ND,
 46,"Four pin crystal, GND on pins 2 and 4",Crystal_GND24,Y1,20MHz,Crystal_SMD_SeikoEpson_TSX3225-4pin_3.2x2.5mm,1,~,SER4249CT-ND,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
-,,,,,,,,,
+
+
+
+
+
+Component Groups:,46
+Component Count:,106
+Fitted Components:,106
+Number of PCBs:,1
+Total components:,106
+Schematic Version:,001
+Schematic Date:,2020-01-15
+PCB Variant:,[u'default']
+BoM Date:,2020-03-31 3:33:25 PM
+Schematic Source:,D:\Motor Controller Research\GitHub\motor-controller\PCBs\Thruster_Controller\Thruster_Controller.sch
+KiCad Version:,Eeschema (5.1.5)-3

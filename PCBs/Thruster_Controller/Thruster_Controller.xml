@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>D:\Motor Controller Research\GitHub\motor-controller\PCBs\Thruster_Controller\Thruster_Controller.sch</source>
-    <date>2020-03-31 3:33:25 PM</date>
+    <date>2020-03-31 8:36:58 PM</date>
     <tool>Eeschema (5.1.5)-3</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -303,7 +303,7 @@
       <value>10uF</value>
       <footprint>Capacitors_SMD:C_0805</footprint>
       <fields>
-        <field name="Digikey">490-5523-1-ND</field>
+        <field name="Digikey">1276-6454-1-ND</field>
         <field name="Voltage">25V</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -323,9 +323,9 @@
     </comp>
     <comp ref="C50">
       <value>22uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitors_SMD:C_0805</footprint>
       <fields>
-        <field name="Digikey">490-7611-1-ND</field>
+        <field name="Digikey">1276-1100-1-ND</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
       <sheetpath names="/" tstamps="/"/>
@@ -382,10 +382,10 @@
     </comp>
     <comp ref="R19">
       <value>330</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <footprint>Resistors_SMD:R_0805</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digikey">RHM330DCT-ND</field>
+        <field name="Digikey">2019-RK73B2ATTD331JCT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/" tstamps="/"/>
@@ -667,10 +667,10 @@
     </comp>
     <comp ref="R10">
       <value>330</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <footprint>Resistors_SMD:R_0805</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digikey">RHM330DCT-ND</field>
+        <field name="Digikey">2019-RK73B2ATTD331JCT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/Powertrain/" tstamps="/5E20A2BB/"/>
@@ -804,9 +804,9 @@
     </comp>
     <comp ref="R11">
       <value>5m</value>
-      <footprint>MCU_Powertrain:R_2512_Sense</footprint>
+      <footprint>Resistors_SMD:R_2512</footprint>
       <fields>
-        <field name="Digikey">YAG6124CT-ND</field>
+        <field name="Digikey">YAG6105CT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/Powertrain/" tstamps="/5E20A2BB/"/>
@@ -847,9 +847,9 @@
     </comp>
     <comp ref="R8">
       <value>5m</value>
-      <footprint>MCU_Powertrain:R_2512_Sense</footprint>
+      <footprint>Resistors_SMD:R_2512</footprint>
       <fields>
-        <field name="Digikey">YAG6124CT-ND</field>
+        <field name="Digikey">YAG6105CT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/Powertrain/" tstamps="/5E20A2BB/"/>
@@ -879,9 +879,9 @@
     </comp>
     <comp ref="R9">
       <value>5m</value>
-      <footprint>MCU_Powertrain:R_2512_Sense</footprint>
+      <footprint>Resistors_SMD:R_2512</footprint>
       <fields>
-        <field name="Digikey">YAG6124CT-ND</field>
+        <field name="Digikey">YAG6105CT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/Powertrain/" tstamps="/5E20A2BB/"/>
