@@ -190,7 +190,7 @@ extern "C" {
 //! \brief ADC Conversion Done triggers ISR
 //! \brief This relates the hardware ISR rate to the software controller rate
 //! \brief Typcially want to consider some form of decimation (ePWM hardware, CURRENT or EST) over 16KHz ISR to insure interrupt completes and leaves time for background tasks
-#define USER_NUM_ISR_TICKS_PER_CTRL_TICK       (1)      // 2 Example, controller clock rate (CTRL) runs at PWM / 2; ex 30 KHz PWM, 15 KHz control
+#define USER_NUM_ISR_TICKS_PER_CTRL_TICK       (2)      // 2 Example, controller clock rate (CTRL) runs at PWM / 2; ex 30 KHz PWM, 15 KHz control
 
 //! \brief Defines the number of controller clock ticks per current controller clock tick
 //! \brief Relationship of controller clock rate to current controller (FOC) rate

@@ -35,8 +35,6 @@
 
 // **************************************************************************
 // the globals
-
-bool gFirst = true;
 uint32_t gOldTimer2 = 0;
 uint32_t gNewTimer2 = 0;
 double gTime = 0.0;
@@ -118,6 +116,8 @@ void sendCSVHeader() {
     char title1[] = {'T','i','m','e', 0};
     char title2[] = {'S','e','t','_','R','P','M', 0};
     char title3[] = {'A','c','t','u','a','l','_','R','P','M', 0};
+    char title4[] = {'K','p','_','S','p','e','e','d', 0};
+    char title5[] = {'K','i','_','S','p','e','e','d', 0};
 
     //Write all characters in array
     while (title1[i] != 0) {
@@ -142,7 +142,7 @@ void sendCSVHeader() {
     while(!SCI_txReady(halHandle->sciAHandle));
     SCI_write(halHandle->sciAHandle, 0x002C);
 
-    //Write all characters in title2 array
+    //Write all characters in title3 array
     i = 0;
     while (title3[i] != 0) {
         while(!SCI_txReady(halHandle->sciAHandle));
@@ -150,36 +150,60 @@ void sendCSVHeader() {
         i++;
     }
 
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Write all characters in title4 array
+    i = 0;
+    while (title4[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, title4[i]);
+        i++;
+    }
+
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Write all characters in title5 array
+    i = 0;
+    while (title5[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, title5[i]);
+        i++;
+    }
+
     //Write Newline
     while(!SCI_txReady(halHandle->sciAHandle));
     SCI_write(halHandle->sciAHandle, 0x000A);
 
-    //Write Carriage Return
-    while(!SCI_txReady(halHandle->sciAHandle));
-    SCI_write(halHandle->sciAHandle, 0x000D);
-
     return;
 }
 
-//Function that sends an IQ value over UART, formatted for PUTTY
-//Also Formatted for CSV, adds a timestamp feature using Timer2
-void sendCSV(_iq data1, _iq data2) {
-    //Initializations
-    int i = 0;
-    float data_f1;
-    float data_f2;
-    char buffer[50];
+//Updates global time variable via the timer
+void updateTime() {
 
-    // Calculate TimeStamp
-    if (gFirst) {
+    if (gOldTimer2 == 0) {
       gOldTimer2 = halHandle->timerHandle[2]->TIM;
-      gFirst = false;
     }
     else {
       gNewTimer2 = halHandle->timerHandle[2]->TIM;
       gTime += (double)(gOldTimer2-gNewTimer2)/(60E6);
       gOldTimer2 = gNewTimer2;
     }
+}
+
+//Function that sends an IQ value over UART, formatted for PUTTY
+//Also Formatted for CSV, adds a timestamp feature using Timer2
+void sendCSV(_iq data1, _iq data2, _iq data3, _iq data4) {
+    //Initializations
+    int i = 0;
+    float data_f1;
+    float data_f2;
+    float data_f3;
+    float data_f4;
+    char buffer[50];
 
     //Convert uint32 timer value to char buffer
     sprintf(buffer, "%f", gTime);
@@ -229,13 +253,47 @@ void sendCSV(_iq data1, _iq data2) {
         i++;
     }
 
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Convert data from IQ to float
+    data_f3 = _IQtoF(data3);
+
+    //Convert float to a char array
+    memset(buffer, 0, 50);
+    sprintf(buffer, "%f", data_f3);
+
+    //Write all characters in array
+    i = 0;
+    while (buffer[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer[i]);
+        i++;
+    }
+
+    //Write Comma
+    while(!SCI_txReady(halHandle->sciAHandle));
+    SCI_write(halHandle->sciAHandle, 0x002C);
+
+    //Convert data from IQ to float
+    data_f4 = _IQtoF(data4);
+
+    //Convert float to a char array
+    memset(buffer, 0, 50);
+    sprintf(buffer, "%f", data_f4);
+
+    //Write all characters in array
+    i = 0;
+    while (buffer[i] != 0) {
+        while(!SCI_txReady(halHandle->sciAHandle));
+        SCI_write(halHandle->sciAHandle, buffer[i]);
+        i++;
+    }
+
     //Write Newline
     while(!SCI_txReady(halHandle->sciAHandle));
     SCI_write(halHandle->sciAHandle, 0x000A);
-
-    //Write Carriage Return
-    while(!SCI_txReady(halHandle->sciAHandle));
-    SCI_write(halHandle->sciAHandle, 0x000D);
 
     return;
 }
@@ -379,9 +437,6 @@ void main(void)
   //***********************ENTER MAIN CONTROL LOOP*****************************
   //***************************************************************************
 
-  //gMotorVars.Flag_enableSys = true;
-  //gMotorVars.Flag_Run_Identify = true;
-
   for(;;)
   {
 
@@ -398,7 +453,25 @@ void main(void)
         /***************TEST CODE*******************/
         /*******************************************/
 
-        if (gEnableUART) sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm);
+        if (gEnableUART)  {
+
+            updateTime();
+            sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm, gMotorVars.Kp_spd, gMotorVars.Ki_spd);
+
+            if (gTime >= 5.0) gMotorVars.SpeedRef_krpm = _IQ(2.5);
+
+            if (gTime >= 15.0) {
+                gMotorVars.SpeedRef_krpm = _IQ(0.0);
+                gEnableUART = false;
+                gTime = 0.0;
+                gOldTimer2 = 0.0;
+                gNewTimer2 = 0.0;
+
+                //Write Newline
+                while(!SCI_txReady(halHandle->sciAHandle));
+                SCI_write(halHandle->sciAHandle, 0x000A);
+            }
+        }
 
         /*******************************************/
 
@@ -529,8 +602,8 @@ void main(void)
             Flag_Latch_softwareUpdate = true;
 
             // initialize the watch window kp and ki values with pre-calculated values
-            gMotorVars.Kp_spd = CTRL_getKp(ctrlHandle,CTRL_Type_PID_spd);
-            gMotorVars.Ki_spd = CTRL_getKi(ctrlHandle,CTRL_Type_PID_spd);
+            gMotorVars.Kp_spd = _IQ(9.0); //CTRL_getKp(ctrlHandle,CTRL_Type_PID_spd); //Originally 10
+            gMotorVars.Ki_spd = _IQ(0.2); //CTRL_getKi(ctrlHandle,CTRL_Type_PID_spd); //Originally 0.1
 
             // the estimator sets the maximum current slope during identification
             gMaxCurrentSlope = EST_getMaxCurrentSlope_pu(obj->estHandle);
