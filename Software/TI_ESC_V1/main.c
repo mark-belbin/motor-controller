@@ -458,7 +458,7 @@ void main(void)
             updateTime();
             sendCSV(gMotorVars.SpeedRef_krpm, gMotorVars.Speed_krpm, gMotorVars.Kp_spd, gMotorVars.Ki_spd);
 
-            if (gTime >= 5.0) gMotorVars.SpeedRef_krpm = _IQ(1.0);
+            if (gTime >= 5.0) gMotorVars.SpeedRef_krpm = _IQ(2.5);
 
             if (gTime >= 15.0) {
                 gMotorVars.SpeedRef_krpm = _IQ(0.0);
@@ -602,8 +602,8 @@ void main(void)
             Flag_Latch_softwareUpdate = true;
 
             // initialize the watch window kp and ki values with pre-calculated values
-            gMotorVars.Kp_spd = CTRL_getKp(ctrlHandle,CTRL_Type_PID_spd);
-            gMotorVars.Ki_spd = CTRL_getKi(ctrlHandle,CTRL_Type_PID_spd);
+            gMotorVars.Kp_spd = _IQ(9.0); //CTRL_getKp(ctrlHandle,CTRL_Type_PID_spd); //Originally 10
+            gMotorVars.Ki_spd = _IQ(0.2); //CTRL_getKi(ctrlHandle,CTRL_Type_PID_spd); //Originally 0.1
 
             // the estimator sets the maximum current slope during identification
             gMaxCurrentSlope = EST_getMaxCurrentSlope_pu(obj->estHandle);
