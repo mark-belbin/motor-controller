@@ -19,6 +19,7 @@
 
 #include "TI_ESC_V1/main.h"
 #include "sw/drivers/sci/src/32b/f28x/f2802x/sci.h"
+#include "can.h"
 
 #ifdef FLASH
 #pragma CODE_SECTION(mainISR,"ramfuncs");
@@ -301,6 +302,19 @@ void sendCSV(_iq data1, _iq data2, _iq data3, _iq data4) {
 
 void main(void)
 {
+  //CAN Setup
+  struct can_frame test_frame;
+  test_frame.can_id = 0x0FF;
+  test_frame.can_dlc = 8;
+  test_frame.data[0] = 0x0F;
+  test_frame.data[1] = 0x1F;
+  test_frame.data[2] = 0x2F;
+  test_frame.data[3] = 0x3F;
+  test_frame.data[4] = 0x4F;
+  test_frame.data[5] = 0x5F;
+  test_frame.data[6] = 0x6F;
+  test_frame.data[7] = 0x7F;
+
   //Use calculated offset values
   gMotorVars.Flag_enableOffsetcalc = false;
 
@@ -407,18 +421,20 @@ void main(void)
   // enable debug interrupts
   HAL_enableDebugInt(halHandle);
 
-  // enable the Timer0 interrupts
-  //HAL_enableTimer0Int(halHandle);
-
   // disable the PWM
   HAL_disablePwm(halHandle);
 
 
   // turn on the DRV8305 if present
   HAL_enableDrv(halHandle);
+
   // initialize the DRV8305 interface
   HAL_setupDrvSpi(halHandle,&gDrvSpi8305Vars);
 
+  // initialize MCP2515 CAN Controller
+  MCP2515_reset(halHandle->mcp2515Handle);
+  MCP2515_setBitrate(halHandle->mcp2515Handle, CAN_500KBPS, MCP_20MHZ);
+  MCP2515_setNormalMode(halHandle->mcp2515Handle);
 
   // enable DC bus compensation
   CTRL_setFlag_enableDcBusComp(ctrlHandle, true);
@@ -452,6 +468,9 @@ void main(void)
 
         /***************TEST CODE*******************/
         /*******************************************/
+
+        //Send test CAN message
+        MCP2515_sendMessage(halHandle->mcp2515Handle, &test_frame);
 
         if (gEnableUART)  {
 

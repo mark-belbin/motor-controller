@@ -363,7 +363,7 @@ extern "C" {
 //! \brief These motor ID settings and motor parameters are then available to be used by the control system
 //! \brief Once your ideal settings and parameters are identified update the motor section here so it is available in the binary code
 
-#define USER_MOTOR BRT200
+#define USER_MOTOR Big_Test_Motor
 
 
 
@@ -586,7 +586,7 @@ extern "C" {
 #define USER_MOTOR_MAGNETIZING_CURRENT  (NULL)
 #define USER_MOTOR_RES_EST_CURRENT      (4.0)
 #define USER_MOTOR_IND_EST_CURRENT      (-2.0) //Was -3
-#define USER_MOTOR_MAX_CURRENT          (25.0)
+#define USER_MOTOR_MAX_CURRENT          (30.0)
 #define USER_MOTOR_FLUX_EST_FREQ_Hz     (120.0) //Was 60
 
 #define USER_MOTOR_FREQ_LOW             (10.0)          // Hz - suggested to set to 10% of rated motor frequency
