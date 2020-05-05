@@ -1257,7 +1257,7 @@ U 1 1 5F055F39
 P 2775 3350
 F 0 "U?" H 2750 5865 50  0000 C CNN
 F 1 "DRV8320S" H 2750 5774 50  0000 C CNN
-F 2 "" H 2675 4000 79  0001 C CNN
+F 2 "Housings_DFN_QFN:WQFN-32-1EP_5x5mm_Pitch0.5mm" H 2675 4000 79  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8323r.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.ca%2F&distId=26" H 5125 5600 79  0001 C CNN
 F 4 "" H 4275 5450 79  0001 C CNN "Digikey"
 F 5 "595-DRV8320SRTVR" H 2775 3350 50  0001 C CNN "Mouser"
@@ -1654,6 +1654,8 @@ $Comp
 L Device:R_Small_US R?
 U 1 1 5F7CA226
 P 875 2900
+AR Path="/5E20A372/5F7CA226" Ref="R?"  Part="1" 
+AR Path="/5E20A2BB/5F7CA226" Ref="R?"  Part="1" 
 F 0 "R?" H 943 2946 50  0000 L CNN
 F 1 "2.2k" H 943 2855 50  0000 L CNN
 F 2 "Resistors_SMD:R_0402" H 875 2900 50  0001 C CNN
