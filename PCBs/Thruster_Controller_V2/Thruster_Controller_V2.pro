@@ -1,4 +1,4 @@
-update=2020-03-27 5:17:24 PM
+update=2020-05-06 10:57:15 PM
 version=1
 last_client=pcbnew
 [general]
@@ -25,7 +25,7 @@ ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=Thruster_Controller.net
+LastNetListRead=Thruster_Controller_V2.net
 CopperLayerCount=4
 BoardThickness=1.6
 AllowMicroVias=0
@@ -72,7 +72,7 @@ OthersTextUpright=1
 SolderMaskClearance=0.051
 SolderMaskMinWidth=0.09999999999999999
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
