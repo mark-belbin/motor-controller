@@ -437,9 +437,9 @@ F 4 "SIZF906DT-T1-GE3CT-ND" H 6000 1425 50  0001 C CNN "Digikey"
 	1    6000 1425
 	1    0    0    -1  
 $EndComp
-Text Label 5550 1375 0    50   ~ 0
+Text Label 9375 1300 0    50   ~ 0
 GH_A
-Text Label 5550 1775 0    50   ~ 0
+Text Label 9375 1700 0    50   ~ 0
 GL_A
 $Comp
 L Device:R_US R11
@@ -453,11 +453,11 @@ F 4 "YAG6105CT-ND" H 6100 2425 50  0001 C CNN "Digikey"
 	1    6100 2425
 	1    0    0    -1  
 $EndComp
-Text Label 5550 1575 0    50   ~ 0
+Text Label 9375 1500 0    50   ~ 0
 SH_A
-Text Label 5550 2075 0    50   ~ 0
+Text Label 9425 2075 0    50   ~ 0
 SL_A
-Text Label 5550 2225 0    50   ~ 0
+Text Label 9425 2275 0    50   ~ 0
 SPA
 $Comp
 L power:GND #PWR020
@@ -470,7 +470,7 @@ F 3 "" H 6100 2800 50  0001 C CNN
 	1    6100 2800
 	1    0    0    -1  
 $EndComp
-Text Label 6850 1575 2    50   ~ 0
+Text Label 10775 1500 2    50   ~ 0
 PHASE_A
 Wire Wire Line
 	6475 1575 6850 1575
@@ -535,7 +535,7 @@ F 3 "" H 6900 2800 50  0001 C CNN
 	1    6900 2800
 	1    0    0    -1  
 $EndComp
-Text Label 7225 2325 2    50   ~ 0
+Text Label 11050 2300 2    50   ~ 0
 VSEN_A
 Wire Wire Line
 	6900 2325 7225 2325
@@ -690,9 +690,9 @@ Text Label 9175 2325 2    50   ~ 0
 VSEN_B
 Text Label 8800 1575 2    50   ~ 0
 PHASE_B
-Text Label 10775 1500 2    50   ~ 0
+Text Label 6850 1575 2    50   ~ 0
 PHASE_C
-Text Label 11050 2300 2    50   ~ 0
+Text Label 7225 2325 2    50   ~ 0
 VSEN_C
 Text Label 7500 1375 0    50   ~ 0
 GH_B
@@ -706,17 +706,17 @@ Text Label 7500 2225 0    50   ~ 0
 SPB
 Text Label 7500 2650 0    50   ~ 0
 SNB
-Text Label 9375 1300 0    50   ~ 0
+Text Label 5550 1375 0    50   ~ 0
 GH_C
-Text Label 9375 1500 0    50   ~ 0
+Text Label 5550 1575 0    50   ~ 0
 SH_C
-Text Label 9375 1700 0    50   ~ 0
+Text Label 5550 1775 0    50   ~ 0
 GL_C
-Text Label 9500 2075 0    50   ~ 0
+Text Label 5550 2075 0    50   ~ 0
 SL_C
-Text Label 9425 2275 0    50   ~ 0
+Text Label 5550 2225 0    50   ~ 0
 SPC
-Text Label 9425 2700 0    50   ~ 0
+Text Label 5550 2650 0    50   ~ 0
 SNC
 Wire Notes Line
 	500  500  4625 500 
@@ -1022,7 +1022,7 @@ F 3 "~" H 5825 2650 50  0001 C CNN
 	1    5825 2650
 	1    0    0    -1  
 $EndComp
-Text Label 5550 2650 0    50   ~ 0
+Text Label 9425 2700 0    50   ~ 0
 SNA
 Wire Wire Line
 	6100 2575 6100 2650
