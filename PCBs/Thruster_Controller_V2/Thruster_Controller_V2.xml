@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>D:\Motor Controller Research\GitHub\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch</source>
-    <date>2020-05-06 10:43:38 PM</date>
+    <date>2020-08-22 4:44:00 PM</date>
     <tool>Eeschema (5.1.5)-3</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>FOC Thruster Controller </title>
         <company>Mark Belbin</company>
         <rev>V2</rev>
-        <date>2020-05-04</date>
+        <date>2020-08-22</date>
         <source>Thruster_Controller_V2.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -205,6 +205,7 @@
       <footprint>Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.65mm</footprint>
       <datasheet>https://www.mouser.ca/datasheet/2/308/NCP718-D-1224359.pdf</datasheet>
       <fields>
+        <field name="Digikey">NCP718AMT330TBGOSCT-ND</field>
         <field name="Mouser">863-NCP718AMT330TBG</field>
       </fields>
       <libsource lib="Thruster_Controller" part="NCP718AMT330" description=""/>
@@ -233,11 +234,11 @@
       <tstamp>5EC10B5C</tstamp>
     </comp>
     <comp ref="R19">
-      <value>330</value>
+      <value>180</value>
       <footprint>Resistors_SMD:R_0603</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digikey">RMCF0603JT330RCT-ND</field>
+        <field name="Digikey">2019-RK73B1JTTD181JCT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/" tstamps="/"/>
@@ -645,6 +646,7 @@
       <footprint>Housings_DFN_QFN:WQFN-32-1EP_5x5mm_Pitch0.5mm</footprint>
       <datasheet>http://www.ti.com/lit/ds/symlink/drv8323r.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&amp;DCM=yes&amp;ref_url=https%3A%2F%2Fwww.mouser.ca%2F&amp;distId=26</datasheet>
       <fields>
+        <field name="Digikey">296-50725-1-ND</field>
         <field name="Mouser">595-DRV8320SRTVR</field>
       </fields>
       <libsource lib="Thruster_Controller" part="DRV8320S" description=""/>
@@ -806,6 +808,7 @@
       <footprint>Housings_DFN_QFN:QFN-56-1EP_7x7mm_Pitch0.4mm</footprint>
       <datasheet>http://www.ti.com/lit/ds/symlink/tms320f280041.pdf?ts=1588432897241</datasheet>
       <fields>
+        <field name="Digikey">296-F280041CRSHSRCT-ND</field>
         <field name="Mouser">595-F280041CRSHSR</field>
       </fields>
       <libsource lib="Thruster_Controller" part="TMS320F280041C" description=""/>
@@ -905,7 +908,7 @@
       <footprint>Capacitors_SMD:C_0402</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digikey">732-7507-1-ND</field>
+        <field name="Digikey">732-7545-1-ND</field>
       </fields>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
       <sheetpath names="/TI_MCU/" tstamps="/5E20A372/"/>
@@ -1089,7 +1092,7 @@
     </comp>
     <comp ref="Y1">
       <value>20 MHz</value>
-      <footprint>Crystals:Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm</footprint>
+      <footprint>Thruster_Controller:Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">SER3629CT-ND</field>
@@ -1558,55 +1561,57 @@
       <node ref="C36" pin="2"/>
       <node ref="C4" pin="2"/>
       <node ref="U1" pin="7"/>
-      <node ref="C28" pin="2"/>
       <node ref="C3" pin="2"/>
+      <node ref="C28" pin="2"/>
       <node ref="R19" pin="2"/>
-      <node ref="U1" pin="2"/>
       <node ref="J5" pin="7"/>
+      <node ref="U1" pin="2"/>
       <node ref="U1" pin="5"/>
       <node ref="U8" pin="2"/>
       <node ref="U1" pin="3"/>
       <node ref="C23" pin="2"/>
-      <node ref="J5" pin="9"/>
       <node ref="J8" pin="1"/>
+      <node ref="J5" pin="9"/>
     </net>
     <net code="2" name="/Powertrain/EN_GATE">
       <node ref="U2" pin="42"/>
       <node ref="U3" pin="22"/>
     </net>
     <net code="3" name="/Powertrain/VSEN_A">
-      <node ref="C8" pin="1"/>
-      <node ref="R14" pin="1"/>
-      <node ref="R5" pin="2"/>
+      <node ref="C7" pin="1"/>
+      <node ref="R13" pin="1"/>
+      <node ref="R4" pin="2"/>
       <node ref="U2" pin="8"/>
     </net>
     <net code="4" name="/Powertrain/VSEN_B">
+      <node ref="C6" pin="1"/>
       <node ref="R12" pin="1"/>
       <node ref="U2" pin="7"/>
-      <node ref="C6" pin="1"/>
       <node ref="R3" pin="2"/>
     </net>
     <net code="5" name="/Powertrain/VSEN_C">
-      <node ref="R4" pin="2"/>
-      <node ref="C7" pin="1"/>
-      <node ref="C17" pin="1"/>
-      <node ref="R13" pin="1"/>
+      <node ref="R14" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="R5" pin="2"/>
       <node ref="U2" pin="17"/>
-      <node ref="R16" pin="1"/>
-      <node ref="U2" pin="6"/>
-      <node ref="R15" pin="2"/>
     </net>
-    <net code="6" name="/Powertrain/DAC">
-      <node ref="R2" pin="2"/>
+    <net code="6" name="/Powertrain/VSEN_PVDD">
+      <node ref="U2" pin="6"/>
+      <node ref="R16" pin="1"/>
+      <node ref="R15" pin="2"/>
+      <node ref="C17" pin="1"/>
+    </net>
+    <net code="7" name="/Powertrain/DAC">
       <node ref="U2" pin="13"/>
+      <node ref="R2" pin="2"/>
       <node ref="R17" pin="2"/>
       <node ref="R18" pin="2"/>
     </net>
-    <net code="7" name="/SCI_TX">
+    <net code="8" name="/SCI_TX">
       <node ref="J5" pin="3"/>
       <node ref="U2" pin="2"/>
     </net>
-    <net code="8" name="+BATT">
+    <net code="9" name="+BATT">
       <node ref="C5" pin="1"/>
       <node ref="C10" pin="1"/>
       <node ref="C1" pin="1"/>
@@ -1629,7 +1634,7 @@
       <node ref="Q3" pin="4"/>
       <node ref="U1" pin="4"/>
     </net>
-    <net code="9" name="+3V3">
+    <net code="10" name="+3V3">
       <node ref="C38" pin="1"/>
       <node ref="C33" pin="1"/>
       <node ref="C4" pin="1"/>
@@ -1664,37 +1669,37 @@
       <node ref="D3" pin="2"/>
       <node ref="TP1" pin="1"/>
     </net>
-    <net code="10" name="/Powertrain/nFAULT">
+    <net code="11" name="/Powertrain/nFAULT">
       <node ref="R6" pin="2"/>
       <node ref="R10" pin="2"/>
       <node ref="U3" pin="17"/>
       <node ref="U2" pin="52"/>
     </net>
-    <net code="11" name="/Powertrain/INL_C">
+    <net code="12" name="/Powertrain/INL_C">
       <node ref="U2" pin="55"/>
       <node ref="U3" pin="30"/>
     </net>
-    <net code="12" name="/Powertrain/INH_C">
+    <net code="13" name="/Powertrain/INH_C">
       <node ref="U2" pin="43"/>
       <node ref="U3" pin="29"/>
     </net>
-    <net code="13" name="/Powertrain/INL_B">
+    <net code="14" name="/Powertrain/INL_B">
       <node ref="U2" pin="44"/>
       <node ref="U3" pin="28"/>
     </net>
-    <net code="14" name="/Powertrain/INH_B">
+    <net code="15" name="/Powertrain/INH_B">
       <node ref="U2" pin="45"/>
       <node ref="U3" pin="27"/>
     </net>
-    <net code="15" name="/Powertrain/INL_A">
+    <net code="16" name="/Powertrain/INL_A">
       <node ref="U2" pin="46"/>
       <node ref="U3" pin="26"/>
     </net>
-    <net code="16" name="/Powertrain/INH_A">
+    <net code="17" name="/Powertrain/INH_A">
       <node ref="U2" pin="47"/>
       <node ref="U3" pin="25"/>
     </net>
-    <net code="17" name="/Powertrain/PGA_GND">
+    <net code="18" name="/Powertrain/PGA_GND">
       <node ref="C25" pin="2"/>
       <node ref="C24" pin="2"/>
       <node ref="C26" pin="2"/>
@@ -1702,229 +1707,229 @@
       <node ref="U2" pin="9"/>
       <node ref="U2" pin="18"/>
     </net>
-    <net code="18" name="/SCI_RX">
+    <net code="19" name="/SCI_RX">
       <node ref="J5" pin="5"/>
       <node ref="U2" pin="3"/>
     </net>
-    <net code="19" name="/Powertrain/SPI_MOSI">
+    <net code="20" name="/Powertrain/SPI_MOSI">
       <node ref="U2" pin="30"/>
       <node ref="U3" pin="19"/>
     </net>
-    <net code="20" name="/Powertrain/SPI_CS">
+    <net code="21" name="/Powertrain/SPI_CS">
       <node ref="U2" pin="28"/>
       <node ref="U3" pin="21"/>
     </net>
-    <net code="21" name="/Powertrain/SPI_CLK">
+    <net code="22" name="/Powertrain/SPI_CLK">
       <node ref="U3" pin="20"/>
       <node ref="U2" pin="56"/>
     </net>
-    <net code="22" name="/Powertrain/SPI_MISO">
+    <net code="23" name="/Powertrain/SPI_MISO">
       <node ref="U2" pin="31"/>
       <node ref="U3" pin="18"/>
       <node ref="R1" pin="2"/>
     </net>
-    <net code="23" name="/Powertrain/ISEN_C">
+    <net code="24" name="/Powertrain/ISEN_C">
       <node ref="R32" pin="2"/>
       <node ref="U2" pin="11"/>
       <node ref="R18" pin="1"/>
     </net>
-    <net code="24" name="/Powertrain/ISEN_B">
+    <net code="25" name="/Powertrain/ISEN_B">
       <node ref="R24" pin="2"/>
       <node ref="U2" pin="16"/>
       <node ref="R17" pin="1"/>
     </net>
-    <net code="25" name="/Powertrain/ISEN_A">
+    <net code="26" name="/Powertrain/ISEN_A">
       <node ref="R2" pin="1"/>
       <node ref="U2" pin="10"/>
       <node ref="R23" pin="2"/>
     </net>
-    <net code="26" name="/CANL">
+    <net code="27" name="/CANL">
       <node ref="R35" pin="1"/>
       <node ref="J4" pin="1"/>
       <node ref="U8" pin="6"/>
     </net>
-    <net code="27" name="/CANH">
+    <net code="28" name="/CANH">
       <node ref="U8" pin="7"/>
       <node ref="J6" pin="1"/>
       <node ref="R35" pin="2"/>
     </net>
-    <net code="28" name="/RXCAN">
+    <net code="29" name="/RXCAN">
       <node ref="U8" pin="4"/>
       <node ref="U2" pin="26"/>
     </net>
-    <net code="29" name="/TXCAN">
+    <net code="30" name="/TXCAN">
       <node ref="U8" pin="1"/>
       <node ref="U2" pin="27"/>
     </net>
-    <net code="30" name="/Powertrain/Phase_B">
+    <net code="31" name="/Powertrain/Phase_B">
       <node ref="J2" pin="1"/>
       <node ref="R3" pin="1"/>
       <node ref="Q1" pin="5"/>
     </net>
-    <net code="31" name="/Powertrain/Phase_C">
+    <net code="32" name="/Powertrain/Phase_C">
       <node ref="J3" pin="1"/>
+      <node ref="R5" pin="1"/>
+      <node ref="Q3" pin="5"/>
+    </net>
+    <net code="33" name="/Powertrain/Phase_A">
+      <node ref="J1" pin="1"/>
       <node ref="R4" pin="1"/>
       <node ref="Q2" pin="5"/>
     </net>
-    <net code="32" name="/Powertrain/Phase_A">
-      <node ref="Q3" pin="5"/>
-      <node ref="R5" pin="1"/>
-      <node ref="J1" pin="1"/>
-    </net>
-    <net code="33" name="/TRST">
+    <net code="34" name="/TRST">
       <node ref="J5" pin="10"/>
     </net>
-    <net code="34" name="/TDI">
+    <net code="35" name="/TDI">
       <node ref="U2" pin="36"/>
       <node ref="J5" pin="8"/>
       <node ref="R25" pin="2"/>
     </net>
-    <net code="35" name="/TDO">
+    <net code="36" name="/TDO">
       <node ref="J5" pin="6"/>
       <node ref="R26" pin="2"/>
       <node ref="U2" pin="34"/>
     </net>
-    <net code="36" name="/TCK">
+    <net code="37" name="/TCK">
       <node ref="U2" pin="33"/>
       <node ref="J5" pin="4"/>
     </net>
-    <net code="37" name="/TMS">
+    <net code="38" name="/TMS">
       <node ref="R27" pin="2"/>
       <node ref="J5" pin="2"/>
       <node ref="U2" pin="35"/>
     </net>
-    <net code="38" name="Net-(D3-Pad1)">
+    <net code="39" name="Net-(D3-Pad1)">
       <node ref="R19" pin="1"/>
       <node ref="D3" pin="1"/>
     </net>
-    <net code="39" name="Net-(D1-Pad1)">
+    <net code="40" name="Net-(D1-Pad1)">
       <node ref="R7" pin="1"/>
       <node ref="D1" pin="1"/>
     </net>
-    <net code="40" name="Net-(C20-Pad1)">
+    <net code="41" name="/Powertrain/SNA">
+      <node ref="NT3" pin="1"/>
+      <node ref="NT2" pin="1"/>
+      <node ref="R33" pin="1"/>
+      <node ref="NT1" pin="1"/>
+    </net>
+    <net code="42" name="Net-(C20-Pad1)">
       <node ref="U3" pin="24"/>
       <node ref="C20" pin="1"/>
     </net>
-    <net code="41" name="Net-(C5-Pad2)">
-      <node ref="C5" pin="2"/>
+    <net code="43" name="Net-(C5-Pad2)">
       <node ref="U3" pin="2"/>
+      <node ref="C5" pin="2"/>
     </net>
-    <net code="42" name="/Powertrain/SL_C">
-      <node ref="C14" pin="2"/>
+    <net code="44" name="/Powertrain/SL_C">
+      <node ref="NT6" pin="2"/>
+      <node ref="R11" pin="1"/>
+      <node ref="C11" pin="2"/>
+      <node ref="Q3" pin="6"/>
       <node ref="U3" pin="16"/>
-      <node ref="R9" pin="1"/>
-      <node ref="Q2" pin="6"/>
-      <node ref="NT5" pin="2"/>
     </net>
-    <net code="43" name="/Powertrain/SH_B">
+    <net code="45" name="/Powertrain/SH_B">
       <node ref="U3" pin="11"/>
       <node ref="Q1" pin="2"/>
     </net>
-    <net code="44" name="/Powertrain/GH_B">
-      <node ref="Q1" pin="1"/>
+    <net code="46" name="/Powertrain/GH_B">
       <node ref="U3" pin="12"/>
+      <node ref="Q1" pin="1"/>
     </net>
-    <net code="45" name="/Powertrain/GH_C">
+    <net code="47" name="/Powertrain/GH_C">
       <node ref="U3" pin="13"/>
+      <node ref="Q3" pin="1"/>
+    </net>
+    <net code="48" name="/Powertrain/SH_C">
+      <node ref="Q3" pin="2"/>
+      <node ref="U3" pin="14"/>
+    </net>
+    <net code="49" name="/Powertrain/GL_C">
+      <node ref="Q3" pin="3"/>
+      <node ref="U3" pin="15"/>
+    </net>
+    <net code="50" name="Net-(C25-Pad1)">
+      <node ref="C25" pin="1"/>
+      <node ref="R24" pin="1"/>
+      <node ref="R21" pin="2"/>
+    </net>
+    <net code="51" name="/Powertrain/SPB">
+      <node ref="R21" pin="1"/>
+      <node ref="NT4" pin="1"/>
+    </net>
+    <net code="52" name="/Powertrain/SPC">
+      <node ref="NT6" pin="1"/>
+      <node ref="R22" pin="1"/>
+    </net>
+    <net code="53" name="/Powertrain/GH_A">
+      <node ref="U3" pin="5"/>
       <node ref="Q2" pin="1"/>
     </net>
-    <net code="46" name="/Powertrain/SH_C">
-      <node ref="U3" pin="14"/>
+    <net code="54" name="/Powertrain/SH_A">
+      <node ref="U3" pin="6"/>
       <node ref="Q2" pin="2"/>
     </net>
-    <net code="47" name="/Powertrain/GL_C">
-      <node ref="U3" pin="15"/>
+    <net code="55" name="/Powertrain/GL_A">
       <node ref="Q2" pin="3"/>
-    </net>
-    <net code="48" name="/Powertrain/SNA">
-      <node ref="NT3" pin="1"/>
-      <node ref="NT1" pin="1"/>
-      <node ref="NT2" pin="1"/>
-      <node ref="R33" pin="1"/>
-    </net>
-    <net code="49" name="Net-(C25-Pad1)">
-      <node ref="R21" pin="2"/>
-      <node ref="R24" pin="1"/>
-      <node ref="C25" pin="1"/>
-    </net>
-    <net code="50" name="/Powertrain/SPB">
-      <node ref="NT4" pin="1"/>
-      <node ref="R21" pin="1"/>
-    </net>
-    <net code="51" name="/Powertrain/SPC">
-      <node ref="R22" pin="1"/>
-      <node ref="NT5" pin="1"/>
-    </net>
-    <net code="52" name="/Powertrain/GH_A">
-      <node ref="Q3" pin="1"/>
-      <node ref="U3" pin="5"/>
-    </net>
-    <net code="53" name="/Powertrain/SH_A">
-      <node ref="U3" pin="6"/>
-      <node ref="Q3" pin="2"/>
-    </net>
-    <net code="54" name="/Powertrain/GL_A">
       <node ref="U3" pin="7"/>
-      <node ref="Q3" pin="3"/>
     </net>
-    <net code="55" name="/Powertrain/SL_A">
-      <node ref="R11" pin="1"/>
-      <node ref="Q3" pin="6"/>
-      <node ref="NT6" pin="2"/>
+    <net code="56" name="/Powertrain/SL_A">
+      <node ref="NT5" pin="2"/>
+      <node ref="R9" pin="1"/>
       <node ref="U3" pin="8"/>
-      <node ref="C11" pin="2"/>
+      <node ref="Q2" pin="6"/>
+      <node ref="C14" pin="2"/>
     </net>
-    <net code="56" name="Net-(C2-Pad1)">
-      <node ref="C2" pin="1"/>
+    <net code="57" name="Net-(C2-Pad1)">
       <node ref="U3" pin="32"/>
+      <node ref="C2" pin="1"/>
     </net>
-    <net code="57" name="Net-(C2-Pad2)">
+    <net code="58" name="Net-(C2-Pad2)">
       <node ref="U3" pin="1"/>
       <node ref="C2" pin="2"/>
     </net>
-    <net code="58" name="Net-(C26-Pad1)">
-      <node ref="R32" pin="1"/>
+    <net code="59" name="Net-(C26-Pad1)">
       <node ref="R22" pin="2"/>
+      <node ref="R32" pin="1"/>
       <node ref="C26" pin="1"/>
     </net>
-    <net code="59" name="/Powertrain/GL_B">
-      <node ref="Q1" pin="3"/>
+    <net code="60" name="/Powertrain/GL_B">
       <node ref="U3" pin="10"/>
+      <node ref="Q1" pin="3"/>
     </net>
-    <net code="60" name="/Powertrain/SL_B">
+    <net code="61" name="/Powertrain/SL_B">
       <node ref="NT4" pin="2"/>
       <node ref="C12" pin="2"/>
-      <node ref="Q1" pin="6"/>
       <node ref="U3" pin="9"/>
+      <node ref="Q1" pin="6"/>
       <node ref="R8" pin="1"/>
     </net>
-    <net code="61" name="Net-(C24-Pad1)">
+    <net code="62" name="Net-(C24-Pad1)">
       <node ref="R23" pin="1"/>
-      <node ref="R20" pin="2"/>
       <node ref="C24" pin="1"/>
+      <node ref="R20" pin="2"/>
     </net>
-    <net code="62" name="/Powertrain/SPA">
-      <node ref="NT6" pin="1"/>
+    <net code="63" name="/Powertrain/SPA">
+      <node ref="NT5" pin="1"/>
       <node ref="R20" pin="1"/>
     </net>
-    <net code="63" name="Net-(D2-Pad1)">
-      <node ref="R10" pin="1"/>
+    <net code="64" name="Net-(D2-Pad1)">
       <node ref="D2" pin="1"/>
+      <node ref="R10" pin="1"/>
     </net>
-    <net code="64" name="/TI_MCU/GPIO24">
-      <node ref="R29" pin="2"/>
+    <net code="65" name="/TI_MCU/GPIO24">
       <node ref="U2" pin="32"/>
+      <node ref="R29" pin="2"/>
     </net>
-    <net code="65" name="/TI_MCU/GPIO32">
+    <net code="66" name="/TI_MCU/GPIO32">
       <node ref="R28" pin="2"/>
       <node ref="U2" pin="37"/>
     </net>
-    <net code="66" name="/TI_MCU/X2">
+    <net code="67" name="/TI_MCU/X2">
       <node ref="Y1" pin="3"/>
       <node ref="U2" pin="38"/>
       <node ref="C37" pin="1"/>
     </net>
-    <net code="67" name="+3.3VA">
+    <net code="68" name="+3.3VA">
       <node ref="U2" pin="54"/>
       <node ref="U2" pin="48"/>
       <node ref="C34" pin="1"/>
@@ -1936,52 +1941,52 @@
       <node ref="U2" pin="40"/>
       <node ref="C40" pin="1"/>
     </net>
-    <net code="68" name="Net-(U2-Pad49)">
+    <net code="69" name="Net-(U2-Pad49)">
       <node ref="U2" pin="49"/>
     </net>
-    <net code="69" name="Net-(U2-Pad51)">
+    <net code="70" name="Net-(U2-Pad51)">
       <node ref="U2" pin="51"/>
     </net>
-    <net code="70" name="/TI_MCU/GPIO6">
+    <net code="71" name="/TI_MCU/GPIO6">
       <node ref="R31" pin="2"/>
       <node ref="U2" pin="1"/>
     </net>
-    <net code="71" name="Net-(U2-Pad29)">
+    <net code="72" name="Net-(U2-Pad29)">
       <node ref="U2" pin="29"/>
     </net>
-    <net code="72" name="Net-(D5-Pad1)">
+    <net code="73" name="Net-(D5-Pad1)">
       <node ref="R31" pin="1"/>
       <node ref="D5" pin="1"/>
     </net>
-    <net code="73" name="Net-(U2-Pad23)">
+    <net code="74" name="Net-(U2-Pad23)">
       <node ref="U2" pin="23"/>
     </net>
-    <net code="74" name="Net-(U2-Pad22)">
+    <net code="75" name="Net-(U2-Pad22)">
       <node ref="U2" pin="22"/>
     </net>
-    <net code="75" name="Net-(U2-Pad21)">
+    <net code="76" name="Net-(U2-Pad21)">
       <node ref="U2" pin="21"/>
     </net>
-    <net code="76" name="Net-(U2-Pad12)">
+    <net code="77" name="Net-(U2-Pad12)">
       <node ref="U2" pin="12"/>
     </net>
-    <net code="77" name="/TI_MCU/X1">
+    <net code="78" name="/TI_MCU/X1">
       <node ref="U2" pin="39"/>
       <node ref="Y1" pin="1"/>
       <node ref="C36" pin="1"/>
     </net>
-    <net code="78" name="Net-(C30-Pad1)">
+    <net code="79" name="Net-(C30-Pad1)">
       <node ref="U2" pin="14"/>
       <node ref="C32" pin="1"/>
       <node ref="C30" pin="1"/>
     </net>
-    <net code="79" name="Net-(C22-Pad1)">
+    <net code="80" name="Net-(C22-Pad1)">
       <node ref="U2" pin="20"/>
       <node ref="C29" pin="1"/>
       <node ref="C22" pin="1"/>
       <node ref="L3" pin="2"/>
     </net>
-    <net code="80" name="/TI_MCU/~RESET~">
+    <net code="81" name="/TI_MCU/~RESET~">
       <node ref="U2" pin="4"/>
       <node ref="C35" pin="1"/>
       <node ref="R30" pin="2"/>

@@ -1259,7 +1259,7 @@ F 0 "U3" H 2750 5865 50  0000 C CNN
 F 1 "DRV8320S" H 2750 5774 50  0000 C CNN
 F 2 "Housings_DFN_QFN:WQFN-32-1EP_5x5mm_Pitch0.5mm" H 2675 4000 79  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/drv8323r.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.ca%2F&distId=26" H 5125 5600 79  0001 C CNN
-F 4 "" H 4275 5450 79  0001 C CNN "Digikey"
+F 4 "296-50725-1-ND" H 4275 5450 79  0001 C CNN "Digikey"
 F 5 "595-DRV8320SRTVR" H 2775 3350 50  0001 C CNN "Mouser"
 	1    2775 3350
 	1    0    0    -1  
