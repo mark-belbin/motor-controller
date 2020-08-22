@@ -1147,7 +1147,7 @@ U 1 1 5FDC1EC1
 P 6725 4925
 F 0 "Y1" H 6725 5193 50  0000 C CNN
 F 1 "20 MHz" H 6725 5102 50  0000 C CNN
-F 2 "Crystals:Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm" H 6725 4925 50  0001 C CNN
+F 2 "Thruster_Controller:Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm" H 6725 4925 50  0001 C CNN
 F 3 "~" H 6725 4925 50  0001 C CNN
 F 4 "SER3629CT-ND" H 6725 4925 50  0001 C CNN "Digikey"
 	1    6725 4925
@@ -1266,7 +1266,7 @@ Wire Wire Line
 Wire Wire Line
 	3700 1825 3375 1825
 Text Label 3375 1625 0    50   ~ 0
-ADCINC3
+ADCINB2
 Text Label 3375 1725 0    50   ~ 0
 ADCINB3
 Text Label 3375 1825 0    50   ~ 0
@@ -1473,7 +1473,7 @@ ADCINB3
 Text Label 9900 2600 0    50   ~ 0
 ADCINC3
 Text Label 9900 2700 0    50   ~ 0
-ADCINC3
+ADCINB2
 Text HLabel 10325 2100 2    50   Input ~ 0
 nFAULT
 Text HLabel 10325 2225 2    50   Output ~ 0
