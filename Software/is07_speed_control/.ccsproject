@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="9.3.0"/>
+	<deviceVariant value="com.ti.ccstudio.deviceModel.C2000.GenericC28xxDevice"/>
+	<deviceFamily value="C2000"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="18.12.2.LTS"/>
+	<isElfFormat value="false"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=is07_speed_control.projectspec.is07_speed_control"/>
+	<origin value="C:\ti\c2000\C2000Ware_MotorControl_SDK_3_00_01_00\solutions\boostxl_drv8320rs\f28004x\ccs\sensorless_foc\is07_speed_control.projectspec"/>
+	<filesToOpen value=""/>
+</projectOptions>
