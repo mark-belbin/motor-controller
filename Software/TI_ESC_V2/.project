@@ -26,11 +26,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>is08_overmodulation.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/solutions/common/sensorless_foc/source/is08_overmodulation.c</locationURI>
-		</link>
-		<link>
 			<name>src_board/drv8320.c</name>
 			<type>1</type>
 			<locationURI>MCSDK_ROOT/solutions/boostxl_drv8320rs/f28004x/drivers/source/drv8320.c</locationURI>
@@ -89,66 +84,6 @@
 			<name>src_fast/user.c</name>
 			<type>1</type>
 			<locationURI>MCSDK_ROOT/libraries/observers/est/source/user.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/clarke.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/transforms/clarke/source/clarke.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/cpu_time.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/utilities/cpu_time/source/cpu_time.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/datalog.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/utilities/datalog/source/datalog.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/filter_fo.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/filter/filter_fo/source/filter_fo.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/filter_so.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/filter/filter_so/source/filter_so.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/ipark.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/transforms/ipark/source/ipark.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/offset.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/filter/offset/source/offset.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/park.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/transforms/park/source/park.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/pi.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/control/pi/source/pi.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/svgen.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/transforms/svgen/source/svgen.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/svgen_current.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/transforms/svgen/source/svgen_current.c</locationURI>
-		</link>
-		<link>
-			<name>src_foc/traj.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/libraries/utilities/traj/source/traj.c</locationURI>
 		</link>
 		<link>
 			<name>src_lib/driverlib.lib</name>
