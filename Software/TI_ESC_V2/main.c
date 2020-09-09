@@ -34,10 +34,14 @@
 // $
 //#############################################################################
 
-//! \file   solutions/common/sensorless_foc/source/is08_overmodulation.c
-//! \brief  This lab is used to show how to re-create the currents that cannot
-//!         be measured due to high duty cycles during SVM over-modulation
-//!
+//| Modified from lab8 from TI's InstaSPIN FOC MotorControl SDK
+//| Other modifications are found throughout project files
+//|
+//| For The TMS320F2800041C and DRV8320
+//| And use with the custom motor controller
+//| for the T200 UUV thruster
+//|
+//| Mark Belbin -- Sept 2020
 
 // **************************************************************************
 
