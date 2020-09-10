@@ -517,68 +517,6 @@ HAL_readADCDataWithOffsets(HAL_Handle handle, HAL_ADCData_t *pADCData)
     float32_t current_sf = -HAL_getCurrentScaleFactor(handle);
     float32_t voltage_sf = HAL_getVoltageScaleFactor(handle);
 
-    /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-  // convert phase A current        ->RA0/A14
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[0] = value * current_sf;
-
-    // convert phase B current        ->RC0/C7
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[1] = value * current_sf;
-
-    // convert phase C current        ->RB0/B7
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[2] = value * current_sf;
-
-    // convert phase A voltage        ->RA1/A5
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[0] = value * voltage_sf;
-
-    // convert phase B voltage        ->RB1/B0
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[1] = value * voltage_sf;
-
-    // convert phase C voltage        ->RC1/C2
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[2] = value * voltage_sf;
-
-    // convert dcBus voltage          ->RB2/B1
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER2);
-    pADCData->dcBus_V = value * voltage_sf;
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    // convert phase A current        ->RB0/B9
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[0] = value * current_sf;
-
-    // convert phase B current        ->RC0/C9
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[1] = value * current_sf;
-
-    // convert phase C current        ->RA0/A15
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[2] = value * current_sf;
-
-    // convert phase A voltage        ->RA1/A6
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[0] = value * voltage_sf;
-
-    // convert phase B voltage        ->RB1/B6
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[1] = value * voltage_sf;
-
-    // convert phase C voltage        ->RC1/C14
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[2] = value * voltage_sf;
-
-    // convert dcBus voltage          ->RC2/C1
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER2);
-    pADCData->dcBus_V = value * voltage_sf;
-#endif
-     */
-
     // For T200 Controller
 
     // convert phase A current PGA1       ->RA0/A11

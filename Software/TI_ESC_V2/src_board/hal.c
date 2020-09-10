@@ -337,7 +337,7 @@ void HAL_setParams(HAL_Handle handle)
     HAL_setupDACs(handle);
 
     // setup the CMPSSs
-    //HAL_setupCMPSSs(handle);
+    HAL_setupCMPSSs(handle);
 
     // setup the PWMs
     HAL_setupPWMs(handle,
@@ -718,54 +718,6 @@ void HAL_setupCMPSSs(HAL_Handle handle)
     // Technical Reference Manual (SPRUI33B), to configure the ePWM X-Bar
     //
 
-    /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_1, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_1, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_3, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_3, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_5, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_5, 4);
-
-    // Configure TRIP9 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX08_CMPSS5_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX08);
-
-    // Configure TRIP7 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX00);
-
-    // Configure TRIP8 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX04);
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_2, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_2, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_4, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_4, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_6, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_6, 4);
-
-    // Configure TRIP11 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX06_CMPSS4_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX06);
-
-    // Configure TRIP10 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX02);
-
-    // Configure TRIP12 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX10_CMPSS6_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX10);
-#endif
-
-*/
     // For T200 Controller
 
     ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_1, 4);
