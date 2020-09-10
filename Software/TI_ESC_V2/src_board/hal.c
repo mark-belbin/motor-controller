@@ -953,7 +953,7 @@ void HAL_setupGPIOs(HAL_Handle handle)
     // GPIO29->nFAULT for T200 Controller
     GPIO_setMasterCore(7, GPIO_CORE_CPU1);
     GPIO_setPinConfig(GPIO_7_GPIO7);
-    GPIO_setDirectionMode(7, GPIO_DIR_MODE_IN);
+    GPIO_setDirectionMode(7, GPIO_DIR_MODE_OUT);
     GPIO_setPadConfig(7, GPIO_PIN_TYPE_PULLUP);
 
     // GPIO16->SPIA-MOSI for T200 Controller
