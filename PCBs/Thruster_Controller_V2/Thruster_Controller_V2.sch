@@ -896,4 +896,6 @@ Wire Wire Line
 	4175 3525 4175 4250
 Wire Wire Line
 	4175 4250 5200 4250
+Text Notes 1075 6775 0    79   Italic 16
+5V Linear Regulator
 $EndSCHEMATC
