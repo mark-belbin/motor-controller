@@ -777,20 +777,20 @@ void HAL_setupCMPSSs(HAL_Handle handle)
     ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_3, 4);
     ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_3, 4);
 
-    //Phase A / PGA1 / EPWM1
-    // Configure TRIP10 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP10, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP10, XBAR_MUX00);
-
-    //Phase B / PGA2 / EPWM2
-    // Configure TRIP11 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP11, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP11, XBAR_MUX02);
-
-    //Phase C / PGA3 / EPWM3
+    //Phase A / PGA1
     // Configure TRIP7 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX04);
+    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX00);
+
+    //Phase B / PGA2
+    // Configure TRIP8 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
+    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX02);
+
+    //Phase C / PGA3
+    // Configure TRIP9 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
+    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX04);
 
 
     return;
