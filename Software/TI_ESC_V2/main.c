@@ -459,7 +459,7 @@ void main(void)
     //
     // setup faults
     //
-    HAL_setupFaults(halHandle);
+    //HAL_setupFaults(halHandle);
 
     //
     // setup OVM PWM

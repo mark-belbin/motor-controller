@@ -337,7 +337,7 @@ void HAL_setParams(HAL_Handle handle)
     HAL_setupDACs(handle);
 
     // setup the CMPSSs
-    HAL_setupCMPSSs(handle);
+    //HAL_setupCMPSSs(handle);
 
     // setup the PWMs
     HAL_setupPWMs(handle,
@@ -421,84 +421,6 @@ void HAL_setupADCs(HAL_Handle handle)
 
     // delay to allow ADCs to power up
     SysCtl_delay(1000U);
-
-   /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-    // configure the interrupt sources
-    // configure the ample window to 15 system clock cycle wide by assigning 14
-    // to the ACQPS of ADCSOCxCTL Register.
-    // RB2/B1
-    ADC_setInterruptSource(obj->adcHandle[1], ADC_INT_NUMBER1, ADC_SOC_NUMBER2);
-
-    // configure the SOCs for hvkit_rev1p1
-    // ISENA - PGA5->A14->RA0
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN14, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENB - PGA3->C7->RC0
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN7, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENC - PGA1->B7->RB0
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN7, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENA - A5->RA1
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN5, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENB - B0->RB1
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN0, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENC - C2->RC1
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN2, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENVM - B1->RB2. hvkit board has capacitor on Vbus feedback, so
-    // the sampling doesn't need to be very long to get an accurate value
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN1, HAL_ADC_SAMPLE_WINDOW);
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    // configure the interrupt sources
-    // configure the ample window to 15 system clock cycle wide by assigning 14
-    // to the ACQPS of ADCSOCxCTL Register.
-    // RC2/C1
-    ADC_setInterruptSource(obj->adcHandle[2], ADC_INT_NUMBER1, ADC_SOC_NUMBER2);
-
-    // configure the SOCs for hvkit_rev1p1
-    // ISENA - PGA2->B9->RB0
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN9, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENB - PGA4->A15->RA0
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN15, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENC - PGA1->C9->RC0
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN9, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENA - A6->RA1
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN6, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENB - B6/A2->RB1
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN6, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENC - C14->RC1
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN14, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENVM - C1->RC2. hvkit board has capacitor on Vbus feedback, so
-    // the sampling doesn't need to be very long to get an accurate value
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN1, HAL_ADC_SAMPLE_WINDOW);
-#endif
-*/
 
     // configure the interrupt sources
     // configure the ample window to 15 system clock cycle wide by assigning 14
@@ -953,8 +875,9 @@ void HAL_setupGPIOs(HAL_Handle handle)
     // GPIO29->nFAULT for T200 Controller
     GPIO_setMasterCore(7, GPIO_CORE_CPU1);
     GPIO_setPinConfig(GPIO_7_GPIO7);
-    GPIO_setDirectionMode(7, GPIO_DIR_MODE_OUT);
+    GPIO_setDirectionMode(7, GPIO_DIR_MODE_IN);
     GPIO_setPadConfig(7, GPIO_PIN_TYPE_PULLUP);
+    GPIO_writePin(7, 1);
 
     // GPIO16->SPIA-MOSI for T200 Controller
     GPIO_setMasterCore(16, GPIO_CORE_CPU1);
@@ -965,7 +888,7 @@ void HAL_setupGPIOs(HAL_Handle handle)
     // GPIO17->SPIA-MISO for T200 Controller
     GPIO_setMasterCore(17, GPIO_CORE_CPU1);
     GPIO_setPinConfig(GPIO_17_SPISOMIA);
-    GPIO_setDirectionMode(17, GPIO_DIR_MODE_IN);
+    GPIO_setDirectionMode(17, GPIO_DIR_MODE_OUT);
     GPIO_setPadConfig(17, GPIO_PIN_TYPE_STD);
 
     // GPIO9->SPIA-CLK for T200 Controller
