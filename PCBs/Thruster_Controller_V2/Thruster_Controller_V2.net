@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "D:\\FOC Motor Controller\\motor-controller\\PCBs\\Thruster_Controller_V2\\Thruster_Controller_V2.sch")
-    (date "2020-09-17 10:53:04 PM")
+    (date "2020-09-19 9:36:20 PM")
     (tool "Eeschema (5.1.5)-3")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -557,7 +557,7 @@
       (tstamp 5E3EF0DE))
     (comp (ref C15)
       (value 220uF)
-      (footprint Capacitors_SMD:CP_Elec_6.3x5.8)
+      (footprint Thruster_Controller:CP_Elec_6.3x5.8)
       (datasheet ~)
       (fields
         (field (name Digikey) 565-APXJ160ARA221MF61GCT-ND))
@@ -566,7 +566,7 @@
       (tstamp 5E8C16A5))
     (comp (ref C13)
       (value 220uF)
-      (footprint Capacitors_SMD:CP_Elec_6.3x5.8)
+      (footprint Thruster_Controller:CP_Elec_6.3x5.8)
       (datasheet ~)
       (fields
         (field (name Digikey) 565-APXJ160ARA221MF61GCT-ND))
@@ -594,7 +594,7 @@
       (tstamp 5F055F39))
     (comp (ref C10)
       (value 220uF)
-      (footprint Capacitors_SMD:CP_Elec_6.3x5.8)
+      (footprint Thruster_Controller:CP_Elec_6.3x5.8)
       (datasheet ~)
       (fields
         (field (name Digikey) 565-APXJ160ARA221MF61GCT-ND))
