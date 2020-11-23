@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source "D:\\FOC Motor Controller\\motor-controller\\PCBs\\Thruster_Controller_V2\\Thruster_Controller_V2.sch")
-    (date "2020-09-19 9:36:20 PM")
-    (tool "Eeschema (5.1.5)-3")
+    (date "2020-11-22 7:26:04 PM")
+    (tool "Eeschema (5.1.8)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title "FOC Thruster Controller ")
@@ -67,7 +67,7 @@
       (tstamp 5E2798B5))
     (comp (ref C23)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -75,7 +75,7 @@
       (tstamp 5E5059A5))
     (comp (ref C28)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1102-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -83,7 +83,7 @@
       (tstamp 5E595A4F))
     (comp (ref R35)
       (value 120)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-120JRCT-ND))
@@ -92,12 +92,12 @@
       (tstamp 5E50F8DF))
     (comp (ref U8)
       (value ATA6561)
-      (footprint Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.65mm)
+      (footprint Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.65mm_EP1.7x2.05mm)
       (datasheet https://ww1.microchip.com/downloads/en/DeviceDoc/20005991B.pdf)
       (fields
         (field (name Digikey) ATA6561-GBQW-NCT-ND)
         (field (name Mouser) 579-ATA6561-GBQW-N))
-      (libsource (lib Interface_CAN_LIN) (part MCP2562-E-MF) (description "High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN8 package"))
+      (libsource (lib Interface_CAN_LIN) (part MCP2562-E-MF) (description "High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN-8"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E558E9D))
     (comp (ref J6)
@@ -130,7 +130,7 @@
       (tstamp 5EED568B))
     (comp (ref R7)
       (value 2.7k)
-      (footprint Resistors_SMD:R_0603)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0603JT2K70CT-ND))
@@ -139,7 +139,7 @@
       (tstamp 5EE89191))
     (comp (ref D1)
       (value BLUE)
-      (footprint LEDs:LED_0603)
+      (footprint LED_SMD:LED_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 732-4966-1-ND))
@@ -148,7 +148,7 @@
       (tstamp 5EE89189))
     (comp (ref D3)
       (value GREEN)
-      (footprint LEDs:LED_0603)
+      (footprint LED_SMD:LED_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 732-4980-1-ND))
@@ -171,7 +171,7 @@
       (tstamp 5E97F5C4))
     (comp (ref U1)
       (value NCP718AMT330)
-      (footprint Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.65mm)
+      (footprint Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm)
       (datasheet https://www.mouser.ca/datasheet/2/308/NCP718-D-1224359.pdf)
       (fields
         (field (name Digikey) NCP718AMT330TBGOSCT-ND)
@@ -181,7 +181,7 @@
       (tstamp 5EBF94AC))
     (comp (ref C4)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1102-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -189,7 +189,7 @@
       (tstamp 5EBFB8C1))
     (comp (ref C3)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0805)
+      (footprint Capacitor_SMD:C_0805_2012Metric)
       (fields
         (field (name Digikey) 1276-6470-1-ND)
         (field (name Voltage) 50V))
@@ -198,7 +198,7 @@
       (tstamp 5EC10B5C))
     (comp (ref R19)
       (value 100)
-      (footprint Resistors_SMD:R_0603)
+      (footprint Resistor_SMD:R_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1JTTD101JCT-ND))
@@ -207,7 +207,7 @@
       (tstamp 5E5672C2))
     (comp (ref U4)
       (value NCP718BMT500)
-      (footprint Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.65mm)
+      (footprint Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm)
       (datasheet https://www.onsemi.com/pub/Collateral/NCP718-D.PDF)
       (fields
         (field (name Digikey) NCP718BMT500TBGOSCT-ND)
@@ -217,7 +217,7 @@
       (tstamp 5F656C14))
     (comp (ref C44)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1102-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -225,7 +225,7 @@
       (tstamp 5F656C1B))
     (comp (ref C43)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0805)
+      (footprint Capacitor_SMD:C_0805_2012Metric)
       (fields
         (field (name Digikey) 1276-6470-1-ND)
         (field (name Voltage) 50V))
@@ -234,7 +234,7 @@
       (tstamp 5F656C4B))
     (comp (ref D4)
       (value GREEN)
-      (footprint LEDs:LED_0603)
+      (footprint LED_SMD:LED_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 732-4980-1-ND))
@@ -250,7 +250,7 @@
       (tstamp 5F6BB45D))
     (comp (ref R34)
       (value 220)
-      (footprint Resistors_SMD:R_0603)
+      (footprint Resistor_SMD:R_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1JTTD221JCT-ND))
@@ -259,7 +259,7 @@
       (tstamp 5F69B65B))
     (comp (ref C1)
       (value 4.7uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1900-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -267,7 +267,7 @@
       (tstamp 5D54718E))
     (comp (ref D2)
       (value RED)
-      (footprint LEDs:LED_0603)
+      (footprint LED_SMD:LED_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 732-4978-1-ND))
@@ -276,7 +276,7 @@
       (tstamp 5D559C3A))
     (comp (ref R10)
       (value 330)
-      (footprint Resistors_SMD:R_0603)
+      (footprint Resistor_SMD:R_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0603JT330RCT-ND))
@@ -285,7 +285,7 @@
       (tstamp 5D55B899))
     (comp (ref R6)
       (value 10k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1ETTP103JCT-ND))
@@ -294,7 +294,7 @@
       (tstamp 5D55E30C))
     (comp (ref C2)
       (value 0.047uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10702-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -302,7 +302,7 @@
       (tstamp 5D5BA7FE))
     (comp (ref C26)
       (value 2200pF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-6359-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -310,7 +310,7 @@
       (tstamp 5D6785DF))
     (comp (ref R20)
       (value 56)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-56JRCT-ND))
@@ -319,7 +319,7 @@
       (tstamp 5D6F1B35))
     (comp (ref R16)
       (value 4.99k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-4.99KLRCT-ND))
@@ -328,7 +328,7 @@
       (tstamp 5D98B7BC))
     (comp (ref C17)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -345,7 +345,7 @@
       (tstamp 5DAFC590))
     (comp (ref R11)
       (value 5m)
-      (footprint Resistors_SMD:R_2512)
+      (footprint Resistor_SMD:R_2512_6332Metric)
       (fields
         (field (name Digikey) YAG6105CT-ND))
       (libsource (lib Device) (part R_US) (description "Resistor, US symbol"))
@@ -353,7 +353,7 @@
       (tstamp 5DB32370))
     (comp (ref R5)
       (value 22.0k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT22K0CT-ND))
@@ -362,7 +362,7 @@
       (tstamp 5DBC9AD3))
     (comp (ref R14)
       (value 4.99k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-4.99KLRCT-ND))
@@ -380,7 +380,7 @@
       (tstamp 5DCF5A96))
     (comp (ref R8)
       (value 5m)
-      (footprint Resistors_SMD:R_2512)
+      (footprint Resistor_SMD:R_2512_6332Metric)
       (fields
         (field (name Digikey) YAG6105CT-ND))
       (libsource (lib Device) (part R_US) (description "Resistor, US symbol"))
@@ -388,7 +388,7 @@
       (tstamp 5DCF5AA9))
     (comp (ref R12)
       (value 4.99k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-4.99KLRCT-ND))
@@ -397,7 +397,7 @@
       (tstamp 5DCF5ACE))
     (comp (ref R9)
       (value 5m)
-      (footprint Resistors_SMD:R_2512)
+      (footprint Resistor_SMD:R_2512_6332Metric)
       (fields
         (field (name Digikey) YAG6105CT-ND))
       (libsource (lib Device) (part R_US) (description "Resistor, US symbol"))
@@ -405,7 +405,7 @@
       (tstamp 5DD12DA3))
     (comp (ref R13)
       (value 4.99k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-4.99KLRCT-ND))
@@ -414,7 +414,7 @@
       (tstamp 5DD12DC8))
     (comp (ref C5)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1102-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -422,7 +422,7 @@
       (tstamp 5E407190))
     (comp (ref C20)
       (value 1uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (fields
         (field (name Digikey) 1276-1102-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -430,7 +430,7 @@
       (tstamp 5E407539))
     (comp (ref C25)
       (value 2200pF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-6359-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -438,7 +438,7 @@
       (tstamp 5E409D2B))
     (comp (ref C24)
       (value 2200pF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-6359-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -446,7 +446,7 @@
       (tstamp 5E40A15E))
     (comp (ref C8)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -454,7 +454,7 @@
       (tstamp 5E40AF07))
     (comp (ref C6)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -462,7 +462,7 @@
       (tstamp 5E40C2C2))
     (comp (ref C7)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -470,7 +470,7 @@
       (tstamp 5E40C74F))
     (comp (ref R21)
       (value 56)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-56JRCT-ND))
@@ -479,7 +479,7 @@
       (tstamp 5E40F792))
     (comp (ref R22)
       (value 56)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-56JRCT-ND))
@@ -488,7 +488,7 @@
       (tstamp 5E40FDB5))
     (comp (ref R3)
       (value 22.0k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT22K0CT-ND))
@@ -497,7 +497,7 @@
       (tstamp 5E4108F2))
     (comp (ref R4)
       (value 22.0k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT22K0CT-ND))
@@ -506,7 +506,7 @@
       (tstamp 5E410DEB))
     (comp (ref R15)
       (value 22.0k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT22K0CT-ND))
@@ -584,7 +584,7 @@
       (tstamp 5DD12D90))
     (comp (ref U3)
       (value DRV8320S)
-      (footprint Housings_DFN_QFN:WQFN-32-1EP_5x5mm_Pitch0.5mm)
+      (footprint Package_DFN_QFN:WQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm)
       (datasheet http://www.ti.com/lit/ds/symlink/drv8323r.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.ca%2F&distId=26)
       (fields
         (field (name Digikey) 296-50725-1-ND)
@@ -603,7 +603,7 @@
       (tstamp 5E8C16B3))
     (comp (ref C9)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 490-10698-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -611,7 +611,7 @@
       (tstamp 5F2CB787))
     (comp (ref C11)
       (value 0.01uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 732-7545-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -619,7 +619,7 @@
       (tstamp 5F2FF0BC))
     (comp (ref C12)
       (value 0.01uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 732-7545-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -627,7 +627,7 @@
       (tstamp 5F30094C))
     (comp (ref C14)
       (value 0.01uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (fields
         (field (name Digikey) 732-7545-1-ND))
       (libsource (lib Device) (part C_Small) (description "Unpolarized capacitor, small symbol"))
@@ -635,7 +635,7 @@
       (tstamp 5F301F05))
     (comp (ref R33)
       (value 56)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-56JRCT-ND))
@@ -644,7 +644,7 @@
       (tstamp 5F4AD0F5))
     (comp (ref R23)
       (value 2.49k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT2K49CT-ND))
@@ -653,7 +653,7 @@
       (tstamp 5F555C48))
     (comp (ref R24)
       (value 2.49k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT2K49CT-ND))
@@ -662,7 +662,7 @@
       (tstamp 5F564237))
     (comp (ref R32)
       (value 2.49k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT2K49CT-ND))
@@ -671,7 +671,7 @@
       (tstamp 5F56455C))
     (comp (ref R18)
       (value 27.4k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT27K4CT-ND))
@@ -680,7 +680,7 @@
       (tstamp 5F57E485))
     (comp (ref R17)
       (value 27.4k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT27K4CT-ND))
@@ -689,7 +689,7 @@
       (tstamp 5F64AD7E))
     (comp (ref R2)
       (value 27.4k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0402FT27K4CT-ND))
@@ -698,7 +698,7 @@
       (tstamp 5F64B745))
     (comp (ref R1)
       (value 2.2k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-2.2KJRCT-ND))
@@ -707,7 +707,7 @@
       (tstamp 5F7CA226))
     (comp (ref L3)
       (value "60 Ohm")
-      (footprint Inductors_SMD:L_0402)
+      (footprint Inductor_SMD:L_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 445-172882-1-ND))
@@ -716,7 +716,7 @@
       (tstamp 5E2552CC))
     (comp (ref U2)
       (value TMS320F280041C)
-      (footprint Housings_DFN_QFN:QFN-56-1EP_7x7mm_Pitch0.4mm)
+      (footprint Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.6x5.6mm)
       (datasheet http://www.ti.com/lit/ds/symlink/tms320f280041.pdf?ts=1588432897241)
       (fields
         (field (name Digikey) 296-F280041CRSHSRCT-ND)
@@ -726,7 +726,7 @@
       (tstamp 5F8727D6))
     (comp (ref C33)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -735,7 +735,7 @@
       (tstamp 5F8D0311))
     (comp (ref C31)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -744,7 +744,7 @@
       (tstamp 5F8E04DC))
     (comp (ref C40)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -753,7 +753,7 @@
       (tstamp 5F8E550E))
     (comp (ref C34)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -762,7 +762,7 @@
       (tstamp 5F92CD57))
     (comp (ref C38)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -771,7 +771,7 @@
       (tstamp 5F965F8E))
     (comp (ref C41)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -780,7 +780,7 @@
       (tstamp 5F98262D))
     (comp (ref C39)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -789,7 +789,7 @@
       (tstamp 5F982645))
     (comp (ref R30)
       (value 2.2k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-2.2KJRCT-ND))
@@ -798,7 +798,7 @@
       (tstamp 5E229BC7))
     (comp (ref C35)
       (value 10nF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 732-7545-1-ND))
@@ -807,7 +807,7 @@
       (tstamp 5F9B3B7C))
     (comp (ref C29)
       (value 2.2uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10451-1-ND))
@@ -816,7 +816,7 @@
       (tstamp 5F9DB0B7))
     (comp (ref C22)
       (value 2.2uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10451-1-ND))
@@ -825,7 +825,7 @@
       (tstamp 5F9DBC16))
     (comp (ref C32)
       (value 2.2uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10451-1-ND))
@@ -834,7 +834,7 @@
       (tstamp 5FA66235))
     (comp (ref C30)
       (value 2.2uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10451-1-ND))
@@ -843,7 +843,7 @@
       (tstamp 5FA6766A))
     (comp (ref C21)
       (value 10uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 1276-1119-1-ND))
@@ -852,7 +852,7 @@
       (tstamp 5FAD3E7F))
     (comp (ref C27)
       (value 10uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 1276-1119-1-ND))
@@ -861,7 +861,7 @@
       (tstamp 5FAD44BC))
     (comp (ref L1)
       (value "220 Ohm")
-      (footprint Inductors_SMD:L_0402)
+      (footprint Inductor_SMD:L_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-11021-1-ND))
@@ -870,7 +870,7 @@
       (tstamp 5FAD4997))
     (comp (ref C19)
       (value 2.2uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10451-1-ND))
@@ -879,7 +879,7 @@
       (tstamp 5FB4740A))
     (comp (ref C18)
       (value 10uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 1276-1119-1-ND))
@@ -888,7 +888,7 @@
       (tstamp 5FA1F497))
     (comp (ref C16)
       (value 10uF)
-      (footprint Capacitors_SMD:C_0603)
+      (footprint Capacitor_SMD:C_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 1276-1119-1-ND))
@@ -897,7 +897,7 @@
       (tstamp 5F9FF58E))
     (comp (ref C42)
       (value 0.1uF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-10698-1-ND))
@@ -906,7 +906,7 @@
       (tstamp 5FBE06BF))
     (comp (ref R25)
       (value 10k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1ETTP103JCT-ND))
@@ -915,7 +915,7 @@
       (tstamp 5FC71A8E))
     (comp (ref R26)
       (value 10k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1ETTP103JCT-ND))
@@ -924,7 +924,7 @@
       (tstamp 5FC75C3D))
     (comp (ref R27)
       (value 2.2k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 311-2.2KJRCT-ND))
@@ -933,7 +933,7 @@
       (tstamp 5FC8FBEB))
     (comp (ref R28)
       (value 10k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1ETTP103JCT-ND))
@@ -942,7 +942,7 @@
       (tstamp 5FD15766))
     (comp (ref R29)
       (value 10k)
-      (footprint Resistors_SMD:R_0402)
+      (footprint Resistor_SMD:R_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 2019-RK73B1ETTP103JCT-ND))
@@ -960,7 +960,7 @@
       (tstamp 5FDC1EC1))
     (comp (ref C37)
       (value 9pF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-5880-1-ND))
@@ -969,7 +969,7 @@
       (tstamp 5FDCD865))
     (comp (ref C36)
       (value 9pF)
-      (footprint Capacitors_SMD:C_0402)
+      (footprint Capacitor_SMD:C_0402_1005Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 490-5880-1-ND))
@@ -978,7 +978,7 @@
       (tstamp 5FDF6C2B))
     (comp (ref D5)
       (value Orange)
-      (footprint LEDs:LED_0603)
+      (footprint LED_SMD:LED_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) 160-1180-1-ND))
@@ -987,7 +987,7 @@
       (tstamp 5E9F4B31))
     (comp (ref R31)
       (value 680)
-      (footprint Resistors_SMD:R_0603)
+      (footprint Resistor_SMD:R_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0603JT680RCT-ND))
@@ -1132,7 +1132,7 @@
     (libpart (lib Interface_CAN_LIN) (part MCP2562-E-MF)
       (aliases
         (alias MCP2562-H-MF))
-      (description "High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN8 package")
+      (description "High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN-8")
       (docs http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf)
       (footprints
         (fp DFN*1EP*3x3mm*P0.65mm*))
