@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>D:\Motor Controller Research\GitHub\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch</source>
-    <date>2020-08-22 4:44:00 PM</date>
-    <tool>Eeschema (5.1.5)-3</tool>
+    <source>D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch</source>
+    <date>2021-01-13 4:57:46 PM</date>
+    <tool>Eeschema (5.1.9)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>FOC Thruster Controller </title>
         <company>Mark Belbin</company>
-        <rev>V2</rev>
-        <date>2020-08-22</date>
+        <rev>V2.1</rev>
+        <date>2020-09-04</date>
         <source>Thruster_Controller_V2.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -79,7 +79,7 @@
     </comp>
     <comp ref="C23">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -89,7 +89,7 @@
     </comp>
     <comp ref="C28">
       <value>1uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Digikey">1276-1102-1-ND</field>
       </fields>
@@ -99,7 +99,7 @@
     </comp>
     <comp ref="R35">
       <value>120</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-120JRCT-ND</field>
@@ -109,13 +109,14 @@
       <tstamp>5E50F8DF</tstamp>
     </comp>
     <comp ref="U8">
-      <value>MCP2562</value>
-      <footprint>Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.65mm</footprint>
-      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf</datasheet>
+      <value>ATA6561</value>
+      <footprint>Package_DFN_QFN:DFN-8-1EP_3x3mm_P0.65mm_EP1.7x2.05mm</footprint>
+      <datasheet>https://ww1.microchip.com/downloads/en/DeviceDoc/20005991B.pdf</datasheet>
       <fields>
-        <field name="Digikey">MCP2562-E/MF-ND</field>
+        <field name="Digikey">ATA6561-GBQW-NCT-ND</field>
+        <field name="Mouser">579-ATA6561-GBQW-N</field>
       </fields>
-      <libsource lib="Interface_CAN_LIN" part="MCP2562-E-MF" description="High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN8 package"/>
+      <libsource lib="Interface_CAN_LIN" part="MCP2562-E-MF" description="High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN-8"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5E558E9D</tstamp>
     </comp>
@@ -153,7 +154,7 @@
     </comp>
     <comp ref="R7">
       <value>2.7k</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0603JT2K70CT-ND</field>
@@ -164,7 +165,7 @@
     </comp>
     <comp ref="D1">
       <value>BLUE</value>
-      <footprint>LEDs:LED_0603</footprint>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">732-4966-1-ND</field>
@@ -175,7 +176,7 @@
     </comp>
     <comp ref="D3">
       <value>GREEN</value>
-      <footprint>LEDs:LED_0603</footprint>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">732-4980-1-ND</field>
@@ -202,7 +203,7 @@
     </comp>
     <comp ref="U1">
       <value>NCP718AMT330</value>
-      <footprint>Housings_DFN_QFN:DFN-6-1EP_2x2mm_Pitch0.65mm</footprint>
+      <footprint>Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm</footprint>
       <datasheet>https://www.mouser.ca/datasheet/2/308/NCP718-D-1224359.pdf</datasheet>
       <fields>
         <field name="Digikey">NCP718AMT330TBGOSCT-ND</field>
@@ -214,7 +215,7 @@
     </comp>
     <comp ref="C4">
       <value>1uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Digikey">1276-1102-1-ND</field>
       </fields>
@@ -224,7 +225,7 @@
     </comp>
     <comp ref="C3">
       <value>1uF</value>
-      <footprint>Capacitors_SMD:C_0805</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
       <fields>
         <field name="Digikey">1276-6470-1-ND</field>
         <field name="Voltage">50V</field>
@@ -234,19 +235,82 @@
       <tstamp>5EC10B5C</tstamp>
     </comp>
     <comp ref="R19">
-      <value>180</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
-        <field name="Digikey">2019-RK73B1JTTD181JCT-ND</field>
+        <field name="Digikey">2019-RK73B1JTTD101JCT-ND</field>
       </fields>
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5E5672C2</tstamp>
     </comp>
+    <comp ref="U4">
+      <value>NCP718BMT500</value>
+      <footprint>Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/NCP718-D.PDF</datasheet>
+      <fields>
+        <field name="Digikey">NCP718BMT500TBGOSCT-ND</field>
+        <field name="Mouser">863-NCP718BMT500TBG</field>
+      </fields>
+      <libsource lib="Thruster_Controller" part="NCP718AMT330" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F656C14</tstamp>
+    </comp>
+    <comp ref="C44">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Digikey">1276-1102-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F656C1B</tstamp>
+    </comp>
+    <comp ref="C43">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Digikey">1276-6470-1-ND</field>
+        <field name="Voltage">50V</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F656C4B</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>GREEN</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Digikey">732-4980-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="LED_ALT" description="Light emitting diode, filled shape"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F69B13E</tstamp>
+    </comp>
+    <comp ref="TP2">
+      <value>TestPoint</value>
+      <footprint>Thruster_Controller:TestPoint_Pad_D1.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F6BB45D</tstamp>
+    </comp>
+    <comp ref="R34">
+      <value>220</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="Digikey">2019-RK73B1JTTD221JCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5F69B65B</tstamp>
+    </comp>
     <comp ref="C1">
       <value>4.7uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Digikey">1276-1900-1-ND</field>
       </fields>
@@ -256,7 +320,7 @@
     </comp>
     <comp ref="D2">
       <value>RED</value>
-      <footprint>LEDs:LED_0603</footprint>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">732-4978-1-ND</field>
@@ -267,7 +331,7 @@
     </comp>
     <comp ref="R10">
       <value>330</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0603JT330RCT-ND</field>
@@ -278,7 +342,7 @@
     </comp>
     <comp ref="R6">
       <value>10k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">2019-RK73B1ETTP103JCT-ND</field>
@@ -289,7 +353,7 @@
     </comp>
     <comp ref="C2">
       <value>0.047uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10702-1-ND</field>
       </fields>
@@ -299,7 +363,7 @@
     </comp>
     <comp ref="C26">
       <value>2200pF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-6359-1-ND</field>
       </fields>
@@ -309,7 +373,7 @@
     </comp>
     <comp ref="R20">
       <value>56</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-56JRCT-ND</field>
@@ -320,7 +384,7 @@
     </comp>
     <comp ref="R16">
       <value>4.99k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-4.99KLRCT-ND</field>
@@ -331,7 +395,7 @@
     </comp>
     <comp ref="C17">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -352,7 +416,7 @@
     </comp>
     <comp ref="R11">
       <value>5m</value>
-      <footprint>Resistors_SMD:R_2512</footprint>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
       <fields>
         <field name="Digikey">YAG6105CT-ND</field>
       </fields>
@@ -362,7 +426,7 @@
     </comp>
     <comp ref="R5">
       <value>22.0k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT22K0CT-ND</field>
@@ -373,7 +437,7 @@
     </comp>
     <comp ref="R14">
       <value>4.99k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-4.99KLRCT-ND</field>
@@ -395,7 +459,7 @@
     </comp>
     <comp ref="R8">
       <value>5m</value>
-      <footprint>Resistors_SMD:R_2512</footprint>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
       <fields>
         <field name="Digikey">YAG6105CT-ND</field>
       </fields>
@@ -405,7 +469,7 @@
     </comp>
     <comp ref="R12">
       <value>4.99k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-4.99KLRCT-ND</field>
@@ -416,7 +480,7 @@
     </comp>
     <comp ref="R9">
       <value>5m</value>
-      <footprint>Resistors_SMD:R_2512</footprint>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
       <fields>
         <field name="Digikey">YAG6105CT-ND</field>
       </fields>
@@ -426,7 +490,7 @@
     </comp>
     <comp ref="R13">
       <value>4.99k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-4.99KLRCT-ND</field>
@@ -437,7 +501,7 @@
     </comp>
     <comp ref="C5">
       <value>1uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Digikey">1276-1102-1-ND</field>
       </fields>
@@ -447,7 +511,7 @@
     </comp>
     <comp ref="C20">
       <value>1uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Digikey">1276-1102-1-ND</field>
       </fields>
@@ -457,7 +521,7 @@
     </comp>
     <comp ref="C25">
       <value>2200pF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-6359-1-ND</field>
       </fields>
@@ -467,7 +531,7 @@
     </comp>
     <comp ref="C24">
       <value>2200pF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-6359-1-ND</field>
       </fields>
@@ -477,7 +541,7 @@
     </comp>
     <comp ref="C8">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -487,7 +551,7 @@
     </comp>
     <comp ref="C6">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -497,7 +561,7 @@
     </comp>
     <comp ref="C7">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -507,7 +571,7 @@
     </comp>
     <comp ref="R21">
       <value>56</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-56JRCT-ND</field>
@@ -518,7 +582,7 @@
     </comp>
     <comp ref="R22">
       <value>56</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-56JRCT-ND</field>
@@ -529,7 +593,7 @@
     </comp>
     <comp ref="R3">
       <value>22.0k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT22K0CT-ND</field>
@@ -540,7 +604,7 @@
     </comp>
     <comp ref="R4">
       <value>22.0k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT22K0CT-ND</field>
@@ -551,7 +615,7 @@
     </comp>
     <comp ref="R15">
       <value>22.0k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT22K0CT-ND</field>
@@ -610,7 +674,7 @@
     </comp>
     <comp ref="C15">
       <value>220uF</value>
-      <footprint>Capacitors_SMD:CP_Elec_6.3x5.8</footprint>
+      <footprint>Thruster_Controller:CP_Elec_6.3x5.8</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">565-APXJ160ARA221MF61GCT-ND</field>
@@ -621,7 +685,7 @@
     </comp>
     <comp ref="C13">
       <value>220uF</value>
-      <footprint>Capacitors_SMD:CP_Elec_6.3x5.8</footprint>
+      <footprint>Thruster_Controller:CP_Elec_6.3x5.8</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">565-APXJ160ARA221MF61GCT-ND</field>
@@ -643,7 +707,7 @@
     </comp>
     <comp ref="U3">
       <value>DRV8320S</value>
-      <footprint>Housings_DFN_QFN:WQFN-32-1EP_5x5mm_Pitch0.5mm</footprint>
+      <footprint>Package_DFN_QFN:WQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm</footprint>
       <datasheet>http://www.ti.com/lit/ds/symlink/drv8323r.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&amp;DCM=yes&amp;ref_url=https%3A%2F%2Fwww.mouser.ca%2F&amp;distId=26</datasheet>
       <fields>
         <field name="Digikey">296-50725-1-ND</field>
@@ -655,7 +719,7 @@
     </comp>
     <comp ref="C10">
       <value>220uF</value>
-      <footprint>Capacitors_SMD:CP_Elec_6.3x5.8</footprint>
+      <footprint>Thruster_Controller:CP_Elec_6.3x5.8</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">565-APXJ160ARA221MF61GCT-ND</field>
@@ -666,7 +730,7 @@
     </comp>
     <comp ref="C9">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
       </fields>
@@ -676,7 +740,7 @@
     </comp>
     <comp ref="C11">
       <value>0.01uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">732-7545-1-ND</field>
       </fields>
@@ -686,7 +750,7 @@
     </comp>
     <comp ref="C12">
       <value>0.01uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">732-7545-1-ND</field>
       </fields>
@@ -696,7 +760,7 @@
     </comp>
     <comp ref="C14">
       <value>0.01uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <fields>
         <field name="Digikey">732-7545-1-ND</field>
       </fields>
@@ -706,7 +770,7 @@
     </comp>
     <comp ref="R33">
       <value>56</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-56JRCT-ND</field>
@@ -717,7 +781,7 @@
     </comp>
     <comp ref="R23">
       <value>2.49k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT2K49CT-ND</field>
@@ -728,7 +792,7 @@
     </comp>
     <comp ref="R24">
       <value>2.49k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT2K49CT-ND</field>
@@ -739,7 +803,7 @@
     </comp>
     <comp ref="R32">
       <value>2.49k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT2K49CT-ND</field>
@@ -750,7 +814,7 @@
     </comp>
     <comp ref="R18">
       <value>27.4k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT27K4CT-ND</field>
@@ -761,7 +825,7 @@
     </comp>
     <comp ref="R17">
       <value>27.4k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT27K4CT-ND</field>
@@ -772,7 +836,7 @@
     </comp>
     <comp ref="R2">
       <value>27.4k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0402FT27K4CT-ND</field>
@@ -783,7 +847,7 @@
     </comp>
     <comp ref="R1">
       <value>2.2k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-2.2KJRCT-ND</field>
@@ -794,7 +858,7 @@
     </comp>
     <comp ref="L3">
       <value>60 Ohm</value>
-      <footprint>Inductors_SMD:L_0402</footprint>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">445-172882-1-ND</field>
@@ -805,7 +869,7 @@
     </comp>
     <comp ref="U2">
       <value>TMS320F280041C</value>
-      <footprint>Housings_DFN_QFN:QFN-56-1EP_7x7mm_Pitch0.4mm</footprint>
+      <footprint>Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.6x5.6mm</footprint>
       <datasheet>http://www.ti.com/lit/ds/symlink/tms320f280041.pdf?ts=1588432897241</datasheet>
       <fields>
         <field name="Digikey">296-F280041CRSHSRCT-ND</field>
@@ -817,7 +881,7 @@
     </comp>
     <comp ref="C33">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -828,7 +892,7 @@
     </comp>
     <comp ref="C31">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -839,7 +903,7 @@
     </comp>
     <comp ref="C40">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -850,7 +914,7 @@
     </comp>
     <comp ref="C34">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -861,7 +925,7 @@
     </comp>
     <comp ref="C38">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -872,7 +936,7 @@
     </comp>
     <comp ref="C41">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -883,7 +947,7 @@
     </comp>
     <comp ref="C39">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -894,7 +958,7 @@
     </comp>
     <comp ref="R30">
       <value>2.2k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-2.2KJRCT-ND</field>
@@ -905,7 +969,7 @@
     </comp>
     <comp ref="C35">
       <value>10nF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">732-7545-1-ND</field>
@@ -916,7 +980,7 @@
     </comp>
     <comp ref="C29">
       <value>2.2uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10451-1-ND</field>
@@ -927,7 +991,7 @@
     </comp>
     <comp ref="C22">
       <value>2.2uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10451-1-ND</field>
@@ -938,7 +1002,7 @@
     </comp>
     <comp ref="C32">
       <value>2.2uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10451-1-ND</field>
@@ -949,7 +1013,7 @@
     </comp>
     <comp ref="C30">
       <value>2.2uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10451-1-ND</field>
@@ -960,7 +1024,7 @@
     </comp>
     <comp ref="C21">
       <value>10uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">1276-1119-1-ND</field>
@@ -971,7 +1035,7 @@
     </comp>
     <comp ref="C27">
       <value>10uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">1276-1119-1-ND</field>
@@ -982,7 +1046,7 @@
     </comp>
     <comp ref="L1">
       <value>220 Ohm</value>
-      <footprint>Inductors_SMD:L_0402</footprint>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-11021-1-ND</field>
@@ -993,7 +1057,7 @@
     </comp>
     <comp ref="C19">
       <value>2.2uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10451-1-ND</field>
@@ -1004,7 +1068,7 @@
     </comp>
     <comp ref="C18">
       <value>10uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">1276-1119-1-ND</field>
@@ -1015,7 +1079,7 @@
     </comp>
     <comp ref="C16">
       <value>10uF</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">1276-1119-1-ND</field>
@@ -1026,7 +1090,7 @@
     </comp>
     <comp ref="C42">
       <value>0.1uF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-10698-1-ND</field>
@@ -1037,7 +1101,7 @@
     </comp>
     <comp ref="R25">
       <value>10k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">2019-RK73B1ETTP103JCT-ND</field>
@@ -1048,7 +1112,7 @@
     </comp>
     <comp ref="R26">
       <value>10k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">2019-RK73B1ETTP103JCT-ND</field>
@@ -1059,7 +1123,7 @@
     </comp>
     <comp ref="R27">
       <value>2.2k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">311-2.2KJRCT-ND</field>
@@ -1070,7 +1134,7 @@
     </comp>
     <comp ref="R28">
       <value>10k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">2019-RK73B1ETTP103JCT-ND</field>
@@ -1081,7 +1145,7 @@
     </comp>
     <comp ref="R29">
       <value>10k</value>
-      <footprint>Resistors_SMD:R_0402</footprint>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">2019-RK73B1ETTP103JCT-ND</field>
@@ -1103,7 +1167,7 @@
     </comp>
     <comp ref="C37">
       <value>9pF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-5880-1-ND</field>
@@ -1114,7 +1178,7 @@
     </comp>
     <comp ref="C36">
       <value>9pF</value>
-      <footprint>Capacitors_SMD:C_0402</footprint>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">490-5880-1-ND</field>
@@ -1125,7 +1189,7 @@
     </comp>
     <comp ref="D5">
       <value>Orange</value>
-      <footprint>LEDs:LED_0603</footprint>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">160-1180-1-ND</field>
@@ -1136,7 +1200,7 @@
     </comp>
     <comp ref="R31">
       <value>680</value>
-      <footprint>Resistors_SMD:R_0603</footprint>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0603JT680RCT-ND</field>
@@ -1329,7 +1393,7 @@
       <aliases>
         <alias>MCP2562-H-MF</alias>
       </aliases>
-      <description>High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN8 package</description>
+      <description>High-Speed CAN Transceiver, 1Mbps, 5V supply, Vio pin, -40C to +125C, DFN-8</description>
       <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf</docs>
       <footprints>
         <fp>DFN*1EP*3x3mm*P0.65mm*</fp>
@@ -1503,493 +1567,521 @@
       <uri>C:\Program Files\KiCad\share\kicad\library/Interface_CAN_LIN.lib</uri>
     </library>
     <library logical="Thruster_Controller">
-      <uri>D:\Motor Controller Research\GitHub\motor-controller\PCBs\Thruster_Controller_V2/Thruster_Controller.lib</uri>
+      <uri>D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2/Thruster_Controller.lib</uri>
     </library>
   </libraries>
   <nets>
-    <net code="1" name="GND">
-      <node ref="C20" pin="2"/>
-      <node ref="R9" pin="2"/>
-      <node ref="C1" pin="2"/>
-      <node ref="R16" pin="2"/>
-      <node ref="C9" pin="2"/>
+    <net code="1" name="/Powertrain/SPI_MISO">
+      <node ref="R1" pin="2"/>
+      <node ref="U3" pin="18"/>
+      <node ref="U2" pin="31"/>
+    </net>
+    <net code="2" name="/Powertrain/VSEN_A">
+      <node ref="C7" pin="1"/>
+      <node ref="R4" pin="2"/>
+      <node ref="R13" pin="1"/>
+      <node ref="U2" pin="8"/>
+    </net>
+    <net code="3" name="/SCI_RX">
+      <node ref="J5" pin="5"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="4" name="/Powertrain/VSEN_B">
+      <node ref="R3" pin="2"/>
+      <node ref="C6" pin="1"/>
+      <node ref="R12" pin="1"/>
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="5" name="/Powertrain/SPI_MOSI">
+      <node ref="U2" pin="30"/>
+      <node ref="U3" pin="19"/>
+    </net>
+    <net code="6" name="/Powertrain/SPI_CS">
+      <node ref="U3" pin="21"/>
+      <node ref="U2" pin="28"/>
+    </net>
+    <net code="7" name="/Powertrain/SPI_CLK">
+      <node ref="U3" pin="20"/>
+      <node ref="U2" pin="56"/>
+    </net>
+    <net code="8" name="/Powertrain/INL_C">
+      <node ref="U3" pin="30"/>
+      <node ref="U2" pin="55"/>
+    </net>
+    <net code="9" name="/Powertrain/INH_C">
+      <node ref="U2" pin="43"/>
+      <node ref="U3" pin="29"/>
+    </net>
+    <net code="10" name="/Powertrain/INL_B">
+      <node ref="U2" pin="44"/>
+      <node ref="U3" pin="28"/>
+    </net>
+    <net code="11" name="/Powertrain/DAC">
+      <node ref="R17" pin="2"/>
+      <node ref="R18" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="U2" pin="13"/>
+    </net>
+    <net code="12" name="/Powertrain/EN_GATE">
+      <node ref="U3" pin="22"/>
+      <node ref="U2" pin="42"/>
+    </net>
+    <net code="13" name="/Powertrain/nFAULT">
+      <node ref="U3" pin="17"/>
+      <node ref="R10" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="U2" pin="52"/>
+    </net>
+    <net code="14" name="/Powertrain/INH_B">
+      <node ref="U2" pin="45"/>
+      <node ref="U3" pin="27"/>
+    </net>
+    <net code="15" name="/Powertrain/INL_A">
+      <node ref="U3" pin="26"/>
+      <node ref="U2" pin="46"/>
+    </net>
+    <net code="16" name="/Powertrain/INH_A">
+      <node ref="U3" pin="25"/>
+      <node ref="U2" pin="47"/>
+    </net>
+    <net code="17" name="/Powertrain/PGA_GND">
+      <node ref="C26" pin="2"/>
+      <node ref="C24" pin="2"/>
+      <node ref="U2" pin="18"/>
+      <node ref="C25" pin="2"/>
+      <node ref="U2" pin="9"/>
+      <node ref="R33" pin="2"/>
+    </net>
+    <net code="18" name="/Powertrain/ISEN_C">
+      <node ref="U2" pin="11"/>
+      <node ref="R18" pin="1"/>
+      <node ref="R32" pin="2"/>
+    </net>
+    <net code="19" name="/Powertrain/ISEN_B">
+      <node ref="R17" pin="1"/>
+      <node ref="U2" pin="16"/>
+      <node ref="R24" pin="2"/>
+    </net>
+    <net code="20" name="/Powertrain/ISEN_A">
+      <node ref="R2" pin="1"/>
+      <node ref="R23" pin="2"/>
+      <node ref="U2" pin="10"/>
+    </net>
+    <net code="21" name="/Powertrain/VSEN_PVDD">
+      <node ref="C17" pin="1"/>
+      <node ref="R16" pin="1"/>
+      <node ref="R15" pin="2"/>
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="22" name="/Powertrain/VSEN_C">
+      <node ref="R14" pin="1"/>
+      <node ref="R5" pin="2"/>
+      <node ref="U2" pin="17"/>
+      <node ref="C8" pin="1"/>
+    </net>
+    <net code="23" name="GND">
+      <node ref="R34" pin="2"/>
       <node ref="R8" pin="2"/>
       <node ref="R12" pin="2"/>
-      <node ref="C17" pin="2"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U4" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="R16" pin="2"/>
+      <node ref="C44" pin="2"/>
+      <node ref="U4" pin="7"/>
+      <node ref="U4" pin="5"/>
+      <node ref="C9" pin="2"/>
       <node ref="R14" pin="2"/>
       <node ref="R11" pin="2"/>
       <node ref="C6" pin="2"/>
       <node ref="C8" pin="2"/>
       <node ref="C7" pin="2"/>
+      <node ref="C17" pin="2"/>
       <node ref="R13" pin="2"/>
-      <node ref="U3" pin="31"/>
-      <node ref="U3" pin="23"/>
-      <node ref="U8" pin="8"/>
-      <node ref="U8" pin="9"/>
-      <node ref="R7" pin="2"/>
-      <node ref="C10" pin="2"/>
-      <node ref="U3" pin="33"/>
-      <node ref="NT1" pin="2"/>
-      <node ref="NT2" pin="2"/>
-      <node ref="C13" pin="2"/>
-      <node ref="C15" pin="2"/>
-      <node ref="NT3" pin="2"/>
-      <node ref="C32" pin="2"/>
-      <node ref="C19" pin="2"/>
-      <node ref="C30" pin="2"/>
-      <node ref="C21" pin="2"/>
-      <node ref="C27" pin="2"/>
-      <node ref="U2" pin="19"/>
+      <node ref="R9" pin="2"/>
+      <node ref="C20" pin="2"/>
       <node ref="U2" pin="15"/>
-      <node ref="C35" pin="2"/>
-      <node ref="C29" pin="2"/>
-      <node ref="C22" pin="2"/>
-      <node ref="C41" pin="2"/>
-      <node ref="C39" pin="2"/>
-      <node ref="C37" pin="2"/>
-      <node ref="C18" pin="2"/>
-      <node ref="C16" pin="2"/>
-      <node ref="C42" pin="2"/>
-      <node ref="Y1" pin="2"/>
-      <node ref="C33" pin="2"/>
+      <node ref="U2" pin="19"/>
+      <node ref="C27" pin="2"/>
+      <node ref="C21" pin="2"/>
       <node ref="C40" pin="2"/>
-      <node ref="C34" pin="2"/>
+      <node ref="C30" pin="2"/>
+      <node ref="C18" pin="2"/>
+      <node ref="C19" pin="2"/>
+      <node ref="C32" pin="2"/>
       <node ref="C38" pin="2"/>
       <node ref="U2" pin="50"/>
+      <node ref="C41" pin="2"/>
+      <node ref="C34" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="C29" pin="2"/>
+      <node ref="C35" pin="2"/>
       <node ref="U2" pin="57"/>
-      <node ref="C31" pin="2"/>
+      <node ref="C39" pin="2"/>
+      <node ref="C37" pin="2"/>
+      <node ref="C42" pin="2"/>
+      <node ref="C16" pin="2"/>
       <node ref="C36" pin="2"/>
-      <node ref="C4" pin="2"/>
-      <node ref="U1" pin="7"/>
+      <node ref="Y1" pin="2"/>
+      <node ref="C43" pin="2"/>
       <node ref="C3" pin="2"/>
-      <node ref="C28" pin="2"/>
+      <node ref="C31" pin="2"/>
+      <node ref="C33" pin="2"/>
       <node ref="R19" pin="2"/>
-      <node ref="J5" pin="7"/>
-      <node ref="U1" pin="2"/>
+      <node ref="NT2" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C13" pin="2"/>
+      <node ref="NT1" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="U8" pin="9"/>
+      <node ref="U8" pin="8"/>
+      <node ref="U1" pin="7"/>
+      <node ref="U3" pin="33"/>
       <node ref="U1" pin="5"/>
-      <node ref="U8" pin="2"/>
       <node ref="U1" pin="3"/>
+      <node ref="U1" pin="2"/>
+      <node ref="NT3" pin="2"/>
+      <node ref="U3" pin="31"/>
+      <node ref="U8" pin="2"/>
+      <node ref="C28" pin="2"/>
+      <node ref="J5" pin="9"/>
+      <node ref="J5" pin="7"/>
+      <node ref="U3" pin="23"/>
       <node ref="C23" pin="2"/>
       <node ref="J8" pin="1"/>
-      <node ref="J5" pin="9"/>
     </net>
-    <net code="2" name="/Powertrain/EN_GATE">
-      <node ref="U2" pin="42"/>
-      <node ref="U3" pin="22"/>
-    </net>
-    <net code="3" name="/Powertrain/VSEN_A">
-      <node ref="C7" pin="1"/>
-      <node ref="R13" pin="1"/>
-      <node ref="R4" pin="2"/>
-      <node ref="U2" pin="8"/>
-    </net>
-    <net code="4" name="/Powertrain/VSEN_B">
-      <node ref="C6" pin="1"/>
-      <node ref="R12" pin="1"/>
-      <node ref="U2" pin="7"/>
-      <node ref="R3" pin="2"/>
-    </net>
-    <net code="5" name="/Powertrain/VSEN_C">
-      <node ref="R14" pin="1"/>
-      <node ref="C8" pin="1"/>
-      <node ref="R5" pin="2"/>
-      <node ref="U2" pin="17"/>
-    </net>
-    <net code="6" name="/Powertrain/VSEN_PVDD">
-      <node ref="U2" pin="6"/>
-      <node ref="R16" pin="1"/>
-      <node ref="R15" pin="2"/>
-      <node ref="C17" pin="1"/>
-    </net>
-    <net code="7" name="/Powertrain/DAC">
-      <node ref="U2" pin="13"/>
-      <node ref="R2" pin="2"/>
-      <node ref="R17" pin="2"/>
-      <node ref="R18" pin="2"/>
-    </net>
-    <net code="8" name="/SCI_TX">
-      <node ref="J5" pin="3"/>
+    <net code="24" name="/SCI_TX">
       <node ref="U2" pin="2"/>
+      <node ref="J5" pin="3"/>
     </net>
-    <net code="9" name="+BATT">
-      <node ref="C5" pin="1"/>
-      <node ref="C10" pin="1"/>
-      <node ref="C1" pin="1"/>
-      <node ref="U3" pin="4"/>
-      <node ref="C12" pin="1"/>
-      <node ref="C14" pin="1"/>
-      <node ref="C3" pin="1"/>
-      <node ref="TP3" pin="1"/>
-      <node ref="J7" pin="1"/>
-      <node ref="C9" pin="1"/>
-      <node ref="D1" pin="2"/>
-      <node ref="C11" pin="1"/>
-      <node ref="U1" pin="6"/>
-      <node ref="Q2" pin="4"/>
-      <node ref="R15" pin="1"/>
-      <node ref="C13" pin="1"/>
-      <node ref="C15" pin="1"/>
-      <node ref="Q1" pin="4"/>
-      <node ref="U3" pin="3"/>
-      <node ref="Q3" pin="4"/>
-      <node ref="U1" pin="4"/>
+    <net code="25" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1"/>
+      <node ref="R34" pin="1"/>
     </net>
-    <net code="10" name="+3V3">
-      <node ref="C38" pin="1"/>
-      <node ref="C33" pin="1"/>
-      <node ref="C4" pin="1"/>
-      <node ref="U2" pin="5"/>
-      <node ref="U2" pin="53"/>
-      <node ref="R28" pin="1"/>
-      <node ref="C18" pin="1"/>
-      <node ref="C16" pin="1"/>
-      <node ref="R25" pin="1"/>
-      <node ref="R26" pin="1"/>
-      <node ref="R27" pin="1"/>
-      <node ref="C23" pin="1"/>
-      <node ref="C31" pin="1"/>
-      <node ref="D2" pin="2"/>
-      <node ref="R6" pin="1"/>
-      <node ref="C28" pin="1"/>
-      <node ref="D5" pin="2"/>
-      <node ref="R29" pin="1"/>
-      <node ref="L1" pin="1"/>
-      <node ref="C19" pin="1"/>
-      <node ref="U1" pin="1"/>
-      <node ref="J5" pin="1"/>
-      <node ref="C21" pin="1"/>
-      <node ref="U2" pin="24"/>
-      <node ref="U2" pin="41"/>
-      <node ref="L3" pin="1"/>
-      <node ref="R1" pin="1"/>
+    <net code="26" name="+5V">
+      <node ref="U4" pin="1"/>
+      <node ref="TP2" pin="1"/>
       <node ref="U8" pin="3"/>
-      <node ref="R30" pin="1"/>
-      <node ref="U8" pin="5"/>
-      <node ref="C41" pin="1"/>
-      <node ref="D3" pin="2"/>
-      <node ref="TP1" pin="1"/>
+      <node ref="C44" pin="1"/>
+      <node ref="D4" pin="2"/>
+      <node ref="C28" pin="1"/>
+      <node ref="C23" pin="1"/>
     </net>
-    <net code="11" name="/Powertrain/nFAULT">
-      <node ref="R6" pin="2"/>
-      <node ref="R10" pin="2"/>
-      <node ref="U3" pin="17"/>
-      <node ref="U2" pin="52"/>
+    <net code="27" name="/TXCAN">
+      <node ref="U2" pin="27"/>
+      <node ref="U8" pin="1"/>
     </net>
-    <net code="12" name="/Powertrain/INL_C">
-      <node ref="U2" pin="55"/>
-      <node ref="U3" pin="30"/>
-    </net>
-    <net code="13" name="/Powertrain/INH_C">
-      <node ref="U2" pin="43"/>
-      <node ref="U3" pin="29"/>
-    </net>
-    <net code="14" name="/Powertrain/INL_B">
-      <node ref="U2" pin="44"/>
-      <node ref="U3" pin="28"/>
-    </net>
-    <net code="15" name="/Powertrain/INH_B">
-      <node ref="U2" pin="45"/>
-      <node ref="U3" pin="27"/>
-    </net>
-    <net code="16" name="/Powertrain/INL_A">
-      <node ref="U2" pin="46"/>
-      <node ref="U3" pin="26"/>
-    </net>
-    <net code="17" name="/Powertrain/INH_A">
-      <node ref="U2" pin="47"/>
-      <node ref="U3" pin="25"/>
-    </net>
-    <net code="18" name="/Powertrain/PGA_GND">
-      <node ref="C25" pin="2"/>
-      <node ref="C24" pin="2"/>
-      <node ref="C26" pin="2"/>
-      <node ref="R33" pin="2"/>
-      <node ref="U2" pin="9"/>
-      <node ref="U2" pin="18"/>
-    </net>
-    <net code="19" name="/SCI_RX">
-      <node ref="J5" pin="5"/>
-      <node ref="U2" pin="3"/>
-    </net>
-    <net code="20" name="/Powertrain/SPI_MOSI">
-      <node ref="U2" pin="30"/>
-      <node ref="U3" pin="19"/>
-    </net>
-    <net code="21" name="/Powertrain/SPI_CS">
-      <node ref="U2" pin="28"/>
-      <node ref="U3" pin="21"/>
-    </net>
-    <net code="22" name="/Powertrain/SPI_CLK">
-      <node ref="U3" pin="20"/>
-      <node ref="U2" pin="56"/>
-    </net>
-    <net code="23" name="/Powertrain/SPI_MISO">
-      <node ref="U2" pin="31"/>
-      <node ref="U3" pin="18"/>
-      <node ref="R1" pin="2"/>
-    </net>
-    <net code="24" name="/Powertrain/ISEN_C">
-      <node ref="R32" pin="2"/>
-      <node ref="U2" pin="11"/>
-      <node ref="R18" pin="1"/>
-    </net>
-    <net code="25" name="/Powertrain/ISEN_B">
-      <node ref="R24" pin="2"/>
-      <node ref="U2" pin="16"/>
-      <node ref="R17" pin="1"/>
-    </net>
-    <net code="26" name="/Powertrain/ISEN_A">
-      <node ref="R2" pin="1"/>
-      <node ref="U2" pin="10"/>
-      <node ref="R23" pin="2"/>
-    </net>
-    <net code="27" name="/CANL">
-      <node ref="R35" pin="1"/>
+    <net code="28" name="/CANL">
       <node ref="J4" pin="1"/>
+      <node ref="R35" pin="1"/>
       <node ref="U8" pin="6"/>
     </net>
-    <net code="28" name="/CANH">
-      <node ref="U8" pin="7"/>
-      <node ref="J6" pin="1"/>
-      <node ref="R35" pin="2"/>
+    <net code="29" name="+3V3">
+      <node ref="L3" pin="1"/>
+      <node ref="C19" pin="1"/>
+      <node ref="R27" pin="1"/>
+      <node ref="L1" pin="1"/>
+      <node ref="D5" pin="2"/>
+      <node ref="J5" pin="1"/>
+      <node ref="C21" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="U8" pin="5"/>
+      <node ref="TP1" pin="1"/>
+      <node ref="D2" pin="2"/>
+      <node ref="R28" pin="1"/>
+      <node ref="R26" pin="1"/>
+      <node ref="R6" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="R30" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="D3" pin="2"/>
+      <node ref="R25" pin="1"/>
+      <node ref="R29" pin="1"/>
     </net>
-    <net code="29" name="/RXCAN">
+    <net code="30" name="/RXCAN">
       <node ref="U8" pin="4"/>
       <node ref="U2" pin="26"/>
     </net>
-    <net code="30" name="/TXCAN">
-      <node ref="U8" pin="1"/>
-      <node ref="U2" pin="27"/>
+    <net code="31" name="/TDO">
+      <node ref="U2" pin="34"/>
+      <node ref="R26" pin="2"/>
+      <node ref="J5" pin="6"/>
     </net>
-    <net code="31" name="/Powertrain/Phase_B">
-      <node ref="J2" pin="1"/>
-      <node ref="R3" pin="1"/>
-      <node ref="Q1" pin="5"/>
-    </net>
-    <net code="32" name="/Powertrain/Phase_C">
-      <node ref="J3" pin="1"/>
-      <node ref="R5" pin="1"/>
-      <node ref="Q3" pin="5"/>
-    </net>
-    <net code="33" name="/Powertrain/Phase_A">
-      <node ref="J1" pin="1"/>
-      <node ref="R4" pin="1"/>
-      <node ref="Q2" pin="5"/>
-    </net>
-    <net code="34" name="/TRST">
+    <net code="32" name="/TRST">
       <node ref="J5" pin="10"/>
     </net>
-    <net code="35" name="/TDI">
-      <node ref="U2" pin="36"/>
+    <net code="33" name="/TDI">
       <node ref="J5" pin="8"/>
+      <node ref="U2" pin="36"/>
       <node ref="R25" pin="2"/>
     </net>
-    <net code="36" name="/TDO">
-      <node ref="J5" pin="6"/>
-      <node ref="R26" pin="2"/>
-      <node ref="U2" pin="34"/>
+    <net code="34" name="+BATT">
+      <node ref="C10" pin="1"/>
+      <node ref="TP3" pin="1"/>
+      <node ref="C12" pin="1"/>
+      <node ref="U1" pin="6"/>
+      <node ref="U3" pin="4"/>
+      <node ref="U1" pin="4"/>
+      <node ref="U4" pin="4"/>
+      <node ref="D1" pin="2"/>
+      <node ref="C1" pin="1"/>
+      <node ref="Q2" pin="4"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="C14" pin="1"/>
+      <node ref="U4" pin="6"/>
+      <node ref="U3" pin="3"/>
+      <node ref="C11" pin="1"/>
+      <node ref="J7" pin="1"/>
+      <node ref="C43" pin="1"/>
+      <node ref="Q1" pin="4"/>
+      <node ref="C15" pin="1"/>
+      <node ref="Q3" pin="4"/>
+      <node ref="R15" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="C13" pin="1"/>
     </net>
-    <net code="37" name="/TCK">
-      <node ref="U2" pin="33"/>
+    <net code="35" name="/TCK">
       <node ref="J5" pin="4"/>
+      <node ref="U2" pin="33"/>
     </net>
-    <net code="38" name="/TMS">
+    <net code="36" name="/TMS">
       <node ref="R27" pin="2"/>
-      <node ref="J5" pin="2"/>
       <node ref="U2" pin="35"/>
+      <node ref="J5" pin="2"/>
     </net>
-    <net code="39" name="Net-(D3-Pad1)">
-      <node ref="R19" pin="1"/>
+    <net code="37" name="Net-(D3-Pad1)">
       <node ref="D3" pin="1"/>
+      <node ref="R19" pin="1"/>
     </net>
-    <net code="40" name="Net-(D1-Pad1)">
-      <node ref="R7" pin="1"/>
+    <net code="38" name="Net-(D1-Pad1)">
       <node ref="D1" pin="1"/>
+      <node ref="R7" pin="1"/>
     </net>
-    <net code="41" name="/Powertrain/SNA">
+    <net code="39" name="/Powertrain/Phase_C">
+      <node ref="R5" pin="1"/>
+      <node ref="J3" pin="1"/>
+      <node ref="Q3" pin="5"/>
+    </net>
+    <net code="40" name="/Powertrain/Phase_B">
+      <node ref="R3" pin="1"/>
+      <node ref="Q1" pin="5"/>
+      <node ref="J2" pin="1"/>
+    </net>
+    <net code="41" name="/Powertrain/Phase_A">
+      <node ref="R4" pin="1"/>
+      <node ref="Q2" pin="5"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="42" name="/CANH">
+      <node ref="J6" pin="1"/>
+      <node ref="R35" pin="2"/>
+      <node ref="U8" pin="7"/>
+    </net>
+    <net code="43" name="/Powertrain/SNA">
+      <node ref="R33" pin="1"/>
       <node ref="NT3" pin="1"/>
       <node ref="NT2" pin="1"/>
-      <node ref="R33" pin="1"/>
       <node ref="NT1" pin="1"/>
     </net>
-    <net code="42" name="Net-(C20-Pad1)">
-      <node ref="U3" pin="24"/>
+    <net code="44" name="Net-(C20-Pad1)">
       <node ref="C20" pin="1"/>
+      <node ref="U3" pin="24"/>
     </net>
-    <net code="43" name="Net-(C5-Pad2)">
+    <net code="45" name="Net-(C5-Pad2)">
       <node ref="U3" pin="2"/>
       <node ref="C5" pin="2"/>
     </net>
-    <net code="44" name="/Powertrain/SL_C">
-      <node ref="NT6" pin="2"/>
+    <net code="46" name="/Powertrain/SL_C">
       <node ref="R11" pin="1"/>
-      <node ref="C11" pin="2"/>
       <node ref="Q3" pin="6"/>
+      <node ref="NT6" pin="2"/>
       <node ref="U3" pin="16"/>
+      <node ref="C11" pin="2"/>
     </net>
-    <net code="45" name="/Powertrain/SH_B">
-      <node ref="U3" pin="11"/>
+    <net code="47" name="/Powertrain/SH_B">
       <node ref="Q1" pin="2"/>
+      <node ref="U3" pin="11"/>
     </net>
-    <net code="46" name="/Powertrain/GH_B">
-      <node ref="U3" pin="12"/>
+    <net code="48" name="/Powertrain/GH_B">
       <node ref="Q1" pin="1"/>
+      <node ref="U3" pin="12"/>
     </net>
-    <net code="47" name="/Powertrain/GH_C">
+    <net code="49" name="/Powertrain/GH_C">
       <node ref="U3" pin="13"/>
       <node ref="Q3" pin="1"/>
     </net>
-    <net code="48" name="/Powertrain/SH_C">
-      <node ref="Q3" pin="2"/>
+    <net code="50" name="/Powertrain/SH_C">
       <node ref="U3" pin="14"/>
+      <node ref="Q3" pin="2"/>
     </net>
-    <net code="49" name="/Powertrain/GL_C">
-      <node ref="Q3" pin="3"/>
+    <net code="51" name="/Powertrain/GL_C">
       <node ref="U3" pin="15"/>
+      <node ref="Q3" pin="3"/>
     </net>
-    <net code="50" name="Net-(C25-Pad1)">
+    <net code="52" name="Net-(C25-Pad1)">
       <node ref="C25" pin="1"/>
-      <node ref="R24" pin="1"/>
       <node ref="R21" pin="2"/>
+      <node ref="R24" pin="1"/>
     </net>
-    <net code="51" name="/Powertrain/SPB">
+    <net code="53" name="/Powertrain/SPB">
       <node ref="R21" pin="1"/>
       <node ref="NT4" pin="1"/>
     </net>
-    <net code="52" name="/Powertrain/SPC">
+    <net code="54" name="/Powertrain/SPC">
       <node ref="NT6" pin="1"/>
       <node ref="R22" pin="1"/>
     </net>
-    <net code="53" name="/Powertrain/GH_A">
+    <net code="55" name="/Powertrain/GH_A">
       <node ref="U3" pin="5"/>
       <node ref="Q2" pin="1"/>
     </net>
-    <net code="54" name="/Powertrain/SH_A">
+    <net code="56" name="/Powertrain/SH_A">
       <node ref="U3" pin="6"/>
       <node ref="Q2" pin="2"/>
     </net>
-    <net code="55" name="/Powertrain/GL_A">
+    <net code="57" name="/Powertrain/GL_A">
       <node ref="Q2" pin="3"/>
       <node ref="U3" pin="7"/>
     </net>
-    <net code="56" name="/Powertrain/SL_A">
+    <net code="58" name="/Powertrain/SL_A">
       <node ref="NT5" pin="2"/>
       <node ref="R9" pin="1"/>
-      <node ref="U3" pin="8"/>
       <node ref="Q2" pin="6"/>
+      <node ref="U3" pin="8"/>
       <node ref="C14" pin="2"/>
     </net>
-    <net code="57" name="Net-(C2-Pad1)">
+    <net code="59" name="Net-(C2-Pad1)">
       <node ref="U3" pin="32"/>
       <node ref="C2" pin="1"/>
     </net>
-    <net code="58" name="Net-(C2-Pad2)">
+    <net code="60" name="Net-(C2-Pad2)">
       <node ref="U3" pin="1"/>
       <node ref="C2" pin="2"/>
     </net>
-    <net code="59" name="Net-(C26-Pad1)">
+    <net code="61" name="Net-(C26-Pad1)">
+      <node ref="C26" pin="1"/>
       <node ref="R22" pin="2"/>
       <node ref="R32" pin="1"/>
-      <node ref="C26" pin="1"/>
     </net>
-    <net code="60" name="/Powertrain/GL_B">
-      <node ref="U3" pin="10"/>
+    <net code="62" name="/Powertrain/GL_B">
       <node ref="Q1" pin="3"/>
+      <node ref="U3" pin="10"/>
     </net>
-    <net code="61" name="/Powertrain/SL_B">
-      <node ref="NT4" pin="2"/>
+    <net code="63" name="/Powertrain/SL_B">
       <node ref="C12" pin="2"/>
-      <node ref="U3" pin="9"/>
-      <node ref="Q1" pin="6"/>
+      <node ref="NT4" pin="2"/>
       <node ref="R8" pin="1"/>
+      <node ref="Q1" pin="6"/>
+      <node ref="U3" pin="9"/>
     </net>
-    <net code="62" name="Net-(C24-Pad1)">
-      <node ref="R23" pin="1"/>
+    <net code="64" name="Net-(C24-Pad1)">
       <node ref="C24" pin="1"/>
+      <node ref="R23" pin="1"/>
       <node ref="R20" pin="2"/>
     </net>
-    <net code="63" name="/Powertrain/SPA">
-      <node ref="NT5" pin="1"/>
+    <net code="65" name="/Powertrain/SPA">
       <node ref="R20" pin="1"/>
+      <node ref="NT5" pin="1"/>
     </net>
-    <net code="64" name="Net-(D2-Pad1)">
-      <node ref="D2" pin="1"/>
+    <net code="66" name="Net-(D2-Pad1)">
       <node ref="R10" pin="1"/>
+      <node ref="D2" pin="1"/>
     </net>
-    <net code="65" name="/TI_MCU/GPIO24">
-      <node ref="U2" pin="32"/>
+    <net code="67" name="/TI_MCU/GPIO24">
       <node ref="R29" pin="2"/>
+      <node ref="U2" pin="32"/>
     </net>
-    <net code="66" name="/TI_MCU/GPIO32">
-      <node ref="R28" pin="2"/>
-      <node ref="U2" pin="37"/>
+    <net code="68" name="/TI_MCU/X1">
+      <node ref="C36" pin="1"/>
+      <node ref="Y1" pin="1"/>
+      <node ref="U2" pin="39"/>
     </net>
-    <net code="67" name="/TI_MCU/X2">
+    <net code="69" name="/TI_MCU/X2">
       <node ref="Y1" pin="3"/>
       <node ref="U2" pin="38"/>
       <node ref="C37" pin="1"/>
     </net>
-    <net code="68" name="+3.3VA">
-      <node ref="U2" pin="54"/>
-      <node ref="U2" pin="48"/>
-      <node ref="C34" pin="1"/>
-      <node ref="C42" pin="1"/>
-      <node ref="U2" pin="25"/>
-      <node ref="C39" pin="1"/>
-      <node ref="C27" pin="1"/>
-      <node ref="L1" pin="2"/>
-      <node ref="U2" pin="40"/>
-      <node ref="C40" pin="1"/>
-    </net>
-    <net code="69" name="Net-(U2-Pad49)">
+    <net code="70" name="Net-(U2-Pad49)">
       <node ref="U2" pin="49"/>
     </net>
-    <net code="70" name="Net-(U2-Pad51)">
+    <net code="71" name="+3.3VA">
+      <node ref="U2" pin="54"/>
+      <node ref="C39" pin="1"/>
+      <node ref="U2" pin="25"/>
+      <node ref="U2" pin="40"/>
+      <node ref="C42" pin="1"/>
+      <node ref="C40" pin="1"/>
+      <node ref="C27" pin="1"/>
+      <node ref="C34" pin="1"/>
+      <node ref="L1" pin="2"/>
+      <node ref="U2" pin="48"/>
+    </net>
+    <net code="72" name="/TI_MCU/GPIO32">
+      <node ref="R28" pin="2"/>
+      <node ref="U2" pin="37"/>
+    </net>
+    <net code="73" name="Net-(U2-Pad51)">
       <node ref="U2" pin="51"/>
     </net>
-    <net code="71" name="/TI_MCU/GPIO6">
-      <node ref="R31" pin="2"/>
+    <net code="74" name="/TI_MCU/GPIO6">
       <node ref="U2" pin="1"/>
+      <node ref="R31" pin="2"/>
     </net>
-    <net code="72" name="Net-(U2-Pad29)">
-      <node ref="U2" pin="29"/>
-    </net>
-    <net code="73" name="Net-(D5-Pad1)">
-      <node ref="R31" pin="1"/>
+    <net code="75" name="Net-(D5-Pad1)">
       <node ref="D5" pin="1"/>
+      <node ref="R31" pin="1"/>
     </net>
-    <net code="74" name="Net-(U2-Pad23)">
+    <net code="76" name="Net-(U2-Pad23)">
       <node ref="U2" pin="23"/>
     </net>
-    <net code="75" name="Net-(U2-Pad22)">
+    <net code="77" name="Net-(U2-Pad22)">
       <node ref="U2" pin="22"/>
     </net>
-    <net code="76" name="Net-(U2-Pad21)">
+    <net code="78" name="Net-(U2-Pad21)">
       <node ref="U2" pin="21"/>
     </net>
-    <net code="77" name="Net-(U2-Pad12)">
+    <net code="79" name="Net-(U2-Pad12)">
       <node ref="U2" pin="12"/>
     </net>
-    <net code="78" name="/TI_MCU/X1">
-      <node ref="U2" pin="39"/>
-      <node ref="Y1" pin="1"/>
-      <node ref="C36" pin="1"/>
+    <net code="80" name="Net-(U2-Pad29)">
+      <node ref="U2" pin="29"/>
     </net>
-    <net code="79" name="Net-(C30-Pad1)">
+    <net code="81" name="Net-(C31-Pad1)">
+      <node ref="C31" pin="1"/>
+      <node ref="U2" pin="24"/>
+    </net>
+    <net code="82" name="Net-(C18-Pad1)">
+      <node ref="U2" pin="5"/>
+      <node ref="C18" pin="1"/>
+      <node ref="C33" pin="1"/>
+    </net>
+    <net code="83" name="Net-(C38-Pad1)">
+      <node ref="U2" pin="53"/>
+      <node ref="C38" pin="1"/>
+    </net>
+    <net code="84" name="Net-(C30-Pad1)">
       <node ref="U2" pin="14"/>
-      <node ref="C32" pin="1"/>
       <node ref="C30" pin="1"/>
+      <node ref="C32" pin="1"/>
     </net>
-    <net code="80" name="Net-(C22-Pad1)">
-      <node ref="U2" pin="20"/>
-      <node ref="C29" pin="1"/>
-      <node ref="C22" pin="1"/>
-      <node ref="L3" pin="2"/>
+    <net code="85" name="Net-(C16-Pad1)">
+      <node ref="C41" pin="1"/>
+      <node ref="U2" pin="41"/>
+      <node ref="C16" pin="1"/>
     </net>
-    <net code="81" name="/TI_MCU/~RESET~">
+    <net code="86" name="/TI_MCU/~RESET~">
       <node ref="U2" pin="4"/>
       <node ref="C35" pin="1"/>
       <node ref="R30" pin="2"/>
+    </net>
+    <net code="87" name="Net-(C22-Pad1)">
+      <node ref="U2" pin="20"/>
+      <node ref="L3" pin="2"/>
+      <node ref="C29" pin="1"/>
+      <node ref="C22" pin="1"/>
     </net>
   </nets>
 </export>
