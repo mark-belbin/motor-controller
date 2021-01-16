@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source "D:\\FOC Motor Controller\\motor-controller\\PCBs\\Thruster_Controller_V2\\Thruster_Controller_V2.sch")
-    (date "2020-11-22 7:26:04 PM")
-    (tool "Eeschema (5.1.8)-1")
+    (date "2021-01-16 5:02:29 PM")
+    (tool "Eeschema (5.1.9)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title "FOC Thruster Controller ")
@@ -130,7 +130,7 @@
       (tstamp 5EED568B))
     (comp (ref R7)
       (value 2.7k)
-      (footprint Resistor_SMD:R_0402_1005Metric)
+      (footprint Resistor_SMD:R_0603_1608Metric)
       (datasheet ~)
       (fields
         (field (name Digikey) RMCF0603JT2K70CT-ND))
@@ -206,11 +206,11 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 5E5672C2))
     (comp (ref U4)
-      (value NCP718BMT500)
+      (value NCP718AMT500)
       (footprint Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm)
       (datasheet https://www.onsemi.com/pub/Collateral/NCP718-D.PDF)
       (fields
-        (field (name Digikey) NCP718BMT500TBGOSCT-ND)
+        (field (name Digikey) ‎NCP718AMT500TBGOSCT-ND‎)
         (field (name Mouser) 863-NCP718BMT500TBG))
       (libsource (lib Thruster_Controller) (part NCP718AMT330) (description ""))
       (sheetpath (names /) (tstamps /))
