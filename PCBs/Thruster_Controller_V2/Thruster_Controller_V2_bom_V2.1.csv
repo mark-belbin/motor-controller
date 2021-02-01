@@ -42,19 +42,19 @@ Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet
 41,,NCP718AMT330,U4,NCP718BMT500,DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm,1,https://www.onsemi.com/pub/Collateral/NCP718-D.PDF,NCP718BMT500TBGOSCT-ND,,863-NCP718BMT500TBG
 42,,TMS320F280041C,U2,TMS320F280041C,QFN-56-1EP_7x7mm_P0.4mm_EP5.6x5.6mm,1,http://www.ti.com/lit/ds/symlink/tms320f280041.pdf?ts=1588432897241,296-F280041CRSHSRCT-ND,,595-F280041CRSHSR
 43,"Three pin crystal, GND on pin 2",Crystal_GND2,Y1,20 MHz,Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm,1,~,SER3629CT-ND,,
-
-
-
-
-
-Component Groups:,43
-Component Count:,109
-Fitted Components:,109
-Number of PCBs:,1
-Total components:,109
-Schematic Version:,V2.1
-Schematic Date:,2020-09-04
-PCB Variant:,[u'default']
-BoM Date:,2021-01-13 4:57:46 PM
-Schematic Source:,D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch
-KiCad Version:,Eeschema (5.1.9)-1
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Component Groups:,43,,,,,,,,,
+Component Count:,109,,,,,,,,,
+Fitted Components:,109,,,,,,,,,
+Number of PCBs:,1,,,,,,,,,
+Total components:,109,,,,,,,,,
+Schematic Version:,V2.1,,,,,,,,,
+Schematic Date:,2020-09-04,,,,,,,,,
+PCB Variant:,[u'default'],,,,,,,,,
+BoM Date:,2021-01-13 16:57,,,,,,,,,
+Schematic Source:,D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch,,,,,,,,,
+KiCad Version:,Eeschema (5.1.9)-1,,,,,,,,,
