@@ -422,84 +422,6 @@ void HAL_setupADCs(HAL_Handle handle)
     // delay to allow ADCs to power up
     SysCtl_delay(1000U);
 
-   /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-    // configure the interrupt sources
-    // configure the ample window to 15 system clock cycle wide by assigning 14
-    // to the ACQPS of ADCSOCxCTL Register.
-    // RB2/B1
-    ADC_setInterruptSource(obj->adcHandle[1], ADC_INT_NUMBER1, ADC_SOC_NUMBER2);
-
-    // configure the SOCs for hvkit_rev1p1
-    // ISENA - PGA5->A14->RA0
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN14, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENB - PGA3->C7->RC0
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN7, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENC - PGA1->B7->RB0
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN7, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENA - A5->RA1
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN5, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENB - B0->RB1
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN0, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENC - C2->RC1
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN2, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENVM - B1->RB2. hvkit board has capacitor on Vbus feedback, so
-    // the sampling doesn't need to be very long to get an accurate value
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM6_SOCA,
-                 ADC_CH_ADCIN1, HAL_ADC_SAMPLE_WINDOW);
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    // configure the interrupt sources
-    // configure the ample window to 15 system clock cycle wide by assigning 14
-    // to the ACQPS of ADCSOCxCTL Register.
-    // RC2/C1
-    ADC_setInterruptSource(obj->adcHandle[2], ADC_INT_NUMBER1, ADC_SOC_NUMBER2);
-
-    // configure the SOCs for hvkit_rev1p1
-    // ISENA - PGA2->B9->RB0
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN9, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENB - PGA4->A15->RA0
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN15, HAL_ADC_SAMPLE_WINDOW);
-
-    // ISENC - PGA1->C9->RC0
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN9, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENA - A6->RA1
-    ADC_setupSOC(obj->adcHandle[0], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN6, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENB - B6/A2->RB1
-    ADC_setupSOC(obj->adcHandle[1], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN6, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENC - C14->RC1
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN14, HAL_ADC_SAMPLE_WINDOW);
-
-    // VSENVM - C1->RC2. hvkit board has capacitor on Vbus feedback, so
-    // the sampling doesn't need to be very long to get an accurate value
-    ADC_setupSOC(obj->adcHandle[2], ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN1, HAL_ADC_SAMPLE_WINDOW);
-#endif
-*/
-
     // configure the interrupt sources
     // configure the ample window to 15 system clock cycle wide by assigning 14
     // to the ACQPS of ADCSOCxCTL Register.
@@ -718,54 +640,6 @@ void HAL_setupCMPSSs(HAL_Handle handle)
     // Technical Reference Manual (SPRUI33B), to configure the ePWM X-Bar
     //
 
-    /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_1, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_1, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_3, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_3, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_5, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_5, 4);
-
-    // Configure TRIP9 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX08_CMPSS5_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX08);
-
-    // Configure TRIP7 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX00);
-
-    // Configure TRIP8 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX04);
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_2, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_2, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_4, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_4, 4);
-
-    ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_6, 4);
-    ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_6, 4);
-
-    // Configure TRIP11 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX06_CMPSS4_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX06);
-
-    // Configure TRIP10 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX02);
-
-    // Configure TRIP12 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX10_CMPSS6_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX10);
-#endif
-
-*/
     // For T200 Controller
 
     ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_1, 4);
@@ -777,20 +651,20 @@ void HAL_setupCMPSSs(HAL_Handle handle)
     ASysCtl_selectCMPHPMux(ASYSCTL_CMPHPMUX_SELECT_3, 4);
     ASysCtl_selectCMPLPMux(ASYSCTL_CMPLPMUX_SELECT_3, 4);
 
-    //Phase A / PGA1 / EPWM1
-    // Configure TRIP10 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP10, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP10, XBAR_MUX00);
-
-    //Phase B / PGA2 / EPWM2
-    // Configure TRIP11 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP11, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP11, XBAR_MUX02);
-
-    //Phase C / PGA3 / EPWM3
+    //Phase A / PGA1
     // Configure TRIP7 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
-    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
-    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX04);
+    XBAR_setEPWMMuxConfig(XBAR_TRIP7, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP7, XBAR_MUX00);
+
+    //Phase B / PGA2
+    // Configure TRIP8 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
+    XBAR_setEPWMMuxConfig(XBAR_TRIP8, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP8, XBAR_MUX02);
+
+    //Phase C / PGA3
+    // Configure TRIP9 to be CTRIP1H and CTRIP1L using the ePWM X-BAR
+    XBAR_setEPWMMuxConfig(XBAR_TRIP9, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
+    XBAR_enableEPWMMux(XBAR_TRIP9, XBAR_MUX04);
 
 
     return;
@@ -1003,6 +877,7 @@ void HAL_setupGPIOs(HAL_Handle handle)
     GPIO_setPinConfig(GPIO_7_GPIO7);
     GPIO_setDirectionMode(7, GPIO_DIR_MODE_IN);
     GPIO_setPadConfig(7, GPIO_PIN_TYPE_PULLUP);
+    GPIO_writePin(7, 1);
 
     // GPIO16->SPIA-MOSI for T200 Controller
     GPIO_setMasterCore(16, GPIO_CORE_CPU1);
@@ -1013,7 +888,7 @@ void HAL_setupGPIOs(HAL_Handle handle)
     // GPIO17->SPIA-MISO for T200 Controller
     GPIO_setMasterCore(17, GPIO_CORE_CPU1);
     GPIO_setPinConfig(GPIO_17_SPISOMIA);
-    GPIO_setDirectionMode(17, GPIO_DIR_MODE_IN);
+    GPIO_setDirectionMode(17, GPIO_DIR_MODE_OUT);
     GPIO_setPadConfig(17, GPIO_PIN_TYPE_STD);
 
     // GPIO9->SPIA-CLK for T200 Controller
