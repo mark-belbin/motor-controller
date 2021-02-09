@@ -5,8 +5,8 @@
 // TITLE:  Device setup for examples.
 //
 //#############################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -71,21 +71,21 @@
 //
 #define DEVICE_GPIO_PIN_CANTXA      32U  // GPIO number for CANTXA
 #define DEVICE_GPIO_PIN_CANRXA      33U  // GPIO number for CANRXA
-#define DEVICE_GPIO_CFG_CANRXA      GPIO_33_CANRXA  // "pinConfig" for CANA RX
-#define DEVICE_GPIO_CFG_CANTXA      GPIO_32_CANTXA  // "pinConfig" for CANA TX
+#define DEVICE_GPIO_CFG_CANRXA      GPIO_33_CANA_RX  // "pinConfig" for CANA RX
+#define DEVICE_GPIO_CFG_CANTXA      GPIO_32_CANA_TX  // "pinConfig" for CANA TX
 
 //
 // CAN External Loopback
 //
-#define DEVICE_GPIO_CFG_CANRXB      GPIO_10_CANRXB  // "pinConfig" for CANB RX
-#define DEVICE_GPIO_CFG_CANTXB      GPIO_8_CANTXB   // "pinConfig" for CANB TX
+#define DEVICE_GPIO_CFG_CANRXB      GPIO_10_CANB_RX  // "pinConfig" for CANB RX
+#define DEVICE_GPIO_CFG_CANTXB      GPIO_8_CANB_TX   // "pinConfig" for CANB TX
 
 
 //
 // LINA
 //
-#define DEVICE_GPIO_CFG_LINTXA      GPIO_37_LINTXA  // "pinConfig" for LINA TX
-#define DEVICE_GPIO_CFG_LINRXA      GPIO_35_LINRXA  // "pinConfig" for LINA RX
+#define DEVICE_GPIO_CFG_LINTXA      GPIO_37_LINA_TX  // "pinConfig" for LINA TX
+#define DEVICE_GPIO_CFG_LINRXA      GPIO_35_LINA_RX  // "pinConfig" for LINA RX
 
 //
 // FSI
@@ -93,12 +93,12 @@
 #define DEVICE_GPIO_PIN_FSI_RXCLK   33U  // GPIO number for FSI RXCLK
 #define DEVICE_GPIO_PIN_FSI_RX0     12U  // GPIO number for FSI RX0
 #define DEVICE_GPIO_PIN_FSI_RX1      2U  // GPIO number for FSI RX1
-#define DEVICE_GPIO_CFG_FSI_TXCLK   GPIO_7_FSI_TXCLK  // "pinConfig" for FSI TXCLK
-#define DEVICE_GPIO_CFG_FSI_TX0     GPIO_6_FSI_TX0  // "pinConfig" for FSI TX0
-#define DEVICE_GPIO_CFG_FSI_TX1     GPIO_25_FSI_TX1  // "pinConfig" for FSI TX1
-#define DEVICE_GPIO_CFG_FSI_RXCLK   GPIO_33_FSI_RXCLK  // "pinConfig" for FSI RXCLK
-#define DEVICE_GPIO_CFG_FSI_RX0     GPIO_12_FSI_RX0  // "pinConfig" for FSI RX0
-#define DEVICE_GPIO_CFG_FSI_RX1     GPIO_2_FSI_RX1  // "pinConfig" for FSI RX1
+#define DEVICE_GPIO_CFG_FSI_TXCLK   GPIO_7_FSITXA_CLK  // "pinConfig" for FSI TXCLK
+#define DEVICE_GPIO_CFG_FSI_TX0     GPIO_6_FSITXA_D0  // "pinConfig" for FSI TX0
+#define DEVICE_GPIO_CFG_FSI_TX1     GPIO_25_FSITXA_D1  // "pinConfig" for FSI TX1
+#define DEVICE_GPIO_CFG_FSI_RXCLK   GPIO_33_FSIRXA_CLK  // "pinConfig" for FSI RXCLK
+#define DEVICE_GPIO_CFG_FSI_RX0     GPIO_12_FSIRXA_D0  // "pinConfig" for FSI RX0
+#define DEVICE_GPIO_CFG_FSI_RX1     GPIO_2_FSIRXA_D1  // "pinConfig" for FSI RX1
 
 //
 // SPI
@@ -107,26 +107,26 @@
 #define DEVICE_GPIO_PIN_SPISIMOA    16U  // GPIO number for SPI SIMOA
 #define DEVICE_GPIO_PIN_SPISOMIA    17U  // GPIO number for SPI SOMIA
 #define DEVICE_GPIO_PIN_SPISTEA     57U  // GPIO number for SPI STEA
-#define DEVICE_GPIO_CFG_SPICLKA     GPIO_56_SPICLKA   // "pinConfig" for SPI CLKA
-#define DEVICE_GPIO_CFG_SPISIMOA    GPIO_16_SPISIMOA  // "pinConfig" for SPI SIMOA
-#define DEVICE_GPIO_CFG_SPISOMIA    GPIO_17_SPISOMIA  // "pinConfig" for SPI SOMIA
-#define DEVICE_GPIO_CFG_SPISTEA     GPIO_57_SPISTEA   // "pinConfig" for SPI STEA
+#define DEVICE_GPIO_CFG_SPICLKA     GPIO_56_SPIA_CLK   // "pinConfig" for SPI CLKA
+#define DEVICE_GPIO_CFG_SPISIMOA    GPIO_16_SPIA_SIMO  // "pinConfig" for SPI SIMOA
+#define DEVICE_GPIO_CFG_SPISOMIA    GPIO_17_SPIA_SOMI  // "pinConfig" for SPI SOMIA
+#define DEVICE_GPIO_CFG_SPISTEA     GPIO_57_SPIA_STE   // "pinConfig" for SPI STEA
 #define DEVICE_GPIO_PIN_SPICLKB     22U  // GPIO number for SPI CLKB
 #define DEVICE_GPIO_PIN_SPISIMOB    24U  // GPIO number for SPI SIMOB
 #define DEVICE_GPIO_PIN_SPISOMIB    31U  // GPIO number for SPI SOMIB
 #define DEVICE_GPIO_PIN_SPISTEB     27U  // GPIO number for SPI STEB
-#define DEVICE_GPIO_CFG_SPICLKB     GPIO_22_SPICLKB   // "pinConfig" for SPI CLKB
-#define DEVICE_GPIO_CFG_SPISIMOB    GPIO_24_SPISIMOB  // "pinConfig" for SPI SIMOB
-#define DEVICE_GPIO_CFG_SPISOMIB    GPIO_31_SPISOMIB  // "pinConfig" for SPI SOMIB
-#define DEVICE_GPIO_CFG_SPISTEB     GPIO_27_SPISTEB   // "pinConfig" for SPI STEB
+#define DEVICE_GPIO_CFG_SPICLKB     GPIO_22_SPIB_CLK   // "pinConfig" for SPI CLKB
+#define DEVICE_GPIO_CFG_SPISIMOB    GPIO_24_SPIB_SIMO  // "pinConfig" for SPI SIMOB
+#define DEVICE_GPIO_CFG_SPISOMIB    GPIO_31_SPIB_SOMI  // "pinConfig" for SPI SOMIB
+#define DEVICE_GPIO_CFG_SPISTEB     GPIO_27_SPIB_STE   // "pinConfig" for SPI STEB
 
 //
 // I2C
 //
 #define DEVICE_GPIO_PIN_SDAA        35U  // GPIO number for I2C SDAA
 #define DEVICE_GPIO_PIN_SCLA        37U  // GPIO number for I2C SCLA
-#define DEVICE_GPIO_CFG_SDAA        GPIO_35_SDAA  // "pinConfig" for I2C SDAA
-#define DEVICE_GPIO_CFG_SCLA        GPIO_37_SCLA  // "pinConfig" for I2C SCLA
+#define DEVICE_GPIO_CFG_SDAA        GPIO_35_I2CA_SDA  // "pinConfig" for I2C SDAA
+#define DEVICE_GPIO_CFG_SCLA        GPIO_37_I2CA_SCL  // "pinConfig" for I2C SCLA
 
 //
 // eQEP
@@ -134,9 +134,9 @@
 #define DEVICE_GPIO_PIN_EQEP1A      35U  // GPIO number for EQEP 1A
 #define DEVICE_GPIO_PIN_EQEP1B      37U  // GPIO number for EQEP 1B
 #define DEVICE_GPIO_PIN_EQEP1I      59U  // GPIO number for EQEP 1I
-#define DEVICE_GPIO_CFG_EQEP1A      GPIO_35_EQEP1A  // "pinConfig" for EQEP 1A
-#define DEVICE_GPIO_CFG_EQEP1B      GPIO_37_EQEP1B  // "pinConfig" for EQEP 1B
-#define DEVICE_GPIO_CFG_EQEP1I      GPIO_59_EQEP1I  // "pinConfig" for EQEP 1I
+#define DEVICE_GPIO_CFG_EQEP1A      GPIO_35_EQEP1_A  // "pinConfig" for EQEP 1A
+#define DEVICE_GPIO_CFG_EQEP1B      GPIO_37_EQEP1_B  // "pinConfig" for EQEP 1B
+#define DEVICE_GPIO_CFG_EQEP1I      GPIO_59_EQEP1_INDEX  // "pinConfig" for EQEP 1I
 
 //
 // EPWM
@@ -146,8 +146,8 @@
 #define DEVICE_GPIO_PIN_EPWMxA      10U  // GPIO number for EPWM6A
 #define DEVICE_GPIO_PIN_EPWMxB      11U  // GPIO number for EPWM6B
 #define DEVICE_GPIO_PIN_IOINDEX     8U   // GPIO number for IO Index
-#define DEVICE_GPIO_CFG_EPWMxA      GPIO_10_EPWM6A  // "pinConfig" for EPWM6A
-#define DEVICE_GPIO_CFG_EPWMxB      GPIO_11_EPWM6B  // "pinConfig" for EPWM6B
+#define DEVICE_GPIO_CFG_EPWMxA      GPIO_10_EPWM6_A  // "pinConfig" for EPWM6A
+#define DEVICE_GPIO_CFG_EPWMxB      GPIO_11_EPWM6_B  // "pinConfig" for EPWM6B
 #define DEVICE_GPIO_CFG_IOINDEX     GPIO_8_GPIO8    // "pinConfig" for IO Index
 
 #else
@@ -172,16 +172,16 @@
 //
 // CAN External Loopback
 //
-#define DEVICE_GPIO_CFG_CANRXA      GPIO_30_CANRXA  // "pinConfig" for CANA RX
-#define DEVICE_GPIO_CFG_CANTXA      GPIO_31_CANTXA  // "pinConfig" for CANA TX
-#define DEVICE_GPIO_CFG_CANRXB      GPIO_10_CANRXB  // "pinConfig" for CANB RX
-#define DEVICE_GPIO_CFG_CANTXB      GPIO_8_CANTXB   // "pinConfig" for CANB TX
+#define DEVICE_GPIO_CFG_CANRXA      GPIO_30_CANA_RX  // "pinConfig" for CANA RX
+#define DEVICE_GPIO_CFG_CANTXA      GPIO_31_CANA_TX  // "pinConfig" for CANA TX
+#define DEVICE_GPIO_CFG_CANRXB      GPIO_10_CANB_RX  // "pinConfig" for CANB RX
+#define DEVICE_GPIO_CFG_CANTXB      GPIO_8_CANB_TX   // "pinConfig" for CANB TX
 
 //
 // LINA
 //
-#define DEVICE_GPIO_CFG_LINTXA      GPIO_58_LINTXA  // "pinConfig" for LINA TX
-#define DEVICE_GPIO_CFG_LINRXA      GPIO_59_LINRXA  // "pinConfig" for LINA RX
+#define DEVICE_GPIO_CFG_LINTXA      GPIO_58_LINA_TX  // "pinConfig" for LINA TX
+#define DEVICE_GPIO_CFG_LINRXA      GPIO_59_LINA_RX  // "pinConfig" for LINA RX
 
 //
 // FSI
@@ -189,12 +189,12 @@
 #define DEVICE_GPIO_PIN_FSI_RXCLK   13U  // GPIO number for FSI RXCLK
 #define DEVICE_GPIO_PIN_FSI_RX0     12U  // GPIO number for FSI RX0
 #define DEVICE_GPIO_PIN_FSI_RX1     11U  // GPIO number for FSI RX1
-#define DEVICE_GPIO_CFG_FSI_TXCLK   GPIO_27_FSI_TXCLK  // "pinConfig" for FSI TXCLK
-#define DEVICE_GPIO_CFG_FSI_TX0     GPIO_26_FSI_TX0  // "pinConfig" for FSI TX0
-#define DEVICE_GPIO_CFG_FSI_TX1     GPIO_25_FSI_TX1  // "pinConfig" for FSI TX1
-#define DEVICE_GPIO_CFG_FSI_RXCLK   GPIO_13_FSI_RXCLK  // "pinConfig" for FSI RXCLK
-#define DEVICE_GPIO_CFG_FSI_RX0     GPIO_12_FSI_RX0  // "pinConfig" for FSI RX0
-#define DEVICE_GPIO_CFG_FSI_RX1     GPIO_11_FSI_RX1  // "pinConfig" for FSI RX1
+#define DEVICE_GPIO_CFG_FSI_TXCLK   GPIO_27_FSITXA_CLK  // "pinConfig" for FSI TXCLK
+#define DEVICE_GPIO_CFG_FSI_TX0     GPIO_26_FSITXA_D0  // "pinConfig" for FSI TX0
+#define DEVICE_GPIO_CFG_FSI_TX1     GPIO_25_FSITXA_D1  // "pinConfig" for FSI TX1
+#define DEVICE_GPIO_CFG_FSI_RXCLK   GPIO_13_FSIRXA_CLK  // "pinConfig" for FSI RXCLK
+#define DEVICE_GPIO_CFG_FSI_RX0     GPIO_12_FSIRXA_D0  // "pinConfig" for FSI RX0
+#define DEVICE_GPIO_CFG_FSI_RX1     GPIO_11_FSIRXA_D1  // "pinConfig" for FSI RX1
 
 //
 // SPI
@@ -203,26 +203,26 @@
 #define DEVICE_GPIO_PIN_SPISIMOA    8U  // GPIO number for SPI SIMOA
 #define DEVICE_GPIO_PIN_SPISOMIA    10U  // GPIO number for SPI SOMIA
 #define DEVICE_GPIO_PIN_SPISTEA     11U  // GPIO number for SPI STEA
-#define DEVICE_GPIO_CFG_SPICLKA     GPIO_9_SPICLKA   // "pinConfig" for SPI CLKA
-#define DEVICE_GPIO_CFG_SPISIMOA    GPIO_8_SPISIMOA  // "pinConfig" for SPI SIMOA
-#define DEVICE_GPIO_CFG_SPISOMIA    GPIO_10_SPISOMIA // "pinConfig" for SPI SOMIA
-#define DEVICE_GPIO_CFG_SPISTEA     GPIO_11_SPISTEA   // "pinConfig" for SPI STEA
+#define DEVICE_GPIO_CFG_SPICLKA     GPIO_9_SPIA_CLK   // "pinConfig" for SPI CLKA
+#define DEVICE_GPIO_CFG_SPISIMOA    GPIO_8_SPIA_SIMO  // "pinConfig" for SPI SIMOA
+#define DEVICE_GPIO_CFG_SPISOMIA    GPIO_10_SPIA_SOMI // "pinConfig" for SPI SOMIA
+#define DEVICE_GPIO_CFG_SPISTEA     GPIO_11_SPIA_STE   // "pinConfig" for SPI STEA
 #define DEVICE_GPIO_PIN_SPICLKB     26U  // GPIO number for SPI CLKB
 #define DEVICE_GPIO_PIN_SPISIMOB    24U  // GPIO number for SPI SIMOB
 #define DEVICE_GPIO_PIN_SPISOMIB    25U  // GPIO number for SPI SOMIB
 #define DEVICE_GPIO_PIN_SPISTEB     27U  // GPIO number for SPI STEB
-#define DEVICE_GPIO_CFG_SPICLKB     GPIO_26_SPICLKB   // "pinConfig" for SPI CLKB
-#define DEVICE_GPIO_CFG_SPISIMOB    GPIO_24_SPISIMOB  // "pinConfig" for SPI SIMOB
-#define DEVICE_GPIO_CFG_SPISOMIB    GPIO_25_SPISOMIB  // "pinConfig" for SPI SOMIB
-#define DEVICE_GPIO_CFG_SPISTEB     GPIO_27_SPISTEB   // "pinConfig" for SPI STEB
+#define DEVICE_GPIO_CFG_SPICLKB     GPIO_26_SPIB_CLK   // "pinConfig" for SPI CLKB
+#define DEVICE_GPIO_CFG_SPISIMOB    GPIO_24_SPIB_SIMO  // "pinConfig" for SPI SIMOB
+#define DEVICE_GPIO_CFG_SPISOMIB    GPIO_25_SPIB_SOMI  // "pinConfig" for SPI SOMIB
+#define DEVICE_GPIO_CFG_SPISTEB     GPIO_27_SPIB_STE   // "pinConfig" for SPI STEB
 
 //
 // I2C
 //
 #define DEVICE_GPIO_PIN_SDAA        32U  // GPIO number for I2C SDAA
 #define DEVICE_GPIO_PIN_SCLA        33U  // GPIO number for I2C SCLA
-#define DEVICE_GPIO_CFG_SDAA        GPIO_32_SDAA  // "pinConfig" for I2C SDAA
-#define DEVICE_GPIO_CFG_SCLA        GPIO_33_SCLA  // "pinConfig" for I2C SCLA
+#define DEVICE_GPIO_CFG_SDAA        GPIO_32_I2CA_SDA  // "pinConfig" for I2C SDAA
+#define DEVICE_GPIO_CFG_SCLA        GPIO_33_I2CA_SCL  // "pinConfig" for I2C SCLA
 
 //
 // eQEP
@@ -230,9 +230,9 @@
 #define DEVICE_GPIO_PIN_EQEP1A      6U  // GPIO number for EQEP 1A
 #define DEVICE_GPIO_PIN_EQEP1B      7U  // GPIO number for EQEP 1B
 #define DEVICE_GPIO_PIN_EQEP1I      9U  // GPIO number for EQEP 1I
-#define DEVICE_GPIO_CFG_EQEP1A      GPIO_6_EQEP1A  // "pinConfig" for EQEP 1A
-#define DEVICE_GPIO_CFG_EQEP1B      GPIO_7_EQEP1B  // "pinConfig" for EQEP 1B
-#define DEVICE_GPIO_CFG_EQEP1I      GPIO_9_EQEP1I  // "pinConfig" for EQEP 1I
+#define DEVICE_GPIO_CFG_EQEP1A      GPIO_6_EQEP1_A  // "pinConfig" for EQEP 1A
+#define DEVICE_GPIO_CFG_EQEP1B      GPIO_7_EQEP1_B  // "pinConfig" for EQEP 1B
+#define DEVICE_GPIO_CFG_EQEP1I      GPIO_9_EQEP1_INDEX  // "pinConfig" for EQEP 1I
 
 //
 // EPWM
@@ -242,20 +242,20 @@
 #define DEVICE_GPIO_PIN_EPWMxA      0U  // GPIO number for EPWM1A
 #define DEVICE_GPIO_PIN_EPWMxB      1U  // GPIO number for EPWM1B
 #define DEVICE_GPIO_PIN_IOINDEX     2U  // GPIO number for IO Index
-#define DEVICE_GPIO_CFG_EPWMxA      GPIO_0_EPWM1A  // "pinConfig" for EPWM1A
-#define DEVICE_GPIO_CFG_EPWMxB      GPIO_1_EPWM1B  // "pinConfig" for EPWM1B
+#define DEVICE_GPIO_CFG_EPWMxA      GPIO_0_EPWM1_A  // "pinConfig" for EPWM1A
+#define DEVICE_GPIO_CFG_EPWMxB      GPIO_1_EPWM1_B  // "pinConfig" for EPWM1B
 #define DEVICE_GPIO_CFG_IOINDEX     GPIO_2_GPIO2   // "pinConfig" for IO Index
 #endif
 
-#define DEVICE_GPIO_CFG_EPWM1A      GPIO_0_EPWM1A  // "pinConfig" for EPWM1A
+#define DEVICE_GPIO_CFG_EPWM1A      GPIO_0_EPWM1_A  // "pinConfig" for EPWM1A
 #define DEVICE_GPIO_PIN_EPWM1A      0U              // GPIO number for EPWM1A
 //
 // SCI for USB-to-UART adapter on FTDI chip
 //
 #define DEVICE_GPIO_PIN_SCIRXDA     28U             // GPIO number for SCI RX
 #define DEVICE_GPIO_PIN_SCITXDA     29U             // GPIO number for SCI TX
-#define DEVICE_GPIO_CFG_SCIRXDA     GPIO_28_SCIRXDA // "pinConfig" for SCI RX
-#define DEVICE_GPIO_CFG_SCITXDA     GPIO_29_SCITXDA // "pinConfig" for SCI TX
+#define DEVICE_GPIO_CFG_SCIRXDA     GPIO_28_SCIA_RX // "pinConfig" for SCI RX
+#define DEVICE_GPIO_CFG_SCITXDA     GPIO_29_SCIA_TX // "pinConfig" for SCI TX
 
 //*****************************************************************************
 //

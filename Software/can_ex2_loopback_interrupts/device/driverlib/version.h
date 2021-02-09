@@ -5,8 +5,8 @@
 // TITLE:  API to return the version number of the driverlib.lib in use.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -64,7 +64,7 @@ extern "C"
 
 //! Version number to be returned by Version_getLibVersion()
 //!
-#define VERSION_NUMBER      3020000U
+#define VERSION_NUMBER      3030000U
 
 //*****************************************************************************
 //

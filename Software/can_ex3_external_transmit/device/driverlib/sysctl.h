@@ -5,8 +5,8 @@
 // TITLE:  C28x system control driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -213,13 +213,13 @@ extern "C"
 // SysCtl_getNMIFlagStatus() and SysCtl_getNMIShadowFlagStatus().
 //
 //*****************************************************************************
-#define SYSCTL_NMI_NMIINT             0x1U //!<  NMI Interrupt Flag
-#define SYSCTL_NMI_CLOCKFAIL          0x2U //!<  Clock Fail Interrupt Flag
-#define SYSCTL_NMI_RAMUNCERR          0x4U //!<  RAM Uncorrectable Error NMI
-#define SYSCTL_NMI_FLUNCERR           0x8U //!<  Flash Uncorrectable Error NMI
-#define SYSCTL_NMI_PIEVECTERR         0x40U //!<  PIE Vector Fetch Error Flag
-#define SYSCTL_NMI_CLBNMI             0x100U //!<  Configurable Logic Block NMI
-#define SYSCTL_NMI_SWERR              0x2000U //!<  SW Error Force NMI Flag
+#define SYSCTL_NMI_NMIINT        0x1U //!<  NMI Interrupt Flag
+#define SYSCTL_NMI_CLOCKFAIL     0x2U //!<  Clock Fail Interrupt Flag
+#define SYSCTL_NMI_RAMUNCERR     0x4U //!<  RAM Uncorrectable Error NMI Flag
+#define SYSCTL_NMI_FLUNCERR      0x8U //!<  Flash Uncorrectable Error NMI Flag
+#define SYSCTL_NMI_PIEVECTERR    0x40U //!<  PIE Vector Fetch Error Flag
+#define SYSCTL_NMI_CLBNMI        0x100U //!<  Configurable Logic Block NMI Flag
+#define SYSCTL_NMI_SWERR         0x2000U //!<  SW Error Force NMI Flag
 
 //*****************************************************************************
 //
@@ -809,6 +809,12 @@ SysCtl_resetPeripheral(SysCtl_PeripheralSOFTPRES peripheral)
 //! Peripherals are enabled with this function.  At power-up, all peripherals
 //! are disabled; they must be enabled in order to operate or respond to
 //! register reads/writes.
+//!
+//! \note Note that there should be atleast 5 cycles delay between enabling the
+//! peripheral clock and accessing the peripheral registers. The delay should be
+//! added by the user if the peripheral is accessed immediately after this
+//! function call.
+//! Use asm(" RPT #5 || NOP"); to add 5 cycle delay post this function call.
 //!
 //! \return None.
 //
@@ -1864,13 +1870,13 @@ SysCtl_getNMIStatus(void)
 //!
 //! \return Value of NMIFLG register. These defines are provided to decode
 //! the value:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //
 //*****************************************************************************
 static inline uint16_t
@@ -1889,13 +1895,13 @@ SysCtl_getNMIFlagStatus(void)
 //! \param nmiFlags Bit mask of the NMI interrupts that user wants to clear.
 //! The bit format of this parameter is same as of the NMIFLG register. These
 //! defines are provided:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //!
 //! Check if interrupt flags corresponding to the passed in bit mask are
 //! asserted.
@@ -1913,12 +1919,12 @@ SysCtl_isNMIFlagSet(uint32_t nmiFlags)
     // Make sure if reserved bits are not set in nmiFlags.
     //
     ASSERT((nmiFlags & ~(
-                         SYSCTL_NMI_NMIINT             |
-                         SYSCTL_NMI_CLOCKFAIL          |
-                         SYSCTL_NMI_RAMUNCERR          |
-                         SYSCTL_NMI_FLUNCERR           |
-                         SYSCTL_NMI_PIEVECTERR         |
-                         SYSCTL_NMI_CLBNMI             |
+                         SYSCTL_NMI_NMIINT        |
+                         SYSCTL_NMI_CLOCKFAIL     |
+                         SYSCTL_NMI_RAMUNCERR     |
+                         SYSCTL_NMI_FLUNCERR      |
+                         SYSCTL_NMI_PIEVECTERR    |
+                         SYSCTL_NMI_CLBNMI        |
                          SYSCTL_NMI_SWERR
                          )) == 0);
 
@@ -1935,13 +1941,13 @@ SysCtl_isNMIFlagSet(uint32_t nmiFlags)
 //! \param nmiFlags Bit mask of the NMI interrupts that user wants to clear.
 //! The bit format of this parameter is same as of the NMIFLG register. These
 //! defines are provided:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //!
 //! Clear NMI interrupt flags that correspond with the passed in bit mask.
 //!
@@ -1959,12 +1965,12 @@ SysCtl_clearNMIStatus(uint32_t nmiFlags)
     // Make sure if reserved bits are not set in nmiFlags.
     //
     ASSERT((nmiFlags & ~(
-                         SYSCTL_NMI_NMIINT             |
-                         SYSCTL_NMI_CLOCKFAIL          |
-                         SYSCTL_NMI_RAMUNCERR          |
-                         SYSCTL_NMI_FLUNCERR           |
-                         SYSCTL_NMI_PIEVECTERR         |
-                         SYSCTL_NMI_CLBNMI             |
+                         SYSCTL_NMI_NMIINT        |
+                         SYSCTL_NMI_CLOCKFAIL     |
+                         SYSCTL_NMI_RAMUNCERR     |
+                         SYSCTL_NMI_FLUNCERR      |
+                         SYSCTL_NMI_PIEVECTERR    |
+                         SYSCTL_NMI_CLBNMI        |
                          SYSCTL_NMI_SWERR
                          )) == 0);
 
@@ -2011,13 +2017,13 @@ SysCtl_clearAllNMIFlags(void)
 //! \param nmiFlags Bit mask of the NMI interrupts that user wants to clear.
 //! The bit format of this parameter is same as of the NMIFLG register. These
 //! defines are provided:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //!
 //! \return None.
 //
@@ -2030,12 +2036,12 @@ SysCtl_forceNMIFlags(uint32_t nmiFlags)
     // Make sure if reserved bits are not set in nmiFlags.
     //
     ASSERT((nmiFlags & ~(
-                         SYSCTL_NMI_NMIINT             |
-                         SYSCTL_NMI_CLOCKFAIL          |
-                         SYSCTL_NMI_RAMUNCERR          |
-                         SYSCTL_NMI_FLUNCERR           |
-                         SYSCTL_NMI_PIEVECTERR         |
-                         SYSCTL_NMI_CLBNMI             |
+                         SYSCTL_NMI_NMIINT        |
+                         SYSCTL_NMI_CLOCKFAIL     |
+                         SYSCTL_NMI_RAMUNCERR     |
+                         SYSCTL_NMI_FLUNCERR      |
+                         SYSCTL_NMI_PIEVECTERR    |
+                         SYSCTL_NMI_CLBNMI        |
                          SYSCTL_NMI_SWERR
                         )) == 0);
 
@@ -2121,13 +2127,13 @@ SysCtl_getNMIWatchdogPeriod(void)
 //!
 //! \return Value of NMISHDFLG register. These defines are provided to decode
 //! the value:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //
 //*****************************************************************************
 static inline uint32_t
@@ -2146,13 +2152,13 @@ SysCtl_getNMIShadowFlagStatus(void)
 //! \param nmiFlags Bit mask of the NMI interrupts that user wants  to clear.
 //! The bit format of this parameter is same as of the NMIFLG register. These
 //! defines are provided:
-//! - \b SYSCTL_NMI_NMIINT             -  NMI Interrupt Flag
-//! - \b SYSCTL_NMI_CLOCKFAIL          -  Clock Fail Interrupt Flag
-//! - \b SYSCTL_NMI_RAMUNCERR          -  RAM Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_FLUNCERR           -  Flash Uncorrectable Error NMI
-//! - \b SYSCTL_NMI_PIEVECTERR         -  PIE Vector Fetch Error Flag
-//! - \b SYSCTL_NMI_CLBNMI             -  Configurable Logic Block NMI
-//! - \b SYSCTL_NMI_SWERR              -  SW Error Force NMI Flag
+//! - \b SYSCTL_NMI_NMIINT        -  NMI Interrupt Flag
+//! - \b SYSCTL_NMI_CLOCKFAIL     -  Clock Fail Interrupt Flag
+//! - \b SYSCTL_NMI_RAMUNCERR     -  RAM Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_FLUNCERR      -  Flash Uncorrectable Error NMI Flag
+//! - \b SYSCTL_NMI_PIEVECTERR    -  PIE Vector Fetch Error Flag
+//! - \b SYSCTL_NMI_CLBNMI        -  Configurable Logic Block NMI Flag
+//! - \b SYSCTL_NMI_SWERR         -  SW Error Force NMI Flag
 //!
 //! Check if interrupt flags corresponding to the passed in bit mask are
 //! asserted.
@@ -2170,12 +2176,12 @@ SysCtl_isNMIShadowFlagSet(uint32_t nmiFlags)
     // Make sure if reserved bits are not set in nmiFlags.
     //
     ASSERT((nmiFlags & ~(
-                         SYSCTL_NMI_NMIINT             |
-                         SYSCTL_NMI_CLOCKFAIL          |
-                         SYSCTL_NMI_RAMUNCERR          |
-                         SYSCTL_NMI_FLUNCERR           |
-                         SYSCTL_NMI_PIEVECTERR         |
-                         SYSCTL_NMI_CLBNMI             |
+                         SYSCTL_NMI_NMIINT        |
+                         SYSCTL_NMI_CLOCKFAIL     |
+                         SYSCTL_NMI_RAMUNCERR     |
+                         SYSCTL_NMI_FLUNCERR      |
+                         SYSCTL_NMI_PIEVECTERR    |
+                         SYSCTL_NMI_CLBNMI        |
                          SYSCTL_NMI_SWERR
                         )) == 0);
 

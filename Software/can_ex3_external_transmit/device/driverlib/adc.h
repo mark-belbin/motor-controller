@@ -5,8 +5,8 @@
 // TITLE:  C28x ADC driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -1310,6 +1310,81 @@ ADC_clearPPBEventStatus(uint32_t base, ADC_PPBNumber ppbNumber,
 
 //*****************************************************************************
 //
+//! Enables cycle-by-cycle clear of ADC PPB event flags.
+//!
+//! \param base is the base address of the ADC module.
+//! \param ppbNumber is the number of the post-processing block.
+//!
+//! This function enables the automatic cycle-by-cycle clear of ADC PPB event
+//! flags. When enabled, the desired PPB event flags are automatically cleared
+//! on the next PPBxRESULT load, unless a set condition is also occurring at
+//! the same time, in which case the set takes precedence.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+ADC_enablePPBEventCBCClear(uint32_t base, ADC_PPBNumber ppbNumber)
+{
+    uint32_t ppbOffset;
+
+    //
+    // Check the arguments.
+    //
+    ASSERT(ADC_isBaseValid(base));
+
+    //
+    // Get the offset to the appropriate PPB configuration register.
+    //
+    ppbOffset = (ADC_PPBxCONFIG_STEP * (uint32_t)ppbNumber) + ADC_O_PPB1CONFIG;
+
+    //
+    // Set automatic cycle-by-cycle flag clear bit
+    //
+    EALLOW;
+    HWREGH(base + ppbOffset) |= ADC_PPB1CONFIG_CBCEN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Disables cycle-by-cycle clear of ADC PPB event flags.
+//!
+//! \param base is the base address of the ADC module.
+//! \param ppbNumber is the number of the post-processing block.
+//!
+//! This function disables the cycle-by-cycle clear of ADC PPB event flags. When
+//! disabled, the desired PPB event flags are to be cleared explicitly in
+//! software inorder to generate next set of interrupts/events.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+ADC_disablePPBEventCBCClear(uint32_t base, ADC_PPBNumber ppbNumber)
+{
+    uint32_t ppbOffset;
+
+    //
+    // Check the arguments.
+    //
+    ASSERT(ADC_isBaseValid(base));
+
+    //
+    // Get the offset to the appropriate PPB configuration register.
+    //
+    ppbOffset = (ADC_PPBxCONFIG_STEP * (uint32_t)ppbNumber) + ADC_O_PPB1CONFIG;
+
+    //
+    // Clear automatic cycle-by-cycle flag clear bit
+    //
+    EALLOW;
+    HWREGH(base + ppbOffset) &= ~ADC_PPB1CONFIG_CBCEN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
 //! Reads the processed conversion result from the PPB.
 //!
 //! \param resultBase is the base address of the ADC results.
@@ -1507,7 +1582,7 @@ ADC_enablePPBTwosComplement(uint32_t base, ADC_PPBNumber ppbNumber)
     ppbOffset = (ADC_PPBxCONFIG_STEP * (uint32_t)ppbNumber) + ADC_O_PPB1CONFIG;
 
     //
-    // Return the delay time stamp.
+    // Enable PPB two's complement.
     //
     EALLOW;
     HWREGH(base + ppbOffset) |= ADC_PPB1CONFIG_TWOSCOMPEN;
@@ -1547,7 +1622,7 @@ ADC_disablePPBTwosComplement(uint32_t base, ADC_PPBNumber ppbNumber)
     ppbOffset = (ADC_PPBxCONFIG_STEP * (uint32_t)ppbNumber) + ADC_O_PPB1CONFIG;
 
     //
-    // Return the delay time stamp.
+    // Disable PPB two's complement.
     //
     EALLOW;
     HWREGH(base + ppbOffset) &= ~ADC_PPB1CONFIG_TWOSCOMPEN;

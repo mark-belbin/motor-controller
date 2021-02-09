@@ -5,8 +5,8 @@
 // TITLE:  C28x X-BAR driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -69,7 +69,7 @@ XBAR_setOutputMuxConfig(XBAR_OutputNum output, XBAR_OutputMuxConfig muxConfig)
     //
     // Extract the shift from the input value.
     //
-    shift = ((uint32_t)muxConfig >> 8U) & 0x7FU;
+    shift = ((uint32_t)muxConfig >> 8U) & 0x1FU;
 
     //
     // Write the requested muxing value for this XBAR output.
@@ -111,7 +111,7 @@ XBAR_setEPWMMuxConfig(XBAR_TripNum trip, XBAR_EPWMMuxConfig muxConfig)
     //
     // Extract the shift from the input value.
     //
-    shift = ((uint32_t)muxConfig >> 8U) & 0x7FU;
+    shift = ((uint32_t)muxConfig >> 8U) & 0x1FU;
 
     //
     // Write the requested muxing value for this XBAR trip.
@@ -152,7 +152,7 @@ XBAR_setCLBMuxConfig(XBAR_AuxSigNum auxSignal, XBAR_CLBMuxConfig muxConfig)
     //
     // Extract the shift from the input value.
     //
-    shift = ((uint32_t)muxConfig >> 8U) & 0x7FU;
+    shift = ((uint32_t)muxConfig >> 8U) & 0x1FU;
 
     //
     // Write the requested muxing value for this XBAR auxSignal.

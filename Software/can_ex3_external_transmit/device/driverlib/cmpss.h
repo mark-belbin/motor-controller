@@ -5,8 +5,8 @@
 // TITLE:  C28x CMPSS driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -975,6 +975,114 @@ CMPSS_setHysteresis(uint32_t base, uint16_t value)
 
     HWREGH(base + CMPSS_O_COMPHYSCTL) = value;
 
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Enables reset of HIGH comparator digital filter output latch on PWMSYNC
+//!
+//! \param base is the base address of the comparator module.
+//!
+//! This function enables EPWMSYNCPER reset of High comparator digital filter 
+//! output latch
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+CMPSS_enableLatchResetOnPWMSYNCHigh(uint32_t base)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT(CMPSS_isBaseValid(base));
+    
+    EALLOW;
+    
+    HWREGH(base + CMPSS_O_COMPSTSCLR) |= CMPSS_COMPSTSCLR_HSYNCCLREN;
+    
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Disables reset of HIGH comparator digital filter output latch on PWMSYNC
+//!
+//! \param base is the base address of the comparator module.
+//!
+//! This function disables EPWMSYNCPER reset of High comparator digital filter 
+//! output latch
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+CMPSS_disableLatchResetOnPWMSYNCHigh(uint32_t base)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT(CMPSS_isBaseValid(base));
+    
+    EALLOW;
+    
+    HWREGH(base + CMPSS_O_COMPSTSCLR) &= ~CMPSS_COMPSTSCLR_HSYNCCLREN;
+    
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Enables reset of LOW comparator digital filter output latch on PWMSYNC
+//!
+//! \param base is the base address of the comparator module.
+//!
+//! This function enables EPWMSYNCPER reset of Low comparator digital filter 
+//! output latch
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+CMPSS_enableLatchResetOnPWMSYNCLow(uint32_t base)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT(CMPSS_isBaseValid(base));
+    
+    EALLOW;
+    
+    HWREGH(base + CMPSS_O_COMPSTSCLR) |= CMPSS_COMPSTSCLR_LSYNCCLREN;
+    
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Disables reset of LOW comparator digital filter output latch on PWMSYNC
+//!
+//! \param base is the base address of the comparator module.
+//!
+//! This function disables EPWMSYNCPER reset of Low comparator digital filter 
+//! output latch
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void
+CMPSS_disableLatchResetOnPWMSYNCLow(uint32_t base)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT(CMPSS_isBaseValid(base));
+    
+    EALLOW;
+    
+    HWREGH(base + CMPSS_O_COMPSTSCLR) &= ~CMPSS_COMPSTSCLR_LSYNCCLREN;
+    
     EDIS;
 }
 

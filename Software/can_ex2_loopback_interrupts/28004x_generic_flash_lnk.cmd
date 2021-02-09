@@ -5,7 +5,7 @@ PAGE 0 :
    /* BEGIN is used for the "boot to Flash" bootloader mode   */
 
    BEGIN           	: origin = 0x080000, length = 0x000002
-   RAMM0           	: origin = 0x0000F3, length = 0x00030D
+   RAMM0           	: origin = 0x0000F4, length = 0x00030C
 
    RAMLS0          	: origin = 0x008000, length = 0x000800
    RAMLS1          	: origin = 0x008800, length = 0x000800

@@ -25,8 +25,8 @@
 ;// to _c_init00 and thus there is no worry and this warning can be ignored.
 ;//
 ;//###########################################################################
-;// $TI Release: F28004x Support Library v1.10.00.00 $
-;// $Release Date: Tue May 26 17:06:03 IST 2020 $
+;// $TI Release: F28004x Support Library v1.11.00.00 $
+;// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 ;// $Copyright:
 ;// Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 ;//
@@ -62,7 +62,7 @@
 
 ***********************************************************************
 
-WD_DISABLE  .set  0    ;set to 1 to disable WD, else set to 0
+WD_DISABLE  .set  1    ;set to 1 to disable WD, else set to 0
 
     .ref _c_int00
     .global code_start
@@ -74,6 +74,7 @@ WD_DISABLE  .set  0    ;set to 1 to disable WD, else set to 0
 ***********************************************************************
 
     .sect "codestart"
+    .retain
 
 code_start:
     .if WD_DISABLE == 1

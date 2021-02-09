@@ -41,13 +41,10 @@
 //| And use with the custom motor controller
 //| for the T200 UUV thruster
 //|
-//| Mark Belbin -- Sept 2020
+//| Mark Belbin -- Feb 2021
 
 // **************************************************************************
 
-//
-// solutions
-//
 #include "labs.h"
 
 #pragma CODE_SECTION(mainISR, ".TI.ramfunc");
@@ -402,7 +399,7 @@ void main(void)
     //
     // setup faults
     //
-    //HAL_setupFaults(halHandle);
+    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS
 
     //
     // setup OVM PWM

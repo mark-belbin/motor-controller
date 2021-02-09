@@ -5,8 +5,8 @@
 // TITLE:   C28x EPWM Driver
 //
 //#############################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -1455,6 +1455,24 @@ typedef enum
     EPWM_REGISTER_GROUP_TRIP_ZONE_CLEAR = 0x8, //!< Trip zone clear group
     EPWM_REGISTER_GROUP_DIGITAL_COMPARE = 0x10 //!< Digital compare group
 } EPWM_LockRegisterGroup;
+
+//*****************************************************************************
+//
+//! Values that can be passed to EPWM_configureSignal() as the
+//! \e signalParams parameter.
+//
+//*****************************************************************************
+typedef struct
+{
+    float32_t              freqInHz;    //!< Desired Signal Frequency(in Hz)
+    float32_t              dutyValA;    //!< Desired ePWMxA Signal Duty
+    float32_t              dutyValB;    //!< Desired ePWMxB Signal Duty
+    bool                   invertSignalB; //!< Invert ePWMxB Signal if true
+    float32_t              sysClkInHz;  //!< SYSCLK Frequency(in Hz)
+    EPWM_TimeBaseCountMode tbCtrMode;   //!< Time Base Counter Mode
+    EPWM_ClockDivider      tbClkDiv;    //!< Time Base Counter Clock Divider
+    EPWM_HSClockDivider    tbHSClkDiv;  //!< Time Base Counter HS Clock Divider
+} EPWM_SignalParams;
 
 //*****************************************************************************
 //
@@ -7375,6 +7393,23 @@ EPWM_lockRegisters(uint32_t base, EPWM_LockRegisterGroup registerGroup)
 //*****************************************************************************
 extern void
 EPWM_setEmulationMode(uint32_t base, EPWM_EmulationMode emulationMode);
+
+//*****************************************************************************
+//
+//! Configures ePWM signal with desired frequency & duty
+//!
+//! \param base is the base address of the EPWM module.
+//! \param signalParams is the desired signal parameters.
+//!
+//! This function configures the ePWM module to generate a signal with
+//! desired frequency & duty.
+//!
+//! \return None.
+//
+//*****************************************************************************
+extern void
+EPWM_configureSignal(uint32_t base, const EPWM_SignalParams *signalParams);
+
 //*****************************************************************************
 //
 // Close the Doxygen group.

@@ -5,8 +5,8 @@
 // TITLE:  CLA Driver Implementation File
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -79,6 +79,7 @@ extern "C"
 //*****************************************************************************
 #define CLA_NUM_EOT_INTERRUPTS          (8U)
 
+#ifdef __TMS320C28XX__  // This enum is only accessible by C28x
 //*****************************************************************************
 //
 //! Values that can be passed to CLA_getBackgroundTaskStatus() as the
@@ -95,6 +96,7 @@ typedef enum
     //! while the BG is already running, the overflow is set
     CLA_BGSTS_OVERFLOW         = CLA_MSTSBGRND_BGOVF
 } CLA_BGTaskStatus;
+#endif // __TMS320C28XX__
 
 //*****************************************************************************
 //
@@ -133,6 +135,7 @@ typedef enum
     CLA_TASK_8   //!< CLA Task 8
 } CLA_TaskNumber;
 
+#ifdef __TMS320C28XX__  // These enums are only accessible by C28x
 //*****************************************************************************
 //
 //! Values that can be passed to CLA_mapTaskVector() as the \e claIntVect
@@ -244,6 +247,7 @@ typedef enum
     CLA_TRIGGER_CLB4INT      = 130, //!< CLA Task Trigger Source is CLB4INT
 
 } CLA_Trigger;
+#endif // __TMS320C28XX__
 
 //*****************************************************************************
 //

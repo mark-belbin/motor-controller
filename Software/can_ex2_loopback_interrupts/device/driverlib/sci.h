@@ -5,8 +5,8 @@
 // TITLE:  C28x SCI driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -661,6 +661,7 @@ SCI_resetChannels(uint32_t base)
     //
     // Reset the Tx and Rx Channels
     //
+    HWREGH(base + SCI_O_FFTX) &= ~SCI_FFTX_SCIRST;
     HWREGH(base + SCI_O_FFTX) |= SCI_FFTX_SCIRST;
 }
 

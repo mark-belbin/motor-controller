@@ -5,8 +5,8 @@
 // TITLE:  C28x CLB driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -201,6 +201,61 @@ typedef enum
 
 //*****************************************************************************
 //
+//! Values that can be passed to select CLB AOC signal. It can be passed to
+//! CLB_configAOC() as the \e aocID parameter.
+//! AOC is the Asynchronous Output Conditioning block.
+//
+//*****************************************************************************
+typedef enum
+{
+    CLB_AOC0 = 0,                   //!< AOC 0
+    CLB_AOC1 = 1,                   //!< AOC 1
+    CLB_AOC2 = 2,                   //!< AOC 2
+    CLB_AOC3 = 3,                   //!< AOC 3
+    CLB_AOC4 = 4,                   //!< AOC 4
+    CLB_AOC5 = 5,                   //!< AOC 5
+    CLB_AOC6 = 6,                   //!< AOC 6
+    CLB_AOC7 = 7                    //!< AOC 7
+} CLB_AOCs;
+
+//*****************************************************************************
+//
+//! Values that can be passed to set/clear CLB SW release signals. It can 
+//! be passed to CLB_writeSWReleaseControl() as the \e inID parameter.
+//
+//*****************************************************************************
+typedef enum
+{
+    CLB_SW_RLS_CTRL0 = 0,           //!< SW RLS CTRL 0
+    CLB_SW_RLS_CTRL1 = 1,           //!< SW RLS CTRL 1
+    CLB_SW_RLS_CTRL2 = 2,           //!< SW RLS CTRL 2
+    CLB_SW_RLS_CTRL3 = 3,           //!< SW RLS CTRL 3
+    CLB_SW_RLS_CTRL4 = 4,           //!< SW RLS CTRL 4
+    CLB_SW_RLS_CTRL5 = 5,           //!< SW RLS CTRL 5
+    CLB_SW_RLS_CTRL6 = 6,           //!< SW RLS CTRL 6
+    CLB_SW_RLS_CTRL7 = 7            //!< SW RLS CTRL 7
+} CLB_SWReleaseCtrl;
+
+//*****************************************************************************
+//
+//! Values that can be passed to set/clear CLB SW release signals. It can 
+//! be passed to CLB_writeSWGateControl() as the \e inID parameter.
+//
+//*****************************************************************************
+typedef enum
+{
+    CLB_SW_GATE_CTRL0 = 0,           //!< SW GATE CTRL 0
+    CLB_SW_GATE_CTRL1 = 1,           //!< SW GATE CTRL 1
+    CLB_SW_GATE_CTRL2 = 2,           //!< SW GATE CTRL 2
+    CLB_SW_GATE_CTRL3 = 3,           //!< SW GATE CTRL 3
+    CLB_SW_GATE_CTRL4 = 4,           //!< SW GATE CTRL 4
+    CLB_SW_GATE_CTRL5 = 5,           //!< SW GATE CTRL 5
+    CLB_SW_GATE_CTRL6 = 6,           //!< SW GATE CTRL 6
+    CLB_SW_GATE_CTRL7 = 7            //!< SW GATE CTRL 7
+} CLB_SWGateCtrl;
+
+//*****************************************************************************
+//
 //! Values that can be passed to select CLB counter. It can be passed to
 //! CLB_configCounterLoadMatch() as the \e counterID parameter.
 //
@@ -214,7 +269,7 @@ typedef enum
 
 //*****************************************************************************
 //
-//! Values that can be passed to CLB_getRegisters() as the \e registerID
+//! Values that can be passed to CLB_getRegister() as the \e registerID
 //! parameter.
 //
 //*****************************************************************************
@@ -287,6 +342,11 @@ typedef enum
     CLB_LOCAL_IN_MUX_EQEP_EQEPS         = 21,  //!< EQEPx EQEPS
     CLB_LOCAL_IN_MUX_CPU1_TBCLKSYNC     = 22,  //!< CPU1.TBCLKSYNC
     CLB_LOCAL_IN_MUX_CPU1_HALT          = 24,  //!< CPU1.HALT
+    CLB_LOCAL_IN_MUX_SPICLK             = 26,  //!< SPI Clock
+    CLB_LOCAL_IN_MUX_SPISIMO_SLAVE      = 27,  //!< SPISIMO Slave Input
+    CLB_LOCAL_IN_MUX_SPISTE             = 28,  //!< SPI STE
+    CLB_LOCAL_IN_MUX_SCI_TX             = 29,  //!< SCI TX
+    CLB_LOCAL_IN_MUX_CLB_PSCLK          = 31,  //!< CLB prescaled clock
 } CLB_LocalInputMux;
 
 //*****************************************************************************
@@ -372,7 +432,68 @@ typedef enum
     CLB_GLOBAL_IN_MUX_CLB_AUXSIG4       = 68,  //!< CLB X-BAR AUXSIG4
     CLB_GLOBAL_IN_MUX_CLB_AUXSIG5       = 69,  //!< CLB X-BAR AUXSIG5
     CLB_GLOBAL_IN_MUX_CLB_AUXSIG6       = 70,  //!< CLB X-BAR AUXSIG6
-    CLB_GLOBAL_IN_MUX_CLB_AUXSIG7       = 71   //!< CLB X-BAR AUXSIG7
+    CLB_GLOBAL_IN_MUX_CLB_AUXSIG7       = 71,  //!< CLB X-BAR AUXSIG7
+    
+    CLB_GLOBAL_IN_MUX_CLB1_OUT16         = 72,  //!< CLB1 OUT16
+    CLB_GLOBAL_IN_MUX_CLB1_OUT17         = 73,  //!< CLB1 OUT17
+    CLB_GLOBAL_IN_MUX_CLB1_OUT18         = 74,  //!< CLB1 OUT18
+    CLB_GLOBAL_IN_MUX_CLB1_OUT19         = 75,  //!< CLB1 OUT19
+    CLB_GLOBAL_IN_MUX_CLB1_OUT20         = 76,  //!< CLB1 OUT20
+    CLB_GLOBAL_IN_MUX_CLB1_OUT21         = 77,  //!< CLB1 OUT21
+    CLB_GLOBAL_IN_MUX_CLB1_OUT22         = 78,  //!< CLB1 OUT22
+    CLB_GLOBAL_IN_MUX_CLB1_OUT23         = 79,  //!< CLB1 OUT23
+
+    CLB_GLOBAL_IN_MUX_CLB2_OUT16         = 80,  //!< CLB2 OUT16
+    CLB_GLOBAL_IN_MUX_CLB2_OUT17         = 81,  //!< CLB2 OUT17
+    CLB_GLOBAL_IN_MUX_CLB2_OUT18         = 82,  //!< CLB2 OUT18
+    CLB_GLOBAL_IN_MUX_CLB2_OUT19         = 83,  //!< CLB2 OUT19
+    CLB_GLOBAL_IN_MUX_CLB2_OUT20         = 84,  //!< CLB2 OUT20
+    CLB_GLOBAL_IN_MUX_CLB2_OUT21         = 85,  //!< CLB2 OUT21
+    CLB_GLOBAL_IN_MUX_CLB2_OUT22         = 86,  //!< CLB2 OUT22
+    CLB_GLOBAL_IN_MUX_CLB2_OUT23         = 87,  //!< CLB2 OUT23
+
+    CLB_GLOBAL_IN_MUX_CLB3_OUT16         = 88,  //!< CLB3 OUT16
+    CLB_GLOBAL_IN_MUX_CLB3_OUT17         = 89,  //!< CLB3 OUT17
+    CLB_GLOBAL_IN_MUX_CLB3_OUT18         = 90,  //!< CLB3 OUT18
+    CLB_GLOBAL_IN_MUX_CLB3_OUT19         = 91,  //!< CLB3 OUT19
+    CLB_GLOBAL_IN_MUX_CLB3_OUT20         = 92,  //!< CLB3 OUT20
+    CLB_GLOBAL_IN_MUX_CLB3_OUT21         = 93,  //!< CLB3 OUT21
+    CLB_GLOBAL_IN_MUX_CLB3_OUT22         = 94,  //!< CLB3 OUT22
+    CLB_GLOBAL_IN_MUX_CLB3_OUT23         = 95,  //!< CLB3 OUT23
+
+    CLB_GLOBAL_IN_MUX_CLB4_OUT16         = 96,   //!< CLB4 OUT16
+    CLB_GLOBAL_IN_MUX_CLB4_OUT17         = 97,   //!< CLB4 OUT17
+    CLB_GLOBAL_IN_MUX_CLB4_OUT18         = 98,   //!< CLB4 OUT18
+    CLB_GLOBAL_IN_MUX_CLB4_OUT19         = 99,   //!< CLB4 OUT19
+    CLB_GLOBAL_IN_MUX_CLB4_OUT20         = 100,  //!< CLB4 OUT20
+    CLB_GLOBAL_IN_MUX_CLB4_OUT21         = 101,  //!< CLB4 OUT21
+    CLB_GLOBAL_IN_MUX_CLB4_OUT22         = 102,  //!< CLB4 OUT22
+    CLB_GLOBAL_IN_MUX_CLB4_OUT23         = 103,  //!< CLB4 OUT23
+
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT0       = 104,  //!< ERAD Event 0
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT1       = 105,  //!< ERAD Event 1
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT2       = 106,  //!< ERAD Event 2
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT3       = 107,  //!< ERAD Event 3
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT4       = 108,  //!< ERAD Event 4
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT5       = 109,  //!< ERAD Event 5
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT6       = 110,  //!< ERAD Event 6
+    CLB_GLOBAL_IN_MUX_ERAD_EVENT7       = 111,  //!< ERAD Event 7
+
+    CLB_GLOBAL_IN_MUX_FSIRXA_DATA_PACKET_RCVD  = 112,  //!< FSIRXA Data Packet Received
+    CLB_GLOBAL_IN_MUX_FSIRXA_ERROR_PACKET_RCVD = 113,  //!< FSIRXA Error Packet Received
+    CLB_GLOBAL_IN_MUX_FSIRXA_PING_PACKET_RCVD  = 114,  //!< FSIRXA PING Packet Received
+    CLB_GLOBAL_IN_MUX_FSIRXA_OUTPUT_FRAME_DONE = 115,  //!< FSIRXA Output Frame Done
+    CLB_GLOBAL_IN_MUX_FSIRXA_PACKET_TAG0       = 116,  //!< FSIRXA Packet TAG0
+    CLB_GLOBAL_IN_MUX_FSIRXA_PACKET_TAG1       = 117,  //!< FSIRXA Packet TAG1
+    CLB_GLOBAL_IN_MUX_FSIRXA_PACKET_TAG2       = 118,  //!< FSIRXA Packet TAG2
+    CLB_GLOBAL_IN_MUX_FSIRXA_PACKET_TAG3       = 119,  //!< FSIRXA Packet TAG3
+
+    CLB_GLOBAL_IN_MUX_SPI1_SPICLK           = 120,  //!< SPI1 SPICLK OUT
+    CLB_GLOBAL_IN_MUX_SPI1_SPISOMI_MASTER   = 121,  //!< SPI1 SPISOMI Master IN
+    CLB_GLOBAL_IN_MUX_SPI1_SPISTE           = 122,  //!< SPI1 SPISTE OUT
+    CLB_GLOBAL_IN_MUX_SPI2_SPICLK           = 123,  //!< SPI2 SPICLK OUT
+    CLB_GLOBAL_IN_MUX_SPI2_SPISOMI_MASTER   = 124,  //!< SPI2 SPISOMI Master IN
+    CLB_GLOBAL_IN_MUX_SPI2_SPISTE           = 125,  //!< SPI2 SPISTE OUT
 } CLB_GlobalInputMux;
 
 //*****************************************************************************
@@ -438,6 +559,216 @@ static inline void CLB_enableCLB(uint32_t base)
 
     EALLOW;
     HWREGH(base + CLB_LOGICCTL + CLB_O_LOAD_EN) |= CLB_LOAD_EN_GLOBAL_EN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Clear global enable.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function disables the CLB via global enable register.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_disableCLB(uint32_t base)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREGH(base + CLB_LOGICCTL + CLB_O_LOAD_EN) &= ~CLB_LOAD_EN_GLOBAL_EN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Enable HLC NMI.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function enables the CLB HLC NMI.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_enableNMI(uint32_t base)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREGH(base + CLB_LOGICCTL + CLB_O_LOAD_EN) |= CLB_LOAD_EN_NMI_EN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Disable HLC NMI.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function disables the CLB HLC NMI.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_disableNMI(uint32_t base)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREGH(base + CLB_LOGICCTL + CLB_O_LOAD_EN) &= ~CLB_LOAD_EN_NMI_EN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Configure Clock Prescalar.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function enables and configures the CLB Clock Precalar.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_configureClockPrescalar(uint32_t base, uint16_t prescl)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) =
+        (HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) &
+         ~(CLB_PRESCALE_CTRL_PRESCALE_M)) |
+        ((uint32_t)prescl << CLB_PRESCALE_CTRL_PRESCALE_S);
+    HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) |= CLB_PRESCALE_CTRL_CLKEN;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Configures Clock Precalar Strobe Mode.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function enables and configures the CLB Clock Precalar Strobe Mode.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_configureStrobeMode(uint32_t base, uint16_t strb)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) =
+        (HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) &
+         ~((uint32_t)CLB_PRESCALE_CTRL_TAP_M)) |
+        ((uint32_t)strb << CLB_PRESCALE_CTRL_TAP_S);
+    HWREG(base + CLB_LOGICCTL + CLB_O_PRESCALE_CTRL) |= CLB_PRESCALE_CTRL_STRB;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Configures the general purpose SW release control value.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//! \param inID is the specified CLB SW Release input signal.
+//! \param val is the value of the SW RLS control.
+//!
+//! This function configures the general purpose SW release control value.
+//! The \e inID parameter can have one enumeration value from CLB_SWReleaseCtrl.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_writeSWReleaseControl(uint32_t base, 
+                                            CLB_SWReleaseCtrl inID, bool val)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+
+    HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG) =
+            (HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG) &
+                ~(0x1000000U << inID)) |
+                    (((uint32_t)val) << (24U + inID));
+}
+
+
+//*****************************************************************************
+//
+//! Configures the general purpose SW gate control value.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//! \param inID is the specified CLB SW Release input signal.
+//! \param val is the value of the SW GATE control.
+//!
+//! This function configures the general purpose SW release control value.
+//! The \e inID parameter can have one enumeration value from CLB_SWGateCtrl.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_writeSWGateControl(uint32_t base, 
+                                            CLB_SWGateCtrl inID, bool val)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG) =
+            (HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG) &
+                ~(0x10000U << inID)) |
+                    (((uint32_t)val) << (16U + inID));
+
+}
+
+
+//*****************************************************************************
+//
+//! Configures Counter TAP Selects.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//! \param miscCtrl is the value to represent counter tap selects.
+//!        Generated by tool as \b TILEx_CFG_TAP_SELL.
+//!
+//! This function configures the counter tap selects.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_configCounterTapSelects(uint32_t base, uint32_t tapSel)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREG(base + CLB_O_COUNT_MATCH_TAP_SEL) = tapSel;
+    EDIS;
+}
+
+//*****************************************************************************
+//
+//! Configures AOC (Asynchronous Output Conditioning) functions.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//! \param aocID is the specified CLB tile AOC signal.
+//! \param aocCfg is the value for the AOC signal function and input
+//!        signal selections. Generated by tool as \b TILEx_OUTPUT_COND_CTR_n
+//!        where n is the output number.
+//!
+//! This function configures the input signals and equations of the aoc LUT
+//! corresponding to the /e aocID parameter.
+//!
+//! \return None.
+//
+//*****************************************************************************
+static inline void CLB_configAOC(uint32_t base, CLB_AOCs aocID,
+                                     uint32_t aocCfg)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    EALLOW;
+    HWREG(base + CLB_O_OUTPUT_COND_CTRL_0 + (sizeof(uint32_t) * aocID)) = aocCfg;
     EDIS;
 }
 
@@ -621,6 +952,30 @@ static inline void CLB_setGPREG(uint32_t base, uint32_t gpRegVal)
     ASSERT(CLB_isBaseValid(base));
 
     HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG) = gpRegVal;
+}
+
+//*****************************************************************************
+//
+//! Gets the CLB_GP_REG register value.
+//!
+//! \param base is the base address of a CLB tile's logic config register.
+//!
+//! This function writes to the CLB_GP_REG register. When the general purpose
+//! input mux is configured to use CLB_GP_REG, each bit in \e gpRegVal
+//! corresponds to an input signal (bit 0 to Input 0, bit 1 to Input 1, and
+//! so on).
+//!
+//! \sa CLB_configGPInputMux() to select the CLB_GP_REG as the source for
+//! an input signal.
+//!
+//! \return CLB_GP_REG value.
+//
+//*****************************************************************************
+static inline uint32_t CLB_getGPREG(uint32_t base)
+{
+    ASSERT(CLB_isBaseValid(base));
+
+    return HWREG(base + CLB_LOGICCTL + CLB_O_GP_REG);
 }
 
 //*****************************************************************************

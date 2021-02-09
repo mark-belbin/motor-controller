@@ -5,8 +5,8 @@
 // TITLE:  C28x CAN driver.
 //
 //###########################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -593,6 +593,46 @@ CAN_readMessage(uint32_t base, uint32_t objID,
     return(status);
 }
 
+bool CAN_readMessageWithID(uint32_t base,
+                           uint32_t objID,
+                           CAN_MsgFrameType *frameType,
+                           uint32_t *msgID,
+                           uint16_t *msgData)
+{
+    bool status;
+
+
+    //
+    // Check the arguments.
+    //
+    ASSERT(msgID != 0U);
+    ASSERT(frameType != 0U);
+
+    //
+    //Read the message first this fills the IF2 registers
+    //with received message for that mailbox
+    //
+    status = CAN_readMessage(base, objID, msgData);
+    //
+    // See if there is new data available.
+    //
+    if(status == true)
+    {
+        if((HWREG_BP(base + CAN_O_IF2ARB) & CAN_IF2ARB_XTD) != 0U)
+        {
+            *frameType = CAN_MSG_FRAME_EXT;
+            *msgID = ((HWREG_BP(base + CAN_O_IF2ARB)) & CAN_IF2ARB_ID_M);
+        }
+        else
+        {
+            *frameType = CAN_MSG_FRAME_STD;
+            *msgID = (((HWREG_BP(base + CAN_O_IF2ARB)) &
+                       CAN_IF2ARB_STD_ID_M) >>
+                      CAN_IF2ARB_STD_ID_S);
+        }
+    }
+    return(status);
+}
 //*****************************************************************************
 //
 // CAN_transferMessage

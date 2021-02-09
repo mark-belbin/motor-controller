@@ -27,8 +27,8 @@
 //!
 //
 //#############################################################################
-// $TI Release: F28004x Support Library v1.10.00.00 $
-// $Release Date: Tue May 26 17:06:03 IST 2020 $
+// $TI Release: F28004x Support Library v1.11.00.00 $
+// $Release Date: Sun Oct  4 15:49:15 IST 2020 $
 // $Copyright:
 // Copyright (C) 2020 Texas Instruments Incorporated - http://www.ti.com/
 //
@@ -78,8 +78,6 @@
 //
 volatile unsigned long msgCount = 0;
 
-uint16_t g_rxMsgData[2]; // For viewing in debug mode
-
 //
 // Main
 //
@@ -96,13 +94,13 @@ void main(void)
     // Initialize GPIO and configure GPIO pins for CANTX/CANRX
     //
     Device_initGPIO();
-    GPIO_setPinConfig(DEVICE_GPIO_CFG_CANRXB);
-    GPIO_setPinConfig(DEVICE_GPIO_CFG_CANTXB);
+    GPIO_setPinConfig(DEVICE_GPIO_CFG_CANRXA);
+    GPIO_setPinConfig(DEVICE_GPIO_CFG_CANTXA);
 
     //
     // Initialize the CAN controller
     //
-    CAN_initModule(CANB_BASE);
+    CAN_initModule(CANA_BASE);
 
     //
     // Set up the CAN bus bit rate to 500kHz
@@ -110,7 +108,7 @@ void main(void)
     // tighter timing control. Additionally, consult the device data sheet
     // for more information about the CAN module clocking.
     //
-    CAN_setBitRate(CANB_BASE, DEVICE_SYSCLK_FREQ, 500000, 20);
+    CAN_setBitRate(CANA_BASE, DEVICE_SYSCLK_FREQ, 500000, 20);
 
     //
     // Initialize PIE and clear PIE registers. Disables CPU interrupts.
@@ -132,7 +130,7 @@ void main(void)
     //
     // Enable CAN test mode with external loopback
     //
-    CAN_enableTestMode(CANB_BASE, CAN_TEST_EXL);
+    CAN_enableTestMode(CANA_BASE, CAN_TEST_EXL);
 
     //
     // Initialize the transmit message object used for sending CAN messages.
@@ -145,7 +143,7 @@ void main(void)
     //      Message Object Flags: None
     //      Message Data Length: 2 Bytes
     //
-    CAN_setupMessageObject(CANB_BASE, 1, 0x1234, CAN_MSG_FRAME_STD,
+    CAN_setupMessageObject(CANA_BASE, 1, 0x1234, CAN_MSG_FRAME_STD,
                            CAN_MSG_OBJ_TYPE_TX, 0, CAN_MSG_OBJ_NO_FLAGS,
                            MSG_DATA_LENGTH);
 
@@ -160,14 +158,14 @@ void main(void)
     //      Message Object Flags: None
     //      Message Data Length: 2 Bytes
     //
-    CAN_setupMessageObject(CANB_BASE, 2, 0x1234, CAN_MSG_FRAME_STD,
+    CAN_setupMessageObject(CANA_BASE, 2, 0x1234, CAN_MSG_FRAME_STD,
                            CAN_MSG_OBJ_TYPE_RX, 0, CAN_MSG_OBJ_NO_FLAGS,
                            MSG_DATA_LENGTH);
 
     //
     // Start CAN module operations
     //
-    CAN_startModule(CANB_BASE);
+    CAN_startModule(CANA_BASE);
 
     //
     // Setup send and receive buffers
@@ -184,17 +182,17 @@ void main(void)
         //
         // Send CAN message data from message object 1
         //
-        CAN_sendMessage(CANB_BASE, 1, MSG_DATA_LENGTH, txMsgData);
+        CAN_sendMessage(CANA_BASE, 1, MSG_DATA_LENGTH, txMsgData);
 
         //
         // Delay before receiving the data
         //
-        DEVICE_DELAY_US(100000);
+        DEVICE_DELAY_US(500000);
 
         //
         // Read CAN message object 2 and check for new data
         //
-        if (CAN_readMessage(CANB_BASE, 2, rxMsgData))
+        if (CAN_readMessage(CANA_BASE, 2, rxMsgData))
         {
             //
             // Check that received data matches sent data.
@@ -213,8 +211,6 @@ void main(void)
                 //
                 msgCount++;
                 Example_PassCount++;
-                g_rxMsgData[0] = rxMsgData[0];
-                g_rxMsgData[1] = rxMsgData[1];
             }
         }
         else
