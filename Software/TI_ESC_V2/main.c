@@ -749,21 +749,20 @@ __interrupt void mainISR(void)
 
     if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
     {
-        // Send measuredRPM ****************************************
-        if (motorVars.speed_krpm < 0) { // CounterClockwise
-            rpmMsgData[0] = 0x01; // Direction Byte
-            rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*-1000) >> 8; //High Byte
-            rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*-1000) & 0x00FF; //Low Byte
-        }
-        else { // Clockwise
-            rpmMsgData[0] = 0x00; // Direction Byte
-            rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*1000) >> 8; //High Byte
-            rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*1000) & 0x00FF; //Low Byte
-        }
+        // Send measuredRPM
+        sendRPM();
 
-        CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData);
+        // Send measuredVoltage
+        sendVoltage();
 
-        //***********************************************************
+        // Send measuredTorque
+        sendTorque();
+
+        // Send boardState
+        sendState();
+
+        // Send faultStatus
+        sendFault();
 
         // Reset CAN Telemetry Counter
         counterCAN = 0;
@@ -1107,6 +1106,54 @@ void runOffsetsCalculation(void)
 
     return;
 } // end of runOffsetsCalculation() function
+
+
+// CAN FUNCTIONS *********************************
+
+void sendRPM(void) {
+
+    if (motorVars.speed_krpm < 0) { // CounterClockwise
+        rpmMsgData[0] = 0x01; // Direction Byte
+        rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*-1000) >> 8; //High Byte
+        rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*-1000) & 0x00FF; //Low Byte
+    }
+    else { // Clockwise
+        rpmMsgData[0] = 0x00; // Direction Byte
+        rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*1000) >> 8; //High Byte
+        rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*1000) & 0x00FF; //Low Byte
+    }
+
+    CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData); //Send message
+
+    return;
+}
+
+void sendVoltage(void) {
+
+    return;
+}
+
+void sendTorque(void) {
+
+    return;
+}
+
+void sendState(void) {
+
+    return;
+}
+
+void sendFault(void) {
+
+    return;
+}
+
+
+
+
+//************************************************
+
+
 
 //
 // end of file

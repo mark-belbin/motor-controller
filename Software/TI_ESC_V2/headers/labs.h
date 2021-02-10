@@ -505,6 +505,35 @@ extern __interrupt void mainISR(void);
 //
 extern void runOffsetsCalculation(void);
 
+// CAN Function Prototypes ****************************
+
+//
+//! \brief Function called to calculate and send estimated RPM over CAN
+//
+extern void sendRPM(void);
+
+//
+//! \brief Function called to calculate and send estimated Voltage over CAN
+//
+extern void sendVoltage(void);
+
+//
+//! \brief Function called to calculate and send estimated Torque over CAN
+//
+extern void sendTorque(void);
+
+//
+//! \brief Function called to send board state over CAN
+//
+extern void sendState(void);
+
+//
+//! \brief Function called to send fault bits over CAN
+//
+extern void sendFault(void);
+
+//******************************************************
+
 //
 //! \brief     Sets the number of current sensors
 //! \param[in] handle             The Clarke (CLARKE) handle
