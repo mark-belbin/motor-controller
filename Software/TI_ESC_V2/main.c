@@ -223,6 +223,57 @@ void main(void)
     //*************************************
     // Setup CAN Message Objects
 
+    // Arm Message Object
+    CAN_setupMessageObject(CANB_BASE, arm_id, ((board_id << 6) | arm_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 1);
+
+    // Abort Message Object
+    CAN_setupMessageObject(CANB_BASE, abort_id, ((board_id << 6) | abort_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 1);
+
+    // MotorONOFF Message Object
+    CAN_setupMessageObject(CANB_BASE, motor_onoff_id, ((board_id << 6) | motor_onoff_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 1);
+
+    // SetRPM Message Object
+    CAN_setupMessageObject(CANB_BASE, setRPM_id, ((board_id << 6) | setRPM_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 3);
+
+    // SetAccel Message Object
+    CAN_setupMessageObject(CANB_BASE, setAccel_id, ((board_id << 6) | setAccel_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 2);
+
+    // MeasuredRPM Message Object
+    CAN_setupMessageObject(CANB_BASE, measuredRPM_id, ((board_id << 6) | measuredRPM_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 3);
+
+    // MeasuredVoltage Message Object
+    CAN_setupMessageObject(CANB_BASE, measuredVoltage_id, ((board_id << 6) | measuredVoltage_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 2);
+
+    // MeasuredTorque Message Object
+    CAN_setupMessageObject(CANB_BASE, measuredTorque_id, ((board_id << 6) | measuredTorque_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 2);
+
+    // Board State Message Object
+    CAN_setupMessageObject(CANB_BASE, boardState_id, ((board_id << 6) | boardState_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 1);
+
+    // faultStatus Message Object
+    CAN_setupMessageObject(CANB_BASE, faultStatus_id, ((board_id << 6) | faultStatus_id),
+                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
+                           CAN_MSG_OBJ_NO_FLAGS, 2);
+
+
     //************************************
 
     //
