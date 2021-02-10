@@ -1525,6 +1525,9 @@ void HAL_setupCANB(HAL_Handle handle)
     // Set CANB bitrate
     CAN_setBitRate(obj->canHandle[1], DEVICE_SYSCLK_FREQ, 500000, 20);
 
+    // Start CANB module operations
+    CAN_startModule(CANB_BASE);
+
 
   return;
 }
