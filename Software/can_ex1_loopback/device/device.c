@@ -133,16 +133,16 @@ void Device_init(void)
     //
     //Configure GPIO in Push Pull,Output Mode
     //
-    GPIO_setPadConfig(22U, GPIO_PIN_TYPE_STD);
-    GPIO_setPadConfig(23U, GPIO_PIN_TYPE_STD);
-    GPIO_setDirectionMode(22U, GPIO_DIR_MODE_OUT);
-    GPIO_setDirectionMode(23U, GPIO_DIR_MODE_OUT);
+    GPIO_setPadConfig(12U, GPIO_PIN_TYPE_STD);
+    GPIO_setPadConfig(13U, GPIO_PIN_TYPE_STD);
+    GPIO_setDirectionMode(12U, GPIO_DIR_MODE_OUT);
+    GPIO_setDirectionMode(13U, GPIO_DIR_MODE_OUT);
 
     //
     // Configure GPIO22 and GPIO23 as digital pins
     //
-    GPIO_setAnalogMode(22U, GPIO_ANALOG_DISABLED);
-    GPIO_setAnalogMode(23U, GPIO_ANALOG_DISABLED);
+    //GPIO_setAnalogMode(12U, GPIO_ANALOG_DISABLED);
+    //GPIO_setAnalogMode(13U, GPIO_ANALOG_DISABLED);
 }
 
 //*****************************************************************************

@@ -174,8 +174,8 @@
 //
 #define DEVICE_GPIO_CFG_CANRXA      GPIO_30_CANA_RX  // "pinConfig" for CANA RX
 #define DEVICE_GPIO_CFG_CANTXA      GPIO_31_CANA_TX  // "pinConfig" for CANA TX
-#define DEVICE_GPIO_CFG_CANRXB      GPIO_10_CANB_RX  // "pinConfig" for CANB RX
-#define DEVICE_GPIO_CFG_CANTXB      GPIO_8_CANB_TX   // "pinConfig" for CANB TX
+#define DEVICE_GPIO_CFG_CANRXB      GPIO_13_CANB_RX  // "pinConfig" for CANB RX
+#define DEVICE_GPIO_CFG_CANTXB      GPIO_12_CANB_TX   // "pinConfig" for CANB TX
 
 //
 // LINA

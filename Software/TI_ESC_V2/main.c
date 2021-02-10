@@ -745,9 +745,9 @@ __interrupt void mainISR(void)
     //
     // Send Telemetry over CAN
     //
-    //counterCAN++;
+    counterCAN++;
 
-    if(counterCAN < 2)//(uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
+    if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
     {
         // Send measuredRPM ****************************************
         if (motorVars.speed_krpm < 0) { // CounterClockwise
@@ -761,12 +761,12 @@ __interrupt void mainISR(void)
             rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*1000) & 0x00FF; //Low Byte
         }
 
-
         CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData);
+
         //***********************************************************
 
         // Reset CAN Telemetry Counter
-        counterCAN = 5;
+        counterCAN = 0;
     }
 
     //

@@ -1030,13 +1030,10 @@ void HAL_setupPeripheralClks(HAL_Handle handle)
 {
 
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CLA1);
-
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_DMA);
-
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TIMER0);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TIMER1);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TIMER2);
-
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_HRPWM);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
@@ -1517,6 +1514,7 @@ void HAL_setupSPIB(HAL_Handle handle)
 
 void HAL_setupCANB(HAL_Handle handle)
 {
+
    HAL_Obj   *obj = (HAL_Obj *)handle;
 
    // Initilize CANB
@@ -1525,6 +1523,8 @@ void HAL_setupCANB(HAL_Handle handle)
    // Set CANB bitrate
    CAN_setBitRate(obj->canHandle[1], DEVICE_SYSCLK_FREQ, 500000, 20);
 
+   // Disable CANB Test Mode
+   CAN_disableTestMode(obj->canHandle[1]);
 
    //*************************************
    // Setup CAN Message Objects
