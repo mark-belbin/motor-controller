@@ -52,6 +52,35 @@
 //
 // the globals
 //
+
+// CAN Info
+//***********************
+//Specify board ID for CAN ID differentiation (8 to 15)
+uint16_t board_id = 8;
+
+//Specify function IDs
+
+// Commands (Recieving)
+uint16_t arm_id = 0;
+uint16_t abort_id = 1;
+uint16_t motor_onoff_id = 2;
+uint16_t setRPM_id = 3;
+uint16_t setAccel_id = 4;
+
+// Telemetry (Sending)
+uint16_t measuredRPM_id = 5;
+uint16_t measuredVoltage_id = 6;
+uint16_t measuredTorque_id = 7;
+uint16_t boardState_id = 8;
+uint16_t faultStatus_id = 9;
+
+// CAN_ID = (board_id << 6) | function_id
+
+//***********************
+
+// Global board state
+uint16_t boardState = 0;
+
 HAL_ADCData_t adcData = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, 0.0};
 
 HAL_PWMData_t pwmData = {{0.0, 0.0, 0.0}};
@@ -178,11 +207,6 @@ DRV8320_SPIVars_t drvSPI8320Vars;
 #pragma DATA_SECTION(drvSPI8320Vars, "ctrl_data");
 #endif
 
-#ifdef _PWMDAC_EN_
-HAL_PWMDACData_t pwmDACData;
-
-#pragma DATA_SECTION(pwmDACData, "ctrl_data");
-#endif  // _PWMDAC_EN_
 //
 // the functions
 //
