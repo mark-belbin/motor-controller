@@ -53,30 +53,9 @@
 // the globals
 //
 
-// CAN Info
-//***********************
-//Specify board ID for CAN ID differentiation (8 to 15)
-uint16_t board_id = 8;
+#define CAN_TELEM_FREQ_Hz  (10.0)     // 20 Hz
 
-//Specify function IDs
-
-// Commands (Recieving)
-uint16_t arm_id = 0;
-uint16_t abort_id = 1;
-uint16_t motor_onoff_id = 2;
-uint16_t setRPM_id = 3;
-uint16_t setAccel_id = 4;
-
-// Telemetry (Sending)
-uint16_t measuredRPM_id = 5;
-uint16_t measuredVoltage_id = 6;
-uint16_t measuredTorque_id = 7;
-uint16_t boardState_id = 8;
-uint16_t faultStatus_id = 9;
-
-// CAN_ID = (board_id << 6) | function_id
-
-#define CAN_TELEM_FREQ_Hz  (20.0)     // 20 Hz
+uint16_t rpmMsgData[3];
 
 //***********************
 
@@ -222,61 +201,6 @@ void main(void)
 
     // Define board used
     motorVars.boardKit = BOARD_T200_CONTROLLER;
-
-
-    //*************************************
-    // Setup CAN Message Objects
-
-    // Arm Message Object
-    CAN_setupMessageObject(CANB_BASE, arm_id, ((board_id << 6) | arm_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 1);
-
-    // Abort Message Object
-    CAN_setupMessageObject(CANB_BASE, abort_id, ((board_id << 6) | abort_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 1);
-
-    // MotorONOFF Message Object
-    CAN_setupMessageObject(CANB_BASE, motor_onoff_id, ((board_id << 6) | motor_onoff_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 1);
-
-    // SetRPM Message Object
-    CAN_setupMessageObject(CANB_BASE, setRPM_id, ((board_id << 6) | setRPM_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 3);
-
-    // SetAccel Message Object
-    CAN_setupMessageObject(CANB_BASE, setAccel_id, ((board_id << 6) | setAccel_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_RX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 2);
-
-    // MeasuredRPM Message Object
-    CAN_setupMessageObject(CANB_BASE, measuredRPM_id, ((board_id << 6) | measuredRPM_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 3);
-
-    // MeasuredVoltage Message Object
-    CAN_setupMessageObject(CANB_BASE, measuredVoltage_id, ((board_id << 6) | measuredVoltage_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 2);
-
-    // MeasuredTorque Message Object
-    CAN_setupMessageObject(CANB_BASE, measuredTorque_id, ((board_id << 6) | measuredTorque_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 2);
-
-    // Board State Message Object
-    CAN_setupMessageObject(CANB_BASE, boardState_id, ((board_id << 6) | boardState_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 1);
-
-    // faultStatus Message Object
-    CAN_setupMessageObject(CANB_BASE, faultStatus_id, ((board_id << 6) | faultStatus_id),
-                           CAN_MSG_FRAME_EXT, CAN_MSG_OBJ_TYPE_TX, 0,
-                           CAN_MSG_OBJ_NO_FLAGS, 2);
-
 
     //************************************
 
@@ -821,24 +745,28 @@ __interrupt void mainISR(void)
     //
     // Send Telemetry over CAN
     //
-    counterCAN++;
+    //counterCAN++;
 
-    if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
+    if(counterCAN < 2)//(uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
     {
         // Send measuredRPM ****************************************
-        uint16_t rpmMsgData[3];
+        if (motorVars.speed_krpm < 0) { // CounterClockwise
+            rpmMsgData[0] = 0x01; // Direction Byte
+            rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*-1000) >> 8; //High Byte
+            rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*-1000) & 0x00FF; //Low Byte
+        }
+        else { // Clockwise
+            rpmMsgData[0] = 0x00; // Direction Byte
+            rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*1000) >> 8; //High Byte
+            rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*1000) & 0x00FF; //Low Byte
+        }
 
-        if (motorVars.speedRef_krpm < 0) {rpmMsgData[0] = 0x01;} // Direction Byte
-        else {rpmMsgData[0] = 0x00;}
-
-        rpmMsgData[1] = (uint16_t)(motorVars.speedRef_krpm*1000) >> 8; //High Byte
-        rpmMsgData[2] = (uint16_t)(motorVars.speedRef_krpm*1000) & 0x00FF; //Low Byte
 
         CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData);
         //***********************************************************
 
-        // Reset Counter
-        counterCAN = 0;
+        // Reset CAN Telemetry Counter
+        counterCAN = 5;
     }
 
     //

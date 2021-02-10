@@ -66,6 +66,32 @@ extern "C" {
 // **************************************************************************
 // the defines
 
+// CAN Info
+//***********************
+//Specify board ID for CAN ID differentiation (8 to 15)
+#define board_id    8
+
+//Specify function IDs
+
+// Commands (Recieving)
+#define arm_id          0
+#define abort_id        1
+#define motor_onoff_id  2
+#define setRPM_id       3
+#define setAccel_id     4
+
+// Telemetry (Sending)
+#define measuredRPM_id      5
+#define measuredVoltage_id  6
+#define measuredTorque_id   7
+#define boardState_id       8
+#define faultStatus_id      9
+
+// CAN_ID = (board_id << 6) | function_id
+
+
+
+
 //! Trip Zones all interrupt
 //!
 #define HAL_TZ_INTERRUPT_ALL      EPWM_TZ_INTERRUPT_DCBEVT2 \
@@ -205,6 +231,7 @@ extern __interrupt void cla1Task6(void);
 extern __interrupt void cla1Task7(void);
 extern __interrupt void cla1Task8(void);
 extern __interrupt void cla_EST_run_BackgroundTask(void);
+
 
 // **************************************************************************
 // the function prototypes

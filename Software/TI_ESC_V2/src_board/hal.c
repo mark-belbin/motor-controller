@@ -1517,17 +1517,71 @@ void HAL_setupSPIB(HAL_Handle handle)
 
 void HAL_setupCANB(HAL_Handle handle)
 {
-    HAL_Obj   *obj = (HAL_Obj *)handle;
+   HAL_Obj   *obj = (HAL_Obj *)handle;
 
-    // Initilize CANB
-    CAN_initModule(obj->canHandle[1]);
+   // Initilize CANB
+   CAN_initModule(obj->canHandle[1]);
 
-    // Set CANB bitrate
-    CAN_setBitRate(obj->canHandle[1], DEVICE_SYSCLK_FREQ, 500000, 20);
+   // Set CANB bitrate
+   CAN_setBitRate(obj->canHandle[1], DEVICE_SYSCLK_FREQ, 500000, 20);
 
-    // Start CANB module operations
-    CAN_startModule(CANB_BASE);
 
+   //*************************************
+   // Setup CAN Message Objects
+
+   // Arm Message Object
+   CAN_setupMessageObject(obj->canHandle[1], arm_id, ((board_id << 6) | arm_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_RX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 1);
+
+   // Abort Message Object
+   CAN_setupMessageObject(obj->canHandle[1], abort_id, ((board_id << 6) | abort_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_RX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 1);
+
+   // MotorONOFF Message Object
+   CAN_setupMessageObject(obj->canHandle[1], motor_onoff_id, ((board_id << 6) | motor_onoff_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_RX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 1);
+
+   // SetRPM Message Object
+   CAN_setupMessageObject(CANB_BASE, setRPM_id, ((board_id << 6) | setRPM_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_RX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 3);
+
+   // SetAccel Message Object
+   CAN_setupMessageObject(obj->canHandle[1], setAccel_id, ((board_id << 6) | setAccel_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_RX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 2);
+
+   // MeasuredRPM Message Object
+   CAN_setupMessageObject(obj->canHandle[1], measuredRPM_id, ((board_id << 6) | measuredRPM_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_TX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 3);
+
+   // MeasuredVoltage Message Object
+   CAN_setupMessageObject(obj->canHandle[1], measuredVoltage_id, ((board_id << 6) | measuredVoltage_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_TX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 2);
+
+   // MeasuredTorque Message Object
+   CAN_setupMessageObject(obj->canHandle[1], measuredTorque_id, ((board_id << 6) | measuredTorque_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_TX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 2);
+
+   // Board State Message Object
+   CAN_setupMessageObject(obj->canHandle[1], boardState_id, ((board_id << 6) | boardState_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_TX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 1);
+
+   // faultStatus Message Object
+   CAN_setupMessageObject(obj->canHandle[1], faultStatus_id, ((board_id << 6) | faultStatus_id),
+                          CAN_MSG_FRAME_STD, CAN_MSG_OBJ_TYPE_TX, 0,
+                          CAN_MSG_OBJ_NO_FLAGS, 2);
+
+
+   // Start CANB module operations
+   CAN_startModule(obj->canHandle[1]);
 
   return;
 }

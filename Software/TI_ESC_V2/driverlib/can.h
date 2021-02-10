@@ -1655,6 +1655,43 @@ CAN_readMessage(uint32_t base, uint32_t objID,
 
 //*****************************************************************************
 //
+//! Reads the data and Message ID in a Message Object
+//!
+//! \param base is the base address of the CAN controller.
+//! \param objID is the object number to read (1-32).
+//! \param frameType is a pointer to the CAN_MsgFrameType to store the message
+//!        type that has been received in the mailbox
+//! The \e frameType parameter shall be filled as of the following values:
+//! - \b CAN_MSG_FRAME_STD - Standard 11 bit identifier
+//! - \b CAN_MSG_FRAME_EXT - Extended 29 bit identifier
+//! This parameter is filled when return value is true for this function.
+//! \param msgID is a pointer to storage for the received Message ID
+//! Filled when the return value is true for this function.
+//! \param msgData is a pointer to the array to store the message data
+//! Filled with read Data when the return value is true for this function.
+//!
+//! This function is used to read the data contents and the Message ID
+//! of the specified message object in the CAN controller.The Message returned
+//! is stored in the \e msgID parameter and its type in \e frameType parameter.
+//! The data returned is stored in the \e msgData parameter.
+//!
+//! \note
+//! -# The message object requested by the \e objID must first be setup
+//! using the CAN_setupMessageObject() function.
+//!
+//! \return Returns \b true if new data was retrieved, else returns
+//! \b false to indicate no new data was retrieved.
+//
+//*****************************************************************************
+extern bool CAN_readMessageWithID(uint32_t base,
+                                  uint32_t objID,
+                                  CAN_MsgFrameType *frameType,
+                                  uint32_t *msgID,
+                                  uint16_t *msgData);
+
+
+//*****************************************************************************
+//
 //! Transfers a CAN message between the IF registers and Message RAM.
 //!
 //! \param base is the base address of the CAN controller.
