@@ -193,6 +193,10 @@ HAL_Handle HAL_init(void *pMemory,const size_t numBytes)
     obj->spiHandle[0] = SPIA_BASE;        //!< the SPIA handle
     obj->spiHandle[1] = SPIB_BASE;        //!< the SPIB handle
 
+    // initialize CAN handle
+    obj->canHandle[0] = CANA_BASE;        //!< the CANA handle
+    obj->canHandle[1] = CANB_BASE;        //!< the CANA handle
+
     // initialize DMA handle
     obj->dmaHandle = DMA_BASE;            //!< the DMA handle
 
@@ -365,6 +369,9 @@ void HAL_setParams(HAL_Handle handle)
 
     // setup the drv8320 interface
     HAL_setupGate(handle);
+
+    // setup the CANB interface
+    HAL_setupCANB(handle);
 
 #ifdef _EQEP_EN_
     // setup the eqep
@@ -917,6 +924,18 @@ void HAL_setupGPIOs(HAL_Handle handle)
     // TDO
     GPIO_setMasterCore(37, GPIO_CORE_CPU1);
     GPIO_setPinConfig(GPIO_37_TDO);
+
+    // CANB TX for T200 Controller (GPIO 12)
+    GPIO_setMasterCore(12, GPIO_CORE_CPU1);
+    GPIO_setPinConfig(GPIO_12_CANTXB);
+    GPIO_setDirectionMode(12, GPIO_DIR_MODE_OUT);
+    GPIO_setPadConfig(12, GPIO_PIN_TYPE_STD);
+
+    // CANB RX for T200 Controller (GPIO 13)
+    GPIO_setMasterCore(13, GPIO_CORE_CPU1);
+    GPIO_setPinConfig(GPIO_13_CANRXB);
+    GPIO_setDirectionMode(13, GPIO_DIR_MODE_OUT);
+    GPIO_setPadConfig(13, GPIO_PIN_TYPE_STD);
 
     // GPIO33->Reserve (N/A)
     GPIO_setMasterCore(33, GPIO_CORE_CPU1);
@@ -1495,6 +1514,20 @@ void HAL_setupSPIB(HAL_Handle handle)
 
   return;
 }  // end of HAL_setupSPIB() function
+
+void HAL_setupCANB(HAL_Handle handle)
+{
+    HAL_Obj   *obj = (HAL_Obj *)handle;
+
+    // Initilize CANB
+    CAN_initModule(obj->canHandle[1]);
+
+    // Set CANB bitrate
+    CAN_setBitRate(obj->canHandle[1], DEVICE_SYSCLK_FREQ, 500000, 20);
+
+
+  return;
+}
 
 
 void HAL_setupEstTimer(HAL_Handle handle,

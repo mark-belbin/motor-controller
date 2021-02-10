@@ -94,6 +94,8 @@ typedef struct _HAL_Obj_
 
   uint32_t      spiHandle[2];       //!< the SPI handle
 
+  uint32_t      canHandle[2];       //!< the CAN handle
+
   uint32_t      pgaHandle[3];       //!< the PGA handle
 
   uint32_t      cmpssHandle[3];     //!< the CMPSS handle

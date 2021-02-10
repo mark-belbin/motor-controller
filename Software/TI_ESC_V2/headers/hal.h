@@ -826,6 +826,10 @@ extern void HAL_setupSPIA(HAL_Handle handle);
 //! \param[in] handle  The hardware abstraction layer (HAL) handle
 extern void HAL_setupSPIB(HAL_Handle handle);
 
+//! \brief     Sets up the CANB
+//! \param[in] handle  The hardware abstraction layer (HAL) handle
+extern void HAL_setupCANB(HAL_Handle handle);
+
 
 //! \brief     Set the timer for estimator
 //! \param[in] handle    The hardware abstraction layer (HAL) handle

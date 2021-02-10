@@ -216,8 +216,14 @@ void main(void)
     uint16_t estNumber = 0;
     bool flagEstStateChanged = false;
 
-
+    // Define board used
     motorVars.boardKit = BOARD_T200_CONTROLLER;
+
+
+    //*************************************
+    // Setup CAN Message Objects
+
+    //************************************
 
     //
     // initialize the user parameters
