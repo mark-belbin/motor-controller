@@ -56,11 +56,12 @@
 #define CAN_TELEM_FREQ_Hz  (10.0)     // 20 Hz
 
 uint16_t rpmMsgData[3];
+uint16_t voltageData[2];
+uint16_t torqueData[2];
+uint16_t faults[2];
+uint16_t boardState[1];
 
 //***********************
-
-// Global board state
-uint16_t boardState = 0;
 
 HAL_ADCData_t adcData = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, 0.0};
 
@@ -198,6 +199,9 @@ void main(void)
 {
     uint16_t estNumber = 0;
     bool flagEstStateChanged = false;
+
+    // Global board state
+    boardState[0] = 0x00;
 
     // Define board used
     motorVars.boardKit = BOARD_T200_CONTROLLER;
@@ -1129,22 +1133,86 @@ void sendRPM(void) {
 }
 
 void sendVoltage(void) {
+    uint16_t volt_int = (uint16_t)(motorVars.VdcBus_V) << 10;
+    float32_t volt_decimal = motorVars.VdcBus_V - volt_int;
+    uint16_t volt_sign = 0x0000;
+    uint16_t volt_binary_float = 0x0000;
+
+
+    if (motorVars.VdcBus_V < 0.0) {
+        volt_sign = 0x8000; //1000 0000 0000 0000;
+    }
+
+    int i;
+    for (i=0; i<10; i++) {
+        volt_decimal *= 2.0;
+        if (volt_decimal > 1.0) {
+            volt_binary_float |= 0x0001; // Add in 1
+            volt_decimal -= 1;
+        }
+        else {
+            volt_binary_float |= 0x0000; // Add in 0
+        }
+        volt_binary_float = volt_binary_float << 1; // Shift decimal value
+    }
+
+    volt_binary_float = volt_sign | volt_int | volt_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+
+    voltageData[0] = volt_binary_float >> 8; // High Byte
+    voltageData[1] = volt_binary_float & 0x00FF; // Low Byte
+
+    CAN_sendMessage(CANB_BASE, measuredVoltage_id, 2, voltageData); // Send message
 
     return;
 }
 
 void sendTorque(void) {
+    uint16_t torque_int = (uint16_t)(motorVars.torque_Nm) << 10;
+    float32_t torque_decimal = motorVars.torque_Nm - torque_int;
+    uint16_t torque_sign = 0x0000;
+    uint16_t torque_binary_float = 0x0000;
+
+
+    if (motorVars.torque_Nm < 0.0) {
+        torque_sign = 0x8000; //1000 0000 0000 0000;
+    }
+
+    int i;
+    for (i=0; i<10; i++) {
+        torque_decimal *= 2.0;
+        if (torque_decimal > 1.0) {
+            torque_binary_float |= 0x0001; // Add in 1
+            torque_decimal -= 1;
+        }
+        else {
+            torque_binary_float |= 0x0000; // Add in 0
+        }
+        torque_binary_float = torque_binary_float << 1; // Shift decimal value
+    }
+
+    torque_binary_float = torque_sign | torque_int | torque_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+
+    torqueData[0] = torque_binary_float >> 8; // High Byte
+    torqueData[1] = torque_binary_float & 0x00FF; // Low Byte
+
+    CAN_sendMessage(CANB_BASE, measuredTorque_id, 2, torqueData); // Send message
 
     return;
 }
 
 void sendState(void) {
 
+    CAN_sendMessage(CANB_BASE, boardState_id, 1, boardState); //Send message
+
     return;
 }
 
 void sendFault(void) {
 
+    faults[0] = motorVars.faultNow.all >> 8; //High Byte
+    faults[1] = motorVars.faultNow.all & 0x00FF; //Low Byte
+
+    CAN_sendMessage(CANB_BASE, faultStatus_id, 2, faults); //Send message
     return;
 }
 
