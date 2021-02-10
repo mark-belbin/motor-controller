@@ -53,8 +53,9 @@
 // the globals
 //
 
-#define CAN_TELEM_FREQ_Hz  (10.0)     // 20 Hz
+#define CAN_TELEM_FREQ_Hz  (10.0)     // 10 Hz
 
+uint16_t rxMsgData[3]; // Placeholder for recieved data, maximum of three bytes
 uint16_t rpmMsgData[3];
 uint16_t voltageData[2];
 uint16_t torqueData[2];
@@ -439,7 +440,7 @@ void main(void)
     // Set some global variables
     //
     motorVars.pwmISRCount = 0;          // clear the counter
-    motorVars.speedRef_Hz = 20.0;      // set reference frequency to 20.0Hz
+    motorVars.speedRef_Hz = 0.0;      // set reference frequency to 0 Hz
 
     //
     // disable the PWM
@@ -770,6 +771,60 @@ __interrupt void mainISR(void)
 
         // Reset CAN Telemetry Counter
         counterCAN = 0;
+    }
+
+    //
+    // Read Incoming CAN Commands if Available
+    //
+
+    // Arm Command
+    if (CAN_readMessage(CANB_BASE, arm_id, rxMsgData)) {
+        if (boardState[0] == 0x00 && rxMsgData[0] == 0x01) { // Only do something in IDLE state
+            boardState[0] = 0x01; // Change to ARM state
+            motorVars.flagEnableSys = 1; // Enable control system
+        }
+    }
+
+    // Abort Command
+    if (CAN_readMessage(CANB_BASE, abort_id, rxMsgData)) {
+        if (rxMsgData[0] == 0x01) {
+            motorVars.flagEnableSys = 0; // Disable control system
+            motorVars.flagEnableRunAndIdentify = 0;
+            boardState[0] = 0x03; // Change to ABORT state
+        }
+    }
+
+    // Motor On/Off Command
+    if (CAN_readMessage(CANB_BASE, motor_onoff_id, rxMsgData)) {
+        if (boardState[0] == 0x01 && rxMsgData[0] == 0x01) {
+            boardState[0] = 0x02; // Change to MOTOR ENABLED state
+            motorVars.flagEnableRunAndIdentify = 1; // Enable motor
+            motorVars.speedRef_Hz = 0.0; // Set initial speed to 0.
+        }
+
+        else if (boardState[0] == 0x02 && rxMsgData[0] == 0x00) {
+            boardState[0] = 0x01; // Change to ARM state
+            motorVars.flagEnableRunAndIdentify = 0; // Disable motor
+        }
+    }
+
+    // Set RPM Command
+    if (CAN_readMessage(CANB_BASE, setRPM_id, rxMsgData) && boardState[0] == 0x02) { // Check if board is in MotorEnabled State
+        if (rxMsgData[2] == 0x00) { // Clockwise
+            motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
+
+        }
+        else if (rxMsgData[2] == 0x01){ // CounterClockwise (negative)
+            motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * -1.0 * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
+        }
+        if (motorVars.speedRef_Hz > 350.0) {motorVars.speedRef_Hz = 350.0;} // Clamp at +3000 RPM
+        if (motorVars.speedRef_Hz < -350.0) {motorVars.speedRef_Hz = -350.0;} // Clamp at -3000 RPM
+    }
+
+    // Set Acceleration Command
+    if (CAN_readMessage(CANB_BASE, setAccel_id, rxMsgData)) {
+        motorVars.accelerationMax_Hzps = (float32_t)(rxMsgData[0] << 8 | rxMsgData[1]);
+        if (motorVars.accelerationMax_Hzps > 1000.0) {motorVars.accelerationMax_Hzps = 1000.0;}
     }
 
     //
