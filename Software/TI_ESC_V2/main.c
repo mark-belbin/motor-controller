@@ -76,6 +76,8 @@ uint16_t faultStatus_id = 9;
 
 // CAN_ID = (board_id << 6) | function_id
 
+#define CAN_TELEM_FREQ_Hz  (20.0)     // 20 Hz
+
 //***********************
 
 // Global board state
@@ -87,6 +89,8 @@ HAL_PWMData_t pwmData = {{0.0, 0.0, 0.0}};
 
 uint16_t counterLED = 0;  //!< Counter used to divide down the ISR rate for
                            //!< visually blinking an LED
+
+uint16_t counterCAN = 0; // Counter used to determine when to send CAN telemetry
 
 uint16_t counterSpeed = 0;
 uint16_t counterTrajSpeed = 0;
@@ -813,6 +817,30 @@ __interrupt void mainISR(void)
         counterLED = 0;
     }
 
+
+    //
+    // Send Telemetry over CAN
+    //
+    counterCAN++;
+
+    if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
+    {
+        // Send measuredRPM ****************************************
+        uint16_t rpmMsgData[3];
+
+        if (motorVars.speedRef_krpm < 0) {rpmMsgData[0] = 0x01;} // Direction Byte
+        else {rpmMsgData[0] = 0x00;}
+
+        rpmMsgData[1] = (uint16_t)(motorVars.speedRef_krpm*1000) >> 8; //High Byte
+        rpmMsgData[2] = (uint16_t)(motorVars.speedRef_krpm*1000) & 0x00FF; //Low Byte
+
+        CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData);
+        //***********************************************************
+
+        // Reset Counter
+        counterCAN = 0;
+    }
+
     //
     // acknowledge the ADC interrupt
     //
@@ -1043,29 +1071,6 @@ __interrupt void mainISR(void)
         //
         HAL_setTrigger(halHandle, &pwmData, ignoreShuntNextCycle, midVolShunt);
     }
-
-#ifdef _PWMDAC_EN_
-    //
-    // connect inputs of the PWMDAC module.
-    //
-    HAL_writePWMDACData(halHandle, &pwmDACData);
-#endif  // _PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    //
-    // call datalog
-    //
-    DATALOG_updateWithDMA(datalogHandle);
-
-    //
-    // Force trig DMA channel to save the data
-    //
-    HAL_trigDlogWithDMA(halHandle, 0);
-    HAL_trigDlogWithDMA(halHandle, 1);
-    HAL_trigDlogWithDMA(halHandle, 2);
-    HAL_trigDlogWithDMA(halHandle, 3);
-#endif  //  _DATALOG_EN_
-
 
     motorVars.estISRCount++;
 
