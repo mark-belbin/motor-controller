@@ -1266,8 +1266,25 @@ void sendState(void) {
 
 void sendFault(void) {
 
-    faults[0] = motorVars.faultNow.bit >> 8; //High Byte
-    faults[1] = motorVars.faultNow.bit & 0x00FF; //Low Byte
+    uint16_t faultbits =  (motorVars.faultNow.bit.overVoltage)
+                        | (motorVars.faultNow.bit.underVoltage << 1)
+                        | (motorVars.faultNow.bit.motorOverTemp << 2)
+                        | (motorVars.faultNow.bit.moduleOverTemp << 3)
+                        | (motorVars.faultNow.bit.moduleOverCurrent << 4)
+                        | (motorVars.faultNow.bit.overRmsCurrent << 5)
+                        | (motorVars.faultNow.bit.overPeakCurrent << 6)
+                        | (motorVars.faultNow.bit.multiOverCurrent << 7)
+                        | (motorVars.faultNow.bit.motorLostPhase << 8)
+                        | (motorVars.faultNow.bit.currentUnbalance << 9)
+                        | (motorVars.faultNow.bit.motorStall << 10)
+                        | (motorVars.faultNow.bit.overSpeed << 11)
+                        | (motorVars.faultNow.bit.startupFailed << 12)
+                        | (motorVars.faultNow.bit.overLoad << 13)
+                        | (motorVars.faultNow.bit.controllerError << 14)
+                        | (motorVars.faultNow.bit.reserve15 << 15);
+
+    faults[0] = faultbits >> 8; //High Byte
+    faults[1] = faultbits & 0x00FF; //Low Byte
 
     CAN_sendMessage(CANB_BASE, faultStatus_id, 2, faults); //Send message
     return;
