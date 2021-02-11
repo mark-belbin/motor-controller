@@ -777,6 +777,7 @@ __interrupt void mainISR(void)
     // Read Incoming CAN Commands if Available
     //
 
+
     // Arm Command
     if (CAN_readMessage(CANB_BASE, arm_id, rxMsgData)) {
         if (boardState[0] == 0x00 && rxMsgData[0] == 0x01) { // Only do something in IDLE state
@@ -789,7 +790,7 @@ __interrupt void mainISR(void)
     if (CAN_readMessage(CANB_BASE, abort_id, rxMsgData)) {
         if (rxMsgData[0] == 0x01) {
             motorVars.flagEnableSys = 0; // Disable control system
-            motorVars.flagEnableRunAndIdentify = 0;
+            motorVars.flagRunIdentAndOnLine = 0;
             boardState[0] = 0x03; // Change to ABORT state
         }
     }
@@ -798,23 +799,23 @@ __interrupt void mainISR(void)
     if (CAN_readMessage(CANB_BASE, motor_onoff_id, rxMsgData)) {
         if (boardState[0] == 0x01 && rxMsgData[0] == 0x01) {
             boardState[0] = 0x02; // Change to MOTOR ENABLED state
-            motorVars.flagEnableRunAndIdentify = 1; // Enable motor
+            motorVars.flagRunIdentAndOnLine = 1; // Enable motor
             motorVars.speedRef_Hz = 0.0; // Set initial speed to 0.
         }
 
         else if (boardState[0] == 0x02 && rxMsgData[0] == 0x00) {
             boardState[0] = 0x01; // Change to ARM state
-            motorVars.flagEnableRunAndIdentify = 0; // Disable motor
+            motorVars.flagRunIdentAndOnLine = 0; // Disable motor
         }
     }
 
     // Set RPM Command
     if (CAN_readMessage(CANB_BASE, setRPM_id, rxMsgData) && boardState[0] == 0x02) { // Check if board is in MotorEnabled State
-        if (rxMsgData[2] == 0x00) { // Clockwise
+        if (rxMsgData[0] == 0x00) { // Clockwise
             motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
 
         }
-        else if (rxMsgData[2] == 0x01){ // CounterClockwise (negative)
+        else if (rxMsgData[0] == 0x01){ // CounterClockwise (negative)
             motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * -1.0 * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
         }
         if (motorVars.speedRef_Hz > 350.0) {motorVars.speedRef_Hz = 350.0;} // Clamp at +3000 RPM
@@ -826,6 +827,7 @@ __interrupt void mainISR(void)
         motorVars.accelerationMax_Hzps = (float32_t)(rxMsgData[0] << 8 | rxMsgData[1]);
         if (motorVars.accelerationMax_Hzps > 1000.0) {motorVars.accelerationMax_Hzps = 1000.0;}
     }
+
 
     //
     // acknowledge the ADC interrupt
@@ -1188,8 +1190,8 @@ void sendRPM(void) {
 }
 
 void sendVoltage(void) {
-    uint16_t volt_int = (uint16_t)(motorVars.VdcBus_V) << 10;
-    float32_t volt_decimal = motorVars.VdcBus_V - volt_int;
+    uint16_t volt_int = (uint16_t)(motorVars.VdcBus_V);
+    float32_t volt_decimal = motorVars.VdcBus_V - (float32_t)volt_int;
     uint16_t volt_sign = 0x0000;
     uint16_t volt_binary_float = 0x0000;
 
@@ -1203,7 +1205,7 @@ void sendVoltage(void) {
         volt_decimal *= 2.0;
         if (volt_decimal > 1.0) {
             volt_binary_float |= 0x0001; // Add in 1
-            volt_decimal -= 1;
+            volt_decimal -= 1.0;
         }
         else {
             volt_binary_float |= 0x0000; // Add in 0
@@ -1211,7 +1213,7 @@ void sendVoltage(void) {
         volt_binary_float = volt_binary_float << 1; // Shift decimal value
     }
 
-    volt_binary_float = volt_sign | volt_int | volt_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+    volt_binary_float = volt_sign | (volt_int << 10) | volt_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
 
     voltageData[0] = volt_binary_float >> 8; // High Byte
     voltageData[1] = volt_binary_float & 0x00FF; // Low Byte
@@ -1222,8 +1224,8 @@ void sendVoltage(void) {
 }
 
 void sendTorque(void) {
-    uint16_t torque_int = (uint16_t)(motorVars.torque_Nm) << 10;
-    float32_t torque_decimal = motorVars.torque_Nm - torque_int;
+    uint16_t torque_int = (uint16_t)(motorVars.torque_Nm);
+    float32_t torque_decimal = motorVars.torque_Nm - (float32_t)torque_int;
     uint16_t torque_sign = 0x0000;
     uint16_t torque_binary_float = 0x0000;
 
@@ -1245,7 +1247,7 @@ void sendTorque(void) {
         torque_binary_float = torque_binary_float << 1; // Shift decimal value
     }
 
-    torque_binary_float = torque_sign | torque_int | torque_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+    torque_binary_float = torque_sign | (torque_int << 10) | torque_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
 
     torqueData[0] = torque_binary_float >> 8; // High Byte
     torqueData[1] = torque_binary_float & 0x00FF; // Low Byte
@@ -1264,8 +1266,8 @@ void sendState(void) {
 
 void sendFault(void) {
 
-    faults[0] = motorVars.faultNow.all >> 8; //High Byte
-    faults[1] = motorVars.faultNow.all & 0x00FF; //Low Byte
+    faults[0] = motorVars.faultNow.bit >> 8; //High Byte
+    faults[1] = motorVars.faultNow.bit & 0x00FF; //Low Byte
 
     CAN_sendMessage(CANB_BASE, faultStatus_id, 2, faults); //Send message
     return;
