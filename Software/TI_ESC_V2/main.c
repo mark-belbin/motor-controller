@@ -439,8 +439,10 @@ void main(void)
     //
     // Set some global variables
     //
-    motorVars.pwmISRCount = 0;          // clear the counter
-    motorVars.speedRef_Hz = 0.0;      // set reference frequency to 0 Hz
+    motorVars.pwmISRCount = 0;          // Clear the counter
+    motorVars.speedRef_Hz = 0.0;      // Set reference frequency to 0 Hz
+    motorVars.flagEnableForceAngle = 0; // Disable ForceAngle
+    motorVars.accelerationMax_Hzps = 500; // Set initial accel to 500 (Max is 1000)
 
     //
     // disable the PWM
