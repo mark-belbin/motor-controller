@@ -754,20 +754,23 @@ __interrupt void mainISR(void)
 
     if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
     {
-        // Send measuredRPM
-        sendRPM();
+        if (boardState[0] == 0x01 || boardState[0] == 0x02) {
 
-        // Send measuredVoltage
-        sendVoltage();
+            // Send measuredRPM
+            sendRPM();
 
-        // Send measuredTorque
-        sendTorque();
+            // Send measuredVoltage
+            sendVoltage();
+
+            // Send measuredTorque
+            sendTorque();
+
+            // Send faultStatus
+            sendFault();
+        }
 
         // Send boardState
         sendState();
-
-        // Send faultStatus
-        sendFault();
 
         // Reset CAN Telemetry Counter
         counterCAN = 0;
