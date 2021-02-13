@@ -420,7 +420,6 @@ void main(void)
     //
     HAL_setOvmParams(halHandle, &pwmData);
 
-#ifdef DRV8320_SPI
     //
     // turn on the DRV8320 if present
     //
@@ -434,7 +433,6 @@ void main(void)
     drvSPI8320Vars.Ctrl_Reg_05.VDS_LVL = DRV8320_VDS_LEVEL_1P300_V;
     drvSPI8320Vars.Ctrl_Reg_05.DEAD_TIME = DRV8320_DEADTIME_100_NS;
     drvSPI8320Vars.writeCmd = 1;
-#endif
 
     //
     // Set some global variables
@@ -522,14 +520,6 @@ void main(void)
         EST_setFlag_enableForceAngle(estHandle,
                                      motorVars.flagEnableForceAngle);
 
-        //
-        // enable or disable bypassLockRotor flag
-        //
-        if(userParams.motor_type == MOTOR_TYPE_INDUCTION)
-        {
-            EST_setFlag_bypassLockRotor(estHandle,
-                                        motorVars.flagBypassLockRotor);
-        }
 
         if(HAL_getPwmEnableStatus(halHandle) == true)
         {
@@ -715,14 +705,13 @@ void main(void)
         //
         updateGlobalVariables(estHandle);
 
-#ifdef DRV8320_SPI
         //
         // DRV8320 Read/Write
         //
         HAL_writeDRVData(halHandle, &drvSPI8320Vars);
 
         HAL_readDRVData(halHandle, &drvSPI8320Vars);
-#endif
+
     } // end of while() loop
 
     //

@@ -301,7 +301,7 @@ extern "C" {
 
 //! \brief Defines maximum acceleration for the estimation speed profiles, Hz/sec
 //!
-#define USER_MAX_ACCEL_Hzps        ((float32_t)(2.0))
+#define USER_MAX_ACCEL_Hzps        ((float32_t)(10.0))
 
 
 //! \brief Defines the IdRated delta to use during estimation
@@ -332,11 +332,11 @@ extern "C" {
 
 //! \brief A flag to bypass motor identification (1/0 : true/false)
 //!
-#define USER_BYPASS_MOTOR_ID       (1)    // No motor parameters identification
-//#define USER_BYPASS_MOTOR_ID     (0)    // Do motor parameters identification
+//#define USER_BYPASS_MOTOR_ID       (1)    // No motor parameters identification
+#define USER_BYPASS_MOTOR_ID     (0)    // Do motor parameters identification
 
-#define USER_ENABLE_MOTOR_ID        0
-#define USER_DISABLE_MOTOR_ID       1
+#define USER_ENABLE_MOTOR_ID        1
+#define USER_DISABLE_MOTOR_ID       0
 
 
 //! brief Define the Kp gain for Field Weakening Control
@@ -359,360 +359,20 @@ extern "C" {
 //************** Motor Parameters **************
 
 // PMSM motors
-#define Estun_EMJ_04APB22_A         101
-#define Estun_EMJ_04APB22_B         102
-
-#define Teknic_M2310PLN04K          121
-#define Anaheim_BLY172S_24V         122
-#define Anaheim_BLY341S_48V         123
-#define Anaheim_BLY341S_24V         124
-#define Teknic_MxxxxPLNxxK          125     // Just for test
-
-#define Traxxas_Velineon_380        131
-#define Traxxas_Velineon_3500       132
-#define Pacific_Scientific          133
-#define Regal_Beloit_5SME39DL0756   134
-#define AutoRadiatorFan             135
-
-#define tekin_redline_4600KV        142
-
-// ACIM motors
-#define Marathon_5K33GN2A           201
-#define Marathon_56H17T2011A        202
-#define Dayton_3N352C               203
-
 #define T200                        301
 #define Big_Test_Motor              302
 
 // Select Motor
-#define USER_MOTOR Big_Test_Motor
+#define USER_MOTOR T200
 
-#if (USER_MOTOR == Estun_EMJ_04APB22_A)
-#define USER_MOTOR_TYPE                    MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (0.0)
-#define USER_MOTOR_Rs_Ohm                 (2.303403)
-#define USER_MOTOR_Ls_d_H                 (0.008464367)
-#define USER_MOTOR_Ls_q_H                 (0.008464367)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.3821270569)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (3.82)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (2500.0)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (400.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (200.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (20.0)          // Volt
-#define USER_MOTOR_VOLT_MAX_V             (200.0)         // Volt
-
-#elif (USER_MOTOR == Estun_EMJ_04APB22_B)
-#define USER_MOTOR_TYPE                    MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (0.0)
-
-// HV Kit with external OPA
-#define USER_MOTOR_Rs_Ohm                 (2.98774099)
-#define USER_MOTOR_Ls_d_H                 (0.008926632)
-#define USER_MOTOR_Ls_q_H                 (0.008926632)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.445965141)
-
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (3.82)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (2500.0)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (400.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (200.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (20.0)          // Volt
-#define USER_MOTOR_VOLT_MAX_V             (200.0)         // Volt
-
-
-#elif (USER_MOTOR == Teknic_M2310PLN04K)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.381334811)
-#define USER_MOTOR_Ls_d_H                 (0.000169791776)
-#define USER_MOTOR_Ls_q_H                 (0.000169791776)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0398557819)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (2.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.5)
-#define USER_MOTOR_MAX_CURRENT_A          (6.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (40.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (1000)
-#define USER_MOTOR_INERTIA_Kgm2           (7.06154e-06)
-
-#define USER_MOTOR_RATED_VOLTAGE_V        (24.0)
-#define USER_MOTOR_RATED_SPEED_KRPM       (3.0)
-
-#define USER_MOTOR_FREQ_MIN_HZ            (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (600.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (20.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (400.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (4.0)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (24.0)          // Volt
-
-#elif (USER_MOTOR == Teknic_MxxxxPLNxxK)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.381885976)
-#define USER_MOTOR_Ls_d_H                 (0.000125865598*0.8)
-#define USER_MOTOR_Ls_q_H                 (0.000125865598*1.2)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0411616899)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (2.5)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.5)
-#define USER_MOTOR_MAX_CURRENT_A          (5.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (60.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (1000)
-#define USER_MOTOR_INERTIA_Kgm2           (7.06154e-06)
-
-#define USER_MOTOR_RATED_VOLTAGE_V        (24.0)
-#define USER_MOTOR_RATED_SPEED_KRPM       (3.0)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (600.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (20.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (400.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (4.0)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (24.0)          // Volt
-
-#elif (USER_MOTOR == Anaheim_BLY172S_24V)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.4)
-#define USER_MOTOR_Ls_d_H                 (0.0007190173)
-#define USER_MOTOR_Ls_q_H                 (0.0007190173)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0327013217)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.5)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.5)
-#define USER_MOTOR_MAX_CURRENT_A          (5.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-#define USER_MOTOR_INERTIA_Kgm2           (7.06154e-06)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (400.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (400.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (4.0)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (24.0)          // Volt
-
-#elif (USER_MOTOR == Anaheim_BLY341S_48V)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.463800967)
-#define USER_MOTOR_Ls_d_H                 (0.00114538975)
-#define USER_MOTOR_Ls_q_H                 (0.00114538975)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0978558362)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (2.5)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-2.0)
-#define USER_MOTOR_MAX_CURRENT_A          (20.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (300.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (200.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (4.0)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (24.0)          // Volt
-
-#elif (USER_MOTOR == Anaheim_BLY341S_24V)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.4110007)
-#define USER_MOTOR_Ls_d_H                 (0.0007092811)
-#define USER_MOTOR_Ls_q_H                 (0.0007092811)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.03279636)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.5)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (10.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (300.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (200.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (4.0)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (24.0)          // Volt
-
-#elif (USER_MOTOR == Traxxas_Velineon_380)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (1)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (TBD)
-#define USER_MOTOR_Ls_d_H                 (TBD)
-#define USER_MOTOR_Ls_q_H                 (TBD)
-#define USER_MOTOR_RATED_FLUX_VpHz        (TBD)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (4.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-0.5)
-#define USER_MOTOR_MAX_CURRENT_A          (10.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Traxxas_Velineon_3500)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (1)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.01822988)
-#define USER_MOTOR_Ls_d_H                 (8.322238e-06)
-#define USER_MOTOR_Ls_q_H                 (8.322238e-06)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.010249538)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (2.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-2.0)
-#define USER_MOTOR_MAX_CURRENT_A          (5.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (40.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Pacific_Scientific)
-#define USER_MOTOR_TYPE                    MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (0.0)
-#define USER_MOTOR_Rs_Ohm                 (0.9428042)
-#define USER_MOTOR_Ls_d_H                 (0.002196057)
-#define USER_MOTOR_Ls_q_H                 (0.002196057)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.3481677)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (8.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Regal_Beloit_5SME39DL0756)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (3)
-#define USER_MOTOR_Rr_Ohm                 (0.0)
-#define USER_MOTOR_Rs_Ohm                 (4.581007)
-#define USER_MOTOR_Ls_d_H                 (0.03727356)
-#define USER_MOTOR_Ls_q_H                 (0.03727356)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.6589699)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (2.6)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (20.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == AutoRadiatorFan)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (4)
-#define USER_MOTOR_Rr_Ohm                 (0.0)
-#define USER_MOTOR_Rs_Ohm                 (0.0)
-#define USER_MOTOR_Ls_d_H                 (0.0)
-#define USER_MOTOR_Ls_q_H                 (0.0)
-#define USER_MOTOR_RATED_FLUX_VpHz        (TBD)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-1.0)
-#define USER_MOTOR_MAX_CURRENT_A          (10.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (50.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == tekin_redline_4600KV)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
-#define USER_MOTOR_NUM_POLE_PAIRS         (2)
-#define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.0181193)
-#define USER_MOTOR_Ls_d_H                 (8.180002e-06)
-#define USER_MOTOR_Ls_q_H                 (8.180002e-06)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0041173688)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (3.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (-3.0)
-#define USER_MOTOR_MAX_CURRENT_A          (5.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (60.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Marathon_5K33GN2A)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_INDUCTION
-#define USER_MOTOR_NUM_POLE_PAIRS         (2)
-#define USER_MOTOR_Rr_Ohm                 (5.508003)
-#define USER_MOTOR_Rs_Ohm                 (10.71121)
-#define USER_MOTOR_Ls_d_H                 (0.05296588)
-#define USER_MOTOR_Ls_q_H                 (0.05296588)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.8165*220.0/60.0)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (1.378)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (NULL)
-#define USER_MOTOR_MAX_CURRENT_A          (3.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (5.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#define USER_MOTOR_FREQ_MIN_HZ             (5.0)           // Hz
-#define USER_MOTOR_FREQ_MAX_HZ            (400.0)         // Hz
-
-#define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
-#define USER_MOTOR_FREQ_HIGH_HZ           (200.0)         // Hz
-#define USER_MOTOR_VOLT_MIN_V             (20.0)          // Volt
-#define USER_MOTOR_VOLT_MAX_V             (200.0)         // Volt
-
-
-#elif (USER_MOTOR == Marathon_56H17T2011A)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_INDUCTION
-#define USER_MOTOR_NUM_POLE_PAIRS         (2)
-#define USER_MOTOR_Rr_Ohm                 (5.159403)
-#define USER_MOTOR_Rs_Ohm                 (7.924815)
-#define USER_MOTOR_Ls_d_H                 (0.03904648)
-#define USER_MOTOR_Ls_q_H                 (0.03904648)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.8165*220.0/60.0)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (0.9941965)
-#define USER_MOTOR_RES_EST_CURRENT_A      (0.5)
-#define USER_MOTOR_IND_EST_CURRENT_A      (NULL)
-#define USER_MOTOR_MAX_CURRENT_A          (2.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (5.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Dayton_3N352C)
-#define USER_MOTOR_TYPE                   MOTOR_TYPE_INDUCTION
-#define USER_MOTOR_NUM_POLE_PAIRS         (2)
-#define USER_MOTOR_Rr_Ohm                 (2.428799)
-#define USER_MOTOR_Rs_Ohm                 (2.863202)
-#define USER_MOTOR_Ls_d_H                 (0.02391323)
-#define USER_MOTOR_Ls_q_H                 (0.02391323)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.8165*230.0/60.0)
-#define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (1.0)
-#define USER_MOTOR_IND_EST_CURRENT_A      (NULL)
-#define USER_MOTOR_MAX_CURRENT_A          (3.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (5.0)
-#define USER_MOTOR_NUM_ENC_SLOTS          (NULL)
-
-#elif (USER_MOTOR == Big_Test_Motor)
+#if (USER_MOTOR == Big_Test_Motor)
 #define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
 #define USER_MOTOR_NUM_POLE_PAIRS         (7)
 #define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.0209171511)//(0.0209171511)
-#define USER_MOTOR_Ls_d_H                 (0.000014452974)//(0.000014452974)
-#define USER_MOTOR_Ls_q_H                 (0.000014452974)//(0.000014452974)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.0208010636)//(0.0208010636)
+#define USER_MOTOR_Rs_Ohm                 (NULL)//(0.0209171511) --> (0.0211162195)
+#define USER_MOTOR_Ls_d_H                 (NULL)//(0.000014452974) --> (1.63622371e-05)
+#define USER_MOTOR_Ls_q_H                 (NULL)//(0.000014452974) --> (1.63622371e-05)
+#define USER_MOTOR_RATED_FLUX_VpHz        (NULL)//(0.0208010636) --> (0.0202590227)
 #define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
 #define USER_MOTOR_RES_EST_CURRENT_A      (4.0)
 #define USER_MOTOR_IND_EST_CURRENT_A      (-2.0)
@@ -734,15 +394,15 @@ extern "C" {
 #define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
 #define USER_MOTOR_NUM_POLE_PAIRS         (7)
 #define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.133840173)
-#define USER_MOTOR_Ls_d_H                 (0.000037976)
-#define USER_MOTOR_Ls_q_H                 (0.000037976)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.009744111)
+#define USER_MOTOR_Rs_Ohm                 (NULL)//(0.133840173)
+#define USER_MOTOR_Ls_d_H                 (NULL)//(0.000037976)
+#define USER_MOTOR_Ls_q_H                 (NULL)//(0.000037976)
+#define USER_MOTOR_RATED_FLUX_VpHz        (NULL)//(0.009744111)
 #define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (4.0)
+#define USER_MOTOR_RES_EST_CURRENT_A      (2.0)
 #define USER_MOTOR_IND_EST_CURRENT_A      (-2.0)
-#define USER_MOTOR_MAX_CURRENT_A          (25.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (120.0)
+#define USER_MOTOR_MAX_CURRENT_A          (20.0)
+#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (75.0)
 
 // Number of lines on the motor's quadrature encoder
 #define USER_MOTOR_NUM_ENC_SLOTS          (1000)
@@ -753,7 +413,7 @@ extern "C" {
 #define USER_MOTOR_FREQ_LOW_HZ            (10.0)          // Hz
 #define USER_MOTOR_FREQ_HIGH_HZ           (350.0)         // Hz
 #define USER_MOTOR_VOLT_MIN_V             (1.8)           // Volt
-#define USER_MOTOR_VOLT_MAX_V             (12.0)          // Volt
+#define USER_MOTOR_VOLT_MAX_V             (15.0)          // Volt
 
 
 #else

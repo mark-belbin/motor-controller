@@ -169,17 +169,7 @@ void main(void)
     uint16_t estNumber = 0;
     bool flagEstStateChanged = false;
 
-#ifdef _HVKIT_REV1p1_
-    motorVars.boardKit = BOARD_HVMTRPFC_REV1P1;
-#endif // _HVKIT_REV1p1_
-
-#ifdef _DRV8301_KIT_REVD_
-    motorVars.boardKit = BOARD_DRV8301_REVD;
-#endif  // _DRV8301_KIT_REVD_
-
-#ifdef _BOOSTXL_8320RS_REVA_
-    motorVars.boardKit = BOARD_BSXL8320RS_REVA;
-#endif  // _BOOSTXL_8320RS_REVA_
+    motorVars.boardKit = BOARD_T200_CONTROLLER;
 
     //
     // initialize the user parameters
@@ -426,7 +416,7 @@ void main(void)
     //
     // setup faults
     //
-    HAL_setupFaults(halHandle);
+    //HAL_setupFaults(halHandle);
 
 #ifdef DRV8320_SPI
     //
@@ -810,14 +800,14 @@ __interrupt void mainISR(void)
 
     if(counterLED > (uint32_t)(USER_ISR_FREQ_Hz / LED_BLINK_FREQ_Hz))
     {
-        HAL_toggleLED(halHandle, HAL_GPIO_LED2);
+        HAL_toggleLED(halHandle, HAL_GPIO_TESTLED);
         counterLED = 0;
     }
 
     //
     // acknowledge the ADC interrupt
     //
-    HAL_ackADCInt(halHandle, ADC_INT_NUMBER1);
+    HAL_ackADCInt(halHandle, ADC_INT_NUMBER2);
 
     //
     // read the ADC data with offsets

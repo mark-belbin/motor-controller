@@ -24,18 +24,6 @@
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>is05_motor_id.c</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/solutions/common/sensorless_foc/source/is05_motor_id.c</locationURI>
-		</link>
-		<link>
-			<name>is05_motor_id.js</name>
-			<type>1</type>
-			<locationURI>MCSDK_ROOT/solutions/common/sensorless_foc/debug/is05_motor_id.js</locationURI>
-		</link>
-	</linkedResources>
 	<variableList>
 		<variable>
 			<name>C2000WARE_DEVICE_SUPPORT_ROOT</name>
@@ -44,10 +32,6 @@
 		<variable>
 			<name>C2000WARE_DLIB_ROOT</name>
 			<value>$%7BCOM_TI_MOTOR_CONTROL_C2000WARE_SDK_SOFTWARE_PACKAGE_INSTALL_DIR%7D/c2000ware/driverlib/f28004x/driverlib</value>
-		</variable>
-		<variable>
-			<name>MCSDK_ROOT</name>
-			<value>$%7BCOM_TI_MOTOR_CONTROL_C2000WARE_SDK_SOFTWARE_PACKAGE_INSTALL_DIR%7D</value>
 		</variable>
 	</variableList>
 </projectDescription>

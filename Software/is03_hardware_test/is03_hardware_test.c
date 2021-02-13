@@ -165,9 +165,6 @@ DRV8320_SPIVars_t drvSPI8320Vars;
 #pragma DATA_SECTION(drvSPI8320Vars, "ctrl_data");
 #endif
 
-HAL_PWMDACData_t pwmDACData;
-#pragma DATA_SECTION(pwmDACData, "ctrl_data");
-
 //
 // the functions
 //
@@ -176,14 +173,6 @@ void main(void)
 {
     uint16_t estNumber = 0;
     bool flagEstStateChanged = false;
-
-#ifdef _HVKIT_REV1p1_
-    motorVars.boardKit = BOARD_HVMTRPFC_REV1P1;
-#endif // _HVKIT_REV1p1_
-
-#ifdef _DRV8301_KIT_REVD_
-    motorVars.boardKit = BOARD_DRV8301_REVD;
-#endif  // _DRV8301_KIT_REVD_
 
 #ifdef _BOOSTXL_8320RS_REVA_
     motorVars.boardKit = BOARD_BSXL8320RS_REVA;
@@ -390,58 +379,11 @@ void main(void)
     TRAJ_setMaxDelta(trajHandle_spd,
                      (USER_MAX_ACCEL_Hzps * 0.5 / USER_ISR_FREQ_Hz));
 
-#ifdef _PWMDAC_EN_
-    //
-    // set DAC parameters
-    //
-    pwmDACData.periodMax =
-            PWMDAC_getPeriod(halHandle->pwmDACHandle[PWMDAC_NUMBER_1]);
-
-    pwmDACData.ptrData[0] = &angleFoc_rad;
-    pwmDACData.ptrData[1] = &adcData.V_V.value[0];
-    pwmDACData.ptrData[2] = &adcData.V_V.value[1];
-    pwmDACData.ptrData[3] = &adcData.V_V.value[2];
-
-    pwmDACData.offset[0] = 1.0;     // Change -1.0~1.0 to 0~1.0 for pwmDac
-    pwmDACData.offset[1] = 0.5;     // Change -1.0~1.0 to 0~1.0 for pwmDac
-    pwmDACData.offset[2] = 0.5;     // Change -1.0~1.0 to 0~1.0 for pwmDac
-    pwmDACData.offset[3] = 0.5;     // Change -1.0~1.0 to 0~1.0 for pwmDac
-
-    pwmDACData.gain[0] = -MATH_ONE_OVER_TWO_PI; // Convert -PI()~PI() to 0~1.0
-    pwmDACData.gain[1] = 1.0 / USER_ADC_FULL_SCALE_VOLTAGE_V;
-    pwmDACData.gain[2] = 1.0 / USER_ADC_FULL_SCALE_VOLTAGE_V;
-    pwmDACData.gain[3] = 1.0 / USER_ADC_FULL_SCALE_VOLTAGE_V;
-#endif  // _PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    HAL_resetDlogWithDMA();
-    HAL_setupDlogWithDMA(halHandle, 0, &datalogBuff1[0], &datalogBuff1[1]);
-    HAL_setupDlogWithDMA(halHandle, 1, &datalogBuff2[0], &datalogBuff2[1]);
-    HAL_setupDlogWithDMA(halHandle, 2, &datalogBuff3[0], &datalogBuff3[1]);
-    HAL_setupDlogWithDMA(halHandle, 3, &datalogBuff4[0], &datalogBuff4[1]);
-
-    //
-    // initialize Datalog
-    //
-    datalogHandle = DATALOG_init(&datalog, sizeof(datalog));
-    DATALOG_Obj *datalogObj = (DATALOG_Obj *)datalogHandle;
-
-    //
-    // set datalog parameters
-    //
-    datalogObj->iptr[0] = &angleFoc_rad;
-    datalogObj->iptr[1] = &adcData.I_A.value[0];
-    datalogObj->iptr[2] = &adcData.I_A.value[1];
-    datalogObj->iptr[3] = &adcData.I_A.value[2];
-
-    datalogObj->flag_enableLogData = true;
-    datalogObj->flag_enableLogOneShot = false;
-#endif  //  _DATALOG_EN_
 
     //
     // setup faults
     //
-    HAL_setupFaults(halHandle);
+    //HAL_setupFaults(halHandle);
 
 #ifdef DRV8320_SPI
     //
@@ -756,14 +698,14 @@ __interrupt void mainISR(void)
 
     if(counterLED > (uint32_t)(USER_ISR_FREQ_Hz / LED_BLINK_FREQ_Hz))
     {
-        HAL_toggleLED(halHandle, HAL_GPIO_LED2);
+        HAL_toggleLED(halHandle, HAL_GPIO_TESTLED);
         counterLED = 0;
     }
 
     //
     // acknowledge the ADC interrupt
     //
-    HAL_ackADCInt(halHandle, ADC_INT_NUMBER1);
+    HAL_ackADCInt(halHandle, ADC_INT_NUMBER2);
 
     //
     // read the ADC data with offsets
@@ -879,29 +821,6 @@ __interrupt void mainISR(void)
     // write the PWM compare values
     //
     HAL_writePWMData(halHandle, &pwmData);
-
-#ifdef _PWMDAC_EN_
-    //
-    // connect inputs of the PWMDAC module.
-    //
-    HAL_writePWMDACData(halHandle, &pwmDACData);
-#endif  // _PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    //
-    // call datalog
-    //
-    DATALOG_updateWithDMA(datalogHandle);
-
-    //
-    // Force trig DMA channel to save the data
-    //
-    HAL_trigDlogWithDMA(halHandle, 0);
-    HAL_trigDlogWithDMA(halHandle, 1);
-    HAL_trigDlogWithDMA(halHandle, 2);
-    HAL_trigDlogWithDMA(halHandle, 3);
-#endif  //  _DATALOG_EN_
-
 
     motorVars.estISRCount++;
 
