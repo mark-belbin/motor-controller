@@ -69,7 +69,7 @@ extern "C" {
 // CAN Info
 //***********************
 //Specify board ID for CAN ID differentiation (8 to 15)
-#define board_id    8
+#define board_id    15
 
 //Specify function IDs
 
