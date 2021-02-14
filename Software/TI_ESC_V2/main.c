@@ -54,6 +54,7 @@
 //
 
 #define CAN_TELEM_FREQ_Hz  (10.0)     // 10 Hz
+#define RPM_RESET_FREQ_Hz  (0.2)     // 0.2 Hz, 5 seconds
 
 uint16_t rxMsgData[3]; // Placeholder for recieved data, maximum of three bytes
 uint16_t rpmMsgData[3];
@@ -61,6 +62,8 @@ uint16_t voltageData[2];
 uint16_t torqueData[2];
 uint16_t faults[2];
 uint16_t boardState[1];
+
+bool RPMset = false;
 
 //***********************
 
@@ -72,6 +75,7 @@ uint16_t counterLED = 0;  //!< Counter used to divide down the ISR rate for
                            //!< visually blinking an LED
 
 uint16_t counterCAN = 0; // Counter used to determine when to send CAN telemetry
+uint32_t counterRPM = 0; // Counter to check if RPM signals are not being recieved
 
 uint16_t counterSpeed = 0;
 uint16_t counterTrajSpeed = 0;
@@ -215,6 +219,9 @@ void main(void)
     USER_setParams(&userParams);
 
     userParams.flag_bypassMotorId = true;
+
+    motorVars.Kp_spd = 0.2; // Set Kp and Ki values for speed controller.
+    motorVars.Ki_spd = 0.01;
 
     //
     // initialize the user parameters
@@ -742,6 +749,8 @@ __interrupt void mainISR(void)
     // Send Telemetry over CAN
     //
     counterCAN++;
+    counterRPM++;
+
 
     if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
     {
@@ -766,6 +775,8 @@ __interrupt void mainISR(void)
         // Reset CAN Telemetry Counter
         counterCAN = 0;
     }
+
+
 
     //
     // Read Incoming CAN Commands if Available
@@ -814,6 +825,8 @@ __interrupt void mainISR(void)
         }
         if (motorVars.speedRef_Hz > 350.0) {motorVars.speedRef_Hz = 350.0;} // Clamp at +3000 RPM
         if (motorVars.speedRef_Hz < -350.0) {motorVars.speedRef_Hz = -350.0;} // Clamp at -3000 RPM
+
+        RPMset = true; // An RPM command has been recieved
     }
 
     // Set Acceleration Command
@@ -822,6 +835,16 @@ __interrupt void mainISR(void)
         if (motorVars.accelerationMax_Hzps > 1000.0) {motorVars.accelerationMax_Hzps = 1000.0;}
     }
 
+    // Check for no RPM signal
+    if (!RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
+        motorVars.speedRef_Hz = 0.0;
+        counterRPM = 0;
+    }
+
+    if (RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
+        RPMset = false; // Reset RPM detected flag
+        counterRPM = 0;
+    }
 
     //
     // acknowledge the ADC interrupt
