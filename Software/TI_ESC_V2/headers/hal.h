@@ -66,6 +66,32 @@ extern "C" {
 // **************************************************************************
 // the defines
 
+// CAN Info
+//***********************
+//Specify board ID for CAN ID differentiation (8 to 15)
+#define board_id    15
+
+//Specify function IDs
+
+// Commands (Recieving)
+#define arm_id          0
+#define abort_id        1
+#define motor_onoff_id  2
+#define setRPM_id       3
+#define setAccel_id     4
+
+// Telemetry (Sending)
+#define measuredRPM_id      5
+#define measuredVoltage_id  6
+#define measuredTorque_id   7
+#define boardState_id       8
+#define faultStatus_id      9
+
+// CAN_ID = (board_id << 6) | function_id
+
+
+
+
 //! Trip Zones all interrupt
 //!
 #define HAL_TZ_INTERRUPT_ALL      EPWM_TZ_INTERRUPT_DCBEVT2 \
@@ -205,6 +231,7 @@ extern __interrupt void cla1Task6(void);
 extern __interrupt void cla1Task7(void);
 extern __interrupt void cla1Task8(void);
 extern __interrupt void cla_EST_run_BackgroundTask(void);
+
 
 // **************************************************************************
 // the function prototypes
@@ -517,68 +544,6 @@ HAL_readADCDataWithOffsets(HAL_Handle handle, HAL_ADCData_t *pADCData)
     float32_t current_sf = -HAL_getCurrentScaleFactor(handle);
     float32_t voltage_sf = HAL_getVoltageScaleFactor(handle);
 
-    /*
-#if (BOOST_to_LPD == BOOSTX_to_J1_J2)
-  // convert phase A current        ->RA0/A14
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[0] = value * current_sf;
-
-    // convert phase B current        ->RC0/C7
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[1] = value * current_sf;
-
-    // convert phase C current        ->RB0/B7
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[2] = value * current_sf;
-
-    // convert phase A voltage        ->RA1/A5
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[0] = value * voltage_sf;
-
-    // convert phase B voltage        ->RB1/B0
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[1] = value * voltage_sf;
-
-    // convert phase C voltage        ->RC1/C2
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[2] = value * voltage_sf;
-
-    // convert dcBus voltage          ->RB2/B1
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER2);
-    pADCData->dcBus_V = value * voltage_sf;
-#endif
-
-#if (BOOST_to_LPD == BOOSTX_to_J5_J6)
-    // convert phase A current        ->RB0/B9
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[0] = value * current_sf;
-
-    // convert phase B current        ->RC0/C9
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[1] = value * current_sf;
-
-    // convert phase C current        ->RA0/A15
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER0);
-    pADCData->I_A.value[2] = value * current_sf;
-
-    // convert phase A voltage        ->RA1/A6
-    value = (float32_t)ADC_readResult(obj->adcResult[0], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[0] = value * voltage_sf;
-
-    // convert phase B voltage        ->RB1/B6
-    value = (float32_t)ADC_readResult(obj->adcResult[1], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[1] = value * voltage_sf;
-
-    // convert phase C voltage        ->RC1/C14
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER1);
-    pADCData->V_V.value[2] = value * voltage_sf;
-
-    // convert dcBus voltage          ->RC2/C1
-    value = (float32_t)ADC_readResult(obj->adcResult[2], ADC_SOC_NUMBER2);
-    pADCData->dcBus_V = value * voltage_sf;
-#endif
-     */
-
     // For T200 Controller
 
     // convert phase A current PGA1       ->RA0/A11
@@ -887,6 +852,10 @@ extern void HAL_setupSPIA(HAL_Handle handle);
 //! \brief     Sets up the SPIB
 //! \param[in] handle  The hardware abstraction layer (HAL) handle
 extern void HAL_setupSPIB(HAL_Handle handle);
+
+//! \brief     Sets up the CANB
+//! \param[in] handle  The hardware abstraction layer (HAL) handle
+extern void HAL_setupCANB(HAL_Handle handle);
 
 
 //! \brief     Set the timer for estimator

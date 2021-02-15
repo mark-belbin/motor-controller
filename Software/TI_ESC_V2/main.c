@@ -41,13 +41,10 @@
 //| And use with the custom motor controller
 //| for the T200 UUV thruster
 //|
-//| Mark Belbin -- Sept 2020
+//| Mark Belbin -- Feb 2021
 
 // **************************************************************************
 
-//
-// solutions
-//
 #include "labs.h"
 
 #pragma CODE_SECTION(mainISR, ".TI.ramfunc");
@@ -55,12 +52,30 @@
 //
 // the globals
 //
+
+#define CAN_TELEM_FREQ_Hz  (10.0)     // 10 Hz
+#define RPM_RESET_FREQ_Hz  (0.2)     // 0.2 Hz, 5 seconds
+
+uint16_t rxMsgData[3]; // Placeholder for recieved data, maximum of three bytes
+uint16_t rpmMsgData[3];
+uint16_t voltageData[2];
+uint16_t torqueData[2];
+uint16_t faults[2];
+uint16_t boardState[1];
+
+bool RPMset = false;
+
+//***********************
+
 HAL_ADCData_t adcData = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, 0.0};
 
 HAL_PWMData_t pwmData = {{0.0, 0.0, 0.0}};
 
 uint16_t counterLED = 0;  //!< Counter used to divide down the ISR rate for
                            //!< visually blinking an LED
+
+uint16_t counterCAN = 0; // Counter used to determine when to send CAN telemetry
+uint32_t counterRPM = 0; // Counter to check if RPM signals are not being recieved
 
 uint16_t counterSpeed = 0;
 uint16_t counterTrajSpeed = 0;
@@ -181,11 +196,6 @@ DRV8320_SPIVars_t drvSPI8320Vars;
 #pragma DATA_SECTION(drvSPI8320Vars, "ctrl_data");
 #endif
 
-#ifdef _PWMDAC_EN_
-HAL_PWMDACData_t pwmDACData;
-
-#pragma DATA_SECTION(pwmDACData, "ctrl_data");
-#endif  // _PWMDAC_EN_
 //
 // the functions
 //
@@ -195,8 +205,13 @@ void main(void)
     uint16_t estNumber = 0;
     bool flagEstStateChanged = false;
 
+    // Global board state
+    boardState[0] = 0x00;
 
+    // Define board used
     motorVars.boardKit = BOARD_T200_CONTROLLER;
+
+    //************************************
 
     //
     // initialize the user parameters
@@ -204,6 +219,9 @@ void main(void)
     USER_setParams(&userParams);
 
     userParams.flag_bypassMotorId = true;
+
+    motorVars.Kp_spd = 0.2; // Set Kp and Ki values for speed controller.
+    motorVars.Ki_spd = 0.01;
 
     //
     // initialize the user parameters
@@ -243,15 +261,6 @@ void main(void)
     EST_setParams(estHandle, &userParams);
     EST_setFlag_enableForceAngle(estHandle, motorVars.flagEnableForceAngle);
     EST_setFlag_enableRsRecalc(estHandle, motorVars.flagEnableRsRecalc);
-
-    //
-    // if motor is an induction motor, configure default state of PowerWarp
-    //
-    if(userParams.motor_type == MOTOR_TYPE_INDUCTION)
-    {
-        EST_setFlag_enablePowerWarp(estHandle, motorVars.flagEnablePowerWarp);
-        EST_setFlag_bypassLockRotor(estHandle, motorVars.flagBypassLockRotor);
-    }
 
     //
     // initialize the inverse Park module
@@ -408,65 +417,16 @@ void main(void)
 
     motorVars.faultMask.all = FAULT_MASK_ALL_FLTS;
 
-#ifdef _PWMDAC_EN_
-    //
-    // set DAC parameters
-    //
-    pwmDACData.periodMax =
-            PWMDAC_getPeriod(halHandle->pwmDACHandle[PWMDAC_NUMBER_1]);
-
-    pwmDACData.ptrData[0] = &angleFoc_rad;
-    pwmDACData.ptrData[1] = &Idq_ref_A.value[0];
-    pwmDACData.ptrData[2] = &Idq_ref_A.value[1];
-    pwmDACData.ptrData[3] = &Idq_in_A.value[1];
-
-    pwmDACData.offset[0] = 0.5;
-    pwmDACData.offset[1] = 0.0;
-    pwmDACData.offset[2] = 0.0;
-    pwmDACData.offset[3] = 0.0;
-
-    pwmDACData.gain[0] = -MATH_ONE_OVER_TWO_PI;
-    pwmDACData.gain[1] = 1.0 / USER_ADC_FULL_SCALE_CURRENT_A;
-    pwmDACData.gain[2] = 1.0 / USER_ADC_FULL_SCALE_CURRENT_A;
-    pwmDACData.gain[3] = 1.0 / USER_ADC_FULL_SCALE_CURRENT_A;
-#endif  //_PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    HAL_resetDlogWithDMA();
-    HAL_setupDlogWithDMA(halHandle, 0, &datalogBuff1[0], &datalogBuff1[1]);
-    HAL_setupDlogWithDMA(halHandle, 1, &datalogBuff2[0], &datalogBuff2[1]);
-    HAL_setupDlogWithDMA(halHandle, 2, &datalogBuff3[0], &datalogBuff3[1]);
-    HAL_setupDlogWithDMA(halHandle, 3, &datalogBuff4[0], &datalogBuff4[1]);
-
-    //
-    // initialize Datalog
-    //
-    datalogHandle = DATALOG_init(&datalog, sizeof(datalog));
-    DATALOG_Obj *datalogObj = (DATALOG_Obj *)datalogHandle;
-
-    //
-    // set datalog parameters
-    //
-    datalogObj->iptr[0] = &angleFoc_rad;
-    datalogObj->iptr[1] = &Idq_ref_A.value[0];
-    datalogObj->iptr[2] = &Idq_ref_A.value[1];
-    datalogObj->iptr[3] = &Idq_in_A.value[1];
-
-    datalogObj->flag_enableLogData = true;
-    datalogObj->flag_enableLogOneShot = false;
-#endif      // _DATALOG_EN_
-
     //
     // setup faults
     //
-    HAL_setupFaults(halHandle);
+    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS
 
     //
     // setup OVM PWM
     //
     HAL_setOvmParams(halHandle, &pwmData);
 
-#ifdef DRV8320_SPI
     //
     // turn on the DRV8320 if present
     //
@@ -480,13 +440,14 @@ void main(void)
     drvSPI8320Vars.Ctrl_Reg_05.VDS_LVL = DRV8320_VDS_LEVEL_1P300_V;
     drvSPI8320Vars.Ctrl_Reg_05.DEAD_TIME = DRV8320_DEADTIME_100_NS;
     drvSPI8320Vars.writeCmd = 1;
-#endif
 
     //
     // Set some global variables
     //
-    motorVars.pwmISRCount = 0;          // clear the counter
-    motorVars.speedRef_Hz = 20.0;      // set reference frequency to 20.0Hz
+    motorVars.pwmISRCount = 0;          // Clear the counter
+    motorVars.speedRef_Hz = 0.0;      // Set reference frequency to 0 Hz
+    motorVars.flagEnableForceAngle = 0; // Disable ForceAngle
+    motorVars.accelerationMax_Hzps = 500; // Set initial accel to 500 (Max is 1000)
 
     //
     // disable the PWM
@@ -566,14 +527,6 @@ void main(void)
         EST_setFlag_enableForceAngle(estHandle,
                                      motorVars.flagEnableForceAngle);
 
-        //
-        // enable or disable bypassLockRotor flag
-        //
-        if(userParams.motor_type == MOTOR_TYPE_INDUCTION)
-        {
-            EST_setFlag_bypassLockRotor(estHandle,
-                                        motorVars.flagBypassLockRotor);
-        }
 
         if(HAL_getPwmEnableStatus(halHandle) == true)
         {
@@ -759,14 +712,13 @@ void main(void)
         //
         updateGlobalVariables(estHandle);
 
-#ifdef DRV8320_SPI
         //
         // DRV8320 Read/Write
         //
         HAL_writeDRVData(halHandle, &drvSPI8320Vars);
 
         HAL_readDRVData(halHandle, &drvSPI8320Vars);
-#endif
+
     } // end of while() loop
 
     //
@@ -790,6 +742,108 @@ __interrupt void mainISR(void)
     {
         HAL_toggleLED(halHandle, HAL_GPIO_TESTLED);
         counterLED = 0;
+    }
+
+
+    //
+    // Send Telemetry over CAN
+    //
+    counterCAN++;
+    counterRPM++;
+
+
+    if(counterCAN > (uint32_t)(USER_ISR_FREQ_Hz / CAN_TELEM_FREQ_Hz))
+    {
+        if (boardState[0] == 0x01 || boardState[0] == 0x02) {
+
+            // Send measuredRPM
+            sendRPM();
+
+            // Send measuredVoltage
+            sendVoltage();
+
+            // Send measuredTorque
+            sendTorque();
+
+            // Send faultStatus
+            sendFault();
+        }
+
+        // Send boardState
+        sendState();
+
+        // Reset CAN Telemetry Counter
+        counterCAN = 0;
+    }
+
+
+
+    //
+    // Read Incoming CAN Commands if Available
+    //
+
+
+    // Arm Command
+    if (CAN_readMessage(CANB_BASE, arm_id, rxMsgData)) {
+        if (boardState[0] == 0x00 && rxMsgData[0] == 0x01) { // Only do something in IDLE state
+            boardState[0] = 0x01; // Change to ARM state
+            motorVars.flagEnableSys = 1; // Enable control system
+        }
+    }
+
+    // Abort Command
+    if (CAN_readMessage(CANB_BASE, abort_id, rxMsgData)) {
+        if (rxMsgData[0] == 0x01) {
+            motorVars.flagEnableSys = 0; // Disable control system
+            motorVars.flagRunIdentAndOnLine = 0;
+            boardState[0] = 0x03; // Change to ABORT state
+        }
+    }
+
+    // Motor On/Off Command
+    if (CAN_readMessage(CANB_BASE, motor_onoff_id, rxMsgData)) {
+        if (boardState[0] == 0x01 && rxMsgData[0] == 0x01) {
+            boardState[0] = 0x02; // Change to MOTOR ENABLED state
+            motorVars.flagRunIdentAndOnLine = 1; // Enable motor
+            motorVars.speedRef_Hz = 0.0; // Set initial speed to 0.
+        }
+
+        else if (boardState[0] == 0x02 && rxMsgData[0] == 0x00) {
+            boardState[0] = 0x01; // Change to ARM state
+            motorVars.flagRunIdentAndOnLine = 0; // Disable motor
+        }
+    }
+
+    // Set RPM Command
+    if (CAN_readMessage(CANB_BASE, setRPM_id, rxMsgData) && boardState[0] == 0x02) { // Check if board is in MotorEnabled State
+        if (rxMsgData[0] == 0x00) { // Clockwise
+            motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
+
+        }
+        else if (rxMsgData[0] == 0x01){ // CounterClockwise (negative)
+            motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * -1.0 * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
+        }
+        if (motorVars.speedRef_Hz > 350.0) {motorVars.speedRef_Hz = 350.0;} // Clamp at +3000 RPM
+        if (motorVars.speedRef_Hz < -350.0) {motorVars.speedRef_Hz = -350.0;} // Clamp at -3000 RPM
+
+        RPMset = true; // An RPM command has been recieved
+    }
+
+    // Set Acceleration Command
+    if (CAN_readMessage(CANB_BASE, setAccel_id, rxMsgData)) {
+        motorVars.accelerationMax_Hzps = (float32_t)(rxMsgData[0] << 8 | rxMsgData[1]);
+        if (motorVars.accelerationMax_Hzps > 1000.0) {motorVars.accelerationMax_Hzps = 1000.0;}
+    }
+
+    // Check for no RPM signal
+    if (!RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
+        motorVars.speedRef_Hz = 0.0;
+        counterRPM = 0;
+    }
+
+    if (RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
+        RPMset = false; // Reset RPM detected flag
+        counterRPM = 0;
     }
 
     //
@@ -1023,29 +1077,6 @@ __interrupt void mainISR(void)
         HAL_setTrigger(halHandle, &pwmData, ignoreShuntNextCycle, midVolShunt);
     }
 
-#ifdef _PWMDAC_EN_
-    //
-    // connect inputs of the PWMDAC module.
-    //
-    HAL_writePWMDACData(halHandle, &pwmDACData);
-#endif  // _PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    //
-    // call datalog
-    //
-    DATALOG_updateWithDMA(datalogHandle);
-
-    //
-    // Force trig DMA channel to save the data
-    //
-    HAL_trigDlogWithDMA(halHandle, 0);
-    HAL_trigDlogWithDMA(halHandle, 1);
-    HAL_trigDlogWithDMA(halHandle, 2);
-    HAL_trigDlogWithDMA(halHandle, 3);
-#endif  //  _DATALOG_EN_
-
-
     motorVars.estISRCount++;
 
     return;
@@ -1153,6 +1184,135 @@ void runOffsetsCalculation(void)
 
     return;
 } // end of runOffsetsCalculation() function
+
+
+// CAN FUNCTIONS *********************************
+
+void sendRPM(void) {
+
+    if (motorVars.speed_krpm < 0) { // CounterClockwise
+        rpmMsgData[0] = 0x01; // Direction Byte
+        rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*-1000) >> 8; //High Byte
+        rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*-1000) & 0x00FF; //Low Byte
+    }
+    else { // Clockwise
+        rpmMsgData[0] = 0x00; // Direction Byte
+        rpmMsgData[1] = (uint16_t)(motorVars.speed_krpm*1000) >> 8; //High Byte
+        rpmMsgData[2] = (uint16_t)(motorVars.speed_krpm*1000) & 0x00FF; //Low Byte
+    }
+
+    CAN_sendMessage(CANB_BASE, measuredRPM_id, 3, rpmMsgData); //Send message
+
+    return;
+}
+
+void sendVoltage(void) {
+    uint16_t volt_int = (uint16_t)(motorVars.VdcBus_V);
+    float32_t volt_decimal = motorVars.VdcBus_V - (float32_t)volt_int;
+    uint16_t volt_sign = 0x0000;
+    uint16_t volt_binary_float = 0x0000;
+
+
+    if (motorVars.VdcBus_V < 0.0) {
+        volt_sign = 0x8000; //1000 0000 0000 0000;
+    }
+
+    int i;
+    for (i=0; i<10; i++) {
+        volt_decimal *= 2.0;
+        if (volt_decimal > 1.0) {
+            volt_binary_float |= 0x0001; // Add in 1
+            volt_decimal -= 1.0;
+        }
+        else {
+            volt_binary_float |= 0x0000; // Add in 0
+        }
+        volt_binary_float = volt_binary_float << 1; // Shift decimal value
+    }
+
+    volt_binary_float = volt_sign | (volt_int << 10) | volt_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+
+    voltageData[0] = volt_binary_float >> 8; // High Byte
+    voltageData[1] = volt_binary_float & 0x00FF; // Low Byte
+
+    CAN_sendMessage(CANB_BASE, measuredVoltage_id, 2, voltageData); // Send message
+
+    return;
+}
+
+void sendTorque(void) {
+    uint16_t torque_int = (uint16_t)(motorVars.torque_Nm);
+    float32_t torque_decimal = motorVars.torque_Nm - (float32_t)torque_int;
+    uint16_t torque_sign = 0x0000;
+    uint16_t torque_binary_float = 0x0000;
+
+
+    if (motorVars.torque_Nm < 0.0) {
+        torque_sign = 0x8000; //1000 0000 0000 0000;
+    }
+
+    int i;
+    for (i=0; i<10; i++) {
+        torque_decimal *= 2.0;
+        if (torque_decimal > 1.0) {
+            torque_binary_float |= 0x0001; // Add in 1
+            torque_decimal -= 1;
+        }
+        else {
+            torque_binary_float |= 0x0000; // Add in 0
+        }
+        torque_binary_float = torque_binary_float << 1; // Shift decimal value
+    }
+
+    torque_binary_float = torque_sign | (torque_int << 10) | torque_binary_float; // Sign + 5 bit integer + 10 bit decimal = 16 bit custom float
+
+    torqueData[0] = torque_binary_float >> 8; // High Byte
+    torqueData[1] = torque_binary_float & 0x00FF; // Low Byte
+
+    CAN_sendMessage(CANB_BASE, measuredTorque_id, 2, torqueData); // Send message
+
+    return;
+}
+
+void sendState(void) {
+
+    CAN_sendMessage(CANB_BASE, boardState_id, 1, boardState); //Send message
+
+    return;
+}
+
+void sendFault(void) {
+
+    uint16_t faultbits =  (motorVars.faultNow.bit.overVoltage)
+                        | (motorVars.faultNow.bit.underVoltage << 1)
+                        | (motorVars.faultNow.bit.motorOverTemp << 2)
+                        | (motorVars.faultNow.bit.moduleOverTemp << 3)
+                        | (motorVars.faultNow.bit.moduleOverCurrent << 4)
+                        | (motorVars.faultNow.bit.overRmsCurrent << 5)
+                        | (motorVars.faultNow.bit.overPeakCurrent << 6)
+                        | (motorVars.faultNow.bit.multiOverCurrent << 7)
+                        | (motorVars.faultNow.bit.motorLostPhase << 8)
+                        | (motorVars.faultNow.bit.currentUnbalance << 9)
+                        | (motorVars.faultNow.bit.motorStall << 10)
+                        | (motorVars.faultNow.bit.overSpeed << 11)
+                        | (motorVars.faultNow.bit.startupFailed << 12)
+                        | (motorVars.faultNow.bit.overLoad << 13)
+                        | (motorVars.faultNow.bit.controllerError << 14)
+                        | (motorVars.faultNow.bit.reserve15 << 15);
+
+    faults[0] = faultbits >> 8; //High Byte
+    faults[1] = faultbits & 0x00FF; //Low Byte
+
+    CAN_sendMessage(CANB_BASE, faultStatus_id, 2, faults); //Send message
+    return;
+}
+
+
+
+
+//************************************************
+
+
 
 //
 // end of file

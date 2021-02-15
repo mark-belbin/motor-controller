@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//RAM_Lib/driverlib/subdir_rules.mk=UTF-8
+encoding//RAM_Lib/driverlib/subdir_vars.mk=UTF-8
 encoding//RAM_Lib/makefile=UTF-8
 encoding//RAM_Lib/objects.mk=UTF-8
 encoding//RAM_Lib/sources.mk=UTF-8

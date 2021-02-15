@@ -4,7 +4,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="${build_artifact:is05_motor_id}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="is05_motor_id"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:is05_motor_id}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="D:/Motor Controller Research\GitHub\motor-controller\Software\is05_motor_id\RAM_Lib\is05_motor_id.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="D:\FOC_Motor_Controller\motor-controller\Software\is05_motor_id\RAM_Lib\is05_motor_id.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/is05_motor_id"/>
 </listAttribute>

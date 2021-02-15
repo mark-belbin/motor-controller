@@ -1,4 +1,4 @@
-(module Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm (layer F.Cu) (tedit 5F402C2B)
+(module Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm (layer F.Cu) (tedit 5FBB2E03)
   (descr "crystal Epson Toyocom FA-238 series http://www.mouser.com/ds/2/137/1721499-465440.pdf, 3.2x2.5mm^2 package")
   (tags "SMD SMT crystal")
   (attr smd)
@@ -30,9 +30,9 @@
   (pad 3 smd rect (at 1.1 -0.8) (size 1.4 1.2) (layers F.Cu F.Paste F.Mask))
   (pad 2 smd rect (at 1.1 0.8) (size 1.4 1.2) (layers F.Cu F.Paste F.Mask))
   (pad 1 smd rect (at -1.1 0.8) (size 1.4 1.2) (layers F.Cu F.Paste F.Mask))
-  (model ${KISYS3DMOD}/Crystals.3dshapes/Crystal_SMD_SeikoEpson_FA238-4pin_3.2x2.5mm.wrl
+  (model ${KISYS3DMOD}/Crystal.3dshapes/Crystal_SMD_SeikoEpson_FA238-4Pin_3.2x2.5mm.wrl
     (at (xyz 0 0 0))
-    (scale (xyz 0.24 0.24 0.24))
+    (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
 )
