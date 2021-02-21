@@ -422,7 +422,7 @@ void main(void)
     //
     // setup faults
     //
-    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS tripping incorrectly.
+    HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS tripping incorrectly.
 
     //
     // setup OVM PWM
@@ -842,7 +842,7 @@ __interrupt void mainISR(void)
 
     // Check for no RPM signal
     if (!RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
-        motorVars.speedRef_Hz = 0.0;
+        //motorVars.speedRef_Hz = 0.0;
         counterRPM = 0;
     }
 

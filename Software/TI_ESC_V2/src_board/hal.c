@@ -70,7 +70,7 @@
 // the functions
 void HAL_cal(HAL_Handle handle)
 {
-
+  SysCtl_deviceCal();
   return;
 } // end of HAL_cal() function
 
@@ -336,7 +336,7 @@ void HAL_setParams(HAL_Handle handle)
     HAL_setupDACs(handle);
 
     // setup the CMPSSs
-    //HAL_setupCMPSSs(handle);
+    HAL_setupCMPSSs(handle);
 
     // setup the PWMs
     HAL_setupPWMs(handle,
@@ -589,8 +589,8 @@ void HAL_setupCMPSSs(HAL_Handle handle)
     uint16_t  cnt;
 
     // Set the initial value to half of ADC range
-    uint16_t cmpsaDACH = 2048;
-    uint16_t cmpsaDACL = 2048;
+    uint16_t cmpsaDACH = 2048 + 1024;
+    uint16_t cmpsaDACL = 2048 - 1024;
 
     for(cnt = 0; cnt < 3; cnt++)
     {
@@ -807,6 +807,12 @@ void HAL_setupFaults(HAL_Handle handle)
         EPWM_setTripZoneAction(obj->pwmHandle[cnt],
                                EPWM_TZ_ACTION_EVENT_TZB,
                                EPWM_TZ_ACTION_LOW);
+
+        // Clear any high comparator digital filter output latch
+        CMPSS_clearFilterLatchHigh(obj->cmpssHandle[cnt]);
+
+        // Clear any low comparator digital filter output latch
+        CMPSS_clearFilterLatchLow(obj->cmpssHandle[cnt]);
 
         // Clear any spurious fault
         EPWM_clearTripZoneFlag(obj->pwmHandle[cnt],
@@ -1261,7 +1267,7 @@ void HAL_setupPWMs(HAL_Handle handle,
       // write the PWM data value  for ADC trigger
     EPWM_setCounterCompareValue(obj->pwmHandle[0],
                                 EPWM_COUNTER_COMPARE_C,
-                                5);
+                                2);
 
     // enable the ePWM module time base clock sync signal
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);

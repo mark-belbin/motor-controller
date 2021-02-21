@@ -158,7 +158,7 @@ extern "C" {
 
 //! \brief Defines the bypassed delay for PWM on/off noise
 //!
-#define HAL_PM_NOISE_WINDOW_SET      30
+#define HAL_PM_NOISE_WINDOW_SET      10
 
 //! \brief Defines the function to turn LEDs off
 //!
@@ -1080,6 +1080,16 @@ HAL_writePWMAllData(HAL_Handle handle, HAL_PWMData_t *pPWMData)
 static inline void HAL_enablePWM(HAL_Handle handle)
 {
     HAL_Obj *obj = (HAL_Obj *)handle;
+
+    // Clear comparator digital filter output latch
+    CMPSS_clearFilterLatchHigh(obj->cmpssHandle[0]);
+    CMPSS_clearFilterLatchLow(obj->cmpssHandle[0]);
+
+    CMPSS_clearFilterLatchHigh(obj->cmpssHandle[1]);
+    CMPSS_clearFilterLatchLow(obj->cmpssHandle[1]);
+
+    CMPSS_clearFilterLatchHigh(obj->cmpssHandle[2]);
+    CMPSS_clearFilterLatchLow(obj->cmpssHandle[2]);
 
     EPWM_clearTripZoneFlag(obj->pwmHandle[0], HAL_TZ_INTERRUPT_ALL);
     EPWM_clearTripZoneFlag(obj->pwmHandle[1], HAL_TZ_INTERRUPT_ALL);

@@ -20,7 +20,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="TI_ESC_V2"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU1" value="TI_ESC_V2"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${workspace_loc:/TI_ESC_V2/TMS320F280041C.ccxml}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU1" value="D:\FOC_Motor_Controller\motor-controller\Software\TI_ESC_V2\Flash_Lib\TI_ESC_V2.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F280041C.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU1" value="D:\FOC_Motor_Controller\motor-controller\Software\TI_ESC_V2\RAM_Lib\TI_ESC_V2.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/TI_ESC_V2"/>
 </listAttribute>
