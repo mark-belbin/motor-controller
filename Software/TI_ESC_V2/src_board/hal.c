@@ -326,11 +326,6 @@ void HAL_setParams(HAL_Handle handle)
     Flash_initModule(FLASH0CTRL_BASE, FLASH0ECC_BASE, DEVICE_FLASH_WAITSTATES);
 #endif
 
-#ifdef _PWMDAC_EN_
-    // setup the PWM DACs
-    HAL_setupPWMDACs(handle, USER_SYSTEM_FREQ_MHz);
-#endif
-
     // setup the ADCs
     HAL_setupADCs(handle);
 
@@ -618,8 +613,8 @@ void HAL_setupCMPSSs(HAL_Handle handle)
 
         // Configure digital filter. For this example, the maxiumum values will
         // be used for the clock prescale, sample window size, and threshold.
-        CMPSS_configFilterHigh(obj->cmpssHandle[cnt], 4, 3, 2);
-        CMPSS_configFilterLow(obj->cmpssHandle[cnt], 4, 3, 2);
+        CMPSS_configFilterHigh(obj->cmpssHandle[cnt], 32, 32, 30);
+        CMPSS_configFilterLow(obj->cmpssHandle[cnt], 32, 32, 30);
 
         // Initialize the filter logic and start filtering
         CMPSS_initFilterHigh(obj->cmpssHandle[cnt]);

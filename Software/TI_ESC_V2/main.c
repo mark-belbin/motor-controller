@@ -220,8 +220,10 @@ void main(void)
 
     userParams.flag_bypassMotorId = true;
 
-    motorVars.Kp_spd = 0.2; // Set Kp and Ki values for speed controller.
-    motorVars.Ki_spd = 0.01;
+    motorVars.flagEnableOffsetCalc = true;
+
+    motorVars.Kp_spd = 0.5; // Set Kp and Ki values for speed controller.
+    motorVars.Ki_spd = 0.001;
 
     //
     // initialize the user parameters
@@ -420,7 +422,7 @@ void main(void)
     //
     // setup faults
     //
-    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS
+    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS tripping incorrectly.
 
     //
     // setup OVM PWM
@@ -776,12 +778,14 @@ __interrupt void mainISR(void)
         counterCAN = 0;
     }
 
-
+    // Check board state
+    if (boardState[0] == 0x02 && motorVars.flagRunIdentAndOnLine == 0) {
+        boardState[0] = 0x01; // If there's a fault, and motor becomes disabled, change back to state 0x01, motor off.
+    }
 
     //
     // Read Incoming CAN Commands if Available
     //
-
 
     // Arm Command
     if (CAN_readMessage(CANB_BASE, arm_id, rxMsgData)) {
@@ -804,8 +808,9 @@ __interrupt void mainISR(void)
     if (CAN_readMessage(CANB_BASE, motor_onoff_id, rxMsgData)) {
         if (boardState[0] == 0x01 && rxMsgData[0] == 0x01) {
             boardState[0] = 0x02; // Change to MOTOR ENABLED state
-            motorVars.flagRunIdentAndOnLine = 1; // Enable motor
+            motorVars.faultNow.bit.moduleOverCurrent = 0; // Clear any false overcurrent fault on motor enable.
             motorVars.speedRef_Hz = 0.0; // Set initial speed to 0.
+            motorVars.flagRunIdentAndOnLine = 1; // Enable motor
         }
 
         else if (boardState[0] == 0x02 && rxMsgData[0] == 0x00) {

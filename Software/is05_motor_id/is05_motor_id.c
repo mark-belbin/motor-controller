@@ -364,54 +364,6 @@ void main(void)
     motorVars.faultMask.all = FAULT_MASK_OC_OV;
     motorVars.flagEnableUserParams = false;
 
-#ifdef _PWMDAC_EN_
-    //
-    // set DAC parameters
-    //
-    pwmDACData.periodMax =
-            PWMDAC_getPeriod(halHandle->pwmDACHandle[PWMDAC_NUMBER_1]);
-
-    pwmDACData.ptrData[0] = &angleFoc_rad;
-    pwmDACData.ptrData[1] = &adcData.I_A.value[0];
-    pwmDACData.ptrData[2] = &adcData.V_V.value[0];
-    pwmDACData.ptrData[3] = &adcData.I_A.value[1];
-
-    pwmDACData.offset[0] = 1.0;
-    pwmDACData.offset[1] = 0.5;
-    pwmDACData.offset[2] = 0.5;
-    pwmDACData.offset[3] = 0.5;
-
-    pwmDACData.gain[0] = -MATH_ONE_OVER_TWO_PI;
-    pwmDACData.gain[1] = 1.0 / USER_ADC_FULL_SCALE_CURRENT_A;
-    pwmDACData.gain[2] = 1.0 / USER_ADC_FULL_SCALE_VOLTAGE_V;
-    pwmDACData.gain[3] = 1.0 / USER_ADC_FULL_SCALE_CURRENT_A;
-#endif  // _PWMDAC_EN_
-
-#ifdef _DATALOG_EN_
-    HAL_resetDlogWithDMA();
-
-    HAL_setupDlogWithDMA(halHandle, 0, &datalogBuff1[0], &datalogBuff1[1]);
-    HAL_setupDlogWithDMA(halHandle, 1, &datalogBuff2[0], &datalogBuff2[1]);
-    HAL_setupDlogWithDMA(halHandle, 2, &datalogBuff3[0], &datalogBuff3[1]);
-    HAL_setupDlogWithDMA(halHandle, 3, &datalogBuff4[0], &datalogBuff4[1]);
-
-    //
-    // initialize Datalog
-    //
-    datalogHandle = DATALOG_init(&datalog, sizeof(datalog));
-    DATALOG_Obj *datalogObj = (DATALOG_Obj *)datalogHandle;
-
-    //
-    // set datalog parameters
-    //
-    datalogObj->iptr[0] = &angleFoc_rad;
-    datalogObj->iptr[1] = &adcData.I_A.value[0];
-    datalogObj->iptr[2] = &adcData.I_A.value[1];
-    datalogObj->iptr[3] = &adcData.I_A.value[2];
-
-    datalogObj->flag_enableLogData = true;
-    datalogObj->flag_enableLogOneShot = false;
-#endif  //  _DATALOG_EN_
 
     //
     // setup faults

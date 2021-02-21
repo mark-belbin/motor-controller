@@ -394,15 +394,15 @@ extern "C" {
 #define USER_MOTOR_TYPE                   MOTOR_TYPE_PM
 #define USER_MOTOR_NUM_POLE_PAIRS         (7)
 #define USER_MOTOR_Rr_Ohm                 (NULL)
-#define USER_MOTOR_Rs_Ohm                 (0.090513989)//(0.133840173)
-#define USER_MOTOR_Ls_d_H                 (0.000047673)
-#define USER_MOTOR_Ls_q_H                 (0.000047673)
-#define USER_MOTOR_RATED_FLUX_VpHz        (0.010408253)
+#define USER_MOTOR_Rs_Ohm                 (0.0830537900000)
+#define USER_MOTOR_Ls_d_H                 (0.0000368187902)
+#define USER_MOTOR_Ls_q_H                 (0.0000368187902)
+#define USER_MOTOR_RATED_FLUX_VpHz        (0.0100593502000)
 #define USER_MOTOR_MAGNETIZING_CURRENT_A  (NULL)
-#define USER_MOTOR_RES_EST_CURRENT_A      (2.0)
+#define USER_MOTOR_RES_EST_CURRENT_A      (3.0)
 #define USER_MOTOR_IND_EST_CURRENT_A      (-2.0)
-#define USER_MOTOR_MAX_CURRENT_A          (25.0)
-#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (120.0)
+#define USER_MOTOR_MAX_CURRENT_A          (30.0)
+#define USER_MOTOR_FLUX_EXC_FREQ_Hz       (50.0)
 
 // Number of lines on the motor's quadrature encoder
 #define USER_MOTOR_NUM_ENC_SLOTS          (1000)
