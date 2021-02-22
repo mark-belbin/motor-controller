@@ -119,7 +119,7 @@ void USER_setParams(USER_Params *pUserParams)
     if((USER_BYPASS_MOTOR_ID == 1) && (pUserParams->flag_bypassMotorId == true))
     {
 
-        pUserParams->BWc_rps = MATH_TWO_PI * 100 * 16;// Factor of 16 after testing, increasing BW
+        pUserParams->BWc_rps = MATH_TWO_PI * 100 * 6;// Factor of 6 after testing, increasing BW
         pUserParams->BWdelta = (float32_t)8.0;
 
         // 3.0 * pUserParams->motor_numPolePairs * 0.1 / (2.0 * 0.00001);
@@ -133,7 +133,7 @@ void USER_setParams(USER_Params *pUserParams)
     {
         pUserParams->flag_bypassMotorId = false;
 
-        pUserParams->BWc_rps = MATH_TWO_PI * 100 * 16;// Factor of 16 after testing, increasing BW
+        pUserParams->BWc_rps = MATH_TWO_PI * 100 * 6;// Factor of 6 after testing, increasing BW
         pUserParams->BWdelta = (float32_t)8.0;
 
         // 3.0 * pUserParams->motor_numPolePairs * 0.1 / (2.0 * 0.00001);

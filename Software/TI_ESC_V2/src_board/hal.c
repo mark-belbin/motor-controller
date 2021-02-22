@@ -336,7 +336,7 @@ void HAL_setParams(HAL_Handle handle)
     HAL_setupDACs(handle);
 
     // setup the CMPSSs
-    HAL_setupCMPSSs(handle);
+    //HAL_setupCMPSSs(handle);
 
     // setup the PWMs
     HAL_setupPWMs(handle,

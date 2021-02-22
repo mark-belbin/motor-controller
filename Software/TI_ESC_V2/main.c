@@ -222,7 +222,7 @@ void main(void)
 
     motorVars.flagEnableOffsetCalc = true;
 
-    motorVars.Kp_spd = 0.5; // Set Kp and Ki values for speed controller.
+    motorVars.Kp_spd = 0.2; // Set Kp and Ki values for speed controller.
     motorVars.Ki_spd = 0.001;
 
     //
@@ -422,7 +422,7 @@ void main(void)
     //
     // setup faults
     //
-    HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS tripping incorrectly.
+    //HAL_setupFaults(halHandle); // NOT SETTING FAULTS DUE TO CMPSS tripping incorrectly at 1.5A
 
     //
     // setup OVM PWM
@@ -828,8 +828,8 @@ __interrupt void mainISR(void)
         else if (rxMsgData[0] == 0x01){ // CounterClockwise (negative)
             motorVars.speedRef_Hz = (float32_t)((rxMsgData[1] << 8) | rxMsgData[2]) * -1.0 * USER_MOTOR_NUM_POLE_PAIRS / 60.0;
         }
-        if (motorVars.speedRef_Hz > 350.0) {motorVars.speedRef_Hz = 350.0;} // Clamp at +3000 RPM
-        if (motorVars.speedRef_Hz < -350.0) {motorVars.speedRef_Hz = -350.0;} // Clamp at -3000 RPM
+        if (motorVars.speedRef_Hz > 400.0) {motorVars.speedRef_Hz = 400.0;} // Clamp at +3500 RPM
+        if (motorVars.speedRef_Hz < -400.0) {motorVars.speedRef_Hz = -400.0;} // Clamp at -3500 RPM
 
         RPMset = true; // An RPM command has been recieved
     }
@@ -837,12 +837,12 @@ __interrupt void mainISR(void)
     // Set Acceleration Command
     if (CAN_readMessage(CANB_BASE, setAccel_id, rxMsgData)) {
         motorVars.accelerationMax_Hzps = (float32_t)(rxMsgData[0] << 8 | rxMsgData[1]);
-        if (motorVars.accelerationMax_Hzps > 1000.0) {motorVars.accelerationMax_Hzps = 1000.0;}
+        if (motorVars.accelerationMax_Hzps > 1500.0) {motorVars.accelerationMax_Hzps = 1500.0;}
     }
 
     // Check for no RPM signal
     if (!RPMset && counterRPM > (uint32_t)(USER_ISR_FREQ_Hz / RPM_RESET_FREQ_Hz)) {
-        //motorVars.speedRef_Hz = 0.0;
+        motorVars.speedRef_Hz = 0.0;
         counterRPM = 0;
     }
 

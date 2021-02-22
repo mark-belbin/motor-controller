@@ -75,11 +75,11 @@ extern "C" {
 
 //! \brief Defines the maximum current at the AD converter
 //!        T200 Controller, Gain=12
-#define USER_ADC_FULL_SCALE_CURRENT_A         ((float32_t)(59.98))
+#define USER_ADC_FULL_SCALE_CURRENT_A         ((float32_t)(59.998))
 
 //! \brief Defines the analog voltage filter pole location, Hz
 //!
-#define USER_VOLTAGE_FILTER_POLE_Hz           ((float32_t)(384.18))
+#define USER_VOLTAGE_FILTER_POLE_Hz           ((float32_t)(391.291))
 
 
 //! \brief ADC current offsets for A, B, and C phases
