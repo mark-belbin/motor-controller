@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch</source>
-    <date>2021-01-13 4:57:46 PM</date>
+    <source>D:\FOC_Motor_Controller\motor-controller\PCBs\Thruster_Controller_V2\Thruster_Controller_V2.sch</source>
+    <date>2021-05-12 3:15:47 PM</date>
     <tool>Eeschema (5.1.9)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -154,7 +154,7 @@
     </comp>
     <comp ref="R7">
       <value>2.7k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <datasheet>~</datasheet>
       <fields>
         <field name="Digikey">RMCF0603JT2K70CT-ND</field>
@@ -246,11 +246,11 @@
       <tstamp>5E5672C2</tstamp>
     </comp>
     <comp ref="U4">
-      <value>NCP718BMT500</value>
+      <value>NCP718AMT500</value>
       <footprint>Package_DFN_QFN:DFN-6-1EP_2x2mm_P0.65mm_EP1x1.6mm</footprint>
       <datasheet>https://www.onsemi.com/pub/Collateral/NCP718-D.PDF</datasheet>
       <fields>
-        <field name="Digikey">NCP718BMT500TBGOSCT-ND</field>
+        <field name="Digikey">‎NCP718AMT500TBGOSCT-ND‎</field>
         <field name="Mouser">863-NCP718BMT500TBG</field>
       </fields>
       <libsource lib="Thruster_Controller" part="NCP718AMT330" description=""/>
@@ -1567,7 +1567,7 @@
       <uri>C:\Program Files\KiCad\share\kicad\library/Interface_CAN_LIN.lib</uri>
     </library>
     <library logical="Thruster_Controller">
-      <uri>D:\FOC Motor Controller\motor-controller\PCBs\Thruster_Controller_V2/Thruster_Controller.lib</uri>
+      <uri>D:\FOC_Motor_Controller\motor-controller\PCBs\Thruster_Controller_V2/Thruster_Controller.lib</uri>
     </library>
   </libraries>
   <nets>
