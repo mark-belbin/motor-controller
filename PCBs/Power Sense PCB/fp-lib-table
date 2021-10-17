@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "Power Sense PCB")(type KiCad)(uri "${KIPRJMOD}/Power Sense PCB.pretty")(options "")(descr ""))
-)

@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "XDS100v2 Programmer")(type KiCad)(uri "${KIPRJMOD}/XDS100v2 Programmer.pretty")(options "")(descr "Extraneous Required Footprints"))
-)

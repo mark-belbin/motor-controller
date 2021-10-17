@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name MCU_Powertrain)(type KiCad)(uri ${KIPRJMOD}/MCU_Powertrain.pretty)(options "")(descr "Footprints for MCU+Powertrain PCB"))
-)

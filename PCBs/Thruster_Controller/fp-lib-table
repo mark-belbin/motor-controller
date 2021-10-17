@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name Thruster_Controller)(type KiCad)(uri ${KIPRJMOD}/Thruster_Controller.pretty)(options "")(descr "Footprints for MCU+Powertrain PCB"))
-)

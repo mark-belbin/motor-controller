@@ -1,0 +1,1986 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 3
+Title "MCU and Powertrain Test PCB"
+Date "2020-01-15"
+Rev "001"
+Comp "Mark Belbin"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 4450 2375 0    118  Italic 24
+TI MCU
+Text Notes 8025 2350 0    118  Italic 24
+Powertrain
+Text Notes 750  5225 0    118  Italic 24
+Power Input
+Text Notes 800  2225 0    118  Italic 24
+Programming
+Text Notes 7225 3700 0    118  Italic 24
+CAN
+Text Notes 10300 1725 0    118  Italic 24
+Phases
+$Comp
+L ESC~Drivetrain~V1:LMR16006XDDC U?
+U 1 1 5E567233
+P 3150 6000
+AR Path="/5E20A2BB/5E567233" Ref="U?"  Part="1" 
+AR Path="/5E567233" Ref="U4"  Part="1" 
+F 0 "U4" H 3150 6400 50  0000 C CNN
+F 1 "LMR16006XDDC" H 3150 5600 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 3150 6000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lmr16006.pdf" H 3150 6000 50  0001 C CNN
+F 4 "296-40293-1-ND" H 3150 6000 50  0001 C CNN "Digikey"
+	1    3150 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E567239
+P 2600 6350
+AR Path="/5E20A2BB/5E567239" Ref="#PWR?"  Part="1" 
+AR Path="/5E567239" Ref="#PWR0101"  Part="1" 
+F 0 "#PWR0101" H 2600 6100 50  0001 C CNN
+F 1 "GND" H 2605 6177 50  0000 C CNN
+F 2 "" H 2600 6350 50  0001 C CNN
+F 3 "" H 2600 6350 50  0001 C CNN
+	1    2600 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 6350 2600 6250
+Wire Wire Line
+	2600 6250 2800 6250
+NoConn ~ 2800 6000
+$Comp
+L Device:C_Small C?
+U 1 1 5E567243
+P 2600 6000
+AR Path="/5E20A2BB/5E567243" Ref="C?"  Part="1" 
+AR Path="/5E567243" Ref="C33"  Part="1" 
+F 0 "C33" H 2375 6050 50  0000 L CNN
+F 1 "0.1uF" H 2300 5975 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 2600 6000 50  0001 C CNN
+F 3 "" H 2600 6000 50  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 2600 6000 50  0001 C CNN "Digikey"
+	1    2600 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 6100 2600 6250
+Connection ~ 2600 6250
+Wire Wire Line
+	2600 5900 2600 5750
+Wire Wire Line
+	2600 5750 2800 5750
+Wire Wire Line
+	2600 5750 2600 5650
+Connection ~ 2600 5750
+$Comp
+L Device:C_Small C?
+U 1 1 5E567256
+P 3775 5575
+AR Path="/5E20A2BB/5E567256" Ref="C?"  Part="1" 
+AR Path="/5E567256" Ref="C32"  Part="1" 
+F 0 "C32" H 3550 5625 50  0000 L CNN
+F 1 "0.33uF" H 3425 5550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 3775 5575 50  0001 C CNN
+F 3 "" H 3775 5575 50  0001 C CNN
+F 4 "1276-2370-1-ND" H 3775 5575 50  0001 C CNN "Digikey"
+	1    3775 5575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3775 5750 3775 5675
+Wire Wire Line
+	3500 5750 3775 5750
+Wire Wire Line
+	3500 6000 3900 6000
+Wire Wire Line
+	3775 5475 3775 5375
+Wire Wire Line
+	3900 5375 3900 6000
+$Comp
+L Device:D_Schottky_ALT D?
+U 1 1 5E567262
+P 4050 5650
+AR Path="/5E20A2BB/5E567262" Ref="D?"  Part="1" 
+AR Path="/5E567262" Ref="D4"  Part="1" 
+F 0 "D4" V 4050 5729 50  0000 L CNN
+F 1 "D_Schottky_ALT" V 4095 5729 50  0001 L CNN
+F 2 "Diodes_SMD:D_SOD-123F" H 4050 5650 50  0001 C CNN
+F 3 "~" H 4050 5650 50  0001 C CNN
+F 4 "MBR1H100SFT3GOSCT-ND" V 4050 5650 50  0001 C CNN "Digikey"
+	1    4050 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4050 5500 4050 5375
+Wire Wire Line
+	3775 5375 3900 5375
+Connection ~ 3900 5375
+Wire Wire Line
+	4050 5800 4050 5875
+$Comp
+L power:GND #PWR?
+U 1 1 5E56726C
+P 4050 5875
+AR Path="/5E20A2BB/5E56726C" Ref="#PWR?"  Part="1" 
+AR Path="/5E56726C" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 4050 5625 50  0001 C CNN
+F 1 "GND" H 4055 5702 50  0000 C CNN
+F 2 "" H 4050 5875 50  0001 C CNN
+F 3 "" H 4050 5875 50  0001 C CNN
+	1    4050 5875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 5375 4050 5375
+Connection ~ 4050 5375
+Wire Wire Line
+	4050 5375 4175 5375
+$Comp
+L Device:L_Core_Ferrite L?
+U 1 1 5E567277
+P 4325 5375
+AR Path="/5E20A2BB/5E567277" Ref="L?"  Part="1" 
+AR Path="/5E567277" Ref="L1"  Part="1" 
+F 0 "L1" V 4550 5375 50  0000 C CNN
+F 1 "15uH" V 4459 5375 50  0000 C CNN
+F 2 "MCU_Powertrain:Eaton_Inductor" H 4325 5375 50  0001 C CNN
+F 3 "~" H 4325 5375 50  0001 C CNN
+F 4 "" V 4325 5375 50  0001 C CNN "Field4"
+F 5 "513-1458-1-ND" V 4325 5375 50  0001 C CNN "Digikey"
+	1    4325 5375
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4475 5375 4600 5375
+Wire Wire Line
+	4675 5375 4675 5700
+Wire Wire Line
+	4675 5700 4325 5700
+Wire Wire Line
+	4325 5700 4325 5900
+Wire Wire Line
+	4675 5375 4825 5375
+Wire Wire Line
+	4825 5375 4825 5300
+Connection ~ 4675 5375
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E567284
+P 4825 5300
+AR Path="/5E20A2BB/5E567284" Ref="#PWR?"  Part="1" 
+AR Path="/5E567284" Ref="#PWR0105"  Part="1" 
+F 0 "#PWR0105" H 4825 5150 50  0001 C CNN
+F 1 "+3V3" H 4840 5473 50  0000 C CNN
+F 2 "" H 4825 5300 50  0001 C CNN
+F 3 "" H 4825 5300 50  0001 C CNN
+	1    4825 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E56728B
+P 4825 5525
+AR Path="/5E20A2BB/5E56728B" Ref="C?"  Part="1" 
+AR Path="/5E56728B" Ref="C31"  Part="1" 
+F 0 "C31" H 4655 5615 50  0000 L CNN
+F 1 "22uF" H 4550 5525 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4825 5525 50  0001 C CNN
+F 3 "" H 4825 5525 50  0001 C CNN
+F 4 "490-14661-1-ND" H 4825 5525 50  0001 C CNN "Digikey"
+	1    4825 5525
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4825 5425 4825 5375
+Connection ~ 4825 5375
+Wire Wire Line
+	4825 5625 4825 5700
+$Comp
+L power:GND #PWR?
+U 1 1 5E567294
+P 4825 5700
+AR Path="/5E20A2BB/5E567294" Ref="#PWR?"  Part="1" 
+AR Path="/5E567294" Ref="#PWR0106"  Part="1" 
+F 0 "#PWR0106" H 4825 5450 50  0001 C CNN
+F 1 "GND" H 4830 5527 50  0000 C CNN
+F 2 "" H 4825 5700 50  0001 C CNN
+F 3 "" H 4825 5700 50  0001 C CNN
+	1    4825 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5E56729B
+P 4325 6050
+AR Path="/5E20A2BB/5E56729B" Ref="R?"  Part="1" 
+AR Path="/5E56729B" Ref="R23"  Part="1" 
+F 0 "R23" H 4375 6050 50  0000 L CNN
+F 1 "68.0k" H 4375 5975 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 4365 6040 50  0001 C CNN
+F 3 "~" H 4325 6050 50  0001 C CNN
+F 4 "P68KDBCT-ND" H 4325 6050 50  0001 C CNN "Digikey"
+	1    4325 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 6250 4325 6250
+Wire Wire Line
+	4325 6250 4325 6300
+Wire Wire Line
+	4325 6200 4325 6250
+Connection ~ 4325 6250
+$Comp
+L power:GND #PWR?
+U 1 1 5E5672AC
+P 4325 6650
+AR Path="/5E20A2BB/5E5672AC" Ref="#PWR?"  Part="1" 
+AR Path="/5E5672AC" Ref="#PWR0107"  Part="1" 
+F 0 "#PWR0107" H 4325 6400 50  0001 C CNN
+F 1 "GND" H 4475 6575 50  0000 C CNN
+F 2 "" H 4325 6650 50  0001 C CNN
+F 3 "" H 4325 6650 50  0001 C CNN
+	1    4325 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4325 6650 4325 6600
+$Comp
+L Device:LED_ALT D?
+U 1 1 5E5672B4
+P 5325 5500
+AR Path="/5E20A2BB/5E5672B4" Ref="D?"  Part="1" 
+AR Path="/5E5672B4" Ref="D3"  Part="1" 
+F 0 "D3" V 5364 5382 50  0000 R CNN
+F 1 "GREEN" V 5273 5382 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 5325 5500 50  0001 C CNN
+F 3 "~" H 5325 5500 50  0001 C CNN
+F 4 "160-1446-1-ND" V 5325 5500 50  0001 C CNN "Digikey"
+	1    5325 5500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E5672BA
+P 5325 5300
+AR Path="/5E20A2BB/5E5672BA" Ref="#PWR?"  Part="1" 
+AR Path="/5E5672BA" Ref="#PWR0108"  Part="1" 
+F 0 "#PWR0108" H 5325 5150 50  0001 C CNN
+F 1 "+3V3" H 5340 5473 50  0000 C CNN
+F 2 "" H 5325 5300 50  0001 C CNN
+F 3 "" H 5325 5300 50  0001 C CNN
+	1    5325 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5325 5350 5325 5300
+Wire Wire Line
+	5325 5650 5325 5750
+$Comp
+L Device:R_US R?
+U 1 1 5E5672C2
+P 5325 5900
+AR Path="/5E20A2BB/5E5672C2" Ref="R?"  Part="1" 
+AR Path="/5E5672C2" Ref="R19"  Part="1" 
+F 0 "R19" H 5375 5900 50  0000 L CNN
+F 1 "330" H 5375 5825 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 5365 5890 50  0001 C CNN
+F 3 "~" H 5325 5900 50  0001 C CNN
+F 4 "RHM330DCT-ND" H 5325 5900 50  0001 C CNN "Digikey"
+	1    5325 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5325 6050 5325 6125
+$Comp
+L power:GND #PWR?
+U 1 1 5E5672C9
+P 5325 6125
+AR Path="/5E20A2BB/5E5672C9" Ref="#PWR?"  Part="1" 
+AR Path="/5E5672C9" Ref="#PWR0109"  Part="1" 
+F 0 "#PWR0109" H 5325 5875 50  0001 C CNN
+F 1 "GND" H 5330 5952 50  0000 C CNN
+F 2 "" H 5325 6125 50  0001 C CNN
+F 3 "" H 5325 6125 50  0001 C CNN
+	1    5325 6125
+	1    0    0    -1  
+$EndComp
+Text Notes 2700 5250 0    79   Italic 16
+3.3V Regulator
+$Comp
+L Connector_Generic:Conn_01x02 J7
+U 1 1 5E5819AC
+P 1200 5950
+F 0 "J7" H 1200 5725 50  0000 C CNN
+F 1 "PWRIN" H 1125 6100 50  0001 C CNN
+F 2 "MCU_Powertrain:AMASS_XT60-M" H 1200 5950 50  0001 C CNN
+F 3 "~" H 1200 5950 50  0001 C CNN
+F 4 "" H 1200 5950 50  0001 C CNN "Digikey"
+	1    1200 5950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1600 5800 1600 5850
+Wire Wire Line
+	1600 5850 1400 5850
+$Comp
+L power:+BATT #PWR0110
+U 1 1 5E584027
+P 1600 5800
+F 0 "#PWR0110" H 1600 5650 50  0001 C CNN
+F 1 "+BATT" H 1615 5973 50  0000 C CNN
+F 2 "" H 1600 5800 50  0001 C CNN
+F 3 "" H 1600 5800 50  0001 C CNN
+	1    1600 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 5950 1600 5950
+Wire Wire Line
+	1600 5950 1600 6000
+$Comp
+L power:GND #PWR?
+U 1 1 5E585248
+P 1600 6000
+AR Path="/5E20A2BB/5E585248" Ref="#PWR?"  Part="1" 
+AR Path="/5E585248" Ref="#PWR0111"  Part="1" 
+F 0 "#PWR0111" H 1600 5750 50  0001 C CNN
+F 1 "GND" H 1750 5925 50  0000 C CNN
+F 2 "" H 1600 6000 50  0001 C CNN
+F 3 "" H 1600 6000 50  0001 C CNN
+	1    1600 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+BATT #PWR0112
+U 1 1 5E585F6C
+P 2600 5650
+F 0 "#PWR0112" H 2600 5500 50  0001 C CNN
+F 1 "+BATT" H 2615 5823 50  0000 C CNN
+F 2 "" H 2600 5650 50  0001 C CNN
+F 3 "" H 2600 5650 50  0001 C CNN
+	1    2600 5650
+	1    0    0    -1  
+$EndComp
+Text Notes 1700 5800 0    50   Italic 10
+Up to 24V 
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 5E5B11C6
+P 10600 2000
+AR Path="/5E20A2BB/5E5B11C6" Ref="J?"  Part="1" 
+AR Path="/5E5B11C6" Ref="J1"  Part="1" 
+F 0 "J1" H 10680 2042 50  0000 L CNN
+F 1 "PHASE_A" H 10680 1951 50  0000 L CNN
+F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2000 50  0001 C CNN
+F 3 "~" H 10600 2000 50  0001 C CNN
+	1    10600 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 5E5B11CC
+P 10600 2225
+AR Path="/5E20A2BB/5E5B11CC" Ref="J?"  Part="1" 
+AR Path="/5E5B11CC" Ref="J2"  Part="1" 
+F 0 "J2" H 10680 2267 50  0000 L CNN
+F 1 "PHASE_B" H 10680 2176 50  0000 L CNN
+F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2225 50  0001 C CNN
+F 3 "~" H 10600 2225 50  0001 C CNN
+	1    10600 2225
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 5E5B11D2
+P 10600 2450
+AR Path="/5E20A2BB/5E5B11D2" Ref="J?"  Part="1" 
+AR Path="/5E5B11D2" Ref="J3"  Part="1" 
+F 0 "J3" H 10680 2492 50  0000 L CNN
+F 1 "PHASE_C" H 10680 2401 50  0000 L CNN
+F 2 "MCU_Powertrain:3mm_Bullet_RA" H 10600 2450 50  0001 C CNN
+F 3 "~" H 10600 2450 50  0001 C CNN
+	1    10600 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 2000 10125 2000
+Wire Wire Line
+	10400 2225 10225 2225
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J4
+U 1 1 5E5BAC64
+P 1350 2700
+F 0 "J4" H 1400 3025 50  0000 C CNN
+F 1 "Big Conn" H 1400 2375 50  0000 C CNN
+F 2 "MCU_Powertrain:2x05_Prog_Header" H 1350 2700 50  0001 C CNN
+F 3 "~" H 1350 2700 50  0001 C CNN
+F 4 "302-S101" H 1350 2700 50  0001 C CNN "Digikey"
+	1    1350 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 1525 7175 1525
+Wire Wire Line
+	7175 1600 6450 1600
+Wire Wire Line
+	6450 1675 7175 1675
+Wire Wire Line
+	7175 1750 6450 1750
+Wire Wire Line
+	6450 1875 7175 1875
+Wire Wire Line
+	7175 1950 6450 1950
+Wire Wire Line
+	6450 2025 7175 2025
+Wire Wire Line
+	7175 2100 6450 2100
+Wire Wire Line
+	6450 2175 7175 2175
+Wire Wire Line
+	7175 2250 6450 2250
+Wire Wire Line
+	6450 2325 7175 2325
+Wire Wire Line
+	7175 2450 6450 2450
+Wire Wire Line
+	6450 2525 7175 2525
+Wire Wire Line
+	7175 2600 6450 2600
+Wire Wire Line
+	6450 2675 7175 2675
+Wire Wire Line
+	7175 2750 6450 2750
+Wire Wire Line
+	6450 2825 7175 2825
+Wire Wire Line
+	7175 2925 6450 2925
+Wire Wire Line
+	6450 3075 6625 3075
+Wire Wire Line
+	7175 3150 6700 3150
+Wire Wire Line
+	6450 3225 6775 3225
+Wire Wire Line
+	1150 2500 950  2500
+Wire Wire Line
+	950  2500 950  2425
+Wire Wire Line
+	1150 2800 1075 2800
+Wire Wire Line
+	1075 2800 1075 2900
+Wire Wire Line
+	1150 2900 1075 2900
+Wire Wire Line
+	1075 2900 950  2900
+Wire Wire Line
+	950  2900 950  2950
+Connection ~ 1075 2900
+$Comp
+L power:GND #PWR?
+U 1 1 5E266250
+P 950 2950
+AR Path="/5E20A2BB/5E266250" Ref="#PWR?"  Part="1" 
+AR Path="/5E266250" Ref="#PWR0113"  Part="1" 
+F 0 "#PWR0113" H 950 2700 50  0001 C CNN
+F 1 "GND" H 955 2777 50  0000 C CNN
+F 2 "" H 950 2950 50  0001 C CNN
+F 3 "" H 950 2950 50  0001 C CNN
+	1    950  2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E266D11
+P 950 2425
+AR Path="/5E20A2BB/5E266D11" Ref="#PWR?"  Part="1" 
+AR Path="/5E266D11" Ref="#PWR0114"  Part="1" 
+F 0 "#PWR0114" H 950 2275 50  0001 C CNN
+F 1 "+3V3" H 1100 2500 50  0000 C CNN
+F 2 "" H 950 2425 50  0001 C CNN
+F 3 "" H 950 2425 50  0001 C CNN
+	1    950  2425
+	1    0    0    -1  
+$EndComp
+Text Label 875  2600 0    50   ~ 0
+GPIO28
+Wire Wire Line
+	875  2600 1150 2600
+Wire Wire Line
+	875  2700 1150 2700
+Text Label 875  2700 0    50   ~ 0
+GPIO29
+Text Label 1900 2500 2    50   ~ 0
+TMS
+Text Label 1900 2600 2    50   ~ 0
+TCK
+Text Label 1900 2700 2    50   ~ 0
+TDO
+Text Label 1900 2800 2    50   ~ 0
+TDI
+Text Label 1900 2900 2    50   ~ 0
+TRST
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J5
+U 1 1 5E2798B5
+P 1350 3625
+F 0 "J5" H 1400 3950 50  0000 C CNN
+F 1 "Pogo Conn" H 1400 3300 50  0000 C CNN
+F 2 "Connectors:Tag-Connect_TC2050-IDC-NL" H 1350 3625 50  0001 C CNN
+F 3 "~" H 1350 3625 50  0001 C CNN
+F 4 "" H 1350 3625 50  0001 C CNN "Digikey"
+	1    1350 3625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 3425 950  3425
+Wire Wire Line
+	950  3425 950  3350
+Wire Wire Line
+	1150 3725 1075 3725
+Wire Wire Line
+	1075 3725 1075 3825
+Wire Wire Line
+	1150 3825 1075 3825
+Wire Wire Line
+	1075 3825 950  3825
+Wire Wire Line
+	950  3825 950  3875
+Connection ~ 1075 3825
+$Comp
+L power:GND #PWR?
+U 1 1 5E2798C3
+P 950 3875
+AR Path="/5E20A2BB/5E2798C3" Ref="#PWR?"  Part="1" 
+AR Path="/5E2798C3" Ref="#PWR0115"  Part="1" 
+F 0 "#PWR0115" H 950 3625 50  0001 C CNN
+F 1 "GND" H 955 3702 50  0000 C CNN
+F 2 "" H 950 3875 50  0001 C CNN
+F 3 "" H 950 3875 50  0001 C CNN
+	1    950  3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E2798C9
+P 950 3350
+AR Path="/5E20A2BB/5E2798C9" Ref="#PWR?"  Part="1" 
+AR Path="/5E2798C9" Ref="#PWR0116"  Part="1" 
+F 0 "#PWR0116" H 950 3200 50  0001 C CNN
+F 1 "+3V3" H 1100 3425 50  0000 C CNN
+F 2 "" H 950 3350 50  0001 C CNN
+F 3 "" H 950 3350 50  0001 C CNN
+	1    950  3350
+	1    0    0    -1  
+$EndComp
+Text Label 875  3525 0    50   ~ 0
+GPIO28
+Wire Wire Line
+	875  3525 1150 3525
+Wire Wire Line
+	875  3625 1150 3625
+Text Label 875  3625 0    50   ~ 0
+GPIO29
+Text Label 1900 3425 2    50   ~ 0
+TMS
+Text Label 1900 3525 2    50   ~ 0
+TCK
+Text Label 1900 3625 2    50   ~ 0
+TDO
+Text Label 1900 3725 2    50   ~ 0
+TDI
+Text Label 1900 3825 2    50   ~ 0
+TRST
+Wire Wire Line
+	3500 2050 3175 2050
+Wire Wire Line
+	3500 1950 3175 1950
+Text Label 3175 1950 0    50   ~ 0
+GPIO28
+Text Label 3175 2050 0    50   ~ 0
+GPIO29
+Wire Wire Line
+	2350 2275 2350 2500
+Wire Wire Line
+	1650 2500 2350 2500
+Wire Wire Line
+	2350 2275 3500 2275
+Wire Wire Line
+	2425 2375 2425 2600
+Wire Wire Line
+	1650 2600 2425 2600
+Wire Wire Line
+	2425 2375 3500 2375
+Wire Wire Line
+	2500 2475 2500 2700
+Wire Wire Line
+	1650 2700 2500 2700
+Wire Wire Line
+	2500 2475 3500 2475
+Wire Wire Line
+	2575 2575 2575 2800
+Wire Wire Line
+	1650 2800 2575 2800
+Wire Wire Line
+	2575 2575 3500 2575
+Wire Wire Line
+	2650 2675 2650 2900
+Wire Wire Line
+	1650 2900 2650 2900
+Wire Wire Line
+	2650 2675 3500 2675
+Wire Wire Line
+	2350 2500 2350 3425
+Wire Wire Line
+	1650 3425 1950 3425
+Connection ~ 2350 2500
+Wire Wire Line
+	2425 2600 2425 3525
+Wire Wire Line
+	1650 3525 2025 3525
+Connection ~ 2425 2600
+Wire Wire Line
+	2500 2700 2500 3625
+Wire Wire Line
+	1650 3625 2100 3625
+Connection ~ 2500 2700
+Wire Wire Line
+	2575 2800 2575 3725
+Connection ~ 2575 2800
+Wire Wire Line
+	2650 2900 2650 3825
+Connection ~ 2650 2900
+Wire Wire Line
+	6450 3000 6550 3000
+Wire Wire Line
+	6550 3000 6550 4125
+Wire Wire Line
+	6625 3075 6625 4025
+Connection ~ 6625 3075
+Wire Wire Line
+	6625 3075 7175 3075
+Wire Wire Line
+	6700 3150 6700 3925
+Connection ~ 6700 3150
+Wire Wire Line
+	6700 3150 6450 3150
+Wire Wire Line
+	6775 3225 6775 3825
+Connection ~ 6775 3225
+Wire Wire Line
+	6775 3225 7175 3225
+$Sheet
+S 3500 1450 2950 1925
+U 5E20A372
+F0 "TI_MCU" 50
+F1 "TI_MCU.sch" 50
+F2 "GPIO28" I R 6450 1600 50 
+F3 "SPI_CLK" O R 6450 3225 50 
+F4 "ADCINA7" I R 6450 1875 50 
+F5 "ADCINA3" I R 6450 1950 50 
+F6 "ADCINA1" I R 6450 2025 50 
+F7 "ADCINA0" I R 6450 2100 50 
+F8 "ADCINB1" I R 6450 2175 50 
+F9 "ADCINB3" I R 6450 2250 50 
+F10 "ADCINB7" I R 6450 2325 50 
+F11 "EPWM1A" O R 6450 2450 50 
+F12 "EPWM1B" O R 6450 2525 50 
+F13 "EPWM2A" O R 6450 2600 50 
+F14 "EPWM2B" O R 6450 2675 50 
+F15 "EPWM3A" O R 6450 2750 50 
+F16 "EPWM3B" O R 6450 2825 50 
+F17 "SPI_CS_0" O R 6450 2925 50 
+F18 "~RESET~" I R 6450 1525 50 
+F19 "SPI_MOSI" B R 6450 3075 50 
+F20 "SPI_MISO" B R 6450 3150 50 
+F21 "GPIO6" O R 6450 1750 50 
+F22 "GPIO7" O R 6450 1675 50 
+F23 "GPIO29" I L 3500 2050 50 
+F24 "TRST" I L 3500 2675 50 
+F25 "TCK" I L 3500 2375 50 
+F26 "TMS" I L 3500 2275 50 
+F27 "TDI" I L 3500 2575 50 
+F28 "TDO" I L 3500 2475 50 
+F29 "GPIO28" I L 3500 1950 50 
+F30 "SPI_CS_1" O R 6450 3000 50 
+F31 "CAN_INT" I R 6450 3300 50 
+$EndSheet
+$Comp
+L MCU_Powertrain:MCP2515-QFN20 U3
+U 1 1 5E3711F0
+P 8250 4375
+F 0 "U3" H 8650 5125 50  0000 C CNN
+F 1 "MCP2515" H 8700 3625 50  0000 C CNN
+F 2 "Housings_DFN_QFN:QFN-20-1EP_4x4mm_Pitch0.5mm" H 8250 3475 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21801e.pdf" H 8350 3575 50  0001 C CNN
+F 4 "MCP2515T-I/MLCT-ND" H 8250 4375 50  0001 C CNN "Digikey"
+	1    8250 4375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 5175 8250 5200
+$Comp
+L power:GND #PWR?
+U 1 1 5E3CC878
+P 8250 5225
+AR Path="/5E20A2BB/5E3CC878" Ref="#PWR?"  Part="1" 
+AR Path="/5E3CC878" Ref="#PWR0117"  Part="1" 
+F 0 "#PWR0117" H 8250 4975 50  0001 C CNN
+F 1 "GND" H 8400 5175 50  0000 C CNN
+F 2 "" H 8250 5225 50  0001 C CNN
+F 3 "" H 8250 5225 50  0001 C CNN
+	1    8250 5225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 5175 8350 5200
+Wire Wire Line
+	8350 5200 8250 5200
+Connection ~ 8250 5200
+Wire Wire Line
+	8250 5200 8250 5225
+Wire Wire Line
+	6775 3825 7650 3825
+Wire Wire Line
+	6700 3925 7650 3925
+Wire Wire Line
+	6625 4025 7650 4025
+Wire Wire Line
+	6550 4125 7650 4125
+Wire Wire Line
+	8250 3575 8250 3550
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E4011A5
+P 8250 3550
+AR Path="/5E20A2BB/5E4011A5" Ref="#PWR?"  Part="1" 
+AR Path="/5E4011A5" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 8250 3400 50  0001 C CNN
+F 1 "+3V3" H 8225 3700 50  0000 C CNN
+F 2 "" H 8250 3550 50  0001 C CNN
+F 3 "" H 8250 3550 50  0001 C CNN
+	1    8250 3550
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8850 4375
+NoConn ~ 8850 4475
+NoConn ~ 8850 4575
+NoConn ~ 8850 4675
+NoConn ~ 8850 4775
+Wire Wire Line
+	8850 4875 9000 4875
+Wire Wire Line
+	9000 4875 9000 4825
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E420A93
+P 9000 4600
+AR Path="/5E20A2BB/5E420A93" Ref="#PWR?"  Part="1" 
+AR Path="/5E420A93" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 9000 4450 50  0001 C CNN
+F 1 "+3V3" H 9000 4750 50  0000 C CNN
+F 2 "" H 9000 4600 50  0001 C CNN
+F 3 "" H 9000 4600 50  0001 C CNN
+	1    9000 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5E5672A2
+P 4325 6450
+AR Path="/5E20A2BB/5E5672A2" Ref="R?"  Part="1" 
+AR Path="/5E5672A2" Ref="R24"  Part="1" 
+F 0 "R24" H 4375 6450 50  0000 L CNN
+F 1 "20.0k" H 4375 6375 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 4365 6440 50  0001 C CNN
+F 3 "~" H 4325 6450 50  0001 C CNN
+F 4 "P20KDBCT-ND" H 4325 6450 50  0001 C CNN "Digikey"
+	1    4325 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R18
+U 1 1 5E424DEF
+P 9000 4725
+F 0 "R18" H 9068 4771 50  0000 L CNN
+F 1 "10k" H 9068 4680 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 9000 4725 50  0001 C CNN
+F 3 "~" H 9000 4725 50  0001 C CNN
+F 4 "311-10.0KCRCT-ND" H 9000 4725 50  0001 C CNN "Digikey"
+	1    9000 4725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 4600 9000 4625
+Wire Wire Line
+	6450 3300 6475 3300
+Wire Wire Line
+	6475 3300 6475 4275
+Wire Wire Line
+	6475 4275 7650 4275
+NoConn ~ 7650 4775
+Wire Wire Line
+	7650 4575 7600 4575
+Wire Wire Line
+	7600 4575 7600 4450
+Wire Wire Line
+	7600 4450 7175 4450
+Wire Wire Line
+	7175 4450 7175 4500
+Wire Wire Line
+	7650 4675 7600 4675
+Wire Wire Line
+	7600 4675 7600 4825
+Wire Wire Line
+	7600 4825 7175 4825
+$Comp
+L Device:C_Small C21
+U 1 1 5E462988
+P 6950 4450
+F 0 "C21" V 6900 4350 50  0000 C CNN
+F 1 "15pF" V 7000 4325 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" H 6950 4450 50  0001 C CNN
+F 3 "~" H 6950 4450 50  0001 C CNN
+F 4 "311-1060-1-ND" V 6950 4450 50  0001 C CNN "Digikey"
+	1    6950 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C22
+U 1 1 5E463EDB
+P 6950 4825
+F 0 "C22" V 6900 4700 50  0000 C CNN
+F 1 "15pF" V 7000 4700 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" H 6950 4825 50  0001 C CNN
+F 3 "~" H 6950 4825 50  0001 C CNN
+F 4 "311-1060-1-ND" V 6950 4825 50  0001 C CNN "Digikey"
+	1    6950 4825
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7050 4450 7175 4450
+Connection ~ 7175 4450
+Wire Wire Line
+	7050 4825 7175 4825
+Connection ~ 7175 4825
+Wire Wire Line
+	6850 4450 6650 4450
+Wire Wire Line
+	6650 4450 6650 4650
+Wire Wire Line
+	6650 4825 6850 4825
+Wire Wire Line
+	6650 4650 6475 4650
+Wire Wire Line
+	6475 4650 6475 4725
+Connection ~ 6650 4650
+Wire Wire Line
+	6650 4650 6650 4825
+$Comp
+L power:GND #PWR?
+U 1 1 5E479E72
+P 6475 4725
+AR Path="/5E20A2BB/5E479E72" Ref="#PWR?"  Part="1" 
+AR Path="/5E479E72" Ref="#PWR0120"  Part="1" 
+F 0 "#PWR0120" H 6475 4475 50  0001 C CNN
+F 1 "GND" H 6475 4575 50  0000 C CNN
+F 2 "" H 6475 4725 50  0001 C CNN
+F 3 "" H 6475 4725 50  0001 C CNN
+	1    6475 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4A3E7B
+P 9875 4575
+AR Path="/5E20A2BB/5E4A3E7B" Ref="#PWR?"  Part="1" 
+AR Path="/5E4A3E7B" Ref="#PWR0121"  Part="1" 
+F 0 "#PWR0121" H 9875 4325 50  0001 C CNN
+F 1 "GND" H 10025 4525 50  0000 C CNN
+F 2 "" H 9875 4575 50  0001 C CNN
+F 3 "" H 9875 4575 50  0001 C CNN
+	1    9875 4575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 3825 8925 3825
+Wire Wire Line
+	9425 3925 8925 3925
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 5E4DDF4C
+P 10950 4025
+F 0 "J6" H 10900 4250 50  0000 L CNN
+F 1 "Conn CAN" H 10775 3825 50  0000 L CNN
+F 2 "MCU_Powertrain:70553-03" H 10950 4025 50  0001 C CNN
+F 3 "~" H 10950 4025 50  0001 C CNN
+F 4 "WM4901-ND" H 10950 4025 50  0001 C CNN "Digikey"
+	1    10950 4025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 4125 10700 4125
+Wire Wire Line
+	10700 4125 10700 4250
+$Comp
+L power:GND #PWR?
+U 1 1 5E4F0788
+P 10700 4250
+AR Path="/5E20A2BB/5E4F0788" Ref="#PWR?"  Part="1" 
+AR Path="/5E4F0788" Ref="#PWR0122"  Part="1" 
+F 0 "#PWR0122" H 10700 4000 50  0001 C CNN
+F 1 "GND" H 10700 4100 50  0000 C CNN
+F 2 "" H 10700 4250 50  0001 C CNN
+F 3 "" H 10700 4250 50  0001 C CNN
+	1    10700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E5059A5
+P 9525 5350
+AR Path="/5E20A2BB/5E5059A5" Ref="C?"  Part="1" 
+AR Path="/5E5059A5" Ref="C23"  Part="1" 
+F 0 "C23" H 9350 5425 50  0000 L CNN
+F 1 "0.1uF" H 9300 5275 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 9525 5350 50  0001 C CNN
+F 3 "" H 9525 5350 50  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 9525 5350 50  0001 C CNN "Digikey"
+	1    9525 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E507468
+P 9625 5125
+AR Path="/5E20A2BB/5E507468" Ref="#PWR?"  Part="1" 
+AR Path="/5E507468" Ref="#PWR0124"  Part="1" 
+F 0 "#PWR0124" H 9625 4975 50  0001 C CNN
+F 1 "+3V3" H 9625 5300 50  0000 C CNN
+F 2 "" H 9625 5125 50  0001 C CNN
+F 3 "" H 9625 5125 50  0001 C CNN
+	1    9625 5125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E50E8F3
+P 9525 5525
+AR Path="/5E20A2BB/5E50E8F3" Ref="#PWR?"  Part="1" 
+AR Path="/5E50E8F3" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 9525 5275 50  0001 C CNN
+F 1 "GND" H 9525 5375 50  0000 C CNN
+F 2 "" H 9525 5525 50  0001 C CNN
+F 3 "" H 9525 5525 50  0001 C CNN
+	1    9525 5525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E50F7FE
+P 10650 5525
+AR Path="/5E20A2BB/5E50F7FE" Ref="#PWR?"  Part="1" 
+AR Path="/5E50F7FE" Ref="#PWR0127"  Part="1" 
+F 0 "#PWR0127" H 10650 5275 50  0001 C CNN
+F 1 "GND" H 10650 5375 50  0000 C CNN
+F 2 "" H 10650 5525 50  0001 C CNN
+F 3 "" H 10650 5525 50  0001 C CNN
+	1    10650 5525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9525 5450 9525 5525
+Wire Wire Line
+	9525 5250 9525 5175
+$Comp
+L power:GND #PWR?
+U 1 1 5E5466BB
+P 10450 5525
+AR Path="/5E20A2BB/5E5466BB" Ref="#PWR?"  Part="1" 
+AR Path="/5E5466BB" Ref="#PWR0128"  Part="1" 
+F 0 "#PWR0128" H 10450 5275 50  0001 C CNN
+F 1 "GND" H 10450 5375 50  0000 C CNN
+F 2 "" H 10450 5525 50  0001 C CNN
+F 3 "" H 10450 5525 50  0001 C CNN
+	1    10450 5525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 5450 10450 5525
+Wire Wire Line
+	10650 5175 10550 5175
+Wire Wire Line
+	10550 5175 10550 5125
+Wire Wire Line
+	10550 5175 10450 5175
+Wire Wire Line
+	10450 5175 10450 5250
+Connection ~ 10550 5175
+$Comp
+L Device:C_Small C?
+U 1 1 5E595A4F
+P 9725 5350
+AR Path="/5E20A2BB/5E595A4F" Ref="C?"  Part="1" 
+AR Path="/5E595A4F" Ref="C28"  Part="1" 
+F 0 "C28" H 9575 5425 50  0000 L CNN
+F 1 "1uF" H 9575 5275 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 9725 5350 50  0001 C CNN
+F 3 "" H 9725 5350 50  0001 C CNN
+F 4 "399-8011-1-ND" H 9725 5350 50  0001 C CNN "Digikey"
+	1    9725 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9525 5175 9625 5175
+Wire Wire Line
+	9625 5175 9625 5125
+Wire Wire Line
+	9625 5175 9725 5175
+Wire Wire Line
+	9725 5175 9725 5250
+Connection ~ 9625 5175
+Wire Wire Line
+	9725 5450 9725 5525
+$Comp
+L power:GND #PWR?
+U 1 1 5E5AB2A9
+P 9725 5525
+AR Path="/5E20A2BB/5E5AB2A9" Ref="#PWR?"  Part="1" 
+AR Path="/5E5AB2A9" Ref="#PWR0129"  Part="1" 
+F 0 "#PWR0129" H 9725 5275 50  0001 C CNN
+F 1 "GND" H 9725 5375 50  0000 C CNN
+F 2 "" H 9725 5525 50  0001 C CNN
+F 3 "" H 9725 5525 50  0001 C CNN
+	1    9725 5525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 5450 10650 5525
+Wire Wire Line
+	10650 5250 10650 5175
+$Comp
+L Device:C_Small C?
+U 1 1 5E506EE0
+P 10650 5350
+AR Path="/5E20A2BB/5E506EE0" Ref="C?"  Part="1" 
+AR Path="/5E506EE0" Ref="C30"  Part="1" 
+F 0 "C30" H 10675 5425 50  0000 L CNN
+F 1 "0.1uF" H 10675 5275 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 10650 5350 50  0001 C CNN
+F 3 "" H 10650 5350 50  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 10650 5350 50  0001 C CNN "Digikey"
+	1    10650 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5E668803
+P 1200 7200
+F 0 "H1" H 1300 7246 50  0000 L CNN
+F 1 "MountingHole" H 1300 7155 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 1200 7200 50  0001 C CNN
+F 3 "~" H 1200 7200 50  0001 C CNN
+	1    1200 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5E669612
+P 1975 7200
+F 0 "H2" H 2075 7246 50  0000 L CNN
+F 1 "MountingHole" H 2075 7155 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 1975 7200 50  0001 C CNN
+F 3 "~" H 1975 7200 50  0001 C CNN
+	1    1975 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5E669ABC
+P 2750 7200
+F 0 "H3" H 2850 7246 50  0000 L CNN
+F 1 "MountingHole" H 2850 7155 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 2750 7200 50  0001 C CNN
+F 3 "~" H 2750 7200 50  0001 C CNN
+	1    2750 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5E669F85
+P 3525 7200
+F 0 "H4" H 3625 7246 50  0000 L CNN
+F 1 "MountingHole" H 3625 7155 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_3mm_Pad_Via" H 3525 7200 50  0001 C CNN
+F 3 "~" H 3525 7200 50  0001 C CNN
+	1    3525 7200
+	1    0    0    -1  
+$EndComp
+Text Label 11050 4525 2    50   ~ 0
+CANH
+Text Label 9025 3825 0    50   ~ 0
+TXCAN
+Text Label 9025 3925 0    50   ~ 0
+RXCAN
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E49D988
+P 9400 3575
+AR Path="/5E20A2BB/5E49D988" Ref="#PWR?"  Part="1" 
+AR Path="/5E49D988" Ref="#PWR0130"  Part="1" 
+F 0 "#PWR0130" H 9400 3425 50  0001 C CNN
+F 1 "+3V3" H 9400 3725 50  0000 C CNN
+F 2 "" H 9400 3575 50  0001 C CNN
+F 3 "" H 9400 3575 50  0001 C CNN
+	1    9400 3575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8925 3925 8925 4025
+Connection ~ 8925 3925
+Wire Wire Line
+	8925 3925 8850 3925
+Wire Wire Line
+	8925 3825 8925 3700
+Connection ~ 8925 3825
+Wire Wire Line
+	8925 3825 9425 3825
+$Comp
+L Connector:TestPoint TP6
+U 1 1 5E79927E
+P 10500 3775
+F 0 "TP6" H 10558 3893 50  0000 L CNN
+F 1 "TestPoint" H 10558 3802 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3775 50  0001 C CNN
+F 3 "~" H 10700 3775 50  0001 C CNN
+F 4 "36-5119-ND" H 10500 3775 50  0001 C CNN "Digikey"
+	1    10500 3775
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP18
+U 1 1 5E7DF3C1
+P 4600 5025
+F 0 "TP18" H 4658 5143 50  0000 L CNN
+F 1 "TestPoint" H 4658 5052 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4800 5025 50  0001 C CNN
+F 3 "~" H 4800 5025 50  0001 C CNN
+F 4 "36-5000-ND" H 4600 5025 50  0001 C CNN "Digikey"
+	1    4600 5025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 5025 4600 5375
+Connection ~ 4600 5375
+Wire Wire Line
+	4600 5375 4675 5375
+$Comp
+L Connector:TestPoint TP20
+U 1 1 5E7EA5B7
+P 2250 5375
+F 0 "TP20" H 2308 5493 50  0000 L CNN
+F 1 "TestPoint" H 2308 5402 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2450 5375 50  0001 C CNN
+F 3 "~" H 2450 5375 50  0001 C CNN
+F 4 "36-5000-ND" H 2250 5375 50  0001 C CNN "Digikey"
+	1    2250 5375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 5375 2250 5750
+Wire Wire Line
+	2250 5750 2600 5750
+Wire Wire Line
+	1650 3825 2250 3825
+Wire Wire Line
+	1650 3725 2175 3725
+Wire Wire Line
+	1950 3425 1950 4550
+Wire Wire Line
+	1950 4550 2425 4550
+Connection ~ 1950 3425
+Wire Wire Line
+	1950 3425 2350 3425
+Wire Wire Line
+	2425 4400 2025 4400
+Wire Wire Line
+	2025 4400 2025 3525
+Connection ~ 2025 3525
+Wire Wire Line
+	2025 3525 2425 3525
+Wire Wire Line
+	2100 3625 2100 4250
+Wire Wire Line
+	2100 4250 2425 4250
+Connection ~ 2100 3625
+Wire Wire Line
+	2100 3625 2500 3625
+Wire Wire Line
+	2425 4100 2175 4100
+Wire Wire Line
+	2175 4100 2175 3725
+Connection ~ 2175 3725
+Wire Wire Line
+	2175 3725 2575 3725
+Wire Wire Line
+	2425 3950 2250 3950
+Wire Wire Line
+	2250 3950 2250 3825
+Connection ~ 2250 3825
+Wire Wire Line
+	2250 3825 2650 3825
+$Comp
+L Connector:TestPoint TP12
+U 1 1 5E88DEBD
+P 1350 4375
+F 0 "TP12" V 1275 4400 50  0000 L CNN
+F 1 "TestPoint" V 1350 4550 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4375 50  0001 C CNN
+F 3 "~" H 1550 4375 50  0001 C CNN
+F 4 "36-5119-ND" V 1350 4375 50  0001 C CNN "Digikey"
+	1    1350 4375
+	0    1    1    0   
+$EndComp
+Text Label 975  4375 0    50   ~ 0
+GPIO28
+Text Label 975  4550 0    50   ~ 0
+GPIO29
+Wire Wire Line
+	1350 4375 975  4375
+Wire Wire Line
+	975  4550 1350 4550
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5E8B7B57
+P 10500 2800
+F 0 "TP1" V 10425 2825 50  0000 L CNN
+F 1 "TestPoint" V 10500 2975 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2800 50  0001 C CNN
+F 3 "~" H 10700 2800 50  0001 C CNN
+F 4 "36-5117-ND" V 10500 2800 50  0001 C CNN "Digikey"
+	1    10500 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5E8B9215
+P 10500 2950
+F 0 "TP2" V 10425 2975 50  0000 L CNN
+F 1 "TestPoint" V 10500 3125 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 2950 50  0001 C CNN
+F 3 "~" H 10700 2950 50  0001 C CNN
+F 4 "36-5117-ND" V 10500 2950 50  0001 C CNN "Digikey"
+	1    10500 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5E8B95C5
+P 10500 3100
+F 0 "TP3" V 10425 3125 50  0000 L CNN
+F 1 "TestPoint" V 10500 3275 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3100 50  0001 C CNN
+F 3 "~" H 10700 3100 50  0001 C CNN
+F 4 "36-5117-ND" V 10500 3100 50  0001 C CNN "Digikey"
+	1    10500 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10050 2450 10325 2450
+Wire Wire Line
+	10500 2800 10325 2800
+Wire Wire Line
+	10325 2800 10325 2450
+Connection ~ 10325 2450
+Wire Wire Line
+	10325 2450 10400 2450
+Wire Wire Line
+	10500 2950 10225 2950
+Wire Wire Line
+	10225 2950 10225 2225
+Connection ~ 10225 2225
+Wire Wire Line
+	10225 2225 10050 2225
+Wire Wire Line
+	10500 3100 10125 3100
+Wire Wire Line
+	10125 3100 10125 2000
+Connection ~ 10125 2000
+Wire Wire Line
+	10125 2000 10400 2000
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5E9045D4
+P 10500 3300
+F 0 "TP4" V 10425 3325 50  0000 L CNN
+F 1 "TestPoint" V 10500 3475 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 3300 50  0001 C CNN
+F 3 "~" H 10700 3300 50  0001 C CNN
+F 4 "36-5001-ND" V 10500 3300 50  0001 C CNN "Digikey"
+	1    10500 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E90550F
+P 10425 3350
+AR Path="/5E20A2BB/5E90550F" Ref="#PWR?"  Part="1" 
+AR Path="/5E90550F" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 10425 3100 50  0001 C CNN
+F 1 "GND" H 10425 3200 50  0000 C CNN
+F 2 "" H 10425 3350 50  0001 C CNN
+F 3 "" H 10425 3350 50  0001 C CNN
+	1    10425 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10425 3350 10425 3300
+Wire Wire Line
+	10425 3300 10500 3300
+$Comp
+L Connector:TestPoint TP19
+U 1 1 5E9119E4
+P 7175 5225
+F 0 "TP19" V 7100 5250 50  0000 L CNN
+F 1 "TestPoint" V 7175 5400 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5225 50  0001 C CNN
+F 3 "~" H 7375 5225 50  0001 C CNN
+F 4 "36-5001-ND" V 7175 5225 50  0001 C CNN "Digikey"
+	1    7175 5225
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP21
+U 1 1 5E91308A
+P 7175 5400
+F 0 "TP21" V 7100 5425 50  0000 L CNN
+F 1 "TestPoint" V 7175 5575 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7375 5400 50  0001 C CNN
+F 3 "~" H 7375 5400 50  0001 C CNN
+F 4 "36-5001-ND" V 7175 5400 50  0001 C CNN "Digikey"
+	1    7175 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9133F4
+P 7100 5500
+AR Path="/5E20A2BB/5E9133F4" Ref="#PWR?"  Part="1" 
+AR Path="/5E9133F4" Ref="#PWR0132"  Part="1" 
+F 0 "#PWR0132" H 7100 5250 50  0001 C CNN
+F 1 "GND" H 7100 5350 50  0000 C CNN
+F 2 "" H 7100 5500 50  0001 C CNN
+F 3 "" H 7100 5500 50  0001 C CNN
+	1    7100 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 5400 7175 5400
+Wire Wire Line
+	7100 5400 7100 5500
+Wire Wire Line
+	7100 5400 7100 5225
+Wire Wire Line
+	7100 5225 7175 5225
+Connection ~ 7100 5400
+$Comp
+L power:GND #PWR?
+U 1 1 5E938CB0
+P 2325 4925
+AR Path="/5E20A2BB/5E938CB0" Ref="#PWR?"  Part="1" 
+AR Path="/5E938CB0" Ref="#PWR0133"  Part="1" 
+F 0 "#PWR0133" H 2325 4675 50  0001 C CNN
+F 1 "GND" H 2330 4752 50  0000 C CNN
+F 2 "" H 2325 4925 50  0001 C CNN
+F 3 "" H 2325 4925 50  0001 C CNN
+	1    2325 4925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2325 4875 2425 4875
+Wire Wire Line
+	2325 4875 2325 4925
+Wire Wire Line
+	2425 4725 2325 4725
+Wire Wire Line
+	2325 4725 2325 4875
+Connection ~ 2325 4875
+$Comp
+L Connector:TestPoint TP10
+U 1 1 5E96DE13
+P 10500 4275
+F 0 "TP10" H 10725 4375 50  0000 R CNN
+F 1 "TestPoint" H 10800 4475 50  0000 R CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 10700 4275 50  0001 C CNN
+F 3 "~" H 10700 4275 50  0001 C CNN
+F 4 "36-5119-ND" H 10500 4275 50  0001 C CNN "Digikey"
+	1    10500 4275
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5E96F3CE
+P 8925 3700
+F 0 "TP5" H 8983 3818 50  0000 L CNN
+F 1 "TestPoint" H 8983 3727 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 3700 50  0001 C CNN
+F 3 "~" H 9125 3700 50  0001 C CNN
+F 4 "36-5119-ND" H 8925 3700 50  0001 C CNN "Digikey"
+	1    8925 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP8
+U 1 1 5E970343
+P 8925 4025
+F 0 "TP8" H 8867 4051 50  0000 R CNN
+F 1 "TestPoint" H 8867 4142 50  0000 R CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 9125 4025 50  0001 C CNN
+F 3 "~" H 9125 4025 50  0001 C CNN
+F 4 "36-5119-ND" H 8925 4025 50  0001 C CNN "Digikey"
+	1    8925 4025
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP14
+U 1 1 5E973B2C
+P 1350 4550
+F 0 "TP14" V 1275 4575 50  0000 L CNN
+F 1 "TestPoint" V 1350 4725 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 1550 4550 50  0001 C CNN
+F 3 "~" H 1550 4550 50  0001 C CNN
+F 4 "36-5119-ND" V 1350 4550 50  0001 C CNN "Digikey"
+	1    1350 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP17
+U 1 1 5E9387FC
+P 2425 4875
+F 0 "TP17" V 2350 4900 50  0000 L CNN
+F 1 "TestPoint" V 2425 5050 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4875 50  0001 C CNN
+F 3 "~" H 2625 4875 50  0001 C CNN
+F 4 "36-5001-ND" V 2425 4875 50  0001 C CNN "Digikey"
+	1    2425 4875
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP16
+U 1 1 5E9366D5
+P 2425 4725
+F 0 "TP16" V 2350 4750 50  0000 L CNN
+F 1 "TestPoint" V 2425 4900 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4725 50  0001 C CNN
+F 3 "~" H 2625 4725 50  0001 C CNN
+F 4 "36-5001-ND" V 2425 4725 50  0001 C CNN "Digikey"
+	1    2425 4725
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP7
+U 1 1 5E9749CD
+P 2425 3950
+F 0 "TP7" V 2350 3975 50  0000 L CNN
+F 1 "TestPoint" V 2425 4125 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 3950 50  0001 C CNN
+F 3 "~" H 2625 3950 50  0001 C CNN
+F 4 "36-5119-ND" V 2425 3950 50  0001 C CNN "Digikey"
+	1    2425 3950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP9
+U 1 1 5E974F4E
+P 2425 4100
+F 0 "TP9" V 2350 4125 50  0000 L CNN
+F 1 "TestPoint" V 2425 4275 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4100 50  0001 C CNN
+F 3 "~" H 2625 4100 50  0001 C CNN
+F 4 "36-5119-ND" V 2425 4100 50  0001 C CNN "Digikey"
+	1    2425 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP11
+U 1 1 5E9755A1
+P 2425 4250
+F 0 "TP11" V 2350 4275 50  0000 L CNN
+F 1 "TestPoint" V 2425 4425 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4250 50  0001 C CNN
+F 3 "~" H 2625 4250 50  0001 C CNN
+F 4 "36-5119-ND" V 2425 4250 50  0001 C CNN "Digikey"
+	1    2425 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP13
+U 1 1 5E9759DE
+P 2425 4400
+F 0 "TP13" V 2350 4425 50  0000 L CNN
+F 1 "TestPoint" V 2425 4575 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4400 50  0001 C CNN
+F 3 "~" H 2625 4400 50  0001 C CNN
+F 4 "36-5119-ND" V 2425 4400 50  0001 C CNN "Digikey"
+	1    2425 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP15
+U 1 1 5E975CDD
+P 2425 4550
+F 0 "TP15" V 2350 4575 50  0000 L CNN
+F 1 "TestPoint" V 2425 4725 50  0000 L CNN
+F 2 "MCU_Powertrain:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2625 4550 50  0001 C CNN
+F 3 "~" H 2625 4550 50  0001 C CNN
+F 4 "36-5119-ND" V 2425 4550 50  0001 C CNN "Digikey"
+	1    2425 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E98475C
+P 10450 5350
+AR Path="/5E20A2BB/5E98475C" Ref="C?"  Part="1" 
+AR Path="/5E98475C" Ref="C29"  Part="1" 
+F 0 "C29" H 10300 5425 50  0000 L CNN
+F 1 "1uF" H 10300 5275 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 10450 5350 50  0001 C CNN
+F 3 "" H 10450 5350 50  0001 C CNN
+F 4 "399-8011-1-ND" H 10450 5350 50  0001 C CNN "Digikey"
+	1    10450 5350
+	1    0    0    -1  
+$EndComp
+Connection ~ 6475 4275
+Wire Wire Line
+	6475 4275 6125 4275
+Wire Wire Line
+	6125 4275 6125 4175
+Wire Wire Line
+	6125 3925 6125 3975
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E4FE87C
+P 6125 3925
+AR Path="/5E20A2BB/5E4FE87C" Ref="#PWR?"  Part="1" 
+AR Path="/5E4FE87C" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 6125 3775 50  0001 C CNN
+F 1 "+3V3" H 6125 4075 50  0000 C CNN
+F 2 "" H 6125 3925 50  0001 C CNN
+F 3 "" H 6125 3925 50  0001 C CNN
+	1    6125 3925
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R17
+U 1 1 5E4FE03C
+P 6125 4075
+F 0 "R17" H 6193 4121 50  0000 L CNN
+F 1 "10k" H 6193 4030 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" H 6125 4075 50  0001 C CNN
+F 3 "~" H 6125 4075 50  0001 C CNN
+F 4 "311-10.0KCRCT-ND" H 6125 4075 50  0001 C CNN "Digikey"
+	1    6125 4075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7175 4825 7175 4800
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 5E45594D
+P 7175 4650
+F 0 "Y1" V 7325 4600 50  0000 R CNN
+F 1 "20MHz" V 6925 4750 50  0000 R CNN
+F 2 "Crystals:Crystal_SMD_SeikoEpson_TSX3225-4pin_3.2x2.5mm" H 7175 4650 50  0001 C CNN
+F 3 "~" H 7175 4650 50  0001 C CNN
+F 4 "SER4249CT-ND" V 7175 4650 50  0001 C CNN "Digikey"
+	1    7175 4650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7375 4650 7425 4650
+Wire Wire Line
+	7425 4650 7425 4700
+Wire Wire Line
+	6975 4650 7375 4650
+Connection ~ 7375 4650
+$Comp
+L power:GND #PWR?
+U 1 1 5E49D106
+P 7425 4700
+AR Path="/5E20A2BB/5E49D106" Ref="#PWR?"  Part="1" 
+AR Path="/5E49D106" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 7425 4450 50  0001 C CNN
+F 1 "GND" H 7500 4700 50  0000 C CNN
+F 2 "" H 7425 4700 50  0001 C CNN
+F 3 "" H 7425 4700 50  0001 C CNN
+	1    7425 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R35
+U 1 1 5E50F8DF
+P 10775 4700
+F 0 "R35" H 10707 4654 50  0000 R CNN
+F 1 "120" H 10707 4745 50  0000 R CNN
+F 2 "Resistors_SMD:R_0805" H 10775 4700 50  0001 C CNN
+F 3 "~" H 10775 4700 50  0001 C CNN
+F 4 "A129738CT-ND" H 10775 4700 50  0001 C CNN "Digikey"
+	1    10775 4700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10775 4525 10775 4600
+Wire Wire Line
+	10775 4525 11050 4525
+Wire Wire Line
+	10775 4800 10775 4900
+Wire Wire Line
+	10775 4900 11050 4900
+Text Label 10525 3925 0    50   ~ 0
+CANH
+Text Label 11050 4900 2    50   ~ 0
+CANL
+$Comp
+L Interface_CAN_LIN:MCP2562-E-MF U8
+U 1 1 5E558E9D
+P 9925 4025
+F 0 "U8" H 9575 4375 50  0000 C CNN
+F 1 "MCP2562" H 9575 3675 50  0000 C CNN
+F 2 "Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.65mm" H 9925 3525 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/25167A.pdf" H 9925 4025 50  0001 C CNN
+F 4 "MCP2562-E/MF-ND" H 9925 4025 50  0001 C CNN "Digikey"
+	1    9925 4025
+	1    0    0    -1  
+$EndComp
+Text Notes 10675 4750 2    50   ~ 0
+Termination\nResistor
+Wire Wire Line
+	10425 3925 10500 3925
+Text Label 10525 4025 0    50   ~ 0
+CANL
+Wire Wire Line
+	10750 4025 10500 4025
+Wire Wire Line
+	10425 4125 10500 4125
+Wire Wire Line
+	10500 4125 10500 4025
+Wire Wire Line
+	10500 3775 10500 3925
+Connection ~ 10500 3925
+Wire Wire Line
+	10500 3925 10750 3925
+Connection ~ 10500 4125
+Wire Wire Line
+	9425 4125 9400 4125
+Wire Wire Line
+	9400 3575 9400 4125
+Wire Wire Line
+	9925 3625 9925 3600
+$Comp
+L power:+5V #PWR0126
+U 1 1 5E61C7BE
+P 9925 3600
+F 0 "#PWR0126" H 9925 3450 50  0001 C CNN
+F 1 "+5V" H 9940 3773 50  0000 C CNN
+F 2 "" H 9925 3600 50  0001 C CNN
+F 3 "" H 9925 3600 50  0001 C CNN
+	1    9925 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9825 4425 9825 4475
+Wire Wire Line
+	9825 4475 9875 4475
+Wire Wire Line
+	9925 4475 9925 4425
+Wire Wire Line
+	9875 4475 9875 4575
+Connection ~ 9875 4475
+Wire Wire Line
+	9875 4475 9925 4475
+Wire Wire Line
+	10500 4125 10500 4275
+$Comp
+L power:GND #PWR?
+U 1 1 5E66F004
+P 9350 4500
+AR Path="/5E20A2BB/5E66F004" Ref="#PWR?"  Part="1" 
+AR Path="/5E66F004" Ref="#PWR0170"  Part="1" 
+F 0 "#PWR0170" H 9350 4250 50  0001 C CNN
+F 1 "GND" H 9500 4450 50  0000 C CNN
+F 2 "" H 9350 4500 50  0001 C CNN
+F 3 "" H 9350 4500 50  0001 C CNN
+	1    9350 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9425 4225 9350 4225
+Wire Wire Line
+	9350 4225 9350 4500
+$Sheet
+S 7175 1450 2875 1875
+U 5E20A2BB
+F0 "Powertrain" 50
+F1 "Powertrain.sch" 50
+F2 "Phase_A" O R 10050 2000 50 
+F3 "Phase_B" O R 10050 2225 50 
+F4 "Phase_C" O R 10050 2450 50 
+F5 "VSEN_A" O L 7175 1875 50 
+F6 "VSEN_B" O L 7175 1950 50 
+F7 "VSEN_C" O L 7175 2025 50 
+F8 "VSEN_PVDD" O L 7175 2100 50 
+F9 "ISEN_A" O L 7175 2175 50 
+F10 "ISEN_B" O L 7175 2250 50 
+F11 "ISEN_C" O L 7175 2325 50 
+F12 "INH_A" I L 7175 2450 50 
+F13 "INL_A" I L 7175 2525 50 
+F14 "INH_B" I L 7175 2600 50 
+F15 "INL_B" I L 7175 2675 50 
+F16 "INH_C" I L 7175 2750 50 
+F17 "INL_C" I L 7175 2825 50 
+F18 "SPI_CS_0" I L 7175 2925 50 
+F19 "SPI_MOSI" B L 7175 3075 50 
+F20 "SPI_MISO" B L 7175 3150 50 
+F21 "SPI_CLK" I L 7175 3225 50 
+F22 "PWRGD" O L 7175 1525 50 
+F23 "EN_GATE" I L 7175 1750 50 
+F24 "WAKE" I L 7175 1675 50 
+F25 "nFAULT" O L 7175 1600 50 
+$EndSheet
+$Comp
+L power:+5V #PWR0171
+U 1 1 5E68D405
+P 10550 5125
+F 0 "#PWR0171" H 10550 4975 50  0001 C CNN
+F 1 "+5V" H 10565 5298 50  0000 C CNN
+F 2 "" H 10550 5125 50  0001 C CNN
+F 3 "" H 10550 5125 50  0001 C CNN
+	1    10550 5125
+	1    0    0    -1  
+$EndComp
+Text Notes 10350 4875 2    50   ~ 0
+CAN chips decoupling cap
+$Comp
+L Device:C_Small C?
+U 1 1 5E6BC1B4
+P 10075 5350
+AR Path="/5E20A2BB/5E6BC1B4" Ref="C?"  Part="1" 
+AR Path="/5E6BC1B4" Ref="C42"  Part="1" 
+F 0 "C42" H 9900 5425 50  0000 L CNN
+F 1 "0.1uF" H 9850 5275 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 10075 5350 50  0001 C CNN
+F 3 "" H 10075 5350 50  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 10075 5350 50  0001 C CNN "Digikey"
+	1    10075 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E6BC8DA
+P 10075 5525
+AR Path="/5E20A2BB/5E6BC8DA" Ref="#PWR?"  Part="1" 
+AR Path="/5E6BC8DA" Ref="#PWR0172"  Part="1" 
+F 0 "#PWR0172" H 10075 5275 50  0001 C CNN
+F 1 "GND" H 10075 5375 50  0000 C CNN
+F 2 "" H 10075 5525 50  0001 C CNN
+F 3 "" H 10075 5525 50  0001 C CNN
+	1    10075 5525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10075 5450 10075 5525
+Wire Wire Line
+	10075 5250 10075 5125
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E6D854E
+P 10075 5125
+AR Path="/5E20A2BB/5E6D854E" Ref="#PWR?"  Part="1" 
+AR Path="/5E6D854E" Ref="#PWR0173"  Part="1" 
+F 0 "#PWR0173" H 10075 4975 50  0001 C CNN
+F 1 "+3V3" H 10075 5300 50  0000 C CNN
+F 2 "" H 10075 5125 50  0001 C CNN
+F 3 "" H 10075 5125 50  0001 C CNN
+	1    10075 5125
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCU_Powertrain:RTQ2569-50GQW U2
+U 1 1 5E6F07BC
+P 8350 5825
+F 0 "U2" H 8325 5975 50  0000 C CNN
+F 1 "RTQ2569-50GQW" H 7950 5300 50  0000 C CNN
+F 2 "Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.65mm" H 8350 5825 50  0001 C CNN
+F 3 "" H 8350 5825 50  0001 C CNN
+F 4 "1028-1523-1-ND" H 8350 5825 50  0001 C CNN "Digikey"
+	1    8350 5825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 5775 7875 5775
+Wire Wire Line
+	7875 5775 7875 5975
+Wire Wire Line
+	7875 5975 7950 5975
+Wire Wire Line
+	7875 5775 7675 5775
+Wire Wire Line
+	7675 5775 7675 5725
+Connection ~ 7875 5775
+Wire Wire Line
+	8300 6275 8300 6300
+Wire Wire Line
+	8400 6300 8400 6275
+Wire Wire Line
+	8300 6300 8350 6300
+$Comp
+L power:GND #PWR?
+U 1 1 5E72D4ED
+P 8350 6325
+AR Path="/5E20A2BB/5E72D4ED" Ref="#PWR?"  Part="1" 
+AR Path="/5E72D4ED" Ref="#PWR0174"  Part="1" 
+F 0 "#PWR0174" H 8350 6075 50  0001 C CNN
+F 1 "GND" H 8350 6175 50  0000 C CNN
+F 2 "" H 8350 6325 50  0001 C CNN
+F 3 "" H 8350 6325 50  0001 C CNN
+	1    8350 6325
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 6300 8350 6325
+Connection ~ 8350 6300
+Wire Wire Line
+	8350 6300 8400 6300
+Wire Wire Line
+	8700 5775 8800 5775
+Wire Wire Line
+	8900 5775 8900 5725
+$Comp
+L power:+5V #PWR0175
+U 1 1 5E74C0CB
+P 8900 5725
+F 0 "#PWR0175" H 8900 5575 50  0001 C CNN
+F 1 "+5V" H 8900 5875 50  0000 C CNN
+F 2 "" H 8900 5725 50  0001 C CNN
+F 3 "" H 8900 5725 50  0001 C CNN
+	1    8900 5725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7675 5825 7675 5775
+Connection ~ 7675 5775
+$Comp
+L power:GND #PWR?
+U 1 1 5E7C6C10
+P 7675 6050
+AR Path="/5E20A2BB/5E7C6C10" Ref="#PWR?"  Part="1" 
+AR Path="/5E7C6C10" Ref="#PWR0176"  Part="1" 
+F 0 "#PWR0176" H 7675 5800 50  0001 C CNN
+F 1 "GND" H 7675 5900 50  0000 C CNN
+F 2 "" H 7675 6050 50  0001 C CNN
+F 3 "" H 7675 6050 50  0001 C CNN
+	1    7675 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7675 6025 7675 6050
+$Comp
+L Device:C_Small C?
+U 1 1 5E7D7050
+P 8800 5900
+AR Path="/5E20A2BB/5E7D7050" Ref="C?"  Part="1" 
+AR Path="/5E7D7050" Ref="C40"  Part="1" 
+F 0 "C40" H 8650 5975 50  0000 L CNN
+F 1 "1uF" H 8650 5825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 8800 5900 50  0001 C CNN
+F 3 "" H 8800 5900 50  0001 C CNN
+F 4 "399-8011-1-ND" H 8800 5900 50  0001 C CNN "Digikey"
+	1    8800 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E7D78FD
+P 9000 5900
+AR Path="/5E20A2BB/5E7D78FD" Ref="C?"  Part="1" 
+AR Path="/5E7D78FD" Ref="C41"  Part="1" 
+F 0 "C41" H 8850 5975 50  0000 L CNN
+F 1 "1uF" H 8850 5825 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 9000 5900 50  0001 C CNN
+F 3 "" H 9000 5900 50  0001 C CNN
+F 4 "399-8011-1-ND" H 9000 5900 50  0001 C CNN "Digikey"
+	1    9000 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 5800 8800 5775
+Connection ~ 8800 5775
+Wire Wire Line
+	8800 5775 8900 5775
+Wire Wire Line
+	9000 5775 9000 5800
+Wire Wire Line
+	8800 6000 8800 6025
+Wire Wire Line
+	8800 6025 8900 6025
+Wire Wire Line
+	9000 6025 9000 6000
+$Comp
+L power:GND #PWR?
+U 1 1 5E8077B7
+P 8900 6050
+AR Path="/5E20A2BB/5E8077B7" Ref="#PWR?"  Part="1" 
+AR Path="/5E8077B7" Ref="#PWR0177"  Part="1" 
+F 0 "#PWR0177" H 8900 5800 50  0001 C CNN
+F 1 "GND" H 8900 5900 50  0000 C CNN
+F 2 "" H 8900 6050 50  0001 C CNN
+F 3 "" H 8900 6050 50  0001 C CNN
+	1    8900 6050
+	1    0    0    -1  
+$EndComp
+Connection ~ 8900 5775
+Wire Wire Line
+	8900 5775 9000 5775
+Wire Wire Line
+	8900 6050 8900 6025
+Connection ~ 8900 6025
+Wire Wire Line
+	8900 6025 9000 6025
+Text Notes 8000 5600 0    79   Italic 16
+5V LDO
+$Comp
+L power:+BATT #PWR0178
+U 1 1 5E840F27
+P 7675 5725
+F 0 "#PWR0178" H 7675 5575 50  0001 C CNN
+F 1 "+BATT" H 7690 5898 50  0000 C CNN
+F 2 "" H 7675 5725 50  0001 C CNN
+F 3 "" H 7675 5725 50  0001 C CNN
+	1    7675 5725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E7B6E45
+P 7675 5925
+AR Path="/5E20A2BB/5E7B6E45" Ref="C?"  Part="1" 
+AR Path="/5E7B6E45" Ref="C39"  Part="1" 
+F 0 "C39" H 7500 6000 50  0000 L CNN
+F 1 "1.01uF" H 7400 5850 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7675 5925 50  0001 C CNN
+F 3 "" H 7675 5925 50  0001 C CNN
+F 4 "311-1909-1-ND" H 7675 5925 50  0001 C CNN "Digikey"
+F 5 "35V" H 7575 6075 50  0000 C CNN "Voltage"
+	1    7675 5925
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

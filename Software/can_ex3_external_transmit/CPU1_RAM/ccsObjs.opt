@@ -1,1 +1,0 @@
-"./can_ex3_external_transmit.obj" "./device/device.obj" "./device/f28004x_codestartbranch.obj" "../28004x_generic_ram_lnk.cmd" "C:/ti/C2000Ware_3_03_00_00_Software/driverlib/f28004x/driverlib/ccs/Debug/driverlib.lib" -llibc.a 

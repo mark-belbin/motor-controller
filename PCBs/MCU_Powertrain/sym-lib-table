@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name MCU_Powertrain)(type Legacy)(uri ${KIPRJMOD}/MCU_Powertrain.lib)(options "")(descr ""))
-  (lib (name "ESC at Work")(type Legacy)(uri "${KIPRJMOD}/ESC at Work.lib")(options "")(descr ""))
-  (lib (name "ESC Drivetrain V1")(type Legacy)(uri "${KIPRJMOD}/ESC Drivetrain V1.lib")(options "")(descr ""))
-)
