@@ -37,7 +37,7 @@ This motor controller design uses Field-oriented control (FOC), also known as si
 
 This custom FOC controller design will evaluated by comparing against the BlueRobotics Basic ESC R3, a standard hobby controller. Both will run the same BlueRobotics T200 thruster, which is the first intended use of the custom developed controller. 
 
-![T200 and Basic ESC](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/T200_BR_ESC.png)
+![T200 and Basic ESC](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/T200_BR_ESC.PNG)
 
 > BlueRobotics T200 Thruster and Basic ESC R3.
 
@@ -47,14 +47,14 @@ FOC has numerous benefits compared to traditional trapezoidal control. The most 
 
 A comparison of current waveforms is shown below. Both the custom FOC controller and the Blue Robotics Basic ESC R3 are controlling a submerged T200 thruster at 2000 RPM. The FOC phase currents are much cleaner and closer to sinewaves, while the Basic ESC waveforms are more choppy and trapezoidal.
 
-![FOC Currents](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/phase_currents.png)
+![FOC Currents](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/phase_currents.PNG)
 
 > FOC phase currents vs the BR Basic ESC R3 at 2000 RPM.
 
 The 
 
 
-![Efficiency Graph](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/eff_graph.png)
+![Efficiency Graph](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/eff_graph.PNG)
 
 > FOC Controller vs the BR Basic ESC R3.
 
