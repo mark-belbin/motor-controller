@@ -24,8 +24,6 @@ The final controller is designed for T200 or T100 thrusters from BlueRobotics, b
 > FOC Thruster Controller V2 Bottom View
 
 # Table of Contents
-
-## Table of Contents
 1. [Introduction](#Introduction)
 1. [FOC Benefits](#FOC-Benefits)
    1. [Phase Currents](#Phase-Currents)
