@@ -98,7 +98,7 @@ A few other minor benefits were observed with the custom controller and FOC:
 # Motor Controller PCB
 The motor controller PCB design was created using KiCAD. It's a 4 layer board, approximately in the shape of a xx diameter circle. The notches in the design allow it to be dropped in a mount for the T200 thruster. The PCB project is located in "hardware/Thruster_Controller_V2". An older version of the controller is found in "hardware/Thruster_Controller_V1", with the main difference being a different TI microcontroller.
 
-![PCB Angled](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/pcb_angle.PNG)
+![PCB Angled](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/pcb_angle.png)
 
 > FOC Thruster Controller V2 Angled View
 
