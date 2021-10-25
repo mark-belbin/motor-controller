@@ -71,6 +71,10 @@ A significant difference in operating noise is observed because of the current w
 
 An efficiency test was completed for both the custom and off-the-shelf controllers. A T200 was secured and submerged in a relatively large tub full of water. A separate waterproof, magnetic RPM sensor was attached to the shaft of the T200 to independently measure the RPM of the thruster. Measurements were taken of the input power of the motor controller under test for RPM settings in steps of 100 RPM.
 
+![Controller Testing](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/controller_testing.PNG)
+
+> FOC Controller Testing
+
 The FOC controller is more efficient across nearly the entire RPM range. The graph below is shows superiority up until about 2500 RPM, beyond which the FOC controller has the same or slightly worse performance. This is a limitation of FOC, where at a certain voltage the controller will switch to overmodulation control, where the controller will gradually transition to trapezoidal control as the RPM increases. To remain efficient at upper RPMs, a higher input voltage would need to be supplied.
 
 ![Efficiency Graph](https://github.com/mark-belbin/motor-controller/blob/master/docs/images/eff_graph.PNG)
